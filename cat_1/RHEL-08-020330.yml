@@ -6,22 +6,22 @@ file:
     contains:
     - '!/^.*nullok.*/'
     meta:
-    - Cat: 1
-    - CCI: CCI-000366
-    - Rule_ID: SV-230380r627750_rule
-    - STIG_ID: RHEL-08-020330
-    - Vul_ID: V-230380
+      Cat: 1
+      CCI: CCI-000366
+      Rule_ID: SV-230380r627750_rule
+      STIG_ID: RHEL-08-020330
+      Vul_ID: V-230380
   /etc/pam.d/password-auth:
     title: RHEL-08-020330 | If an account has an empty password, anyone could log on and run commands with the privileges of that account. Accounts with empty passwords should never be used in operational environments | password-auth
     exists: true
     contains:
     - '!/^.*nullok.*/'
     meta:
-    - Cat: 1
-    - CCI: CCI-000366
-    - Rule_ID: SV-230380r627750_rule
-    - STIG_ID: RHEL-08-020330
-    - Vul_ID: V-230380
+      Cat: 1
+      CCI: CCI-000366
+      Rule_ID: SV-230380r627750_rule
+      STIG_ID: RHEL-08-020330
+      Vul_ID: V-230380
   /etc/ssh/sshd_config:
     title: RHEL-08-020330 | If an account has an empty password, anyone could log on and run commands with the privileges of that account. Accounts with empty passwords should never be used in operational environments | sshd_conf
     exists: true

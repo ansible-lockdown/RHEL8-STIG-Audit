@@ -1,3 +1,10 @@
+rhel8stig_benchmark:
+- "type: STIG"
+- "version: 'v1r2'"
+- "os: RHEL 8"
+
+rhel8stig_os_distribution: centos
+
 # turn the categories on/off
 rhel8stig_cat1: true
 
@@ -41,5 +48,5 @@ RHEL_08_040360: true
 
 
 
-rhel8stig_password_hash: {{ rhel8stig_bootloader_password_hash }}
+rhel8stig_password_hash: changeme
 rhel8stig_boot_superuser: root
