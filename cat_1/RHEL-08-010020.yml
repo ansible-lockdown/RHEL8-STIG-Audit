@@ -19,7 +19,7 @@ command:
      exit-status: 0
      stdout:
      - '/^kernelopts+.*fips=1'
-     - '/^kernelopts+.*fips=0'
+     - '!/^kernelopts+.*fips=0'
     meta:
     - Cat: 1
     - CCI: CCI-000068

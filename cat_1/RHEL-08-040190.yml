@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_040190 }}
 package:
   tftp-server:
-    title: The Trivial File Transfer Protocol (TFTP) server package must not be installed if not required for RHEL 8 operational support.
+    title: RHEL-08-040190 | The Trivial File Transfer Protocol (TFTP) server package must not be installed if not required for RHEL 8 operational support.
     installed: false
     meta:
     - Cat: 1

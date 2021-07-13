@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_010370 }}
 command:
   gpg_check_default:
-    title: RHEL 8 must prevent the installation of software, patches, service packs, device drivers, or operating system components from a repository without verification they have been digitally signed using a certificate that is issued by a Certificate Authority (CA) that is recognized and approved by the organization. | dnf_running
+    title: RHEL-08-010370 | RHEL 8 must prevent the installation of software, patches, service packs, device drivers, or operating system components from a repository without verification they have been digitally signed using a certificate that is issued by a Certificate Authority (CA) that is recognized and approved by the organization. | dnf_running
     exec: dnf config-manager --dump | grep gpgcheck
     exit-status: 0
     stdout:
@@ -15,7 +15,7 @@ command:
     - STIG_ID: RHEL-08-010370
     - Vul_ID: V-230264
   gpg_check_repos:
-    title: RHEL 8 must prevent the installation of software, patches, service packs, device drivers, or operating system components from a repository without verification they have been digitally signed using a certificate that is issued by a Certificate Authority (CA) that is recognized and approved by the organization. | repo_check
+    title: RHEL-08-010370 | RHEL 8 must prevent the installation of software, patches, service packs, device drivers, or operating system components from a repository without verification they have been digitally signed using a certificate that is issued by a Certificate Authority (CA) that is recognized and approved by the organization. | repo_check
     exec: grep -cR '.*gpgcheck.*=0' /etc/yum.repos.d/*.repo
     exit-status: 1
     stdout:
@@ -29,7 +29,7 @@ command:
     - Vul_ID: V-230264
 file:
   /etc/dnf/dnf.conf:
-    title: RHEL 8 must prevent the installation of software, patches, service packs, device drivers, or operating system components from a repository without verification they have been digitally signed using a certificate that is issued by a Certificate Authority (CA) that is recognized and approved by the organization. | dnf_conf
+    title: RHEL-08-010370 | RHEL 8 must prevent the installation of software, patches, service packs, device drivers, or operating system components from a repository without verification they have been digitally signed using a certificate that is issued by a Certificate Authority (CA) that is recognized and approved by the organization. | dnf_conf
     exists: true
     contains:
     - '/^gpgcheck.*1/'

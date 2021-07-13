@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_040170 }}
 command:
   ctrl_alt_del: 
-    title: The x86 Ctrl-Alt-Delete key sequence must be disabled on RHEL 8.
+    title: RHEL-08-040170 | The x86 Ctrl-Alt-Delete key sequence must be disabled on RHEL 8.
     exec: systemctl status ctrl-alt-del.target
     exit-status: 0
     stdout:

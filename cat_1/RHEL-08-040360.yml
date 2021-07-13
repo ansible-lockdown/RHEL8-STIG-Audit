@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_040360 }}
 package:
   vsftpd:
-    title: A File Transfer Protocol (FTP) server package must not be installed unless mission essential on RHEL 8.
+    title: RHEL-08-040360 | A File Transfer Protocol (FTP) server package must not be installed unless mission essential on RHEL 8.
     installed: false
     meta: 
     - Cat: 1

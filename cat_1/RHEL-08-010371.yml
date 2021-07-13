@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_010371 }}
 command:
   localpkg_gpg_check_default:
-    title: RHEL 8 must prevent the installation of software, patches, service packs, device drivers, or operating system components of local packages without verification they have been digitally signed using a certificate that is issued by a Certificate Authority (CA) that is recognized and approved by the organization. | dnf_runnig
+    title: RHEL-08-010371 | RHEL 8 must prevent the installation of software, patches, service packs, device drivers, or operating system components of local packages without verification they have been digitally signed using a certificate that is issued by a Certificate Authority (CA) that is recognized and approved by the organization. | dnf_runnig
     exec: dnf config-manager --dump | grep gpgcheck
     exit-status: 0
     stdout:
@@ -16,7 +16,7 @@ command:
     - Vul_ID: V-230265
 file:
   /etc/dnf/dnf.conf:
-    title: RHEL 8 must prevent the installation of software, patches, service packs, device drivers, or operating system components of local packages without verification they have been digitally signed using a certificate that is issued by a Certificate Authority (CA) that is recognized and approved by the organization. | dnf_conf
+    title: RHEL-08-010371 | RHEL 8 must prevent the installation of software, patches, service packs, device drivers, or operating system components of local packages without verification they have been digitally signed using a certificate that is issued by a Certificate Authority (CA) that is recognized and approved by the organization. | dnf_conf
     exists: true
     contains:
     - '/^localpkg_gpgcheck.*(1|[tT]rue|yes)/'

@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_040010 }}
 package:
   rsh-server:
-    title: RHEL 8 must not have the rsh-server package installed.
+    title: RHEL-08-040010 | RHEL 8 must not have the rsh-server package installed.
     installed: false
     meta:
     - Cat: 1
