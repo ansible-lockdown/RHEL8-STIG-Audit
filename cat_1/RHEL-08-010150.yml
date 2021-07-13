@@ -7,23 +7,23 @@ file:
     contains:
     - '/^GRUB2_PASSWORD=grub.pbkdf2.sha512.{{ .Vars.rhel8stig_password_hash }}/'
     meta:
-    - Cat: 1
-    - CCI: CCI-000213
-    - Group_Title: SRG-OS-000080-GPOS-00048
-    - Rule_ID: SV-230235r627750_rule
-    - STIG_ID: RHEL-08-010150
-    - Vul_ID: V-230235
+      Cat: 1
+      CCI: CCI-000213
+      Group_Title: SRG-OS-000080-GPOS-00048
+      Rule_ID: SV-230235r627750_rule
+      STIG_ID: RHEL-08-010150
+      Vul_ID: V-230235
   {{ .Vars.rhel8stig_bootloader_path }}/grub.cfg:
     title: RHEL-08-010150 | RHEL 8 operating systems booted with United Extensible Firmware Interface (UEFI) implemented must require authentication upon booting into single-user mode and maintenance. | grub_cfg
     exists: true
     contains:
     - '/^set superusers="{{ .Vars.rhel8stig_boot_superuser }}/'
     meta:
-    - Cat: 1
-    - CCI: CCI-000213
-    - Group_Title: SRG-OS-000080-GPOS-00048
-    - Rule_ID: SV-230235r627750_rule
-    - STIG_ID: RHEL-08-010150
-    - Vul_ID: V-230235
+      Cat: 1
+      CCI: CCI-000213
+      Group_Title: SRG-OS-000080-GPOS-00048
+      Rule_ID: SV-230235r627750_rule
+      STIG_ID: RHEL-08-010150
+      Vul_ID: V-230235
   {{ end }}
 {{ end }}

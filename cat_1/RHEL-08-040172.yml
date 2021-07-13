@@ -5,10 +5,10 @@ file:
     contains:
     - '/^CtrlAltDelBurstAction=none/'
     meta:
-    - Cat: 1
-    - CCI: CCI-000366
-    - Group_Title: SRG-OS-000480-GPOS-00227
-    - Rule_ID: SV-230531r627750_rule
-    - STIG_ID: RHEL-08-040172
-    - Vul_ID:  V-230531
+      Cat: 1
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230531r627750_rule
+      STIG_ID: RHEL-08-040172
+      Vul_ID:  V-230531
 {{ end }}

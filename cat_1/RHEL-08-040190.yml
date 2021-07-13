@@ -4,10 +4,10 @@ package:
     title: RHEL-08-040190 | The Trivial File Transfer Protocol (TFTP) server package must not be installed if not required for RHEL 8 operational support.
     installed: false
     meta:
-    - Cat: 1
-    - CCI: CCI-000366
-    - Group_Title: SRG-OS-000480-GPOS-00227
-    - Rule_ID: SV-230533r627750_rule
-    - STIG_ID: RHEL-08-040190
-    - Vul_ID: V-230533
+      Cat: 1
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230533r627750_rule
+      STIG_ID: RHEL-08-040190
+      Vul_ID: V-230533
 {{ end }}

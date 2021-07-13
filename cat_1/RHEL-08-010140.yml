@@ -19,11 +19,11 @@ file:
     contains:
     - '/^set superusers="{{ .Vars.rhel8stig_boot_superuser }}/'
     meta:
-    - Cat: 1
-    - CCI: CCI-000213
-    - Group_Title: SRG-OS-000080-GPOS-00048
-    - Rule_ID: SV-230234r627750_rule
-    - STIG_ID: RHEL-08-010140
-    - Vul_ID: V-230234
+      Cat: 1
+      CCI: CCI-000213
+      Group_Title: SRG-OS-000080-GPOS-00048
+      Rule_ID: SV-230234r627750_rule
+      STIG_ID: RHEL-08-010140
+      Vul_ID: V-230234
   {{ end }}
 {{ end }}

@@ -8,12 +8,12 @@ command:
     - '/^localpkg_gpgcheck.*(1|[tT]rue|yes)/'
     - '!/^localpkg_gpgcheck.*(0|[fF]alse|no)/'
     meta:
-    - Cat: 1
-    - CCI: CCI-001749
-    - Group_Title: SRG-OS-000366-GPOS-00153
-    - Rule_ID: SV-230265r627750_rule
-    - STIG_ID: RHEL-08-010371
-    - Vul_ID: V-230265
+      Cat: 1
+      CCI: CCI-001749
+      Group_Title: SRG-OS-000366-GPOS-00153
+      Rule_ID: SV-230265r627750_rule
+      STIG_ID: RHEL-08-010371
+      Vul_ID: V-230265
 file:
   /etc/dnf/dnf.conf:
     title: RHEL-08-010371 | RHEL 8 must prevent the installation of software, patches, service packs, device drivers, or operating system components of local packages without verification they have been digitally signed using a certificate that is issued by a Certificate Authority (CA) that is recognized and approved by the organization. | dnf_conf
@@ -22,10 +22,10 @@ file:
     - '/^localpkg_gpgcheck.*(1|[tT]rue|yes)/'
     - '!/^localpkg_gpgcheck.*(0|[fF]alse|no)/'
     meta:
-    - Cat: 1
-    - CCI: CCI-001749
-    - Group_Title: SRG-OS-000366-GPOS-00153
-    - Rule_ID: SV-230265r627750_rule
-    - STIG_ID: RHEL-08-010371
-    - Vul_ID: V-230265
+      Cat: 1
+      CCI: CCI-001749
+      Group_Title: SRG-OS-000366-GPOS-00153
+      Rule_ID: SV-230265r627750_rule
+      STIG_ID: RHEL-08-010371
+      Vul_ID: V-230265
 {{ end }}

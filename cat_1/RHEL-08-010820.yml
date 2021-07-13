@@ -9,11 +9,11 @@ file:
     - '!/#AutomaticLoginEnable=false/'
     - '!/^AutomaticLoginEnable=[tT]rue/'
     meta:
-    - Cat: 1
-    - CCI: CCI-000366
-    - Group_Title: SRG-OS-000480-GPOS-00229
-    - Rule_ID: SV-230329r627750_rule
-    - STIG_ID: RHEL-08-010820
-    - Vul_ID: V-230329
+      Cat: 1
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00229
+      Rule_ID: SV-230329r627750_rule
+      STIG_ID: RHEL-08-010820
+      Vul_ID: V-230329
   {{ end }}
 {{ end }}

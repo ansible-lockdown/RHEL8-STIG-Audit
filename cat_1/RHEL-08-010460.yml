@@ -9,11 +9,11 @@ command:
     stdout:
     - '/.*/'
   meta:
-    - Cat: 1
-    - CCI: CCI-000366
-    - Group_Title: SRG-OS-000480-GPOS-00227
-    - Rule_ID: SV-230283r627750_rule
-    - STIG_ID: RHEL-08-010460
-    - Vul_ID: V-230283
+      Cat: 1
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230283r627750_rule
+      STIG_ID: RHEL-08-010460
+      Vul_ID: V-230283
   {{ end }}
 {{ end }}

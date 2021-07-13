@@ -29,10 +29,10 @@ file:
     - '/PermitEmptyPasswords.*no/'
     - '!/PermitEmptyPasswords.*yes/'
     meta:
-    - Cat: 1
-    - CCI: CCI-000366
-    - Group_Title: SRG-OS-000480-GPOS-00227
-    - Rule_ID: SV-230380r627750_rule
-    - STIG_ID: RHEL-08-020330
-    - Vul_ID: V-230380
+      Cat: 1
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230380r627750_rule
+      STIG_ID: RHEL-08-020330
+      Vul_ID: V-230380
 {{ end }}
