@@ -41,4 +41,5 @@ RHEL_08_040360: true
 
 
 
-rhel8stig_password_hash: "{{ rhel8stig_password_hash }}"
+rhel8stig_password_hash: {{ rhel8stig_bootloader_password_hash }}
+rhel8stig_boot_superuser: root
