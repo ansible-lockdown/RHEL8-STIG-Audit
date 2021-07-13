@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_08_040200 }}
+command:
+  root_only_uid:
+    title: The root account must be the only account having unrestricted access to the RHEL 8 system.
+    exec: "awk -F: '$3 == 0 {print $1}' /etc/passwd | grep -v root"
+    exit-status: 1
+    stdout:
+    - '!/.*/'
+    meta:
+    - Cat: 1
+    - CCI: CCI-000366
+    - Group_Title: SRG-OS-000480-GPOS-00227
+    - Rule_ID: SV-230534r627750_rule
+    - STIG_ID: RHEL-08-040200
+    - Vul_ID: V-230534
+{{ end }}

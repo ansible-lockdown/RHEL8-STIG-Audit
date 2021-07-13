@@ -1,0 +1,19 @@
+{{ if .Vars.rhel8stig_gui }}
+  {{ if .Vars.RHEL_08_040171}}
+command:
+  gui_ctrl_alt_del:
+    title: The x86 Ctrl-Alt-Delete key sequence in RHEL 8 must be disabled if a graphical user interface is installed.
+    exec: grep logout /etc/dconf/db/local.d/*
+    exit-status: 0
+    stdout:
+    - '/^logout=\'\'$/'
+    - '!/logout=\'.*\'/'
+    meta:
+    - Cat: 1
+    - CCI: CCI-000366
+    - Group_Title: SRG-OS-000480-GPOS-00227
+    - Rule_ID: SV-230530r646883_rule
+    - STIG_ID: RHEL-08-040171
+    - Vul_ID: V-230530
+  {{ end }}
+{{ end }}
