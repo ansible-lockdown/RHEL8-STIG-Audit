@@ -22,7 +22,7 @@ rhel8stig_bootloader_path: /boot/grub2/
 
 # If UEFI boot - change for centos/rocky linux
 #legacy_boot: false
-#rhel8stig_bootloader_path: /boot/efi/EFI/redhat
+#rhel8stig_bootloader_path: /boot/efi/EFI/redhat/
 
 
 
