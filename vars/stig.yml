@@ -2,6 +2,8 @@ rhel8stig_benchmark:
 - "type: STIG"
 - "version: '1.2'"
 - "os: RHEL 8"
+# - "epoch: " # Should be populated via wrapper script"
+# - hostname: #Should be populated via wrapper script"
 
 rhel8stig_os_distribution: centos
 
@@ -11,7 +13,7 @@ rhel8stig_cat1: true
 # Some tests may need to scan every filesystem or have an impact on a system 
 # these may need be scheduled to minimise impact
 run_heavy_tests: true
-timeout_ms: 20000
+timeout_ms: 30000
 
 # If using the supplied graphical interface
 rhel8stig_gui: false
