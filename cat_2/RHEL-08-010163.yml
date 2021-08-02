@@ -1,0 +1,13 @@
+{{ if .Vars.RHEL_08_010163 }}
+package: 
+  krb5-server:
+    title: RHEL-08-010163 | The krb5-server package must not be installed on RHEL 8
+    installed: false
+    meta:
+      Cat: 2
+      CCI: CCI-000803
+      Group_Title: SRG-OS-000120-GPOS-00061
+      Rule_ID: SV-237640r646890_rule
+      STIG_ID: RHEL-08-010163
+      Vul_ID: V-237640
+{{ end }}

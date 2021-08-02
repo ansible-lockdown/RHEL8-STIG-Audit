@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_08_010110 }}
+file: 
+  /etc/login.defs:
+    title: RHEL-08-010110 | RHEL 8 must encrypt all stored passwords with a FIPS 140-2 approved cryptographic hashing algorithm.
+    exists: true
+    contains:
+    - '!/^ENCRYPT_METHOD((?!SHA512).)*$/'
+    - '/^ENCRYPT_METHOD SHA512/'
+    meta:
+      Cat: 2
+      CCI: CCI-000196
+      Group_Title: SRG-OS-000073-GPOS-00041
+      Rule_ID: SV-230231r627750_rule
+      STIG_ID: RHEL-08-010110
+      Vul_ID: V-230231
+{{ end }}
