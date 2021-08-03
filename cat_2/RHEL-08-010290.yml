@@ -1,8 +1,9 @@
 {{ if .Vars.RHEL_08_010290 }}
 command: 
-   show_crypto_policy:
+  show_crypto_policy:
     title: RHEL-08-010290 | The RHEL 8 SSH daemon must be configured to use only Message Authentication Codes (MACs) employing FIPS 140-2 validated cryptographic hash algorithms. | Live check
     exec: update-crypto-policies --show
+    exit-status: 0
     stdout:
     - 'FIPS'
     meta:

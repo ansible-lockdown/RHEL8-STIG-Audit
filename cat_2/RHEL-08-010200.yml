@@ -1,6 +1,6 @@
 {{ if .Vars.RHEL_08_010200 }}
 file: 
-   /etc/ssh/sshd_config:
+  /etc/ssh/sshd_config:
     title: RHEL-08-010200 | RHEL 8 must be configured so that all network connections associated with SSH traffic are terminated at the end of the session or after 10 minutes of inactivity, except to fulfill documented and validated mission requirements.
     exists: true
     contains:

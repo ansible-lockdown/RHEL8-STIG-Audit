@@ -82,6 +82,59 @@ RHEL_08_010295: true
 RHEL_08_010300: true
 RHEL_08_010310: true
 RHEL_08_010320: true
+RHEL_08_010330: true
+RHEL_08_010340: true
+RHEL_08_010350: true
+RHEL_08_010360: true
+RHEL_08_010372: true
+RHEL_08_010373: true
+RHEL_08_010374: true
+RHEL_08_010380: true
+RHEL_08_010381: true
+RHEL_08_010382: true
+RHEL_08_010383: true
+RHEL_08_010384: true
+RHEL_08_010390: true
+RHEL_08_010400: true
+RHEL_08_010410: true
+RHEL_08_010420: true
+RHEL_08_010421: true
+RHEL_08_010422: true
+RHEL_08_010423: true
+RHEL_08_010430: true
+RHEL_08_010450: true
+RHEL_08_010480: true
+RHEL_08_010490: true
+RHEL_08_010500: true
+RHEL_08_010510: true
+RHEL_08_010520: true
+RHEL_08_010521: true
+RHEL_08_010543: true
+RHEL_08_010550: true
+RHEL_08_010560: true
+RHEL_08_010561: true
+RHEL_08_010570: true
+RHEL_08_010571: true
+RHEL_08_010580: true
+RHEL_08_010590: true
+RHEL_08_010600: true
+RHEL_08_010610: true
+RHEL_08_010620: true
+RHEL_08_010630: true
+RHEL_08_010640: true
+RHEL_08_010650: true
+RHEL_08_010660: true
+RHEL_08_010670: true
+RHEL_08_010671: true
+RHEL_08_010672: true
+RHEL_08_010673: true
+RHEL_08_010674: true
+RHEL_08_010675: true
+RHEL_08_010680: true
+RHEL_08_010690: true
+
+
+
 
 
 
@@ -90,8 +143,6 @@ RHEL_08_010320: true
 
 rhel8stig_password_hash: grub.pbkdf2.sha512.changeme
 rhel8stig_boot_superuser: root
-
-rhel8stig_gui: true
 
 # RHEL_08_010040-010050-010060
 rhel8stig_banner_file: /etc/issue
@@ -104,3 +155,6 @@ rhel8stig_logon_banner:
 -  -This IS includes security measures (e.g., authentication and access controls)
 -  -Notwithstanding the above, using this IS does not constitute consent to PM, LE
 -  communications and work product are private and confidential. See User 
+
+# RHEL8_08_010680 to change if using hostfile only - seperate checks
+rhel8stig_uses_dns: true

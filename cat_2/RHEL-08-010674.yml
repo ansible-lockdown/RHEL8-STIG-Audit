@@ -1,0 +1,17 @@
+{{ if .Vars.RHEL_08_010674 }}
+file:
+  /etc/systemd/coredump.conf:
+    title: RHEL-08-010674 | RHEL 8 must disable storing core dumps.
+    exists: true
+    contains:
+    - '/^Storage(=|.=.)none/'
+    - '!/[^#]torage=none/'
+    - '/^Storage(.=.|)[^none]/'  # exclusion in regex not preceded by !
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230314r627750_rule
+      STIG_ID: RHEL-08-010674
+      Vul_ID: V-230314
+{{ end }}

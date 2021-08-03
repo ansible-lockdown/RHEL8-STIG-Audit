@@ -1,0 +1,17 @@
+{{ if .Vars.RHEL_08_010675 }}
+file:
+  /etc/systemd/coredump.conf:
+    title: RHEL-08-010675 | RHEL 8 must disable core dump backtraces.
+    exists: true
+    contains:
+    - '/^ProcessSizeMax(=|.=.)0/'
+    - '!/[^#]rocessSizeMax=none/'
+    - '!/^ProcessSizeMax(.=.|)[1-9]/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230315r627750_rule
+      STIG_ID: RHEL-08-010675
+      Vul_ID: V-230315
+{{ end }}

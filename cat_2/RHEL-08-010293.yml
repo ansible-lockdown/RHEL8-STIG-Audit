@@ -1,8 +1,9 @@
 {{ if .Vars.RHEL_08_010293 }}
 command: 
-   show_crypto_policy:
+  show_crypto_policy:
     title: RHEL-08-010293 | The RHEL 8 operating system must implement DoD-approved encryption in the OpenSSL package. | Live check
     exec: update-crypto-policies --show
+    exit-status: 0
     stdout:
     - 'FIPS'
     meta:

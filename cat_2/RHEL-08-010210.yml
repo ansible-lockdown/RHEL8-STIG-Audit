@@ -3,6 +3,7 @@ command:
    msgs_permissions:
     title: RHEL-08-010210 | The RHEL 8 /var/log/messages file must have mode 0640 or less permissive.
     exec: stat -c "%a %n" /var/log/messages
+    exit-status: 0
     stdout:
     - '/^6(4|0)0 \/var\/log\/messages/'
     meta:

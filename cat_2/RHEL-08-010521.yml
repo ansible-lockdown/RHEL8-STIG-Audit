@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_08_010521 }}
+file:
+  /etc/ssh/sshd_config:
+    title: RHEL-08-010521 | The RHEL 8 SSH daemon must not allow unused methods of authentication.
+    exists: true
+    contains:
+    - '/^(Kerberos|GSSAPI)Authentication [nN][oO]/'
+    - '!/^(Kerberos|GSSAPI)Authentication [yY][eE][sS]/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230291r627750_rule
+      STIG_ID: RHEL-08-010521
+      Vul_ID: V-230291
+{{ end }}
