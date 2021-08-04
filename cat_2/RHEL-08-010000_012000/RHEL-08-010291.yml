@@ -1,6 +1,6 @@
 {{ if .Vars.RHEL_08_010291 }}
 command: 
-  show_crypto_policy:
+  show_crypto_policy2:
     title: RHEL-08-010291 | The RHEL 8 operating system must implement DoD-approved encryption to protect the confidentiality of SSH connections. | Live check
     exec: update-crypto-policies --show
     exit-status: 0
