@@ -1,0 +1,13 @@
+{{ if .Vars.RHEL_08_010800 }}
+mount:
+  /home:
+    title: RHEL-08-010800 | A separate RHEL 8 filesystem must be used for user home directories (such as /home or an equivalent).
+    exists: true
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230328r627750_rule
+      STIG_ID: RHEL-08-010543
+      Vul_ID: V-230328
+{{ end }}
