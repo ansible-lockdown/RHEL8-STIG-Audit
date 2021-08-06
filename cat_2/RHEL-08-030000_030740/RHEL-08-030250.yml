@@ -12,6 +12,7 @@ file:
       Rule_ID: SV-230418r627750_rule
       STIG_ID: RHEL-08-030250
       Vul_ID: V-230418
+command:
   auditd_priv_chage_live:
     title: RHEL_08_030250 | Successful/unsuccessful uses of the chage command in RHEL 8 must generate an audit record. | live check
     exec: auditctl -l | grep -w privileged-chage

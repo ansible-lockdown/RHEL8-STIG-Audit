@@ -15,6 +15,7 @@ file:
       Rule_ID: SV-230417r627750_rule
       STIG_ID: RHEL-08-030240
       Vul_ID: V-230417
+command:
   auditd_fremovexattr_live:
     title: RHEL_08_030240 | The RHEL 8 audit system must be configured to audit any usage of the fremovexattr system call. | live check
     exec: auditctl -l | grep -w fremovexattr

@@ -12,6 +12,7 @@ file:
       Rule_ID: SV-230419r627750_rule
       STIG_ID: RHEL-08-030260
       Vul_ID: V-230419
+command:
   auditd_chcon_live:
     title: RHEL_08_030260 | Successful/unsuccessful uses of the chcon command in RHEL 8 must generate an audit record. | live check
     exec: auditctl -l | grep -w chcon
