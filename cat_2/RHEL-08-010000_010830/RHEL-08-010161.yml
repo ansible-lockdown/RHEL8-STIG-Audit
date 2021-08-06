@@ -4,7 +4,7 @@ command:
     title: RHEL-08-010161 | RHEL 8 must prevent system daemons from using Kerberos for authentication. 
     exec: find /etc -name *.keytab
     exit-status: 0
-    contains:
+    stdout:
     - '!/.*/'
     meta:
       Cat: 2

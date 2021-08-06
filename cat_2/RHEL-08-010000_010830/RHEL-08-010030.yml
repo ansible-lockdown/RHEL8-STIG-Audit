@@ -2,7 +2,6 @@
 package:
   cryptsetup:
     title: RHEL-08-010030 | All RHEL 8 local disk partitions must implement cryptographic mechanisms to prevent unauthorized disclosure or modification of all information that requires at rest protection. | pkg installed
-    exit-status: 0
     installed: true
     meta:
       Cat: 2

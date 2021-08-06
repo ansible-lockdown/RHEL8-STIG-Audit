@@ -44,7 +44,7 @@ file:
     title: RHEL-08-010290 | The RHEL 8 SSH daemon must be configured to use only Message Authentication Codes (MACs) employing FIPS 140-2 validated cryptographic hash algorithms. | crypto-policies - ssh_server
     exists: true
     contains:
-    - '/^CRYPTO_POLICY=\'-oCiphers=aes256-ctr,aes192-ctr,aes128-ctr -oMACS=hmac-sha2-512,hmac-sha2-256\'/'
+    - '/^CRYPTO_POLICY=.-oCiphers=aes256-ctr,aes192-ctr,aes128-ctr -oMACS=hmac-sha2-512,hmac-sha2-256../'
     meta:
       Cat: 2
       CCI: CCI-001453

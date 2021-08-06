@@ -4,7 +4,7 @@ command:
     title: RHEL-08-020270 | RHEL 8 emergency accounts must be automatically removed or disabled after the crisis is resolved or within 72 hours.
     exec: echo "Please check for Emergency accounts"
     exit-status: 0
-    contains:
+    stdout:
     - '!/^Please check for Emergency accounts/'
     meta:
       Cat: 2

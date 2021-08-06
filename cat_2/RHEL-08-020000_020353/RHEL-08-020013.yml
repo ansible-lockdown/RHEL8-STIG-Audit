@@ -1,4 +1,4 @@
-{{ if .Vars.rhel8stig_os_version >= '8.2' }}
+{{ if not .Vars.rhel8stig_os_version_pre_8_2}}
   {{ if .Vars.RHEL_08_020013 }}
 file: 
   /etc/pam.d/password-auth:

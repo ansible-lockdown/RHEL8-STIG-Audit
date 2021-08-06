@@ -26,5 +26,4 @@ file:
       Rule_ID: SV-230368r627750_rule
       STIG_ID: RHEL-08-020220
       Vul_ID: V-230368
-  {{ end }}
 {{ end }}

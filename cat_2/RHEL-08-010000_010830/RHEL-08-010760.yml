@@ -3,7 +3,7 @@ file:
   /etc/login.defs:
     title: RHEL-08-010760 | All RHEL 8 local interactive user accounts must be assigned a home directory upon creation.
     exists: true
-    conatins:
+    contains:
     - '/^CREATE_HOME yes/'
     - '!/^CREATE_HOME.*no/'
     meta:
