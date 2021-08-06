@@ -10,5 +10,4 @@ kernel-param:
       Rule_ID: SV-230543r627750_rule
       STIG_ID: RHEL-08-040270
       Vul_ID: V-230543
-  {{ end }}
 {{ end }}

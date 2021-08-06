@@ -7,7 +7,7 @@ command:
       or:
       - 0
       - 127
-    contains:
+    stdout:
     - '/^server_args = -s /var/lib/tftpboot$/'
     meta:
       Cat: 2
