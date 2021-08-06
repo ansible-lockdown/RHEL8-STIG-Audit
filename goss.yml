@@ -5,6 +5,9 @@ gossfile:
 
   {{ if .Vars.rhel8stig_cat2 }}
   cat_2/RHEL-08-010000_010830/*.yml: {}
+  cat_2/RHEL-08-020000_020353/*.yml: {}
+  cat_2/RHEL-08-030000_030740/*.yml: {}
+  cat_2/RHEL-08-040000_040390/*.yml: {}
   {{ end }}
 
 command:
