@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_08_020231 }}
+file:
+  /etc/login.defs:
+    title: RHEL-08-020231 | RHEL 8 passwords for new users must have a minimum of 15 characters.
+    exists: true
+    contains:
+    - '/^PASS_MIN_LEN (1[5-9]|2[0-9])$/'
+    - '!/^PASS_MIN_LEN ([0-9]|1[0-4])/'
+    meta:
+      Cat: 2
+      CCI: CCI-000205
+      Group_Title: SRG-OS-000078-GPOS-00046
+      Rule_ID: SV-230370r627750_rule
+      STIG_ID: RHEL-08-020231
+      Vul_ID: V-230370
+{{ end }}

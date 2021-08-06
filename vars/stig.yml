@@ -6,6 +6,7 @@ rhel8stig_benchmark:
 # - hostname: #Should be populated via wrapper script"
 
 rhel8stig_os_distribution: centos
+rhel8stig_os_version: 8.2
 
 # turn the categories on/off
 rhel8stig_cat1: true
@@ -132,6 +133,169 @@ RHEL_08_010674: true
 RHEL_08_010675: true
 RHEL_08_010680: true
 RHEL_08_010690: true
+RHEL_08_010700: true
+RHEL_08_010710: true
+RHEL_08_010720: true
+RHEL_08_010730: true
+RHEL_08_010740: true
+RHEL_08_010750: true
+RHEL_08_010760: true
+RHEL_08_010770: true
+RHEL_08_010780: true
+RHEL_08_010790: true
+RHEL_08_010800: true
+RHEL_08_010830: true
+
+RHEL_08_020000: true
+RHEL_08_020010: true
+RHEL_08_020011: true
+RHEL_08_020012: true
+RHEL_08_020013: true
+RHEL_08_020014: true
+RHEL_08_020015: true
+RHEL_08_020016: true
+RHEL_08_020017: true
+RHEL_08_020018: true
+RHEL_08_020019: true
+RHEL_08_020020: true
+RHEL_08_020021: true
+RHEL_08_020022: true
+RHEL_08_020023: true
+RHEL_08_020030: true
+RHEL_08_020040: true
+RHEL_08_020041: true
+RHEL_08_020050: true
+RHEL_08_020060: true
+RHEL_08_020070: true
+RHEL_08_020080: true
+RHEL_08_020090: true  # TODO
+RHEL_08_020100: true
+RHEL_08_020110: true
+RHEL_08_020120: true
+RHEL_08_020130: true
+RHEL_08_020140: true
+RHEL_08_020150: true
+RHEL_08_020160: true
+RHEL_08_020170: true
+RHEL_08_020180: true
+RHEL_08_020190: true
+RHEL_08_020200: true
+RHEL_08_020210: true
+RHEL_08_020220: true
+RHEL_08_020230: true
+RHEL_08_020231: true
+RHEL_08_020240: true
+RHEL_08_020250: true
+RHEL_08_020260: true
+RHEL_08_020270: true
+RHEL_08_020280: true
+RHEL_08_020290: true
+RHEL_08_020300: true
+RHEL_08_020310: true
+RHEL_08_020320: true
+RHEL_08_020350: true
+RHEL_08_020351: true
+RHEL_08_020352: true
+RHEL_08_020353: true
+RHEL-08-030000: true
+RHEL-08-030010: true
+RHEL-08-030020: true
+RHEL-08-030030: true
+RHEL-08-030040: true
+RHEL-08-030050: true
+RHEL-08-030060: true
+RHEL-08-030061: true
+RHEL-08-030062: true
+RHEL-08-030070: true
+RHEL-08-030080: true
+RHEL-08-030090: true
+RHEL-08-030100: true
+RHEL-08-030110: true
+RHEL-08-030120: true
+RHEL-08-030121: true
+RHEL-08-030122: true
+RHEL-08-030130: true
+RHEL-08-030140: true
+RHEL-08-030150: true
+RHEL-08-030160: true
+RHEL-08-030170: true
+RHEL-08-030171: true
+RHEL-08-030172: true
+RHEL-08-030180: true
+RHEL-08-030190: true
+RHEL-08-030200: true
+RHEL-08-030210: true
+RHEL-08-030220: true
+RHEL-08-030230: true
+RHEL-08-030240: true
+RHEL-08-030250: true
+RHEL-08-030260: true
+RHEL-08-030270: true
+RHEL-08-030280: true
+RHEL-08-030290: true
+RHEL-08-030300: true
+RHEL-08-030301: true
+RHEL-08-030302: true
+RHEL-08-030310: true
+RHEL-08-030311: true
+RHEL-08-030312: true
+RHEL-08-030313: true
+RHEL-08-030314: true
+RHEL-08-030315: true
+RHEL-08-030316: true
+RHEL-08-030317: true
+RHEL-08-030320: true
+RHEL-08-030330: true
+RHEL-08-030340: true
+RHEL-08-030350: true
+RHEL-08-030360: true
+RHEL-08-030361: true
+RHEL-08-030362: true
+RHEL-08-030363: true
+RHEL-08-030364: true
+RHEL-08-030365: true
+RHEL-08-030370: true
+RHEL-08-030380: true
+RHEL-08-030390: true
+RHEL-08-030400: true
+RHEL-08-030410: true
+RHEL-08-030420: true
+RHEL-08-030430: true
+RHEL-08-030440: true
+RHEL-08-030450: true
+RHEL-08-030460: true
+RHEL-08-030470: true
+RHEL-08-030480: true
+RHEL-08-030490: true
+RHEL-08-030500: true
+RHEL-08-030510: true
+RHEL-08-030520: true
+RHEL-08-030530: true
+RHEL-08-030540: true
+RHEL-08-030550: true
+RHEL-08-030560: true
+RHEL-08-030570: true
+RHEL-08-030580: true
+RHEL-08-030590: true
+RHEL-08-030600: true
+RHEL-08-030610: true
+RHEL-08-030620: true
+RHEL-08-030630: true
+RHEL-08-030640: true
+RHEL-08-030650: true
+RHEL-08-030660: true
+RHEL-08-030670: true
+RHEL-08-030680: true
+RHEL-08-030690: true
+RHEL-08-03070: true
+RHEL-08-030710: true
+RHEL-08-030720: true
+RHEL-08-030730: true
+RHEL-08-030740: true
+
+
+
+
 
 
 
@@ -158,3 +322,12 @@ rhel8stig_logon_banner:
 
 # RHEL8_08_010680 to change if using hostfile only - seperate checks
 rhel8stig_uses_dns: true
+
+# RHEL-08-030040 - Options are SYSLOG, SINGLE, and HALT to fit STIG standards
+rhel8stig_auditd_disk_error_action: HALT
+
+# RHEL-08-030050 - Options are SYSLOG or KEEP_LOGS to fit STIG standards
+rhel8stig_auditd_max_log_file_action: SYSLOG
+
+# RHEL-08-030060 - Options are SYSLOG, HALT, and SINGLE to fit STIG standards
+rhel8stig_auditd_disk_full_action: HALT

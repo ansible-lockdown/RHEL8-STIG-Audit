@@ -1,0 +1,15 @@
+{{ if .Vars.RHEL_08_020041 }}
+file:
+  /etc/bashrc:
+    title: RHEL-08-020041 | RHEL 8 must ensure session control is automatically started at shell initialization.
+    exists: true
+    contains:
+    - '/^\s*[ -n "$PS1" -a -z "$TMUX" ] && exec tmux/'
+    meta:
+      Cat: 2
+      CCI: CCI-000056
+      Group_Title: SRG-OS-000028-GPOS-00009
+      Rule_ID: SV-230348r627750_rule
+      STIG_ID: RHEL-08-020040
+      Vul_ID: V-230348
+{{ end }}

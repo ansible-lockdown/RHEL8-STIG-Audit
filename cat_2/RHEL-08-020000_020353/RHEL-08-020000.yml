@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_08_020000 }}
+command:
+  temporary_user_72:
+    title: RHEL-08-020000 | RHEL 8 temporary user accounts must be provisioned with an expiration time of 72 hours or less.
+    exec: echo "Please check for Temporary accounts"
+    exit-status: 0
+    stdout:
+    - '!/^Please check for Temporary accounts/'
+    meta:
+      Cat: 2
+      CCI: CCI-000016
+      Group_Title: SRG-OS-000002-GPOS-00002
+      Rule_ID: SV-230331r627750_rule
+      STIG_ID: RHEL-08-020000
+      Vul_ID: V-230331
+{{ end }}

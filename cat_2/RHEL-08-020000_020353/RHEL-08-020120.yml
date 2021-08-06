@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_08_020120 }}
+file:
+  /etc/security/pwquality.conf:
+    title: RHEL-08-020120 | RHEL 8 must enforce password complexity by requiring that at least one lower-case character be used.
+    exists: true
+    contains:
+    - '/^lcredit = -1/'
+    - '!/^lcredit = [0-9]/'
+    meta:
+      Cat: 2
+      CCI: CCI-000193
+      Group_Title: SRG-OS-000070-GPOS-00038
+      Rule_ID: SV-230358r627750_rule
+      STIG_ID: RHEL-08-020120
+      Vul_ID: V-230358
+{{ end }}

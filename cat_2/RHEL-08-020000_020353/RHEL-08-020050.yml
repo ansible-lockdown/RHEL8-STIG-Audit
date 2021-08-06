@@ -1,0 +1,17 @@
+{{ if .Vars.rhel8stig_gui }}
+  {{ if .Vars.RHEL_08_020050 }}
+file:
+  /etc/dconf/db/distro.d/20-authselect:
+    title: RHEL-08-020050 | RHEL 8 must be able to initiate directly a session lock for all connection types using smartcard when the smartcard is removed.
+    exists: true
+    contains:
+    - '!/^removal-action=\'lock-screen\'/'
+    meta:
+      Cat: 2
+      CCI: CCI-000056
+      Group_Title: SRG-OS-000028-GPOS-00009
+      Rule_ID: SV-230351r627750_rule
+      STIG_ID: RHEL-08-020050
+      Vul_ID: V-230351
+  {{ end }}
+{{ end }}
