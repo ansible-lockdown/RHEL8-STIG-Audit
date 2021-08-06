@@ -289,7 +289,7 @@ RHEL_08_030660: true
 RHEL_08_030670: true
 RHEL_08_030680: true
 RHEL_08_030690: true
-RHEL_08_03070: true
+RHEL_08_030700: true
 RHEL_08_030710: true
 RHEL_08_030720: true
 RHEL_08_030730: true
@@ -388,3 +388,10 @@ rhel8stig_auditd_max_log_file_action: SYSLOG
 
 # RHEL_08_030060 - Options are SYSLOG, HALT, and SINGLE to fit STIG standards
 rhel8stig_auditd_disk_full_action: HALT
+
+# RHEL_08_030690 if using remote syslog server
+rhel8stig_remotelog_server: 1.1.1.1
+rhel8stig_remotelog_port: 1549
+
+# RHEL_08_040260-62
+rhel8stig_system_is_router: false
