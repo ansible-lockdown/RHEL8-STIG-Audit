@@ -1,0 +1,73 @@
+{{ if .Vars.RHEL_08_040135 }}
+package:
+  fapolicyd:
+    title: RHEL-08-040135 | The RHEL 8 fapolicy module must be configured to employ a deny-all, permit-by-exception policy to allow the execution of authorized software programs. | installed
+    installed: true
+    meta:
+      Cat: 2
+      CCI: CCI-000381
+      Group_Title: SRG-OS-000095-GPOS-00049
+      Rule_ID: SV-230523r627750_rule
+      STIG_ID: RHEL-08-040135
+      Vul_ID: V-230523
+service:
+  fapolicyd:
+    title: RHEL-08-040135 | The RHEL 8 fapolicy module must be configured to employ a deny-all, permit-by-exception policy to allow the execution of authorized software programs. | running
+    running: true
+    enabled: true
+    meta:
+      Cat: 2
+      CCI: CCI-000381
+      Group_Title: SRG-OS-000095-GPOS-00049
+      Rule_ID: SV-230523r627750_rule
+      STIG_ID: RHEL-08-040135
+      Vul_ID: V-230523
+file:
+  /etc/fapolicyd/fapolicyd.conf:
+    title: RHEL-08-040135 | The RHEL 8 fapolicy module must be configured to employ a deny-all, permit-by-exception policy to allow the execution of authorized software programs. | not permissive
+    exists: true
+    contains:
+    - '/^permissive = 0/'
+    - '/^permissive*=*1/'
+    meta:
+      Cat: 2
+      CCI: CCI-000381
+      Group_Title: SRG-OS-000095-GPOS-00049
+      Rule_ID: SV-230523r627750_rule
+      STIG_ID: RHEL-08-040135
+      Vul_ID: V-230523
+  /etc/fapolicyd/fapolicyd.rules:
+     title: RHEL-08-040135 | The RHEL 8 fapolicy module must be configured to employ a deny-all, permit-by-exception policy to allow the execution of authorized software programs. | deny_rules
+     exists: true
+     contains:
+     - '^/allow exe=/usr/bin/python3.4 dir=execdirs ftype=text/x-python/'
+     - '/^deny_audit pattern ld_so all/'
+     - '/^deny all all'
+     - '!/none/'
+     meta:
+      Cat: 2
+      CCI: CCI-000381
+      Group_Title: SRG-OS-000095-GPOS-00049
+      Rule_ID: SV-230523r627750_rule
+      STIG_ID: RHEL-08-040135
+      Vul_ID: V-230523
+  /etc/fapolicyd/fapolicyd.mounts:
+     title: RHEL-08-040135 | The RHEL 8 fapolicy module must be configured to employ a deny-all, permit-by-exception policy to allow the execution of authorized software programs. | mounts
+     exists: true
+     contains:
+     - '/^\/dev\/shm$/'
+     - '/^\/run$/'
+     - '/^\/sys\/fs\/cgroup$/'
+     - '/^\//$'
+     - '/^\/home/'
+     - '/^\/boot/'
+     - '/^\/run\/user\/42/'
+     - '/^\/run\/user\/1000'
+     meta:
+      Cat: 2
+      CCI: CCI-000381
+      Group_Title: SRG-OS-000095-GPOS-00049
+      Rule_ID: SV-230523r627750_rule
+      STIG_ID: RHEL-08-040135
+      Vul_ID: V-230523
+{{ end }}

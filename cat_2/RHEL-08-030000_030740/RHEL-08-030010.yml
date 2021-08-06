@@ -1,0 +1,20 @@
+{{ if .Vars.RHEL_08_030010 }}
+command:
+  cron_logging:
+    title: RHEL-08-030010 | Cron logging must be implemented in RHEL 8. The RHEL 8 audit system must be configured to audit the execution of privileged functions and prevent all software from executing at higher privilege levels than users executing the software | config check
+    exec: grep -s cron /etc/rsyslog.conf /etc/rsyslog.d/*.conf
+    exit-status: 
+      or: 
+      - 0
+      - 2
+    stdout:
+    - '/\/etc\/rsyslog.conf\:\*.info;mail.none;authpriv.none;cron.none\s+\/var\/log\/messages/'
+    - '/\/etc\/rsyslog.conf\:cron.*\s+\/var\/log\/cron/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230387r627750_rule
+      STIG_ID: RHEL-08-030010
+      Vul_ID: V-230387
+{{ end }}

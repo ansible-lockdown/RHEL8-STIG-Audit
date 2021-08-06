@@ -1,0 +1,29 @@
+{{ if .Vars.RHEL_08_030600 }}
+file:
+  /etc/audit/audit.rules:
+    title: RHEL_08_030600 | Successful/unsuccessful modifications to the lastlog file in RHEL 8 must generate an audit record. | config check
+    exists: true
+    contains:
+    - '-w /var/log/lastlog -p wa -k logins'
+    meta:
+      Cat: 2
+      CCI: CCI-000169
+      Group_Title: SRG-OS-000062-GPOS-00031
+      Rule_ID: SV-230467r627750_rule
+      STIG_ID: RHEL-08-030600
+      Vul_ID: V-230467
+command:
+  auditd_lastlog_logins:
+    title: RHEL_08_030600 | Successful/unsuccessful modifications to the lastlog file in RHEL 8 must generate an audit record. | live check
+    exec: auditctl -l | grep -w lastlog
+    exit-status: 0
+    stdout:
+    - '-w /var/log/lastlog -p wa -k logins'
+    meta:
+      Cat: 2
+      CCI: CCI-000169
+      Group_Title: SRG-OS-000062-GPOS-00031
+      Rule_ID: SV-230467r627750_rule
+      STIG_ID: RHEL-08-030600
+      Vul_ID: V-230467
+{{ end }}

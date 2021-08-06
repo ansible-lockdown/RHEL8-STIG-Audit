@@ -1,0 +1,35 @@
+{{ if .Vars.RHEL_08_030000 }}
+file:
+  /etc/audit/audit.rules:
+    title: RHEL-08-030000 | The RHEL 8 audit system must be configured to audit the execution of privileged functions and prevent all software from executing at higher privilege levels than users executing the software | config check
+    exists: true
+    contains:
+    - '-a always,exit -F arch=b32 -S execve -C uid!=euid -F euid=0 -k execpriv'
+    - '-a always,exit -F arch=b64 -S execve -C uid!=euid -F euid=0 -k execpriv'
+    - '-a always,exit -F arch=b32 -S execve -C gid!=egid -F egid=0 -k execpriv'
+    - '-a always,exit -F arch=b64 -S execve -C gid!=egid -F egid=0 -k execpriv'
+    meta:
+      Cat: 2
+      CCI: CCI-002233
+      Group_Title: SRG-OS-000326-GPOS-00126
+      Rule_ID: SV-230386r627750_rule
+      STIG_ID: RHEL-08-030000
+      Vul_ID: V-230386
+command:
+  auditd_execpriv_live:
+    title: RHEL-08-030000 | The RHEL 8 audit system must be configured to audit the execution of privileged functions and prevent all software from executing at higher privilege levels than users executing the software | live_check
+    exec: auditctl -l | grep execpriv
+    exit-status: 0
+    stdout:
+    - '-a always,exit -F arch=b32 -S execve -C uid!=euid -F euid=0 -F key=execpriv'
+    - '-a always,exit -F arch=b64 -S execve -C uid!=euid -F euid=0 -F key=execpriv'
+    - '-a always,exit -F arch=b32 -S execve -C gid!=egid -F egid=0 -F key=execpriv'
+    - '-a always,exit -F arch=b64 -S execve -C gid!=egid -F egid=0 -F key=execpriv'
+    meta:
+      Cat: 2
+      CCI: CCI-002233
+      Group_Title: SRG-OS-000326-GPOS-00126
+      Rule_ID: SV-230386r627750_rule
+      STIG_ID: RHEL-08-030000
+      Vul_ID: V-230386
+{{ end }}

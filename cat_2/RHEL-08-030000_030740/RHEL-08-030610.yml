@@ -1,0 +1,28 @@
+{{ if .Vars.RHEL_08_030610 }}
+file:
+   /etc/audit/auditd.conf:
+    title: RHEL_08_030610 | RHEL 8 must allow only the Information System Security Manager (ISSM) (or individuals or roles appointed by the ISSM) to select which auditable events are to be audited.
+    exists: true
+    mode: "640"
+    meta:
+      Cat: 2
+      CCI: CCI-000171
+      Group_Title: SRG-OS-000063-GPOS-00032
+      Rule_ID: SV-230471r627750_rule
+      STIG_ID: RHEL-08-030610
+      Vul_ID: V-230471
+command:
+  auditd_rule_d_perms:
+    title: RHEL_08_030610 | RHEL 8 must allow only the Information System Security Manager (ISSM) (or individuals or roles appointed by the ISSM) to select which auditable events are to be audited.
+    exec: for file in `find /etc/audit/rules.d/ -type f`; do stat -c '%a %n' $file; done
+    exit-status: 0
+    stdout:
+    - '/^6[0,4]0/'
+    meta:
+      Cat: 2
+      CCI: CCI-000171
+      Group_Title: SRG-OS-000063-GPOS-00032
+      Rule_ID: SV-230471r627750_rule
+      STIG_ID: RHEL-08-030610
+      Vul_ID: V-230471
+{{ end }}

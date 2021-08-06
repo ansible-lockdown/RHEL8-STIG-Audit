@@ -1,0 +1,15 @@
+{{ if not .Vars.rhel8stig_system_is_router }}
+  {{ if .Vars.RHEL_08_040261 }}
+kernel-param:
+  net.ipv6.conf.all.accept_ra:
+    title: RHEL-08-040261 | RHEL 8 must not accept router advertisements on all IPv6 interfaces. | IPv6
+    value: '0'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230541r627750_rule
+      STIG_ID: RHEL-08-040261
+      Vul_ID: V-230541
+  {{ end }}
+{{ end }}

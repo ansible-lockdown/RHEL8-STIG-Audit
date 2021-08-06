@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_08_040090 }}
+command:
+  check_firewall_deny_manually:
+    title: RHEL-08-040090 | A RHEL 8 firewall must employ a deny-all, allow-by-exception policy for allowing connections to other systems.
+    exec: echo "Please investigate firewall is configured as expected"
+    exit-status: 0
+    stdout:
+    - '!/Please investigate firewall is configured as expected/'
+    meta:
+      Cat: 2
+      CCI: CCI-002314
+      Group_Title: SRG-OS-000297-GPOS-00115
+      Rule_ID: SV-230504r627750_rule
+      STIG_ID: RHEL-08-040090
+      Vul_ID: V-230504
+{{ end }}

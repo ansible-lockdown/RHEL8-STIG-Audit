@@ -1,0 +1,31 @@
+{{ if .Vars.RHEL_08_030510 }}
+file:
+  /etc/audit/audit.rules:
+    title: RHEL_08_030510 | Successful/unsuccessful uses of the fchownat system call in RHEL 8 must generate an audit record. | config check
+    exists: true
+    contains:
+    - '-a always,exit -F arch=b32 -S fchownat -F auid>=1000 -F auid!=unset -k perm_mod'
+    - '-a always,exit -F arch=b64 -S fchownat -F auid>=1000 -F auid!=unset -k perm_mod'
+    meta:
+      Cat: 2
+      CCI: CCI-000169
+      Group_Title: SRG-OS-000062-GPOS-00031
+      Rule_ID: SV-230458r627750_rule
+      STIG_ID: RHEL-08-030510
+      Vul_ID: V-230458
+command:
+  auditd_fchownat_live:
+    title: RHEL_08_030510 | Successful/unsuccessful uses of the fchownat system call in RHEL 8 must generate an audit record. | live check
+    exec: auditctl -l | grep -w fchownat
+    exit-status: 0
+    stdout:
+    - '-a always,exit -F arch=b32 -S fchownat -F auid>=1000 -F auid!=-1 -F key=perm_mod'
+    - '-a always,exit -F arch=b64 -S fchownat -F auid>=1000 -F auid!=-1 -F key=perm_mod'
+    meta:
+      Cat: 2
+      CCI: CCI-000169
+      Group_Title: SRG-OS-000062-GPOS-00031
+      Rule_ID: SV-230458r627750_rule
+      STIG_ID: RHEL-08-030510
+      Vul_ID: V-230458
+{{ end }}

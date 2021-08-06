@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_08_040121 }}
+mount:
+  /dev/shm:
+    title: RHEL-08-040121 | RHEL 8 must mount /dev/shm with the nosuid option
+    exists: true
+    opts:
+    - nosuid
+    filesystem: tmpfs
+    meta:
+      Cat: 2
+      CCI: CCI-001764
+      Group_Title: SRG-OS-000368-GPOS-00154
+      Rule_ID: SV-230509r627750_rule
+      STIG_ID: RHEL-08-040121
+      Vul_ID: V-230509
+{{ end }}

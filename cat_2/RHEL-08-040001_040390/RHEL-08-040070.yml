@@ -1,0 +1,24 @@
+{{ if .Vars.RHEL_08_040070 }}
+package:
+  autofs:
+    title: RHEL-08-040070 | The RHEL 8 file system automounter must be disabled unless required.
+    installed: false
+    meta:
+      Cat: 2
+      CCI: CCI-000778
+      Group_Title: SRG-OS-000114-GPOS-00059
+      Rule_ID: SV-230502r627750_rule
+      STIG_ID: RHEL-08-040070
+      Vul_ID: V-230502
+service:
+  autofs:
+    running: false
+    enabled: false
+    meta:
+      Cat: 2
+      CCI: CCI-000778
+      Group_Title: SRG-OS-000114-GPOS-00059
+      Rule_ID: SV-230502r627750_rule
+      STIG_ID: RHEL-08-040070
+      Vul_ID: V-230502
+{{ end }}

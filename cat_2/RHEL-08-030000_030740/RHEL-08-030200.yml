@@ -1,0 +1,35 @@
+{{ if .Vars.RHEL_08_030200 }}
+file:
+  /etc/audit/audit.rules:
+    title: RHEL_08_030200 | The RHEL 8 audit system must be configured to audit any usage of the lremovexattr system call. | config check
+    exists: true
+    contains:
+    - '-a always,exit -F arch=b32 -S lremovexattr -F auid>=1000 -F auid!=unset -k perm_mod'
+    - '-a always,exit -F arch=b64 -S lremovexattr -F auid>=1000 -F auid!=unset -k perm_mod'
+    - '-a always,exit -F arch=b32 -S lremovexattr -F auid=0 -k perm_mod'
+    - '-a always,exit -F arch=b64 -S lremovexattr -F auid=0 -k perm_mod'
+    meta:
+      Cat: 2
+      CCI: CCI-000169
+      Group_Title: SRG-OS-000062-GPOS-00031
+      Rule_ID: SV-230413r627750_rule
+      STIG_ID: RHEL-08-030200
+      Vul_ID: V-230413
+command:
+  auditd_lremovexattr_live:
+    title: RHEL_08_030200 | The RHEL 8 audit system must be configured to audit any usage of the lremovexattr system call. | live check
+    exec: auditctl -l | grep -w lremovexattr
+    exit-status: 0
+    stdout:
+    - '-a always,exit -F arch=b32 -S lremovexattr -F auid>=1000 -F auid!=-1 -F key=perm_mod'
+    - '-a always,exit -F arch=b64 -S lremovexattr -F auid>=1000 -F auid!=-1 -F key=perm_mod'
+    - '-a always,exit -F arch=b32 -S lremovexattr -F auid=0 -F key=perm_mod'
+    - '-a always,exit -F arch=b64 -S lremovexattr -F auid=0 -F key=perm_mod'
+    meta:
+      Cat: 2
+      CCI: CCI-000169
+      Group_Title: SRG-OS-000062-GPOS-00031
+      Rule_ID: SV-230413r627750_rule
+      STIG_ID: RHEL-08-030200
+      Vul_ID: V-230413
+{{ end }}

@@ -1,0 +1,29 @@
+{{ if .Vars.RHEL_08_030660 }}
+command:
+  audit_log_filesystem_size:
+    title: RHEL_08_030660 | RHEL 8 must allocate audit record storage capacity to store at least one week of audit records, when audit records are not immediately sent to a central audit record storage facility. | check filesystem size
+    exec: audit_log=`grep -w 'log_file =' /etc/audit/auditd.conf | awk '{ print $3}'`; if [ `df -k $audit_log | tail -1 | awk '{print $2}'` -lt '10000000000' ]; then echo "Audit log filesystem less than 10G"; fi
+    exit-status: 0
+    stdout:
+    - '!/^Audit log filesystem less than 10G/'
+    meta:
+      Cat: 2
+      CCI: CCI-001849
+      Group_Title: SRG-OS-000341-GPOS-00132
+      Rule_ID: SV-230476r627750_rule
+      STIG_ID: RHEL-08-030660
+      Vul_ID: V-230476
+  audit_log_filesystem_manual:
+    title: RHEL_08_030660 | RHEL 8 must allocate audit record storage capacity to store at least one week of audit records, when audit records are not immediately sent to a central audit record storage facility. | manual check required
+    exec: echo "Please check audit log configuration manually"
+    exit-status: 0
+    stdout:
+    - '!/^Please check audit log configuration manually/'
+    meta:
+      Cat: 2
+      CCI: CCI-001849
+      Group_Title: SRG-OS-000341-GPOS-00132
+      Rule_ID: SV-230476r627750_rule
+      STIG_ID: RHEL-08-030660
+      Vul_ID: V-230476
+{{ end }}

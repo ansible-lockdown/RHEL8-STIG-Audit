@@ -1,0 +1,21 @@
+{{ if .Vars.RHEL_08_030650 }}
+file:
+  /etc/aide.conf:
+    title: RHEL_08_030650 | RHEL 8 must use cryptographic mechanisms to protect the integrity of audit tools.
+    exists: true
+    contains:
+    - '/usr/sbin/auditctl p+i+n+u+g+s+b+acl+xattrs+sha512'
+    - '/usr/sbin/auditd p+i+n+u+g+s+b+acl+xattrs+sha512'
+    - '/usr/sbin/ausearch p+i+n+u+g+s+b+acl+xattrs+sha512'
+    - '/usr/sbin/aureport p+i+n+u+g+s+b+acl+xattrs+sha512'
+    - '/usr/sbin/autrace p+i+n+u+g+s+b+acl+xattrs+sha512'
+    - '/usr/sbin/rsyslogd p+i+n+u+g+s+b+acl+xattrs+sha512'
+    - '/usr/sbin/augenrules p+i+n+u+g+s+b+acl+xattrs+sha512'
+    meta:
+      Cat: 2
+      CCI: CCI-001496
+      Group_Title: SRG-OS-000278-GPOS-00108
+      Rule_ID: SV-230475r627750_rule
+      STIG_ID: RHEL-08-030650
+      Vul_ID: V-230475
+{{ end }}

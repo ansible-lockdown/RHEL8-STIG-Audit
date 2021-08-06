@@ -1,0 +1,13 @@
+{{ if .Vars.RHEL_08_040284 }}
+kernel-param:
+  user.max_user_namespaces:
+    title: RHEL-08-040284 | RHEL 8 must disable the use of user namespaces.
+    value: '0'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230548r627750_rule
+      STIG_ID: RHEL-08-040284
+      Vul_ID: V-230548
+{{ end }}

@@ -1,0 +1,17 @@
+{{ if .Vars.RHEL_08_040110 }}
+command:
+  wifi_turn_off:
+    title: RHEL-08-040110 | RHEL 8 wireless network adapters must be disabled.
+    exec: nmcli radio wifi
+    exit-status: 0
+    stdout:
+    - '/^disabled/'
+    - '!/enabled/'
+    meta:
+      Cat: 2
+      CCI: CCI-001444
+      Group_Title: SRG-OS-000299-GPOS-00117
+      Rule_ID: SV-230506r627750_rule
+      STIG_ID: RHEL-08-040110
+      Vul_ID: V-230506
+{{ end }}

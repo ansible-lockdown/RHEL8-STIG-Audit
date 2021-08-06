@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_08_030640 }}
+command:
+  auditd_tools_group:
+    title: RHEL_08_030640 | RHEL 8 audit tools must be group-owned by root.
+    exec: stat -c "%G %n" /sbin/auditctl /sbin/aureport /sbin/ausearch /sbin/autrace /sbin/auditd /sbin/rsyslogd /sbin/augenrules
+    exit-status: 0
+    stdout:
+    - '/^root/'
+    meta:
+      Cat: 2
+      CCI: CCI-001493
+      Group_Title: SRG-OS-000256-GPOS-00097
+      Rule_ID: SV-230474r627750_rule
+      STIG_ID: RHEL-08-030640
+      Vul_ID: V-230474
+{{ end }}

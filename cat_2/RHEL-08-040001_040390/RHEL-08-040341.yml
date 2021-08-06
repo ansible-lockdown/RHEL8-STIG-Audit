@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_08_040341 }}
+file:
+   /etc/ssh/sshd_config:
+    title: RHEL-08-040341 | The RHEL 8 SSH daemon must prevent remote hosts from connecting to the proxy display.
+    exists: true
+    contains:
+    - '/^(?i)X11UseLocalhost yes/'
+    - '!/^(?i)X11UseLocalhost no/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230556r627750_rule
+      STIG_ID: RHEL-08-040341
+      Vul_ID: V-230556
+{{ end }}

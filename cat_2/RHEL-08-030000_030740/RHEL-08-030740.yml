@@ -1,0 +1,15 @@
+{{ if .Vars.RHEL_08_030740 }}
+file:
+   /etc/chrony.conf:
+    title: RHEL_08_030740 | RHEL 8 must securely compare internal information system clocks at least every 24 hours with a server synchronized to an authoritative time source, such as the United States Naval Observatory (USNO) time servers, or a time server designated for the appropriate DoD network (NIPRNet/SIPRNet), and/or the Global Positioning System (GPS).
+    exists: true
+    contains:
+    - '/^server \d.us.pool.ntp.mil iburst maxpoll ([1-9]1[0-6])/'
+    meta:
+      Cat: 2
+      CCI: CCI-000189
+      Group_Title: SRG-OS-000355-GPOS-00143
+      Rule_ID: SV-230484r627750_rule
+      STIG_ID: RHEL-08-030740
+      Vul_ID: V-230484
+{{ end }}

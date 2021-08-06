@@ -1,0 +1,25 @@
+{{ if not .Vars.rhel8stig_system_is_router }}
+  {{ if .Vars.RHEL_08_040260 }}
+kernel-param:
+  net.ipv4.ip_forward:
+    title: RHEL-08-040260 | RHEL 8 must not be performing packet forwarding unless the system is a router. | IPv4
+    value: '0'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230540r627750_rule
+      STIG_ID: RHEL-08-040260
+      Vul_ID: V-230540
+  net.ipv6.conf.all.forwarding:
+    title: RHEL-08-040260 | RHEL 8 must not be performing packet forwarding unless the system is a router. | IPv6
+    value: '0'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230540r627750_rule
+      STIG_ID: RHEL-08-040260
+      Vul_ID: V-230540
+  {{ end }}
+{{ end }}

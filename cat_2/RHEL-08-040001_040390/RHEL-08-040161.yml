@@ -1,0 +1,15 @@
+{{ if .Vars.RHEL_08_040161 }}
+file:
+   /etc/ssh/sshd_config:
+    title: RHEL-08-040161 | RHEL 8 must force a frequent session key renegotiation for SSH connections to the server.
+    exists: true
+    contains:
+    - '/^RekeyLimit 1G 1h/'
+    meta:
+      Cat: 2
+      CCI: CCI-000068
+      Group_Title: SRG-OS-000033-GPOS-00014
+      Rule_ID: SV-230527r627750_rule
+      STIG_ID: RHEL-08-040161
+      Vul_ID: V-230527
+{{ end }}

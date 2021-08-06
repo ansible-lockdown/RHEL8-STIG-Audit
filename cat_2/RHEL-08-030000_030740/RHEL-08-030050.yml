@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_08_030050 }}
+file:
+  /etc/audit/auditd.conf:
+    title: RHEL-08-030050 | The RHEL 8 System Administrator (SA) and Information System Security Officer (ISSO) (at a minimum) must be alerted when the audit storage volume is full.
+    exists: true
+    contains:
+    - '/^(?i)max_log_file_action*=*{{ .Vars.rhel8stig_auditd_max_log_file_action }}/'
+    - '!/^(?i)max_log_file_action*=*(ignore|suspend|rotate)/'
+    meta:
+      Cat: 2
+      CCI: CCI-000140
+      Group_Title: SRG-OS-000047-GPOS-00023
+      Rule_ID: SV-230391r627750_rule
+      STIG_ID: RHEL-08-030050
+      Vul_ID: V-230391
+{{ end }}

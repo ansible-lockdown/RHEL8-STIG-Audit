@@ -1,0 +1,27 @@
+{{ if .Vars.RHEL_08_040180 }}
+service:
+  debug-shell:
+    title: RHEL-08-040180 | The debug-shell systemd service must be disabled on RHEL 8. | service stopped
+    running: false
+    enabled: false
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230532r627750_rule
+      STIG_ID: RHEL-08-040180
+      Vul_ID: V-230532
+file:
+  /etc/systemd/system/debug-shell.service:
+    title: RHEL-08-040180 | The debug-shell systemd service must be disabled on RHEL 8. | service masked
+    exists: true
+    filetype: symlink
+    linked-to: /dev/null
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230532r627750_rule
+      STIG_ID: RHEL-08-040180
+      Vul_ID: V-230532
+{{ end }}
