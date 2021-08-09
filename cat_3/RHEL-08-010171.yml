@@ -1,0 +1,13 @@
+{{ if .Vars.RHEL_08_010171 }}
+package:
+  policycoreutils:
+    title: RHEL-08-010171 | RHEL 8 must have policycoreutils package installed.
+    installed: true
+    meta:
+      Cat: 3
+      CCI: CCI-001084
+      Group_Title: SRG-OS-000134-GPOS-000689
+      Rule_ID: SV-230241r627750_rule
+      STIG_ID: RHEL-08-010171
+      Vul_ID: V-230241
+{{ end }}

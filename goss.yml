@@ -10,6 +10,10 @@ gossfile:
   cat_2/RHEL-08-040000_040390/*.yml: {}
   {{ end }}
 
+  {{ if .Vars.rhel8stig_cat3 }}
+  cat_3/*.yml: {}
+  {{ end }}
+
 command:
   output_meta:
     title: Benchmark MetaData

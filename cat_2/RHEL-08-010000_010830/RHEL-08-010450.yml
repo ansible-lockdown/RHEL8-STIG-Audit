@@ -18,8 +18,8 @@ file:
     title: RHEL-08-010450 | RHEL 8 must enable the SELinux targeted policy. | sestatus boot check
     exists: true
     contains:
-    - '/^SELINUXTYPE(.=.|)(=|)(?:targeted)$/'
-    - '/^SELINUXTYPE(.=.|)(=|)(minimum|mls)/'
+    - '/^SELINUXTYPE(.=.|=)targeted$/'
+    - '!/^SELINUXTYPE(.=.|)(=|)(minimum|mls)/'
     meta:
       Cat: 2
       CCI: CCI-002696

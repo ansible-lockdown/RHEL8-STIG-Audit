@@ -2,10 +2,10 @@
 command:
   grub_vsyscall_chk:
     title: RHEL-08-010422 | RHEL 8 must disable virtual syscalls. | live vsyscall grub check
-    exec: grub2-editenv -list | grep vsyscall
+    exec: grub2-editenv - list | grep vsyscall
     exit-status: 0
     stdout:
-    - '!/^kernelopts=.*(?!\svsyscall=none)\s.*$/'
+    - '!/^kernelopts=.*\svsyscall=\s.emulated*$/'
     - '/^kernelopts=.*\svsyscall=none\s.*$/'
     meta:
       Cat: 2
@@ -19,7 +19,7 @@ file:
     title: RHEL-08-010422 | RHEL 8 must disable virtual syscalls. | default vsyscall grub check
     exists: true
     contains:
-    - '!/^(?!#).*=.*\svsyscall=none\s/'
+    - '/^GRUB_CMDLINE_LINUX=.*\svsyscall=none\s.*/'
     meta:
       Cat: 2
       CCI: CCI-001084

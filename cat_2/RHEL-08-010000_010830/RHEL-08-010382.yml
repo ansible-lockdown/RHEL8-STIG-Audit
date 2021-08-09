@@ -2,8 +2,11 @@
 command: 
   sudo_all_chk:
     title: RHEL-08-010382 | RHEL 8 must restrict privilege elevation to authorized personnel.
-    exec: grep -iw 'ALL' /etc/sudoers /etc/sudoers.d/*
-    exit-status: 0
+    exec: grep -iw 'ALL' /etc/sudoers /etc/sudoers.d/* | grep -v '.*\:#'
+    exit-status: 
+      or:
+      - 0
+      - 1
     stdout:
     - '!/ALL ALL=(ALL) ALL/'
     - '!/ALL ALL=(ALL\:ALL) ALL/'

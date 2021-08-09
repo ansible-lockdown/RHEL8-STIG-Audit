@@ -2,6 +2,7 @@
 package: 
   opensc:
     title: RHEL-08-010410 | RHEL 8 must accept Personal Identity Verification (PIV) credentials.| pkg opensc
+    installed: true
     meta:
       Cat: 2
       CCI: CCI-001953
@@ -15,7 +16,7 @@ command:
     exec: opensc-tool --list-drivers | grep -i piv
     exit-status: 0
     stdout:
-    - 'PIV-II Personal Identity Verification Card'
+    - '/PIV-II\s*Personal Identity Verification Card/'
     meta:
       Cat: 2
       CCI: CCI-001953

@@ -1,0 +1,13 @@
+{{ if .Vars.RHEL_08_010541 }}
+mount:
+  /var/log:
+    title: RHEL-08-010541 | RHEL 8 must use a separate file system for /var/log.
+    exists: true
+    meta:
+      Cat: 3
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230293r627750_rule
+      STIG_ID: RHEL-08-010541
+      Vul_ID: V-230293
+{{ end }}

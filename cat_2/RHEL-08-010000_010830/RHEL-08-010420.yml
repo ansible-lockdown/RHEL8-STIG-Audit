@@ -2,10 +2,10 @@
 command:
   nx_active_check:
     title: RHEL-08-010420 | RHEL 8 must implement non-executable data to protect its memory from unauthorized code execution. | nx active check
-    exec: dmesg | grep NX
+    exec: "dmesg | grep -c '.*NX.*protection: active'"
     exit-status: 0
     stdout:
-    - '/^[.*0] NX (Execute Disable) protection: active/'
+    - '1'
     meta:
       Cat: 2
       CCI: CCI-001953

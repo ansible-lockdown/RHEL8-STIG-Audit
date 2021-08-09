@@ -2,8 +2,11 @@
 command: 
   sudo_defaults_set:
     title: RHEL-08-010383 | RHEL 8 must use the invoking user's password for privilege escalation when using "sudo".
-    exec: egrep -i '(!rootpw|!targetpw|!runaspw)' /etc/sudoers /etc/sudoers.d/* | grep -v '#'
-    exit-status: 0
+    exec: egrep -i '(!rootpw|!targetpw|!runaspw)' /etc/sudoers /etc/sudoers.d/* | grep -v '.*\:#'
+    exit-status: 
+      or:
+      - 0
+      - 1
     stdout:
     - '^/\/etc\/sudoers\:Defaults !targetpw/'
     - '^/\/etc\/sudoers\:Defaults !rootpw/'

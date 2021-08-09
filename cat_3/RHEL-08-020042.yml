@@ -1,0 +1,15 @@
+{{ if .Vars.RHEL_08_020042 }}
+file:
+  /etc/shells:
+    title: RHEL-08-020042 | RHEL 8 must prevent users from disabling session control mechanisms.
+    exists: true
+    contains:
+    - '!/.*tmux.*/'
+    meta:
+      Cat: 3
+      CCI: CCI-000056
+      Group_Title: SRG-OS-000028-GPOS-00009
+      Rule_ID: SV-230350r627750_rule
+      STIG_ID: RHEL-08-020042
+      Vul_ID: V-230350
+{{ end }}

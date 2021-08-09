@@ -3,7 +3,10 @@ command:
   nodev_check:
     title: RHEL-08-010650 | RHEL 8 must prevent files with the setuid and setgid bit set from being executed on file systems that are imported via Network File System (NFS).
     exec: awk '$3 == "nfs"' /etc/fstab | grep -v nosuid
-    exit-status: 0
+    exit-status: 
+      or: 
+      - 0
+      - 1
     stdout:
     - '!/^.*/'
     meta:

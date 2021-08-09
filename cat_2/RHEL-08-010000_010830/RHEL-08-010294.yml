@@ -6,7 +6,7 @@ file:
     contains:
     - '/^MinProtocol = TLSv1.2/'
     - '!/^#MinProtocol = TLSv1.2/'
-    - '!/^MinProtocol = (?!TLSv1.2)/'
+    - '!/^MinProtocol = (DTLS0.9|SSL3.0|TLS1.0|TLS1.1|DTLS1.0)/'
     meta:
       Cat: 2
       CCI: CCI-001453

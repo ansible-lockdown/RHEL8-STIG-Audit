@@ -2,8 +2,11 @@
 command: 
   sudo_not_auth:
     title: RHEL-08-010381 | RHEL 8 must require users to reauthenticate for privilege escalation.
-    exec: grep -i !authenticate /etc/sudoers /etc/sudoers.d/*
-    exit-status: 0
+    exec: grep -i !authenticate /etc/sudoers /etc/sudoers.d/* | grep -v '.*\:#'
+    exit-status: 
+      or:
+      - 0
+      - 1
     stdout:
     - '!/^.*/'
     meta:

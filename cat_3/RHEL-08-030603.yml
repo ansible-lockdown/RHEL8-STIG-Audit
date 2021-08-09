@@ -1,0 +1,15 @@
+{{ if .Vars.RHEL_08_030603 }}
+file:
+  /etc/usbguard/usbguard-daemon.conf:
+    title: RHEL-08-030603 | RHEL 8 must enable Linux audit logging for the USBGuard daemon.
+    exists: true
+    contains:
+    - '/^AuditBackend=LinuxAudit/'
+    meta:
+      Cat: 3
+      CCI: CCI-000169
+      Group_Title: SRG-OS-000062-GPOS-00031
+      Rule_ID: SV-230470r627750_rule
+      STIG_ID: RHEL-08-030603
+      Vul_ID: V-230470
+{{ end }}

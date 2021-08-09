@@ -2,8 +2,11 @@
 command: 
   sudo_nopwd_chk:
     title: RHEL-08-010380 | RHEL 8 must require users to provide a password for privilege escalation.
-    exec: grep -i nopasswd /etc/sudoers /etc/sudoers.d/*
-    exit-status: 0
+    exec: grep -i nopasswd /etc/sudoers /etc/sudoers.d/* | grep -v '.*\:#'
+    exit-status: 
+      or:
+      - 0
+      - 1
     stdout:
     - '!/^.*/'
     meta:

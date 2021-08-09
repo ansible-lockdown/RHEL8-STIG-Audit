@@ -3,9 +3,9 @@ command:
   pwds_are_sha512:
     title: RHEL-08-010120 | RHEL 8 must employ FIPS 140-2 approved cryptographic hashing algorithms for all stored passwords.
     exec: for user in `eval getent passwd {$(awk '/^UID_MIN/ {print $2}' /etc/login.defs)..$(awk '/^UID_MAX/ {print$2}' /etc/login.defs)} | cut -d ':' -f1`; do grep $user /etc/shadow | grep -cv '\$6\$'; done
-    exit-status: 0
+    exit-status: 1
     stdout:
-    - '^0'
+    - '/^0/'
     - '!/^[1-9]/'
     meta:
       Cat: 2

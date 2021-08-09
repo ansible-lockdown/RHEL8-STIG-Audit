@@ -1,0 +1,13 @@
+{{ if .Vars.RHEL_08_010542 }}
+mount:
+  /var/log/audit:
+    title: RHEL-08-010542 | RHEL 8 must use a separate file system for the system audit data path.
+    exists: true
+    meta:
+      Cat: 3
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230294r627750_rule
+      STIG_ID: RHEL-08-010542
+      Vul_ID: V-230294
+{{ end }}

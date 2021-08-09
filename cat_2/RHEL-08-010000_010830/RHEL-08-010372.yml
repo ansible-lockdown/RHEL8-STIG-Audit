@@ -16,7 +16,7 @@ command:
       STIG_ID: RHEL-08-010372
       Vul_ID: V-230266
 kernel-param:
-  kernel.kexec_load_disable:
+  kernel.kexec_load_disabled:
     title: RHEL-08-010372 | RHEL 8 must prevent the loading of a new kernel for later execution. | live systcl check
     value: '1'
     meta:

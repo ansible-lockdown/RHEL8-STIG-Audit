@@ -16,7 +16,7 @@ command:
     exec: ls -al /etc/cron.* | grep aide | awk '{print $1" "$NF}'
     exit-status: 0
     stdout:
-    - '-rwxr-xr-x aide'
+    - '/^-rw(-|x)r-(-|x)r-(-|x). aide/'
     meta:
       Cat: 2
       CCI: CCI-001744
@@ -39,7 +39,7 @@ command:
       STIG_ID: RHEL-08-010360
       Vul_ID: V-230263
 file:
-  /etc/cron.daily/aide:
+  {{ .Vars.rhel8stig_aide_cron_file }}:
     title: RHEL-08-010360 | The RHEL 8 file integrity tool must notify the system administrator when changes to the baseline configuration or anomalies in the operation of any security functions are discovered within an organizationally defined frequency. | notification
     exists: true
     contains:

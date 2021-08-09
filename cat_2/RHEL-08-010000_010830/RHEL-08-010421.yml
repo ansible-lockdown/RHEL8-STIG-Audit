@@ -2,10 +2,10 @@
 command:
   grub_page_poison_chk:
     title: RHEL-08-010421 | RHEL 8 must clear the page allocator to prevent use-after-free attacks. | live grub check
-    exec: grub2-editenv -list | grep page_poison
+    exec: grub2-editenv - list | grep page_poison
     exit-status: 0
     stdout:
-    - '!/^kernelopts=.*(?!\spage_poison=1)\s.*$/'
+    - '!/^kernelopts=.*\spage_poison=0\s.*$/'
     - '/^kernelopts=.*\spage_poison=1\s.*$/'
     meta:
       Cat: 2
@@ -19,7 +19,7 @@ file:
     title: RHEL-08-010421 | RHEL 8 must clear the page allocator to prevent use-after-free attacks. | default grub check
     exists: true
     contains:
-    - '/^(?!#).*=.*\spage_poison=1\s/'
+    - '/^[^#].*=.*\spage_poison=1\s/'
     meta:
       Cat: 2
       CCI: CCI-001084

@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_08_010440 }}
+file:
+  /etc/dnf/dnf.conf:
+    title: RHEL-08-010440 | YUM must remove all software components after updated versions have been installed on RHEL 8.
+    exists: true
+    contains:
+    - '/^clean_requirements_on_remove=([Tt]rue|1|[Yy)es])/'
+    - '!/^clean_requirements_on_remove=([Ff]alse|0|[Nn)o])/'
+    meta:
+      Cat: 3
+      CCI: CCI-002617
+      Group_Title: SRG-OS-000437-GPOS-00194
+      Rule_ID: SV-230281r627750_rule
+      STIG_ID: RHEL-08-010440
+      Vul_ID: V-230281
+{{ end }}

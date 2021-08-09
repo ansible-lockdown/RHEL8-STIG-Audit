@@ -11,6 +11,7 @@ rhel8stig_os_version_pre_8_2: false
 # turn the categories on/off
 rhel8stig_cat1: true
 rhel8stig_cat2: true
+rhel8stig_cat3: true
 
 # Some tests may need to scan every filesystem or have an impact on a system 
 # these may need be scheduled to minimise impact
@@ -351,6 +352,35 @@ RHEL_08_040370: true
 RHEL_08_040380: true
 RHEL_08_040390: true
 
+# Cat 3 controls
+RHEL_08_010171: true
+RHEL_08_010292: true
+RHEL_08_010375: true
+RHEL_08_010376: true
+RHEL_08_010440: true
+RHEL_08_010471: true
+RHEL_08_010540: true
+RHEL_08_010541: true
+RHEL_08_010542: true
+RHEL_08_020024: true
+RHEL_08_020042: true
+RHEL_08_020340: true
+RHEL_08_030063: true
+RHEL_08_030601: true
+RHEL_08_030602: true
+RHEL_08_030603: true
+RHEL_08_030741: true
+RHEL_08_030742: true
+RHEL_08_040004: true
+RHEL_08_040021: true
+RHEL_08_040022: true
+RHEL_08_040023: true
+RHEL_08_040024: true
+RHEL_08_040025: true
+RHEL_08_040026: true
+RHEL_08_040300: true
+RHEL_08_040310: true
+
 
 
 
@@ -367,18 +397,13 @@ rhel8stig_boot_superuser: root
 
 # RHEL_08_010040-010050-010060
 rhel8stig_banner_file: /etc/issue
-rhel8stig_logon_banner: 
--  You are accessing a U.S. Government (USG) Information System (IS) that is provided for USG-authorized use only.
--  By using this IS (which includes any device attached to this IS), you consent to the following conditions.
--  -The USG routinely intercepts and monitors communications on this IS for 
--  -At any time, the USG may inspect and seize data stored on this IS.
--  -Communications using, or data stored on, this IS are not private, are subject 
--  -This IS includes security measures (e.g., authentication and access controls)
--  -Notwithstanding the above, using this IS does not constitute consent to PM, LE
--  communications and work product are private and confidential. See User 
+rhel8stig_logon_banner: '[You are accessing a U.S. Government (USG) Information System (IS) that is provided for USG-authorized use only. By using this IS (which includes any device attached to this IS), you consent to the following conditions\: \-The USG routinely intercepts and monitors communications on this IS for purposes including, but not limited to, penetration testing, COMSEC monitoring, network operations and defense, personnel misconduct (PM), law enforcement (LE), and counterintelligence (CI) investigations. \-At any time, the USG may inspect and seize data stored on this IS. \-Communications using, or data stored on, this IS are not private, are subject to routine monitoring, interception, and search, and may be disclosed or used for any USG-authorized purpose. -This IS includes security measures (e.g., authentication and access controls) to protect USG interests\--not for your personal benefit or privacy. \-Notwithstanding the above, using this IS does not constitute consent to PM, LE or CI investigative searching or monitoring of the content of privileged communications, or work product, related to personal representation or services by attorneys, psychotherapists, or clergy, and their assistants. Such communications and work product are private and confidential. See User Agreement for details.]'
 
 # RHEL8_08_010680 to change if using hostfile only - seperate checks
 rhel8stig_uses_dns: true
+
+# RHEL_08_010360 if run via ansible it is placed in cron.d setting as manually set in cron.daily
+rhel8stig_aide_cron_file: /etc/cron.daily/aide
 
 # RHEL_08_030040 - Options are SYSLOG, SINGLE, and HALT to fit STIG standards
 rhel8stig_auditd_disk_error_action: HALT

@@ -6,7 +6,7 @@ command:
     exit-status: 
       or:
       - 0
-      - 2
+      - 1
     stdout:
     - '^/\/etc\/sudoers\:Defaults timestamp_timeout=([0-9]|10)/'
     - '!^/\/etc\/sudoers\:Defaults timestamp_timeout.*-\d/'

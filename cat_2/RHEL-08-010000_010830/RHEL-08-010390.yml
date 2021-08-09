@@ -2,6 +2,7 @@
 package: 
   esc:
     title: RHEL-08-010390 | RHEL 8 must have the packages required for multifactor authentication installed. | pkg esc
+    installed: true
     meta:
       Cat: 2
       CCI: CCI-001948
@@ -11,6 +12,7 @@ package:
       Vul_ID: V-230273
   openssl-pkcs11:
     title: RHEL-08-010390 | RHEL 8 must have the packages required for multifactor authentication installed. | pkg openssl-pkcs11
+    installed: true
     meta:
       Cat: 2
       CCI: CCI-001948

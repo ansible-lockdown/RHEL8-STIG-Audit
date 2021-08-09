@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_030680 }}
 package:
   gnutils:
-    title: RHEL_08_030680 |  RHEL 8 must have the packages required for encrypting offloaded audit logs installed.
+    title: RHEL_08_030680 | RHEL 8 must have the packages required for encrypting offloaded audit logs installed.
     installed: true
     meta:
       Cat: 2

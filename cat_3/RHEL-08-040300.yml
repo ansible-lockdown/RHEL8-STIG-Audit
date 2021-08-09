@@ -1,0 +1,17 @@
+{{ if .Vars.RHEL_08_040300 }}
+file:
+  /etc/aide.conf:
+    title: RHEL-08-040300 | The RHEL 8 file integrity tool must be configured to verify extended attributes.
+    exists: true
+    contains:
+    - '/^ALL=.*+xattr.*/'
+    - '/^\/bin All/'
+    - '/^\/sbin All/'
+    meta:
+      Cat: 3
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230551r627750_rule
+      STIG_ID: RHEL-08-040300
+      Vul_ID: V-230551
+{{ end }}

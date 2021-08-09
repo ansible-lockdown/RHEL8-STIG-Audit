@@ -11,15 +11,12 @@ service:
       Rule_ID: SV-230312r627750_rule
       STIG_ID: RHEL-08-010672
       Vul_ID: V-230312
-command:
-  kdump_masked_check:
+file:
+  /etc/systemd/system/systemd-coredump.socket:
     title: RHEL-08-010672 | RHEL 8 must disable acquiring, saving, and processing core dumps.
-    exec: systemctl status systemd-coredump.socket
-    exit-status: 0
+    exists: true
     skip: false  # may need to skip if coredump.socket service not there
-    stdout:
-    - 'Loaded: masked'
-    - 'Active: inactive'
+    linked-to: /dev/null
     meta:
       Cat: 2
       CCI: CCI-000366
