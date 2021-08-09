@@ -2,7 +2,7 @@
 command:
   kernel_core_pattern:
     title: RHEL-08-010671 | RHEL 8 must disable the kernel.core_pattern.
-    exec:  sysctl kernel.core_pattern
+    exec: sysctl kernel.core_pattern
     exit-status: 0
     stdout:
     - 'kernel.core_pattern = |/bin/false'

@@ -9,7 +9,7 @@ file:
     meta:
       Cat: 2
       CCI: CCI-000192
-      Group_Title:  SRG-OS-000069-GPOS-00037
+      Group_Title: SRG-OS-000069-GPOS-00037
       Rule_ID: SV-230356r627750_rule
       STIG_ID: RHEL-08-020100
       Vul_ID: V-230356
@@ -22,7 +22,7 @@ file:
     meta:
       Cat: 2
       CCI: CCI-000192
-      Group_Title:  SRG-OS-000069-GPOS-00037
+      Group_Title: SRG-OS-000069-GPOS-00037
       Rule_ID: SV-230356r627750_rule
       STIG_ID: RHEL-08-020100
       Vul_ID: V-230356

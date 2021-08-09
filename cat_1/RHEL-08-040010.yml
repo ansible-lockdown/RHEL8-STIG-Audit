@@ -9,5 +9,5 @@ package:
       Group_Title: SRG-OS-000095-GPOS-00049
       Rule_ID: SV-230492r627750_rule
       STIG_ID: RHEL-08-040010
-      Vul_ID:  V-230492
+      Vul_ID: V-230492
 {{ end }}

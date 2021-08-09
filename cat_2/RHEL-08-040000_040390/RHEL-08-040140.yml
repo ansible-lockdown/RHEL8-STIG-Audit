@@ -6,7 +6,7 @@ package:
     meta:
       Cat: 2
       CCI: CCI-001958
-      Group_Title:  SRG-OS-000378-GPOS-00163
+      Group_Title: SRG-OS-000378-GPOS-00163
       Rule_ID: SV-230524r627750_rule
       STIG_ID: RHEL-08-040140
       Vul_ID: V-230524
@@ -18,7 +18,7 @@ service:
     meta:
       Cat: 2
       CCI: CCI-001958
-      Group_Title:  SRG-OS-000378-GPOS-00163
+      Group_Title: SRG-OS-000378-GPOS-00163
       Rule_ID: SV-230524r627750_rule
       STIG_ID: RHEL-08-040140
       Vul_ID: V-230524
@@ -29,7 +29,7 @@ file:
     meta:
       Cat: 2
       CCI: CCI-001958
-      Group_Title:  SRG-OS-000378-GPOS-00163
+      Group_Title: SRG-OS-000378-GPOS-00163
       Rule_ID: SV-230524r627750_rule
       STIG_ID: RHEL-08-040140
       Vul_ID: V-230524

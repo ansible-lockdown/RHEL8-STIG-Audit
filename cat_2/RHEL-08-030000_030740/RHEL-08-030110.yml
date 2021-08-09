@@ -8,7 +8,7 @@ file:
     meta:
       Cat: 2
       CCI: CCI-000162
-      Group_Title:  SRG-OS-000057-GPOS-00027
+      Group_Title: SRG-OS-000057-GPOS-00027
       Rule_ID: SV-230400r627750_rule
       STIG_ID: RHEL-08-030110
       Vul_ID: V-230400
