@@ -4,8 +4,8 @@ file:
     title: RHEL-08-020300 | RHEL 8 must prevent the use of dictionary words for passwords.
     exists: true
     contains:
-    - '/^dictcheck=1$/'
-    - '!/^dictcheck=0$/'
+    - '/^dictcheck(.=.|=)1$/'
+    - '!/^dictcheck(.=.|=)0$/'
     meta:
       Cat: 2
       CCI: CCI-000366

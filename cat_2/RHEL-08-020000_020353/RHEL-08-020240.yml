@@ -2,7 +2,7 @@
 command:
   no_dup_uid:
     title: RHEL-08-020240 | RHEL 8 duplicate User IDs (UIDs) must not exist for interactive users.
-    exec: "awk -F ':'' 'list[$3]++{print $1, $3}' /etc/passwd"
+    exec: "awk -F ':' 'list[$3]++{print $1, $3}' /etc/passwd"
     exit-status: 0
     stdout:
     - '!/.*/'

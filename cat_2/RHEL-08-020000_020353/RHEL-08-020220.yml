@@ -4,8 +4,8 @@ file:
     title: RHEL-08-020220 | RHEL 8 passwords must be prohibited from reuse for a minimum of five generations. | passwd-auth
     exists: true
     contains:
-    - '/^password required pam_pwhistory.so.*\sremember=5.*/'
-    - '!/^password required pam_pwhistory.so.*\sremember=([0-4].*/'
+    - '/^password\s+required pam_pwhistory.so.*\sremember=5.*/'
+    - '!/^password\s+required pam_pwhistory.so.*\sremember=[0-4].*/'
     meta:
       Cat: 2
       CCI: CCI-00200
@@ -17,8 +17,8 @@ file:
     title: RHEL-08-020220 | RHEL 8 passwords must be prohibited from reuse for a minimum of five generations. | system-auth
     exists: true
     contains:
-    - '/^password required pam_pwhistory.so.*\sremember=5.*/'
-    - '!/^password required pam_pwhistory.so.*\sremember=([0-4].*/'
+    - '/^password\s+required pam_pwhistory.so.*\sremember=5.*/'
+    - '!/^password\s+required pam_pwhistory.so.*\sremember=[0-4].*/'
     meta:
       Cat: 2
       CCI: CCI-00200
