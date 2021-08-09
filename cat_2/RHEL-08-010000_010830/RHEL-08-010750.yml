@@ -2,7 +2,7 @@
   {{ if .Vars.RHEL_08_010750 }}
 command:
   init_file_ww_progs:
-    title: RHEL-08-010750 |  All RHEL 8 local interactive user home directories defined in the /etc/passwd file must exist.
+    title: RHEL-08-010750 | All RHEL 8 local interactive user home directories defined in the /etc/passwd file must exist.
     exec: pwck -r
     exit-status: 0
     stdout:

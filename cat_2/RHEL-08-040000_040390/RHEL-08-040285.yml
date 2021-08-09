@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_040285 }}
 kernel-param:
   net.ipv4.conf.all.rp_filter:
-    title: RHEL-08-040285 |  RHEL 8 must use reverse path filtering on all IPv4 interfaces.
+    title: RHEL-08-040285 | RHEL 8 must use reverse path filtering on all IPv4 interfaces.
     value: '1'
     meta:
       Cat: 2

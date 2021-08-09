@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_040220 }}
 kernel-param:
   net.ipv4.conf.all.send_redirects:
-    title: RHEL-08-040220 |  RHEL 8 must not send Internet Control Message Protocol (ICMP) redirects.
+    title: RHEL-08-040220 | RHEL 8 must not send Internet Control Message Protocol (ICMP) redirects.
     value: '0'
     meta:
       Cat: 2
