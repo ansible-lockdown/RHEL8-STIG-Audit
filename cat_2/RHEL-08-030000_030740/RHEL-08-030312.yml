@@ -15,7 +15,7 @@ file:
 command:
   auditd_postqueue_live:
     title: RHEL_08_030312 | Successful/unsuccessful uses of postqueue in RHEL 8 must generate an audit record. | live check
-    exec: auditctl -l | grep -w postdrop
+    exec: auditctl -l | grep -w postqueue
     exit-status: 0
     stdout:
     - '-a always,exit -S all -F path=/usr/sbin/postqueue -F perm=x -F auid>=1000 -F auid!=-1 -F key=privileged-unix-update'

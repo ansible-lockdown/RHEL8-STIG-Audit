@@ -8,7 +8,7 @@ command:
       - 0
       - 2
     stdout:
-    - '/^.*\:$ActionSendStreamDriverAuthMode x509/name/'
+    - '/^.*\:\$ActionSendStreamDriverAuthMode x509/name/'
     meta:
       Cat: 2
       CCI: CCI-001851

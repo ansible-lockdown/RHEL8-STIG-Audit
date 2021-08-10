@@ -4,8 +4,6 @@ command:
     title: RHEL-08-040001 | RHEL 8 must not have any automated bug reporting tools installed.
     exec: yum list installed abrt*
     exit-status: 1
-    stdout:
-    - 'Error: No matching Packages to list'
     meta:
       Cat: 2
       CCI: CCI-000381

@@ -8,7 +8,7 @@ command:
       - 0
       - 2
     stdout:
-    - '/^.*\:$DefaultNetstreamDriver gtls/'
+    - '/^.*\:\$DefaultNetstreamDriver gtls/'
     meta:
       Cat: 2
       CCI: CCI-001851
@@ -24,8 +24,8 @@ command:
       - 0
       - 2
     stdout:
-    - '/^.*\:$ActionSendStreamDriverMode 1/'
-    - '!/^.*\:$ActionSendStreamDriverMode 0/'
+    - '/^.*\:\$ActionSendStreamDriverMode 1/'
+    - '!/^.*\:\$ActionSendStreamDriverMode 0/'
     meta:
       Cat: 2
       CCI: CCI-001851

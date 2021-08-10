@@ -28,23 +28,8 @@ file:
     exists: true
     contains:
     - '/^permissive = 0/'
-    - '/^permissive*=*1/'
+    - '!/^permissive*=*1/'
     meta:
-      Cat: 2
-      CCI: CCI-000381
-      Group_Title: SRG-OS-000095-GPOS-00049
-      Rule_ID: SV-230523r627750_rule
-      STIG_ID: RHEL-08-040135
-      Vul_ID: V-230523
-  /etc/fapolicyd/fapolicyd.rules:
-     title: RHEL-08-040135 | The RHEL 8 fapolicy module must be configured to employ a deny-all, permit-by-exception policy to allow the execution of authorized software programs. | deny_rules
-     exists: true
-     contains:
-     - '^/allow exe=/usr/bin/python3.4 dir=execdirs ftype=text/x-python/'
-     - '/^deny_audit pattern ld_so all/'
-     - '/^deny all all'
-     - '!/none/'
-     meta:
       Cat: 2
       CCI: CCI-000381
       Group_Title: SRG-OS-000095-GPOS-00049
@@ -63,6 +48,34 @@ file:
      - '/^\/boot/'
      - '/^\/run\/user\/42/'
      - '/^\/run\/user\/1000'
+     meta:
+      Cat: 2
+      CCI: CCI-000381
+      Group_Title: SRG-OS-000095-GPOS-00049
+      Rule_ID: SV-230523r627750_rule
+      STIG_ID: RHEL-08-040135
+      Vul_ID: V-230523
+command:
+  fapolicy_deny_rule:
+     title: RHEL-08-040135 | The RHEL 8 fapolicy module must be configured to employ a deny-all, permit-by-exception policy to allow the execution of authorized software programs. | deny_rules
+     exec: tail /etc/fapolicyd/fapolicyd.rules
+     exit-status: 0
+     stdout:
+     - '/^deny all all/'
+     - '!/none/'
+     meta:
+      Cat: 2
+      CCI: CCI-000381
+      Group_Title: SRG-OS-000095-GPOS-00049
+      Rule_ID: SV-230523r627750_rule
+      STIG_ID: RHEL-08-040135
+      Vul_ID: V-230523
+  fapolicy_mounts:
+     title: RHEL-08-040135 | The RHEL 8 fapolicy module must be configured to employ a deny-all, permit-by-exception policy to allow the execution of authorized software programs. | mounts
+     exec: for mount in `df -h --local | tail -n +2 | grep -v efi | awk '{print $NF}'`; do if [ `grep -cw $mount /etc/fapolicyd/fapolicyd.mounts` -eq 0 ]; then echo $mount FAIL; fi; done
+     exit-status: 0
+     contains:
+     - '!/^FAIL/'
      meta:
       Cat: 2
       CCI: CCI-000381

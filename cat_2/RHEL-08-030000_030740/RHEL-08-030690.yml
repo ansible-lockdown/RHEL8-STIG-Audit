@@ -8,7 +8,7 @@ command:
       - 0
       - 2
     stdout:
-    - '/^\*\.\* @@{{ .Vars.rhel8stig_remotelog_server }}\:{{ .Vars.rhel8stig_remotelog_port }}/'
+    - '/^.*.conf\:\*\.\* @@{{ .Vars.rhel8stig_remotelog_server }}:{{ .Vars.rhel8stig_remotelog_port }}/'
     meta:
       Cat: 2
       CCI: CCI-001851

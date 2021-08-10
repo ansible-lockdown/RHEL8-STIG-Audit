@@ -1,6 +1,6 @@
 {{ if .Vars.RHEL_08_030180 }}
 package:
-  auditd:
+  audit:
     title: RHEL_08_030180 | RHEL 8 audit records must contain information to establish what type of events occurred, the source of events, where events occurred, and the outcome of events.
     installed: true
     meta:

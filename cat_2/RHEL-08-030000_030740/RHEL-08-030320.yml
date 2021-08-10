@@ -15,7 +15,7 @@ file:
 command:
   auditd_ssh_keysign_live:
     title: RHEL_08_030320 | Successful/unsuccessful uses of ssh-keysign in RHEL 8 must generate an audit record. | live check
-    exec: auditctl -l | grep -w unix_chkpwd
+    exec: auditctl -l | grep -w keysign
     exit-status: 0
     stdout:
     - '-a always,exit -S all -F path=/usr/libexec/openssh/ssh-keysign -F perm=x -F auid>=1000 -F auid!=-1 -F key=privileged-ssh'

@@ -7,7 +7,7 @@ file:
     - '-a always,exit -F arch=b32 -S fremovexattr -F auid>=1000 -F auid!=unset -k perm_mod'
     - '-a always,exit -F arch=b64 -S fremovexattr -F auid>=1000 -F auid!=unset -k perm_mod'
     - '-a always,exit -F arch=b32 -S fremovexattr -F auid=0 -k perm_mod'
-    - '-a always,exit -F arch=b64 -S fremovexattr -F auid=0 -k perm_mod '
+    - '-a always,exit -F arch=b64 -S fremovexattr -F auid=0 -k perm_mod'
     meta:
       Cat: 2
       CCI: CCI-000169
