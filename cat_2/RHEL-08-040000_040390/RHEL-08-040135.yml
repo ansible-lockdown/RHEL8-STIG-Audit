@@ -74,7 +74,7 @@ command:
      title: RHEL-08-040135 | The RHEL 8 fapolicy module must be configured to employ a deny-all, permit-by-exception policy to allow the execution of authorized software programs. | mounts
      exec: for mount in `df -h --local | tail -n +2 | grep -v efi | awk '{print $NF}'`; do if [ `grep -cw $mount /etc/fapolicyd/fapolicyd.mounts` -eq 0 ]; then echo $mount FAIL; fi; done
      exit-status: 0
-     contains:
+     stdout:
      - '!/^FAIL/'
      meta:
       Cat: 2
