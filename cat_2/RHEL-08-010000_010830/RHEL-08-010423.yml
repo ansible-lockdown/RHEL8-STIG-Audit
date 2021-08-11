@@ -1,6 +1,6 @@
 {{ if .Vars.RHEL_08_010423 }}
 command:
-  grub_vsyscall_chk:
+  grub_slub_chk:
     title: RHEL-08-010423 | RHEL 8 must clear SLUB/SLAB objects to prevent use-after-free attacks. | live slub grub check
     exec: grub2-editenv - list | grep slub_debug
     exit-status: 0

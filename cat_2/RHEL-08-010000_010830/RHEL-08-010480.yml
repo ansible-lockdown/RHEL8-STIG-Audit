@@ -1,6 +1,6 @@
 {{ if .Vars.RHEL_08_010480 }}
 command:
-  sestatus_targeted:
+  ssh_pub_host_644:
     title: RHEL-08-010480 | The RHEL 8 SSH public host key files must have mode 0644 or less permissive.
     exec: stat -c %a  /etc/ssh/*.pub
     exit-status: 0

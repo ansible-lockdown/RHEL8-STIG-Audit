@@ -1,6 +1,6 @@
 {{ if .Vars.RHEL_08_010580 }}
 command:
-  nodev_check:
+  nodev_check_nonroot:
     title: RHEL-08-010580 | RHEL 8 must prevent special devices on non-root local partitions.
     exec: mount | grep '^/dev\S* on /\S' | grep --invert-match 'nodev'
     exit-status: 0

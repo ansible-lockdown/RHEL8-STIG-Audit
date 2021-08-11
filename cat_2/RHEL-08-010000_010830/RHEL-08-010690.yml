@@ -1,6 +1,6 @@
 {{ if .Vars.RHEL_08_010690 }}
 command:
-  more_then_2_nameservers:
+  init_paths_sys_dirs:
     title: RHEL-08-010690 | Executable search paths within the initialization files of all local interactive RHEL 8 users must only contain paths that resolve to the system default or the users home directory.
     exec: grep -ri path /home/*/.\b*
     exit-status: 0

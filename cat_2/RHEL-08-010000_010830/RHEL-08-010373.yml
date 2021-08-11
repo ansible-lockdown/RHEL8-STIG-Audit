@@ -1,6 +1,6 @@
 {{ if .Vars.RHEL_08_010373 }}
 command: 
-  kernel_local_disable_file:
+  kernel_discetion_acl_sym:
     title: RHEL-08-010373 | RHEL 8 must enable kernel parameters to enforce discretionary access control on symlinks. | file check
     exec: grep -r fs.protected_symlinks /etc/sysctl.conf /etc/sysctl.d/*.conf
     exit-status: 0

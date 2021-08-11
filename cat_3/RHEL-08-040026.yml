@@ -1,6 +1,6 @@
 {{ if .Vars.RHEL_08_040026 }}
 command:
-  TIPC_modprobe:
+  firewire_modprobe:
     title: RHEL-08-040026 | RHEL 8 must disable IEEE 1394 (FireWire) Support.
     exec: grep -ri firewire-core /etc/modprobe.d/*
     exit-status: 0
