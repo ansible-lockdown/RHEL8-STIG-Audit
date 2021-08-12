@@ -4,6 +4,7 @@ command:
   file_dir_nouser:
     title: RHEL-08-010780 | All RHEL 8 local files and directories must have a valid owner.
     exec: find / -mount -xdev -nouser
+    timeout: {{ .Vars.timeout_ms }}
     exit-status: 0
     stdout:
     - '!/^.*/'
