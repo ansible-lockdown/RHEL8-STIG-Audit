@@ -8,9 +8,9 @@ command:
       - 0
       - 1
     stdout:
-    - '^/\/etc\/sudoers\:Defaults !targetpw/'
-    - '^/\/etc\/sudoers\:Defaults !rootpw/'
-    - '^/\/etc\/sudoers\:Defaults !runaspw/'
+    - '/^\/etc\/sudoers:Defaults !targetpw/'
+    - '/^\/etc\/sudoers:Defaults !rootpw/'
+    - '/^\/etc\/sudoers:Defaults !runaspw/'
     meta:
       Cat: 2
       CCI: CCI-002227
