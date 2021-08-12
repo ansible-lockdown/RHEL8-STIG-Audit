@@ -43,11 +43,10 @@ file:
      - '/^\/dev\/shm$/'
      - '/^\/run$/'
      - '/^\/sys\/fs\/cgroup$/'
-     - '/^\//$'
+     - '/^\/$/'
      - '/^\/home/'
      - '/^\/boot/'
-     - '/^\/run\/user\/42/'
-     - '/^\/run\/user\/1000'
+     - '/^\/run\/user\/1000/'
      meta:
       Cat: 2
       CCI: CCI-000381
