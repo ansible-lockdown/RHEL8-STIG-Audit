@@ -5,9 +5,9 @@ command:
     exec: grep -ri SCTP /etc/modprobe.d/*
     exit-status: 0
     stdout:
-    - '/^install SCTP \/bin\/true/'
-    - '/^install SCTP \/bin\/false/'
-    - '/^blacklist SCTP/'
+    - '/^[^#].*install SCTP \/bin\/true/'
+    - '!/^install SCTP \/bin\/false/'
+    - '/^[^#].*blacklist SCTP/'
     meta:
       Cat: 3
       CCI: CCI-000381

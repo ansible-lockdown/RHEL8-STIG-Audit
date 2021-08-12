@@ -5,9 +5,9 @@ command:
     exec: grep -ri ATM /etc/modprobe.d/*
     exit-status: 0
     stdout:
-    - '/^install ATM \/bin\/true/'
+    - '/^[^#].*:install ATM \/bin\/true/'
     - '!/^install ATM \/bin\/false/'
-    - '/^blacklist ATM/'
+    - '/^[^#].*blacklist ATM/'
     meta:
       Cat: 3
       CCI: CCI-000381
