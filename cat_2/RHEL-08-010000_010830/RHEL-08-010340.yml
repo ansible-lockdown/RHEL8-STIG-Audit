@@ -4,6 +4,7 @@ command:
   lib_files_ownded_root:
     title: RHEL-08-010340 | RHEL 8 library files must be owned by root.
     exec: find -L /lib /lib64 /usr/lib /usr/lib64 ! -user root -exec ls -l {} \;
+    timeout: {{ .Vars.timeout_ms }}
     exit-status: 0
     stdout:
     - '!/^.*/'

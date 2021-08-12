@@ -4,6 +4,7 @@ command:
   init_file_740_less:
     title: RHEL-08-010770 | All RHEL 8 local initialization files must have mode 0740 or less permissive.
     exec: for file_init in `find /home/* -maxdepth 1 -type f -name ".*" -exec ls {} \;`; do stat -c '%a %n' $file_init; done
+    timeout: {{ .Vars.timeout_ms }}
     exit-status: 0
     stdout:
     - '/^[0-7][0,1,2,4,5]0/'

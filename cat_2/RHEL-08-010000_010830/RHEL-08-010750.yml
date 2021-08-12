@@ -4,6 +4,7 @@ command:
   home_dir_defined:
     title: RHEL-08-010750 | All RHEL 8 local interactive user home directories defined in the /etc/passwd file must exist.
     exec: pwck -r
+    timeout: {{ .Vars.timeout_ms }}
     exit-status: 0
     stdout:
     - '!/^.*/'

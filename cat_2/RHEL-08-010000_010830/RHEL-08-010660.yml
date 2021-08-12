@@ -4,6 +4,7 @@ command:
   init_file_ww_progs:
     title: RHEL-08-010650 | Local RHEL 8 initialization files must not execute world-writable programs.
     exec: for i in `find / -mount -xdev -type f -perm -0002 -print`; do grep -r $i /home/*/.*; done
+    timeout: {{ .Vars.timeout_ms }}
     exit-status: 0
     stdout:
     - '!/^.*/'

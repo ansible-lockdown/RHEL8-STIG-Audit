@@ -4,6 +4,7 @@ command:
   root_sys_cmds:
     title: RHEL-08-010310 | RHEL 8 system commands must be owned by root.
     exec: find -L /bin /sbin /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin ! -user root -exec ls -l {} \;
+    timeout: {{ .Vars.timeout_ms }}
     exit-status: 0
     stdout:
     - '!/^.*/'

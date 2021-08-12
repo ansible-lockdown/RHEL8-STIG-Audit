@@ -4,6 +4,7 @@ command:
   lib_file_group_owned:
     title: RHEL-08-010350 | RHEL 8 library files must be group-owned by root or a system account.
     exec: find -L /lib /lib64 /usr/lib /usr/lib64 ! -group root -exec ls -l {} \;
+    timeout: {{ .Vars.timeout_ms }}
     exit-status: 0
     stdout:
     - '!/^.*/'

@@ -4,6 +4,7 @@ command:
   lib_files_755:
     title: RHEL-08-010330 | RHEL 8 library files must have mode 0755 or less permissive.
     exec: find -L /lib /lib64 /usr/lib /usr/lib64 -perm /0022 -type f -exec ls -l {} \;
+    timeout: {{ .Vars.timeout_ms }}
     exit-status: 0
     stdout:
     - '!/^.*/'

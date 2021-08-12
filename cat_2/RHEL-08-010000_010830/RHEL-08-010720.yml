@@ -4,6 +4,7 @@ command:
   user_home_dir_passwd:
     title: RHEL-08-010720 | All RHEL 8 local interactive users must have a home directory assigned in the /etc/passwd file.
     exec: "for user in `awk -F: '($3>=1000)&&($7 !~ /nologin/){print $6}' /etc/passwd`; do if [ `stat -c %F $user` != 'directory' ]; then echo $user Directory_missing; fi; done"
+    timeout: {{ .Vars.timeout_ms }}
     exit-status: 0
     stdout:
     - '!/^.*/'

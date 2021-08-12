@@ -4,6 +4,7 @@ command:
   ww_dirs_not_root:
     title: RHEL-08-010700 | All RHEL 8 world-writable directories must be owned by root, sys, bin, or an application group.
     exec: find / -mount -xdev -type d -perm -0002 -uid +999 -print
+    timeout: {{ .Vars.timeout_ms }}
     exit-status: 0
     stdout:
     - '!/^.*/'
