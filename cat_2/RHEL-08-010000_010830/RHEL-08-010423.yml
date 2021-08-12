@@ -5,7 +5,8 @@ command:
     exec: grub2-editenv - list | grep slub_debug
     exit-status: 0
     stdout:
-    - '!/^kernelopts=.*\sslub_debug=[a-zA-Z]\s.*$/'
+    - '/^kernelopts=.*\sslub_debug=P\s.*$/'
+    - '!/^kernelopts=.*\sslub_debug=[^P]\s.*$/'
     meta:
       Cat: 2
       CCI: CCI-001084
@@ -18,7 +19,8 @@ file:
     title: RHEL-08-010423 | RHEL 8 must clear SLUB/SLAB objects to prevent use-after-free attacks. | default slub grub check
     exists: true
     contains:
-    - '!/^GRUB_CMDLINE_LINUX*=.*\sslub_debug=[a-zA-Z]\s.*$/'
+    - '/^GRUB_CMDLINE_LINUX*=.*\sslub_debug=^P\s.*$/'
+    - '!/^GRUB_CMDLINE_LINUX*=.*\sslub_debug=[^P]\s.*$/'
     meta:
       Cat: 2
       CCI: CCI-001084
