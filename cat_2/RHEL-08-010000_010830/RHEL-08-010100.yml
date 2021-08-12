@@ -5,7 +5,6 @@ command:
     exec: for key in /home/*/.ssh/*_rsa; do if [ -f ${key} ]; then ssh-keygen -y -P '' -f $key; else exit 0; fi; done
     exit-status: 0
     stdout:
-    - '/.*(incorrect passphrase|No such file).*/'
     - '!/^ssh-rsa/'
     meta:
       Cat: 2
