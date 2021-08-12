@@ -2,11 +2,14 @@
 command:
   hard_maxlogins:
     title: RHEL-08-020024 | RHEL 8 must limit the number of concurrent sessions to ten for all accounts and/or account types.
-    exec: sudo grep -r -s '^[^#].*maxlogins' /etc/security/limits.conf /etc/security/limits.d/*.conf
-    exit-status: 0
+    exec: grep -r -s '^[^#].*maxlogins' /etc/security/limits.conf /etc/security/limits.d/*.conf
+    exit-status:
+      or:
+      - 0
+      - 2
     stdout:
-    - '/^\* hard maxlogins ([1-9]|10)/'
-    - '/^\* hard maxlogins (1[1-9]|[2-9]{2,9})$/'
+    - '/^/etc/security/limits.conf:\*\s+hard\s+maxlogins\s+([1-9]|10)/'
+    - '!/^.*\s+hard\s+maxlogins\s+(1[1-9]|[2-9]{2,9})$/'
     meta:
       Cat: 3
       CCI: CCI-000054
