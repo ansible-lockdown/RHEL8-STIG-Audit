@@ -43,7 +43,7 @@ file:
     title: RHEL-08-010360 | The RHEL 8 file integrity tool must notify the system administrator when changes to the baseline configuration or anomalies in the operation of any security functions are discovered within an organizationally defined frequency. | notification
     exists: true
     contains:
-    - '/^\/usr\/sbin\/aide --check | .* - Daily aide integrity run" root@localhost/'
+    - '/^.*\/usr\/sbin\/aide --check | .* - Daily aide integrity run" root@localhost/'
     meta:
       Cat: 2
       CCI: CCI-001744
