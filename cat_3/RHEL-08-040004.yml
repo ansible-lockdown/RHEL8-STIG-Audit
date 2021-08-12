@@ -4,8 +4,8 @@ file:
     title: RHEL-08-040004 | RHEL 8 must enable mitigations against processor-based vulnerabilities. | config
     exists: true
     contains:
-    - '/^GRUB_CMDLINE_LINUX=.*"pti=on".*/'
-    - '!/^GRUB_CMDLINE_LINUX=.*"pti=off".*/'
+    - '/^GRUB_CMDLINE_LINUX=.*pti=on.*/'
+    - '!/^GRUB_CMDLINE_LINUX=.*pti=off.*/'
     meta:
       Cat: 3
       CCI: CCI-000381
@@ -17,9 +17,10 @@ command:
   grub_audit_check:
     title: RHEL-08-040004 | RHEL 8 must enable mitigations against processor-based vulnerabilities. | running grub
     exec: grub2-editenv - list | grep pti
+    exit-status: 0
     stdout:
-    - '/^kernelopts.*\spti=on\s.*/'
-    - '!/^kernelopts=.*\spti=off\s.*/'
+    - '/^kernelopts.*\spti=on.*/'
+    - '!/^kernelopts=.*\spti=off.*/'
     meta:
       Cat: 3
       CCI: CCI-000381
