@@ -3,7 +3,10 @@ command:
   noexec_nfs:
     title: RHEL-08-010630 | RHEL 8 must prevent code from being executed on file systems that are imported via Network File System (NFS).
     exec: awk '$3 == "nfs"' /etc/fstab | grep -v noexec
-    exit-status: 0
+    exit-status: 
+      or:
+      - 0
+      - 1
     stdout:
     - '!/^.*/'
     meta:

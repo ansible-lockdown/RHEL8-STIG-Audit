@@ -3,7 +3,10 @@ command:
   nodev_nfs:
     title: RHEL-08-010640 | RHEL 8 must prevent special devices on file systems that are imported via Network File System (NFS).
     exec: awk '$3 == "nfs"' /etc/fstab | grep -v nodev
-    exit-status: 0
+    exit-status: 
+      or:
+      - 0
+      - 1
     stdout:
     - '!/^.*/'
     meta:
