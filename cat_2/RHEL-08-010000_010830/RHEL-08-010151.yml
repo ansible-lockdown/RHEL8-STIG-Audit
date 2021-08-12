@@ -4,7 +4,7 @@ file:
     title: RHEL-08-010151 | RHEL 8 operating systems must require authentication upon booting into emergency or rescue modes.
     exists: true
     contains:
-    - '^ExecStart=-/usr/lib/systemd/systemd-sulogin-shell rescue'
+    - '/^ExecStart=-/usr/lib/systemd/systemd-sulogin-shell rescue/'
     meta:
       Cat: 2
       CCI: CCI-000213
