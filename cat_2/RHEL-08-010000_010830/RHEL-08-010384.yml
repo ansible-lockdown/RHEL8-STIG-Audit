@@ -8,8 +8,8 @@ command:
       - 0
       - 1
     stdout:
-    - '^/\/etc\/sudoers\:Defaults timestamp_timeout=([0-9]|10)/'
-    - '!^/\/etc\/sudoers\:Defaults timestamp_timeout.*-\d/'
+    - '/^\/etc\/sudoers\:Defaults timestamp_timeout=([0-9]|10)/'
+    - '!/^\/etc\/sudoers\:Defaults timestamp_timeout.*-\d/'
     meta:
       Cat: 2
       CCI: CCI-002038
