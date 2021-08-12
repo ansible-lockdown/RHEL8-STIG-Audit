@@ -4,7 +4,7 @@ file:
     title: RHEL-08-020351 | RHEL 8 must define default permissions for all authenticated users in such a way that the user can only read and modify their own files.
     exists: true
     contains:
-    - '/^UMASK 077$/'
+    - '/^UMASK\s+077$/'
     - '!/^UMASK [1-7][0-7][0-7]$/'
     meta:
       Cat: 2
