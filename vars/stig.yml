@@ -21,6 +21,13 @@ timeout_ms: 30000
 # If using the supplied graphical interface
 rhel8stig_gui: false
 
+# system acts or requires router networking options
+rhel8stig_system_is_router: False
+
+# Assist with skips some audit checks
+skip_sssd_check: False
+skip_postfix_check: False
+skip_tftp_check: False
 # If Bios boot
 legacy_boot: true
 rhel8stig_bootloader_path: /boot/grub2/
