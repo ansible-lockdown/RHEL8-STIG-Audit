@@ -15,7 +15,7 @@ file:
       Vul_ID: V-230396
   /etc/audit/auditd.conf:
      title: RHEL-08-030070 | RHEL 8 audit logs must have a mode of 0600 or less permissive to prevent unauthorized read access. | auditd conf
-     exist: true
+     exists: true
      contains:
      - '/^log_group = root/'
      meta:
