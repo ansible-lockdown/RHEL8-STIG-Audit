@@ -4,7 +4,7 @@ file:
     title: RHEL-08-010070 | All RHEL 8 remote access methods must be monitored.
     exists: true
     contains:
-    - 'auth.*,authpriv.*,daemon.* /var/log/secure'
+    - '/^auth.\*;authpriv.\*;daemon.\*\s+/var/log/secure/'
     meta:
       Cat: 2
       CCI: CCI-000067
