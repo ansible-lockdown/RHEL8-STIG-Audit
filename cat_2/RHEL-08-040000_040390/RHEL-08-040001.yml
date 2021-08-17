@@ -3,6 +3,7 @@ command:
   bug_tools_absent:
     title: RHEL-08-040001 | RHEL 8 must not have any automated bug reporting tools installed.
     exec: yum list installed abrt*
+    timeout: {{ .Vars.timeout_ms }}
     exit-status: 1
     meta:
       Cat: 2
