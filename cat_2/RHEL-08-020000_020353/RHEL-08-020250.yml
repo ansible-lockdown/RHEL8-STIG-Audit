@@ -19,7 +19,7 @@ file:
     exists: true
     skip: {{ .Vars.skip_sssd_check }}
     contains:
-    - '/^auth sufficient pam_sss.so [try_cert_auth|require_cert_auth]/'
+    - '/^auth sufficient\s+pam_sss.so [try_cert_auth|require_cert_auth]/'
     meta:
       Cat: 2
       CCI: CCI-000765
