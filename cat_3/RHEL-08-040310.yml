@@ -5,7 +5,6 @@ file:
     exists: true
     contains:
     - '/^[^#].*=.*+acl.*/'
-    - '!/^[^#].*=.*+[^acl].*/'
     - '!/^[^#].*=.*-acl.*/'
     meta:
       Cat: 3
