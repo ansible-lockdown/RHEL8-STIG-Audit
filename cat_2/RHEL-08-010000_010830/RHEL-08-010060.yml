@@ -4,7 +4,9 @@ file:
     title: RHEL-08-010060 | RHEL 8 must display the Standard Mandatory DoD Notice and Consent Banner before granting local or remote access to the system via a command line user logon.
     exists: true
     contains:
-    - '{{ .Vars.rhel8stig_logon_banner }}'
+    {{ range .Vars.rhel8stig_logon_banner }}
+    - '{{ . }}'
+    {{ end }}
     meta:
       Cat: 2
       CCI: CCI-000048
