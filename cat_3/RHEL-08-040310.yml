@@ -4,7 +4,7 @@ file:
     title: RHEL-08-040310 | The RHEL 8 file integrity tool must be configured to verify Access Control Lists (ACLs).
     exists: true
     contains:
-    - '/^[^#].*=.*+acl.*/'
+    - '/^[^#].*=.*\+acl.*/'
     - '!/^[^#].*=.*-acl.*/'
     meta:
       Cat: 3
