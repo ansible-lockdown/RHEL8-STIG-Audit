@@ -1,0 +1,19 @@
+{{ if .Vars.run_heavy_tests }}
+  {{ if .Vars.RHEL_08_010320 }}
+command: 
+  sys_cmds_gid:
+    title: RHEL-08-010320 | RHEL 8 system commands must be group-owned by root or a system account.
+    exec: find -L /bin /sbin /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin ! -group root -exec ls -l {} \;
+    timeout: {{ .Vars.timeout_ms }}
+    exit-status: 0
+    stdout:
+    - '!/^.*/'
+    meta:
+      Cat: 2
+      CCI: CCI-001499
+      Group_Title: SRG-OS-000259-GPOS-00100
+      Rule_ID: SV-230259r627750_rule
+      STIG_ID: RHEL-08-010320
+      Vul_ID: V-230259
+  {{ end }}
+{{ end }}

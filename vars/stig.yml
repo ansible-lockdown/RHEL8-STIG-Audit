@@ -1,21 +1,40 @@
+rhel8stig_benchmark:
+- "type: STIG"
+- "version: '1.2'"
+- "os: RHEL 8"
+# - "epoch: " # Should be populated via wrapper script"
+# - hostname: #Should be populated via wrapper script"
+
+rhel8stig_os_distribution: centos
+rhel8stig_os_version_pre_8_2: false
+
 # turn the categories on/off
 rhel8stig_cat1: true
+rhel8stig_cat2: true
+rhel8stig_cat3: true
 
 # Some tests may need to scan every filesystem or have an impact on a system 
 # these may need be scheduled to minimise impact
 run_heavy_tests: true
-timeout_ms: 20000
+timeout_ms: 30000
 
 # If using the supplied graphical interface
 rhel8stig_gui: false
 
+# system acts or requires router networking options
+rhel8stig_system_is_router: False
+
+# Assist with skips some audit checks
+skip_sssd_check: False
+skip_postfix_check: False
+skip_tftp_check: False
 # If Bios boot
 legacy_boot: true
 rhel8stig_bootloader_path: /boot/grub2/
 
 # If UEFI boot - change for centos/rocky linux
 #legacy_boot: false
-#rhel8stig_bootloader_path: /boot/efi/EFI/redhat
+#rhel8stig_bootloader_path: /boot/efi/EFI/redhat/
 
 
 
@@ -39,6 +58,375 @@ RHEL_08_040190: true
 RHEL_08_040200: true
 RHEL_08_040360: true
 
+# Cat 2 rules
+RHEL_08_010010: true
+RHEL_08_010030: true
+RHEL_08_010040: true  # Variable options below
+RHEL_08_010050: true  # Variable options below
+RHEL_08_010060: true  # Variable options below
+RHEL_08_010070: true
+RHEL_08_010090: true
+RHEL_08_010100: true
+RHEL_08_010110: true
+RHEL_08_010120: true
+RHEL_08_010130: true
+RHEL_08_010151: true
+RHEL_08_010160: true
+RHEL_08_010161: true
+RHEL_08_010162: true
+RHEL_08_010163: true
+RHEL_08_010170: true
+RHEL_08_010180: true
+RHEL_08_010190: true
+RHEL_08_010200: true
+RHEL_08_010210: true
+RHEL_08_010220: true
+RHEL_08_010230: true
+RHEL_08_010240: true
+RHEL_08_010250: true
+RHEL_08_010260: true
+RHEL_08_010290: true
+RHEL_08_010291: true
+RHEL_08_010293: true
+RHEL_08_010294: true
+RHEL_08_010295: true
+RHEL_08_010300: true
+RHEL_08_010310: true
+RHEL_08_010320: true
+RHEL_08_010330: true
+RHEL_08_010340: true
+RHEL_08_010350: true
+RHEL_08_010360: true
+RHEL_08_010372: true
+RHEL_08_010373: true
+RHEL_08_010374: true
+RHEL_08_010380: true
+RHEL_08_010381: true
+RHEL_08_010382: true
+RHEL_08_010383: true
+RHEL_08_010384: true
+RHEL_08_010390: true
+RHEL_08_010400: true
+RHEL_08_010410: true
+RHEL_08_010420: true
+RHEL_08_010421: true
+RHEL_08_010422: true
+RHEL_08_010423: true
+RHEL_08_010430: true
+RHEL_08_010450: true
+RHEL_08_010480: true
+RHEL_08_010490: true
+RHEL_08_010500: true
+RHEL_08_010510: true
+RHEL_08_010520: true
+RHEL_08_010521: true
+RHEL_08_010543: true
+RHEL_08_010550: true
+RHEL_08_010560: true
+RHEL_08_010561: true
+RHEL_08_010570: true
+RHEL_08_010571: true
+RHEL_08_010580: true
+RHEL_08_010590: true
+RHEL_08_010600: true
+RHEL_08_010610: true
+RHEL_08_010620: true
+RHEL_08_010630: true
+RHEL_08_010640: true
+RHEL_08_010650: true
+RHEL_08_010660: true
+RHEL_08_010670: true
+RHEL_08_010671: true
+RHEL_08_010672: true
+RHEL_08_010673: true
+RHEL_08_010674: true
+RHEL_08_010675: true
+RHEL_08_010680: true
+RHEL_08_010690: true
+RHEL_08_010700: true
+RHEL_08_010710: true
+RHEL_08_010720: true
+RHEL_08_010730: true
+RHEL_08_010740: true
+RHEL_08_010750: true
+RHEL_08_010760: true
+RHEL_08_010770: true
+RHEL_08_010780: true
+RHEL_08_010790: true
+RHEL_08_010800: true
+RHEL_08_010830: true
+
+RHEL_08_020000: true
+RHEL_08_020010: true
+RHEL_08_020011: true
+RHEL_08_020012: true
+RHEL_08_020013: true
+RHEL_08_020014: true
+RHEL_08_020015: true
+RHEL_08_020016: true
+RHEL_08_020017: true
+RHEL_08_020018: true
+RHEL_08_020019: true
+RHEL_08_020020: true
+RHEL_08_020021: true
+RHEL_08_020022: true
+RHEL_08_020023: true
+RHEL_08_020030: true
+RHEL_08_020040: true
+RHEL_08_020041: true
+RHEL_08_020050: true
+RHEL_08_020060: true
+RHEL_08_020070: true
+RHEL_08_020080: true
+RHEL_08_020090: true  # TODO
+RHEL_08_020100: true
+RHEL_08_020110: true
+RHEL_08_020120: true
+RHEL_08_020130: true
+RHEL_08_020140: true
+RHEL_08_020150: true
+RHEL_08_020160: true
+RHEL_08_020170: true
+RHEL_08_020180: true
+RHEL_08_020190: true
+RHEL_08_020200: true
+RHEL_08_020210: true
+RHEL_08_020220: true
+RHEL_08_020230: true
+RHEL_08_020231: true
+RHEL_08_020240: true
+RHEL_08_020250: true
+RHEL_08_020260: true
+RHEL_08_020270: true
+RHEL_08_020280: true
+RHEL_08_020290: true
+RHEL_08_020300: true
+RHEL_08_020310: true
+RHEL_08_020320: true
+RHEL_08_020350: true
+RHEL_08_020351: true
+RHEL_08_020352: true
+RHEL_08_020353: true
+RHEL_08_030000: true
+RHEL_08_030010: true
+RHEL_08_030020: true
+RHEL_08_030030: true
+RHEL_08_030040: true
+RHEL_08_030050: true
+RHEL_08_030060: true
+RHEL_08_030061: true
+RHEL_08_030062: true
+RHEL_08_030070: true
+RHEL_08_030080: true
+RHEL_08_030090: true
+RHEL_08_030100: true
+RHEL_08_030110: true
+RHEL_08_030120: true
+RHEL_08_030121: true
+RHEL_08_030122: true
+RHEL_08_030130: true
+RHEL_08_030140: true
+RHEL_08_030150: true
+RHEL_08_030160: true
+RHEL_08_030170: true
+RHEL_08_030171: true
+RHEL_08_030172: true
+RHEL_08_030180: true
+RHEL_08_030190: true
+RHEL_08_030200: true
+RHEL_08_030210: true
+RHEL_08_030220: true
+RHEL_08_030230: true
+RHEL_08_030240: true
+RHEL_08_030250: true
+RHEL_08_030260: true
+RHEL_08_030270: true
+RHEL_08_030280: true
+RHEL_08_030290: true
+RHEL_08_030300: true
+RHEL_08_030301: true
+RHEL_08_030302: true
+RHEL_08_030310: true
+RHEL_08_030311: true
+RHEL_08_030312: true
+RHEL_08_030313: true
+RHEL_08_030314: true
+RHEL_08_030315: true
+RHEL_08_030316: true
+RHEL_08_030317: true
+RHEL_08_030320: true
+RHEL_08_030330: true
+RHEL_08_030340: true
+RHEL_08_030350: true
+RHEL_08_030360: true
+RHEL_08_030361: true
+RHEL_08_030362: true
+RHEL_08_030363: true
+RHEL_08_030364: true
+RHEL_08_030365: true
+RHEL_08_030370: true
+RHEL_08_030380: true
+RHEL_08_030390: true
+RHEL_08_030400: true
+RHEL_08_030410: true
+RHEL_08_030420: true
+RHEL_08_030430: true
+RHEL_08_030440: true
+RHEL_08_030450: true
+RHEL_08_030460: true
+RHEL_08_030470: true
+RHEL_08_030480: true
+RHEL_08_030490: true
+RHEL_08_030500: true
+RHEL_08_030510: true
+RHEL_08_030520: true
+RHEL_08_030530: true
+RHEL_08_030540: true
+RHEL_08_030550: true
+RHEL_08_030560: true
+RHEL_08_030570: true
+RHEL_08_030580: true
+RHEL_08_030590: true
+RHEL_08_030600: true
+RHEL_08_030610: true
+RHEL_08_030620: true
+RHEL_08_030630: true
+RHEL_08_030640: true
+RHEL_08_030650: true
+RHEL_08_030660: true
+RHEL_08_030670: true
+RHEL_08_030680: true
+RHEL_08_030690: true
+RHEL_08_030700: true
+RHEL_08_030710: true
+RHEL_08_030720: true
+RHEL_08_030730: true
+RHEL_08_030740: true
+RHEL_08_040001: true
+RHEL_08_040002: true
+RHEL_08_040020: true
+RHEL_08_040030: true
+RHEL_08_040070: true
+RHEL_08_040080: true
+RHEL_08_040090: true
+RHEL_08_040100: true
+RHEL_08_040110: true
+RHEL_08_040111: true
+RHEL_08_040120: true
+RHEL_08_040121: true
+RHEL_08_040122: true
+RHEL_08_040123: true
+RHEL_08_040124: true
+RHEL_08_040125: true
+RHEL_08_040126: true
+RHEL_08_040127: true
+RHEL_08_040128: true
+RHEL_08_040129: true
+RHEL_08_040130: true
+RHEL_08_040131: true
+RHEL_08_040132: true
+RHEL_08_040133: true
+RHEL_08_040134: true
+RHEL_08_040135: true
+RHEL_08_040140: true
+RHEL_08_040150: true
+RHEL_08_040160: true
+RHEL_08_040161: true
+RHEL_08_040162: true
+RHEL_08_040180: true
+RHEL_08_040210: true
+RHEL_08_040220: true
+RHEL_08_040230: true
+RHEL_08_040240: true
+RHEL_08_040250: true
+RHEL_08_040260: true
+RHEL_08_040261: true
+RHEL_08_040262: true
+RHEL_08_040270: true
+RHEL_08_040280: true
+RHEL_08_040281: true
+RHEL_08_040282: true
+RHEL_08_040283: true
+RHEL_08_040284: true
+RHEL_08_040285: true
+RHEL_08_040290: true
+RHEL_08_040320: true
+RHEL_08_040330: true
+RHEL_08_040340: true
+RHEL_08_040341: true
+RHEL_08_040350: true
+RHEL_08_040370: true
+RHEL_08_040380: true
+RHEL_08_040390: true
+
+# Cat 3 controls
+RHEL_08_010171: true
+RHEL_08_010292: true
+RHEL_08_010375: true
+RHEL_08_010376: true
+RHEL_08_010440: true
+RHEL_08_010471: true
+RHEL_08_010540: true
+RHEL_08_010541: true
+RHEL_08_010542: true
+RHEL_08_020024: true
+RHEL_08_020042: true
+RHEL_08_020340: true
+RHEL_08_030063: true
+RHEL_08_030601: true
+RHEL_08_030602: true
+RHEL_08_030603: true
+RHEL_08_030741: true
+RHEL_08_030742: true
+RHEL_08_040004: true
+RHEL_08_040021: true
+RHEL_08_040022: true
+RHEL_08_040023: true
+RHEL_08_040024: true
+RHEL_08_040025: true
+RHEL_08_040026: true
+RHEL_08_040300: true
+RHEL_08_040310: true
+
+# Variables
+
+rhel8stig_password_hash: grub.pbkdf2.sha512.changeme
+rhel8stig_boot_superuser: root
 
 
-rhel8stig_password_hash: "{{ rhel8stig_password_hash }}"
+# RHEL_08_101120 & Auditd controls
+MIN_UID: 1000
+MAX_UID: 65000
+
+# RHEL_08_010040-010050-010060
+rhel8stig_banner_file: /etc/issue
+rhel8stig_logon_banner: 
+- 'You are accessing a U.S. Government (USG) Information System (IS) that is provided for USG-authorized use only.'
+- 'By using this IS (which includes any device attached to this IS), you consent to the following conditions:'
+- '-The USG routinely intercepts and monitors communications on this IS for purposes including, but not limited to, penetration testing, COMSEC monitoring, network operations and defense, personnel misconduct (PM), law enforcement (LE), and counterintelligence (CI) investigations.'
+- '-At any time, the USG may inspect and seize data stored on this IS.'
+- '-Communications using, or data stored on, this IS are not private, are subject to routine monitoring, interception, and search, and may be disclosed or used for any USG-authorized purpose.'
+- '-This IS includes security measures (e.g., authentication and access controls) to protect USG interests--not for your personal benefit or privacy.'
+- '-Notwithstanding the above, using this IS does not constitute consent to PM, LE or CI investigative searching or monitoring of the content of privileged communications, or work product, related to personal representation or services by attorneys, psychotherapists, or clergy, and their assistants. Such communications and work product are private and confidential. See User Agreement for details.'
+
+# RHEL8_08_010680 to change if using hostfile only - seperate checks
+rhel8stig_uses_dns: true
+
+# RHEL_08_010360 if run via ansible it is placed in cron.d setting as manually set in cron.daily
+rhel8stig_aide_cron_file: /etc/cron.daily/aide
+
+# RHEL_08_030040 - Options are SYSLOG, SINGLE, and HALT to fit STIG standards
+rhel8stig_auditd_disk_error_action: HALT
+
+# RHEL_08_030050 - Options are SYSLOG or KEEP_LOGS to fit STIG standards
+rhel8stig_auditd_max_log_file_action: SYSLOG
+
+# RHEL_08_030060 - Options are SYSLOG, HALT, and SINGLE to fit STIG standards
+rhel8stig_auditd_disk_full_action: HALT
+
+# RHEL_08_030690 if using remote syslog server
+rhel8stig_remotelog_server: 1.1.1.1
+rhel8stig_remotelog_port: 1549
+
+# RHEL_08_040260-62
+rhel8stig_system_is_router: false

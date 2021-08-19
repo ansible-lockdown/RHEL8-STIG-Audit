@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_08_030063 }}
+file:
+   /etc/audit/auditd.conf:
+    title: RHEL-08-030063 | RHEL 8 must resolve audit information before writing to disk.
+    exists: true
+    contains:
+    - '/^log_format = ENRICHED/'
+    - '!/^log_format.*RAW/'
+    meta:
+      Cat: 3
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230395r627750_rule
+      STIG_ID: RHEL-08-030063
+      Vul_ID: V-230395
+{{ end }}

@@ -1,0 +1,19 @@
+{{ if .Vars.run_heavy_tests }}
+  {{ if .Vars.RHEL_08_010780 }}
+command:
+  file_dir_nouser:
+    title: RHEL-08-010780 | All RHEL 8 local files and directories must have a valid owner.
+    exec: find / -mount -xdev -nouser
+    timeout: {{ .Vars.timeout_ms }}
+    exit-status: 0
+    stdout:
+    - '!/^.*/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230326r627750_rule
+      STIG_ID: RHEL-08-010780
+      Vul_ID: V-230326
+  {{ end }}
+{{ end }}

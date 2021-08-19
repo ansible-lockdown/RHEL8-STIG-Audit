@@ -1,0 +1,19 @@
+{{ if .Vars.run_heavy_tests }}
+  {{ if .Vars.RHEL_08_010740 }}
+command:
+  home_dir_group:
+    title: RHEL-08-010740 | All RHEL 8 local interactive user home directories must be group-owned by the home directory owner’s primary group
+    exec: "for home_dir in `awk -F: '($3>=1000)&&($7 !~ /nologin/){print $6}' /etc/passwd`; do HOME_UID=`stat -c %u $home_dir`; HOME_GID=`stat -c %g $home_dir`; if [ ${HOME_UID} != ${HOME_GID} ]; then echo $home_dir group_ownership incorrect; fi; done"
+    timeout: {{ .Vars.timeout_ms }}
+    exit-status: 0
+    stdout:
+    - '!/^.*/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230322r627750_rule
+      STIG_ID: RHEL-08-010740
+      Vul_ID: V-230322
+  {{ end }}
+{{ end }}

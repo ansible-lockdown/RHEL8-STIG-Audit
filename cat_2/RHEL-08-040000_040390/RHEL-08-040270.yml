@@ -1,0 +1,13 @@
+{{ if .Vars.RHEL_08_040270 }}
+kernel-param:
+  net.ipv4.conf.default.send_redirects:
+    title: RHEL-08-040270 | RHEL 8 must not allow interfaces to perform Internet Control Message Protocol (ICMP) redirects by default. | IPv4
+    value: '0'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230543r627750_rule
+      STIG_ID: RHEL-08-040270
+      Vul_ID: V-230543
+{{ end }}

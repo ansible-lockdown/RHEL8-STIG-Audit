@@ -1,0 +1,27 @@
+{{ if .Vars.RHEL_08_010410 }}
+package: 
+  opensc:
+    title: RHEL-08-010410 | RHEL 8 must accept Personal Identity Verification (PIV) credentials.| pkg opensc
+    installed: true
+    meta:
+      Cat: 2
+      CCI: CCI-001953
+      Group_Title: SRG-OS-000376-GPOS-00161
+      Rule_ID: SV-230275r627750_rule
+      STIG_ID: RHEL-08-010410
+      Vul_ID: V-230275
+command:
+  piv_driver_check:
+    title: RHEL-08-010410 | RHEL 8 must accept Personal Identity Verification (PIV) credentials. | check piv driver loaded
+    exec: opensc-tool --list-drivers | grep -i piv
+    exit-status: 0
+    stdout:
+    - '/PIV-II\s*Personal Identity Verification Card/'
+    meta:
+      Cat: 2
+      CCI: CCI-001953
+      Group_Title: SRG-OS-000376-GPOS-00161
+      Rule_ID: SV-230275r627750_rule
+      STIG_ID: RHEL-08-010410
+      Vul_ID: V-230275
+{{ end }}

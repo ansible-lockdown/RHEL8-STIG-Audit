@@ -1,0 +1,19 @@
+{{ if .Vars.RHEL_08_010650 }}
+command:
+  nosuid_nfs:
+    title: RHEL-08-010650 | RHEL 8 must prevent files with the setuid and setgid bit set from being executed on file systems that are imported via Network File System (NFS).
+    exec: awk '$3 == "nfs"' /etc/fstab | grep -v nosuid
+    exit-status: 
+      or: 
+      - 0
+      - 1
+    stdout:
+    - '!/^.*/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230308r627750_rule
+      STIG_ID: RHEL-08-010650
+      Vul_ID: V-230308
+{{ end }}

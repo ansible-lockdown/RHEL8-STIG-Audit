@@ -1,0 +1,29 @@
+{{ if .Vars.RHEL_08_030171 }}
+file:
+  /etc/audit/audit.rules:
+    title: RHEL_08_030171 | RHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/sudoers. | config check
+    exists: true
+    contains:
+    - '-w /etc/sudoers -p wa -k identity'
+    meta:
+      Cat: 2
+      CCI: CCI-000169
+      Group_Title: SRG-OS-000062-GPOS-00031
+      Rule_ID: SV-230409r627750_rule
+      STIG_ID: RHEL-08-030171
+      Vul_ID: V-230409
+command:
+  auditd_sudoers_live:
+    title: RHEL_08_030171 | RHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/sudoers. | live check
+    exec: auditctl -l | grep -w sudoers
+    exit-status: 0
+    stdout:
+    - '-w /etc/sudoers -p wa -k identity'
+    meta:
+      Cat: 2
+      CCI: CCI-000169
+      Group_Title: SRG-OS-000062-GPOS-00031
+      Rule_ID: SV-230409r627750_rule
+      STIG_ID: RHEL-08-030171
+      Vul_ID: V-230409
+{{ end }}

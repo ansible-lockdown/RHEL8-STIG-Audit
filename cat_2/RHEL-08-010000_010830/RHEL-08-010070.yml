@@ -1,0 +1,27 @@
+{{ if .Vars.RHEL_08_010070 }}
+file: 
+  /etc/rsyslog.conf:
+    title: RHEL-08-010070 | All RHEL 8 remote access methods must be monitored.
+    exists: true
+    contains:
+    - '/^auth.\*;authpriv.\*;daemon.\*\s+/var/log/secure/'
+    meta:
+      Cat: 2
+      CCI: CCI-000067
+      Group_Title: SRG-OS-000032-GPOS-00013
+      Rule_ID: SV-230228r627750_rule
+      STIG_ID: RHEL-08-010070
+      Vul_ID: V-230228
+service:
+  rsyslog:
+    title: RHEL-08-010070 | All RHEL 8 remote access methods must be monitored.
+    running: true
+    enabled: true
+    meta:
+      Cat: 2
+      CCI: CCI-000067
+      Group_Title: SRG-OS-000032-GPOS-00013
+      Rule_ID: SV-230228r627750_rule
+      STIG_ID: RHEL-08-010070
+      Vul_ID: V-230228
+{{ end }}

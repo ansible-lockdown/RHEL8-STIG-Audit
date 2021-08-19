@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_08_020350}}
+file:
+  /etc/ssh/sshd_config:
+    title: RHEL-08-020350 | RHEL 8 must display the date and time of the last successful account logon upon an SSH logon.
+    exists: true
+    contains:
+    - '/^(?i)PrintLastLog yes/'
+    - '!/^(?i)PrintLastLog no/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230382r627750_rule
+      STIG_ID: RHEL-08-020350
+      Vul_ID: V-230382
+{{ end }}

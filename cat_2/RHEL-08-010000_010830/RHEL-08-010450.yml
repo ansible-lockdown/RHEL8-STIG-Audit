@@ -1,0 +1,30 @@
+{{ if .Vars.RHEL_08_010450 }}
+command:
+  sestatus_targeted:
+    title: RHEL-08-010450 | RHEL 8 must enable the SELinux targeted policy. | running sestatus
+    exec: sestatus | grep 'Loaded policy name'
+    exit-status: 0
+    stdout:
+    - '/^Loaded policy name.\s*targeted/'
+    meta:
+      Cat: 2
+      CCI: CCI-002696
+      Group_Title: SRG-OS-000445-GPOS-00199
+      Rule_ID: SV-230282r627750_rule
+      STIG_ID: RHEL-08-010450
+      Vul_ID: V-230282
+file:
+  /etc/selinux/config:
+    title: RHEL-08-010450 | RHEL 8 must enable the SELinux targeted policy. | sestatus boot check
+    exists: true
+    contains:
+    - '/^SELINUXTYPE(.=.|=)targeted$/'
+    - '!/^SELINUXTYPE(.=.|)(=|)(minimum|mls)/'
+    meta:
+      Cat: 2
+      CCI: CCI-002696
+      Group_Title: SRG-OS-000445-GPOS-00199
+      Rule_ID: SV-230282r627750_rule
+      STIG_ID: RHEL-08-010450
+      Vul_ID: V-230282
+{{ end }}

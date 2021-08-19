@@ -1,0 +1,28 @@
+{{ if .Vars.RHEL_08_010030 }}
+package:
+  cryptsetup:
+    title: RHEL-08-010030 | All RHEL 8 local disk partitions must implement cryptographic mechanisms to prevent unauthorized disclosure or modification of all information that requires at rest protection. | pkg installed
+    installed: true
+    meta:
+      Cat: 2
+      CCI: CCI-001199
+      Group_Title: SRG-OS-000185-GPOS-00079
+      Rule_ID: SV-230224r627750_rule
+      STIG_ID: RHEL-08-010030
+      Vul_ID: V-230224
+command:
+  check_encrypted_disks:
+    title: RHEL-08-010030 | All RHEL 8 local disk partitions must implement cryptographic mechanisms to prevent unauthorized disclosure or modification of all information that requires at rest protection | disks encrypted
+    exit-status: 0
+    exec: if [ `dmsetup status | awk '{print $NF}' | grep -cv crypt` -ge 1 ] ; then echo "Fail - unencrypted disks"; else echo "OK - System disks encrypted"; fi
+    stdout:
+    - "OK - System disks encrypted"
+    - "!/^Fail - unencrypted disks/"
+    meta:
+      Cat: 2
+      CCI: CCI-001199
+      Group_Title: SRG-OS-000185-GPOS-00079
+      Rule_ID: SV-230224r627750_rule
+      STIG_ID: RHEL-08-010030
+      Vul_ID: V-230224
+{{ end }}

@@ -1,0 +1,53 @@
+{{ if .Vars.RHEL_08_010360 }}
+package:
+  aide:
+    title: RHEL-08-010360 | The RHEL 8 file integrity tool must notify the system administrator when changes to the baseline configuration or anomalies in the operation of any security functions are discovered within an organizationally defined frequency. | package
+    installed: true
+    meta:
+      Cat: 2
+      CCI: CCI-001744
+      Group_Title: SRG-OS-000363-GPOS-00150
+      Rule_ID: SV-230263r627750_rule
+      STIG_ID: RHEL-08-010360
+      Vul_ID: V-230263 
+command: 
+  aide_cron_file:
+    title: RHEL-08-010360 | The RHEL 8 file integrity tool must notify the system administrator when changes to the baseline configuration or anomalies in the operation of any security functions are discovered within an organizationally defined frequency. | job script
+    exec: ls -al /etc/cron.* | grep aide | awk '{print $1" "$NF}'
+    exit-status: 0
+    stdout:
+    - '/^-rw(-|x)r-(-|x)r-(-|x). aide/'
+    meta:
+      Cat: 2
+      CCI: CCI-001744
+      Group_Title: SRG-OS-000363-GPOS-00150
+      Rule_ID: SV-230263r627750_rule
+      STIG_ID: RHEL-08-010360
+      Vul_ID: V-230263
+  aide_cron_job:
+    title: RHEL-08-010360 | The RHEL 8 file integrity tool must notify the system administrator when changes to the baseline configuration or anomalies in the operation of any security functions are discovered within an organizationally defined frequency. | cron job
+    exec: grep aide /etc/crontab /var/spool/cron/root /etc/cron.d/aide
+    exit-status: 2
+    stdout:
+    - '/^\/(etc|var).*\:(0|[0-5][0-9]) (0|[0-2][0-9]) \* \* \* root \/usr\/sbin\/aide/'
+    meta:
+      Cat: 2
+      CCI: CCI-001744
+      Group_Title: SRG-OS-000363-GPOS-00150
+      Rule_ID: SV-230263r627750_rule
+      STIG_ID: RHEL-08-010360
+      Vul_ID: V-230263
+file:
+  {{ .Vars.rhel8stig_aide_cron_file }}:
+    title: RHEL-08-010360 | The RHEL 8 file integrity tool must notify the system administrator when changes to the baseline configuration or anomalies in the operation of any security functions are discovered within an organizationally defined frequency. | notification
+    exists: true
+    contains:
+    - '/^.*\/usr\/sbin\/aide --check | .* - Daily aide integrity run" root@localhost/'
+    meta:
+      Cat: 2
+      CCI: CCI-001744
+      Group_Title: SRG-OS-000363-GPOS-00150
+      Rule_ID: SV-230263r627750_rule
+      STIG_ID: RHEL-08-010360
+      Vul_ID: V-230263
+{{ end }}

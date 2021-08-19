@@ -1,0 +1,18 @@
+{{ if .Vars.RHEL_08_010690 }}
+command:
+  init_paths_sys_dirs:
+    title: RHEL-08-010690 | Executable search paths within the initialization files of all local interactive RHEL 8 users must only contain paths that resolve to the system default or the users home directory.
+    exec: grep -ri path /home/*/.\b*
+    exit-status: 0
+    stdout:
+    - '/PATH="\$HOME/.local/bin:\$HOME/bin:\$PATH"$/'
+    - 'export PATH'
+    - '!/PATH="\/.*/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230317r627750_rule
+      STIG_ID: RHEL-08-010690
+      Vul_ID: V-230317
+{{ end }}

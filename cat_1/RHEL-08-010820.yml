@@ -2,18 +2,18 @@
 {{ if .Vars.RHEL_08_010820 }}
 file:
   /etc/gdm/custom.conf:
-    title: Unattended or automatic logon via the RHEL 8 graphical user interface must not be allowed.
+    title: RHEL-08-010820 | Unattended or automatic logon via the RHEL 8 graphical user interface must not be allowed.
     exists: true
     contains:
     - '/^AutomaticLoginEnable=false/'
     - '!/#AutomaticLoginEnable=false/'
     - '!/^AutomaticLoginEnable=[tT]rue/'
     meta:
-    - Cat: 1
-    - CCI: CCI-000366
-    - Group_Title: SRG-OS-000480-GPOS-00229
-    - Rule_ID: SV-230329r627750_rule
-    - STIG_ID: RHEL-08-010820
-    - Vul_ID: V-230329
+      Cat: 1
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00229
+      Rule_ID: SV-230329r627750_rule
+      STIG_ID: RHEL-08-010820
+      Vul_ID: V-230329
   {{ end }}
 {{ end }}

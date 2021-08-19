@@ -1,0 +1,25 @@
+{{ if .Vars.RHEL_08_040160 }}
+package:
+  openssh-server:
+    title: RHEL-08-040160 | All RHEL 8 networked systems must have and implement SSH to protect the confidentiality and integrity of transmitted and received information, as well as information during preparation for transmission. | installed
+    installed: true
+    meta:
+      Cat: 2
+      CCI: CCI-002418
+      Group_Title: SRG-OS-000423-GPOS-00187
+      Rule_ID: SV-230526r627750_rule
+      STIG_ID: RHEL-08-040160
+      Vul_ID: V-230526
+service:
+  sshd:
+    title: RHEL-08-040160 | All RHEL 8 networked systems must have and implement SSH to protect the confidentiality and integrity of transmitted and received information, as well as information during preparation for transmission. | service
+    running: true
+    enabled: true
+    meta:
+      Cat: 2
+      CCI: CCI-002418
+      Group_Title: SRG-OS-000423-GPOS-00187
+      Rule_ID: SV-230526r627750_rule
+      STIG_ID: RHEL-08-040160
+      Vul_ID: V-230526
+{{ end }}

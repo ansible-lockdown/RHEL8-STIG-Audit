@@ -1,0 +1,17 @@
+{{ if .Vars.RHEL_08_010294 }}
+file:
+  /etc/crypto-policies/back-ends/opensslcnf.config:
+    title: RHEL-08-010294 | The RHEL 8 operating system must implement DoD-approved TLS encryption in the OpenSSL package.
+    exists: true
+    contains:
+    - '/^MinProtocol = TLSv1.2/'
+    - '!/^#MinProtocol = TLSv1.2/'
+    - '!/^MinProtocol = (DTLS0.9|SSL3.0|TLS1.0|TLS1.1|DTLS1.0)/'
+    meta:
+      Cat: 2
+      CCI: CCI-001453
+      Group_Title: SRG-OS-000250-GPOS-00093
+      Rule_ID: SV-230255r627750_rule
+      STIG_ID: RHEL-08-010294
+      Vul_ID: V-230255
+{{ end }}

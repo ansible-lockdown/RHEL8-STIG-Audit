@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_08_030742 }}
+file:
+   /etc/chrony.conf:
+    title: RHEL-08-030742 | RHEL 8 must disable network management of the chrony daemon.
+    exists: true
+    contains:
+    - '/^cmdport 0/'
+    - '!/^cmdport [1-9]{1,9}'
+    meta:
+      Cat: 3
+      CCI: CCI-000381
+      Group_Title: SRG-OS-000095-GPOS-00049
+      Rule_ID: SV-230486r627750_rule
+      STIG_ID: RHEL-08-030742
+      Vul_ID: V-230486
+{{ end }}

@@ -1,0 +1,32 @@
+{{ if .Vars.rhel8stig_gui }}
+  {{ if .Vars.RHEL_08_020030 }}
+command:
+  gnome_lock_enabled:
+    title: RHEL-08-020030 | RHEL 8 must enable a user session lock until that user re-establishes access using established identification and authentication procedures for graphical user sessions
+    exec: gsettings get org.gnome.desktop.screensaver lock-enabled
+    exit-status: 0
+    stdout:
+    - '!/^true/'
+    meta:
+      Cat: 2
+      CCI: CCI-000056
+      Group_Title: SRG-OS-000028-GPOS-00009
+      Rule_ID: SV-230347r627750_rule
+      STIG_ID: RHEL-08-020030
+      Vul_ID: V-230347
+file:
+  /etc/dconf/db/local.d/00-screensaver:
+    title: RHEL-08-020030 | RHEL 8 must enable a user session lock until that user re-establishes access using established identification and authentication procedures for graphical user sessions
+    exists: true
+    contains:
+    - '[org/gnome/desktop/screensaver]'
+    - '/^lock-enabled=true/'
+    meta:
+      Cat: 2
+      CCI: CCI-000056
+      Group_Title: SRG-OS-000028-GPOS-00009
+      Rule_ID: SV-230347r627750_rule
+      STIG_ID: RHEL-08-020030
+      Vul_ID: V-230347
+  {{ end }}
+{{ end }}

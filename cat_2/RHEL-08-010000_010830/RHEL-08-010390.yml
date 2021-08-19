@@ -1,0 +1,25 @@
+{{ if .Vars.RHEL_08_010390 }}
+package:
+  {{ if .Vars.rhel8stig_gui }}
+  esc:
+    title: RHEL-08-010390 | RHEL 8 must have the packages required for multifactor authentication installed. | pkg esc
+    installed: true
+    meta:
+      Cat: 2
+      CCI: CCI-001948
+      Group_Title: SRG-OS-000375-GPOS-00160
+      Rule_ID: SV-230273r627750_rule
+      STIG_ID: RHEL-08-010390
+      Vul_ID: V-230273
+  {{ end }}
+  openssl-pkcs11:
+    title: RHEL-08-010390 | RHEL 8 must have the packages required for multifactor authentication installed. | pkg openssl-pkcs11
+    installed: true
+    meta:
+      Cat: 2
+      CCI: CCI-001948
+      Group_Title: SRG-OS-000375-GPOS-00160
+      Rule_ID: SV-230273r627750_rule
+      STIG_ID: RHEL-08-010390
+      Vul_ID: V-230273
+{{ end }}

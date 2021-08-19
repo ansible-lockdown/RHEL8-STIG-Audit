@@ -1,0 +1,29 @@
+{{ if .Vars.RHEL_08_010420 }}
+command:
+  nx_active_check:
+    title: RHEL-08-010420 | RHEL 8 must implement non-executable data to protect its memory from unauthorized code execution. | nx active check
+    exec: "dmesg | grep -c '.*NX.*protection: active'"
+    exit-status: 0
+    stdout:
+    - '1'
+    meta:
+      Cat: 2
+      CCI: CCI-001953
+      Group_Title: SRG-OS-000433-GPOS-00192
+      Rule_ID: SV-230276r627750_rule
+      STIG_ID: RHEL-08-010420
+      Vul_ID: V-230276
+  nx_cpu_check:
+    title: RHEL-08-010420 | RHEL 8 must implement non-executable data to protect its memory from unauthorized code execution. | cpu nx abilty
+    exec: grep -wc 'nx' /proc/cpuinfo
+    exit-status: 0
+    stdout:
+    - '1'
+    meta:
+      Cat: 2
+      CCI: CCI-001953
+      Group_Title: SRG-OS-000433-GPOS-00192
+      Rule_ID: SV-230276r627750_rule
+      STIG_ID: RHEL-08-010420
+      Vul_ID: V-230276
+{{ end }}

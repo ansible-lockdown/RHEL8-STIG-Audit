@@ -1,0 +1,29 @@
+{{ if .Vars.RHEL_08_030150 }}
+file:
+  /etc/audit/audit.rules:
+    title: RHEL_08_030150 | RHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/passwd. | config check
+    exists: true
+    contains:
+    - '-w /etc/passwd -p wa -k identity'
+    meta:
+      Cat: 2
+      CCI: CCI-000169
+      Group_Title: SRG-OS-000062-GPOS-00031
+      Rule_ID: SV-230406r627750_rule
+      STIG_ID: RHEL-08-030150
+      Vul_ID: V-230406
+command:
+  auditd_passwd_live:
+    title: RHEL_08_030150 | RHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/passwd. | live check
+    exec: auditctl -l | grep -w passwd
+    exit-status: 0
+    stdout:
+    - '-w /etc/passwd -p wa -k identity'
+    meta:
+      Cat: 2
+      CCI: CCI-000169
+      Group_Title: SRG-OS-000062-GPOS-00031
+      Rule_ID: SV-230406r627750_rule
+      STIG_ID: RHEL-08-030150
+      Vul_ID: V-230406
+{{ end }}

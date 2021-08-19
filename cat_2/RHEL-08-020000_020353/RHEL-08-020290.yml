@@ -1,0 +1,17 @@
+{{ if .Vars.RHEL_08_020290 }}
+file:
+  /etc/sssd/sssd.conf:
+    title: RHEL-08-020290 | RHEL 8 must prohibit the use of cached authentications after one day.
+    exists: true
+    skip: {{ .Vars.skip_sssd_check }}
+    contains:
+    - '/^cache_credentials = [Tt]rue.*offline_credentials_expiration = 1/'
+    - '/^cache_credentials = [Ff]alse$/'
+    meta:
+      Cat: 2
+      CCI: CCI-002007
+      Group_Title: SRG-OS-000383-GPOS-00166
+      Rule_ID: SV-230376r627750_rule
+      STIG_ID: RHEL-08-020290
+      Vul_ID: V-230376
+{{ end }}

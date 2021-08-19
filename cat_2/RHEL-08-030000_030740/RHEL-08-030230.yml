@@ -1,0 +1,35 @@
+{{ if .Vars.RHEL_08_030230 }}
+file:
+  /etc/audit/audit.rules:
+    title: RHEL_08_030230 | The RHEL 8 audit system must be configured to audit any usage of the fsetxattr system call. | config check
+    exists: true
+    contains:
+    - '-a always,exit -F arch=b32 -S fsetxattr -F auid>=1000 -F auid!=unset -k perm_mod'
+    - '-a always,exit -F arch=b64 -S fsetxattr -F auid>=1000 -F auid!=unset -k perm_mod'
+    - '-a always,exit -F arch=b32 -S fsetxattr -F auid=0 -k perm_mod'
+    - '-a always,exit -F arch=b64 -S fsetxattr -F auid=0 -k perm_mod'
+    meta:
+      Cat: 2
+      CCI: CCI-000169
+      Group_Title: SRG-OS-000062-GPOS-00031
+      Rule_ID: SV-230416r627750_rule
+      STIG_ID: RHEL-08-030230
+      Vul_ID: V-230416
+command:
+  auditd_fsetxattr_live:
+    title: RHEL_08_030230 | The RHEL 8 audit system must be configured to audit any usage of the fsetxattr system call. | live check
+    exec: auditctl -l | grep -w fsetxattr
+    exit-status: 0
+    stdout:
+    - '-a always,exit -F arch=b32 -S fsetxattr -F auid>=1000 -F auid!=-1 -F key=perm_mod'
+    - '-a always,exit -F arch=b64 -S fsetxattr -F auid>=1000 -F auid!=-1 -F key=perm_mod'
+    - '-a always,exit -F arch=b32 -S fsetxattr -F auid=0 -F key=perm_mod'
+    - '-a always,exit -F arch=b64 -S fsetxattr -F auid=0 -F key=perm_mod'
+    meta:
+      Cat: 2
+      CCI: CCI-000169
+      Group_Title: SRG-OS-000062-GPOS-00031
+      Rule_ID: SV-230416r627750_rule
+      STIG_ID: RHEL-08-030230
+      Vul_ID: V-230416
+{{ end }}

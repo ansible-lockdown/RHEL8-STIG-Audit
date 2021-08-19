@@ -1,0 +1,20 @@
+{{ if .Vars.RHEL_08_010384 }}
+command: 
+  sudo_defaults_timeout:
+    title: RHEL-08-010384 | RHEL 8 must require re-authentication when using the "sudo" command.
+    exec: grep -i 'timestamp_timeout' /etc/sudoers /etc/sudoers.d/*
+    exit-status: 
+      or:
+      - 0
+      - 1
+    stdout:
+    - '/^\/etc\/sudoers\:Defaults timestamp_timeout=([0-9]|10)/'
+    - '!/^\/etc\/sudoers\:Defaults timestamp_timeout.*-\d/'
+    meta:
+      Cat: 2
+      CCI: CCI-002038
+      Group_Title: SRG-OS-000373-GPOS-00156
+      Rule_ID: SV-237643r646899_rule
+      STIG_ID: RHEL-08-010384
+      Vul_ID: V-237643
+{{ end }}

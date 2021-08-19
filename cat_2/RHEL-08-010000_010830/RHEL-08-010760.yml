@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_08_010760 }}
+file:
+  /etc/login.defs:
+    title: RHEL-08-010760 | All RHEL 8 local interactive user accounts must be assigned a home directory upon creation.
+    exists: true
+    contains:
+    - '/^CREATE_HOME yes/'
+    - '!/^CREATE_HOME.*no/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230324r627750_rule
+      STIG_ID: RHEL-08-010760
+      Vul_ID: V-230324
+{{ end }}

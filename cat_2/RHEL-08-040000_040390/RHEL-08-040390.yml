@@ -1,0 +1,13 @@
+{{ if .Vars.RHEL_08_040390 }}
+package:
+   tuned:
+    title: RHEL-08-040390 | The tuned package must not be installed unless mission essential on RHEL 8.
+    installed: false
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230561r627750_rule
+      STIG_ID: RHEL-08-040390
+      Vul_ID: V-230561
+{{ end }}

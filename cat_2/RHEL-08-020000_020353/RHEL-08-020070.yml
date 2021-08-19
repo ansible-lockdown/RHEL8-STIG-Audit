@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_08_020070 }}
+file:
+  /etc/tmux.conf:
+    title: RHEL-08-020070 | RHEL 8 must automatically lock command line user sessions after 15 minutes of inactivity.
+    exists: true
+    contains:
+    - '/^set -g lock-after-time 900/'
+    - '!/^set -g lock-after-time ^([0-8][0-9]{0,9}|90[1-9]|9[1-9][0-9])/'
+    meta:
+      Cat: 2
+      CCI: CCI-000057
+      Group_Title: SRG-OS-000029-GPOS-00010
+      Rule_ID: SV-230353r627750_rule
+      STIG_ID: RHEL-08-020070
+      Vul_ID: V-230353
+{{ end }}

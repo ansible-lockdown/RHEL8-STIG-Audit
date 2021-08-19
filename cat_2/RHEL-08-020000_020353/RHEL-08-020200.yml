@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_08_020200 }}
+file:
+  /etc/login.defs:
+    title: RHEL-08-020200 | RHEL 8 user account passwords must have a 60-day maximum password lifetime restriction
+    exists: true
+    contains:
+    - '/^PASS_MAX_DAYS ([1-9]|[1-5]|[0-9]|60)$/'
+    - '!/^PASS_MIN_DAYS (6[1-9]|[7-9][0-9]|[1-9]{2,9})$/'
+    meta:
+      Cat: 2
+      CCI: CCI-000199
+      Group_Title: SRG-OS-000076-GPOS-00044
+      Rule_ID: SV-230366r646878_rule
+      STIG_ID: RHEL-08-020200
+      Vul_ID: V-230366
+{{ end }}

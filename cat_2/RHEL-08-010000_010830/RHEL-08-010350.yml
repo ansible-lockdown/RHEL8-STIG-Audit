@@ -1,0 +1,19 @@
+{{ if .Vars.run_heavy_tests }}
+  {{ if .Vars.RHEL_08_010350 }}
+command: 
+  lib_file_group_owned:
+    title: RHEL-08-010350 | RHEL 8 library files must be group-owned by root or a system account.
+    exec: find -L /lib /lib64 /usr/lib /usr/lib64 ! -group root -exec ls -l {} \;
+    timeout: {{ .Vars.timeout_ms }}
+    exit-status: 0
+    stdout:
+    - '!/^.*/'
+    meta:
+      Cat: 2
+      CCI: CCI-001499
+      Group_Title: SRG-OS-000259-GPOS-00100
+      Rule_ID: SV-230262r627750_rule
+      STIG_ID: RHEL-08-010350
+      Vul_ID: V-230262
+  {{ end }}
+{{ end }}

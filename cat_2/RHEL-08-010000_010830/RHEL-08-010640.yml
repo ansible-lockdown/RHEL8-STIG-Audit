@@ -1,0 +1,19 @@
+{{ if .Vars.RHEL_08_010640 }}
+command:
+  nodev_nfs:
+    title: RHEL-08-010640 | RHEL 8 must prevent special devices on file systems that are imported via Network File System (NFS).
+    exec: awk '$3 == "nfs"' /etc/fstab | grep -v nodev
+    exit-status: 
+      or:
+      - 0
+      - 1
+    stdout:
+    - '!/^.*/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230307r627750_rule
+      STIG_ID: RHEL-08-010640
+      Vul_ID: V-230307
+{{ end }}

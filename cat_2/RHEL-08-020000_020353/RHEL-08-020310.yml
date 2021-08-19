@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_08_020310}}
+file:
+  /etc/login.defs:
+    title: RHEL-08-020310 | RHEL 8 must require the change of at least four character classes when passwords are changed.
+    exists: true
+    contains:
+    - '/^FAIL_DELAY [4-5]$/'
+    - '!/^FAIL_DELAY [0-3]$/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000072-GPOS-00040
+      Rule_ID: SV-230378r627750_rule
+      STIG_ID: RHEL-08-020310
+      Vul_ID: V-230378
+{{ end }}

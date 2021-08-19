@@ -1,0 +1,21 @@
+
+{{ if .Vars.RHEL_08_010673 }}
+command:
+  hard_core_check:
+    title: RHEL-08-010673 | RHEL 8 must disable core dumps for all users.
+    exec: grep -r -s '^[^#].*core' /etc/security/limits.conf /etc/security/limits.d/*.conf
+    exit-status:
+      or:
+      - 0
+      - 2
+    stdout:
+    - '/^.*\:\*\s+hard\s+core\s+0/'
+    - '!/^.*\:\* hard core [1-9][0-9]{2,6}/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230313r627750_rule
+      STIG_ID: RHEL-08-010673
+      Vul_ID: V-230313
+{{ end }}

@@ -1,0 +1,13 @@
+{{ if .Vars.RHEL_08_040230 }}
+kernel-param:
+  net.ipv4.icmp_echo_ignore_broadcasts:
+    title: RHEL-08-040230 | RHEL 8 must not respond to Internet Control Message Protocol (ICMP) echoes sent to a broadcast address.
+    value: '1'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230537r627750_rule
+      STIG_ID: RHEL-08-040230
+      Vul_ID: V-230537
+{{ end }}

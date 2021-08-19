@@ -1,0 +1,15 @@
+{{ if .Vars.RHEL_08_030700 }}
+file:
+   /etc/audit/auditd.conf:
+    title: RHEL_08_030700 | RHEL 8 must take appropriate action when the internal event queue is full.
+    exists: true
+    contains:
+    - '/(?i)overflow_action = (syslog|single|halt)/'
+    meta:
+      Cat: 2
+      CCI: CCI-001851
+      Group_Title: SRG-OS-000342-GPOS-00133
+      Rule_ID: SV-230480r627750_rule
+      STIG_ID: RHEL-08-030700
+      Vul_ID: V-230480
+{{ end }}

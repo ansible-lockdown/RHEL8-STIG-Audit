@@ -1,0 +1,17 @@
+{{ if .Vars.RHEL_08_020260 }}
+file:
+  /etc/default/useradd:
+    title: RHEL-08-020260 | RHEL 8 account identifiers (individuals, groups, roles, and devices) must be disabled after 35 days of inactivity.
+    exists: true
+    contains:
+    - '/^INACTIVE=([1-9]|[1-2][0-9]|3[0-5])$/'
+    - '!/^INACTIVE.*-/'
+    - '!/^INACTIVE=(3[6-9]|[4-9][0-9]|[1-9][0-9]{2,9})/'
+    meta:
+      Cat: 2
+      CCI: CCI-000795
+      Group_Title: SRG-OS-000118-GPOS-00060
+      Rule_ID: SV-230373r627750_rule
+      STIG_ID: RHEL-08-020260
+      Vul_ID: V-230373
+{{ end }}

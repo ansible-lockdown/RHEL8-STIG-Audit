@@ -1,0 +1,29 @@
+{{ if .Vars.RHEL_08_030130 }}
+file:
+  /etc/audit/audit.rules:
+    title: RHEL_08_030130 | RHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/shadow. | conf check
+    exists: true
+    contains:
+    - '-w /etc/shadow -p wa -k identity'
+    meta:
+      Cat: 2
+      CCI: CCI-000169
+      Group_Title: SRG-OS-000062-GPOS-00031
+      Rule_ID: SV-230404r627750_rule
+      STIG_ID: RHEL-08-030130
+      Vul_ID: V-230404
+command:
+  auditd_shadow_live:
+    title: RHEL_08_030130 | RHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/shadow. | live check
+    exec: auditctl -l | grep -w shadow
+    exit-status: 0
+    stdout:
+    - '-w /etc/shadow -p wa -k identity'
+    meta:
+      Cat: 2
+      CCI: CCI-000169
+      Group_Title: SRG-OS-000062-GPOS-00031
+      Rule_ID: SV-230404r627750_rule
+      STIG_ID: RHEL-08-030130
+      Vul_ID: V-230404
+{{ end }}

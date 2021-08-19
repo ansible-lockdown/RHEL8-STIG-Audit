@@ -1,0 +1,29 @@
+{{ if .Vars.RHEL_08_030310 }}
+file:
+  /etc/audit/audit.rules:
+    title: RHEL_08_030310 | Successful/unsuccessful uses of the unix_update in RHEL 8 must generate an audit record. | config check
+    exists: true
+    contains:
+    - '-a always,exit -F path=/usr/sbin/unix_update -F perm=x -F auid>=1000 -F auid!=unset -k privileged-unix-update'
+    meta:
+      Cat: 2
+      CCI: CCI-000169
+      Group_Title: SRG-OS-000062-GPOS-00031
+      Rule_ID: SV-230426r627750_rule
+      STIG_ID: RHEL-08-030310
+      Vul_ID: V-230426
+command:
+  auditd_unix_update_live:
+    title: RHEL_08_030310 | Successful/unsuccessful uses of the unix_update in RHEL 8 must generate an audit record. | live check
+    exec: auditctl -l | grep -w unix_update
+    exit-status: 0
+    stdout:
+    - '-a always,exit -S all -F path=/usr/sbin/unix_update -F perm=x -F auid>=1000 -F auid!=-1 -F key=privileged-unix-update'
+    meta:
+      Cat: 2
+      CCI: CCI-000169
+      Group_Title: SRG-OS-000062-GPOS-00031
+      Rule_ID: SV-230426r627750_rule
+      STIG_ID: RHEL-08-030310
+      Vul_ID: V-230426
+{{ end }}

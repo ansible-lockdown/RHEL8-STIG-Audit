@@ -1,0 +1,28 @@
+{{ if .Vars.RHEL_08_040080 }}
+file:
+  /etc/modprobe.d/usb-storage.conf:
+    title: RHEL-08-040080 | RHEL 8 must be configured to disable USB mass storage.
+    exists: true
+    contains:
+    - 'install usb-storage /bin/true'
+    - '!/.*false/'
+    meta:
+      Cat: 2
+      CCI: CCI-000778
+      Group_Title: SRG-OS-000114-GPOS-00059
+      Rule_ID: SV-230503r627750_rule
+      STIG_ID: RHEL-08-040080
+      Vul_ID: V-230503
+  /etc/modprobe.d/blacklist.conf:
+    title: RHEL-08-040080 | RHEL 8 must be configured to disable USB mass storage.
+    exists: true
+    contains:
+    - 'blacklist usb-storage'
+    meta:
+      Cat: 2
+      CCI: CCI-000778
+      Group_Title: SRG-OS-000114-GPOS-00059
+      Rule_ID: SV-230503r627750_rule
+      STIG_ID: RHEL-08-040080
+      Vul_ID: V-230503
+{{ end }}

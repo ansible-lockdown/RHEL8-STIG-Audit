@@ -1,0 +1,18 @@
+{{ if .Vars.RHEL_08_040025 }}
+command:
+  cramfs_modprobe:
+    title: RHEL-08-040025 | RHEL 8 must disable mounting of cramfs.
+    exec: grep -ri cramfs /etc/modprobe.d/*
+    exit-status: 0
+    stdout:
+    - '/^[^#].*install cramfs \/bin\/true/'
+    - '!/^install cramfs \/bin\/false/'
+    - '/^[^#].*blacklist cramfs/'
+    meta:
+      Cat: 3
+      CCI: CCI-000381
+      Group_Title: SRG-OS-000095-GPOS-00049
+      Rule_ID: SV-230498r627750_rule
+      STIG_ID: RHEL-08-040025
+      Vul_ID: V-230498
+{{ end }}

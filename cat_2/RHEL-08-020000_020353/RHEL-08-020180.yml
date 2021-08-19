@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_08_020180 }}
+command:
+  min_pw_lifetime:
+    title: RHEL-08-020180 | RHEL 8 passwords must have a 24 hours/1 day minimum password lifetime restriction in /etc/shadow.
+    exec: "for user in `awk -F: '($3>=1000)&&($7 !~ /nologin/){print $1}' /etc/passwd`; do grep $user /etc/shadow | awk -F : '$4 < 1{print $1 \" \" $4}'; done"
+    exit-status: 0
+    stdout:
+    - '!/^.*/'
+    meta:
+      Cat: 2
+      CCI: CCI-000198
+      Group_Title: SRG-OS-000075-GPOS-00043
+      Rule_ID: SV-230364r627750_rule
+      STIG_ID: RHEL-08-020180
+      Vul_ID: V-230364
+{{ end }}

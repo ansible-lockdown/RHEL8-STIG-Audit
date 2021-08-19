@@ -1,0 +1,31 @@
+{{ if .Vars.RHEL_08_010170 }}
+command: 
+  getenforce:
+    title: RHEL-08-010170 | RHEL 8 must use a Linux Security Module configured to enforce limits on system services. | selinux running status
+    exec: getenforce
+    exit-status: 0
+    stdout:
+    - '/^Enforcing/'
+    meta:
+      Cat: 2
+      CCI: CCI-001084
+      Group_Title: SRG-OS-000134-GPOS-00068
+      Rule_ID: SV-230240r627750_rule
+      STIG_ID: RHEL-08-010170
+      Vul_ID: V-230240
+file: 
+  /etc/selinux/config:
+    title: RHEL-08-010170 | RHEL 8 must use a Linux Security Module configured to enforce limits on system services. | configured settings
+    exists: true
+    contains:
+    - '/^SELINUX=[eE]nforcing/'
+    - '!/^SELINUX=[dD]disabled/'
+    - '!/^SELINUX=[pP]ermissive/'
+    meta:
+      Cat: 2
+      CCI: CCI-001084
+      Group_Title: SRG-OS-000134-GPOS-00068
+      Rule_ID: SV-230240r627750_rule
+      STIG_ID: RHEL-08-010170
+      Vul_ID: V-230240
+{{ end }}

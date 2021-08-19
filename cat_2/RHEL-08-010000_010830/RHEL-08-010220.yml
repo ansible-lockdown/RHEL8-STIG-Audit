@@ -1,0 +1,14 @@
+{{ if .Vars.RHEL_08_010220 }}
+file: 
+  /var/log/messages:
+    title: RHEL-08-010220 | The RHEL 8 /var/log/messages file must be owned by root.
+    exists: true
+    owner: root
+    meta:
+      Cat: 2
+      CCI: CCI-001314
+      Group_Title: SRG-OS-000206-GPOS-00084
+      Rule_ID: SV-230246r627750_rule
+      STIG_ID: RHEL-08-010220
+      Vul_ID: V-230246
+{{ end }}

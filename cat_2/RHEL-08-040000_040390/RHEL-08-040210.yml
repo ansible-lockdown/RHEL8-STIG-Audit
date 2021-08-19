@@ -1,0 +1,23 @@
+{{ if .Vars.RHEL_08_040210 }}
+kernel-param:
+  net.ipv4.conf.default.accept_redirects:
+    title: RHEL-08-040210 | RHEL 8 must prevent Internet Control Message Protocol (ICMP) redirect messages from being accepted. | IPv4
+    value: '0'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230535r627750_rule
+      STIG_ID: RHEL-08-040210
+      Vul_ID: V-230535
+net.ipv6.conf.default.accept_redirects:
+    title: RHEL-08-040210 | RHEL 8 must prevent Internet Control Message Protocol (ICMP) redirect messages from being accepted. | IPv6
+    value: '0'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230535r627750_rule
+      STIG_ID: RHEL-08-040210
+      Vul_ID: V-230535
+{{ end }}

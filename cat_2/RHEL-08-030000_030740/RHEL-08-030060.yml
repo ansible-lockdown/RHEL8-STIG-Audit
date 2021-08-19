@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_08_030060 }}
+file:
+  /etc/audit/auditd.conf:
+    title: RHEL-08-030060 | The RHEL 8 audit system must take appropriate action when the audit storage volume is full.
+    exists: true
+    contains:
+    - '/^(?i)disk_full_action*=*{{ .Vars.rhel8stig_auditd_disk_full_action }}/'
+    - '!/^(?i)disk_full_action*=*(ignore|suspend)/'
+    meta:
+      Cat: 2
+      CCI: CCI-000140
+      Group_Title: SRG-OS-000047-GPOS-00023
+      Rule_ID: SV-230392r627750_rule
+      STIG_ID: RHEL-08-030060
+      Vul_ID: V-230392
+{{ end }}

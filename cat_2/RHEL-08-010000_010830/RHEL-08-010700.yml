@@ -1,0 +1,19 @@
+{{ if .Vars.run_heavy_tests }}
+  {{ if .Vars.RHEL_08_010700 }}
+command:
+  ww_dirs_not_root:
+    title: RHEL-08-010700 | All RHEL 8 world-writable directories must be owned by root, sys, bin, or an application group.
+    exec: find / -mount -xdev -type d -perm -0002 -uid +999 -print
+    timeout: {{ .Vars.timeout_ms }}
+    exit-status: 0
+    stdout:
+    - '!/^.*/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230318r627750_rule
+      STIG_ID: RHEL-08-010700
+      Vul_ID: V-230318
+  {{ end }}
+{{ end }}

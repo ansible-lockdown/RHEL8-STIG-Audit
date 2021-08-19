@@ -1,0 +1,17 @@
+{{ if .Vars.rhel8stig_gui }}
+  {{ if .Vars.RHEL_08_020060 }}
+file:
+  /etc/dconf/db/local.d/00-screensaver:
+    title: RHEL-08-020060 | RHEL 8 must be able to initiate directly a session lock for all connection types using smartcard when the smartcard is removed.
+    exists: true
+    contains:
+    - '!/^idle-delay=uint32 900/'
+    meta:
+      Cat: 2
+      CCI: CCI-000057
+      Group_Title: SRG-OS-000029-GPOS-00009
+      Rule_ID: SV-230352r646876_rule
+      STIG_ID: RHEL-08-020060
+      Vul_ID: V-230352
+  {{ end }}
+{{ end }}

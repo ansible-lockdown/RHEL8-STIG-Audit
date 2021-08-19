@@ -1,0 +1,19 @@
+{{ if .Vars.run_heavy_tests }}
+  {{ if .Vars.RHEL_08_010330 }}
+command: 
+  lib_files_755:
+    title: RHEL-08-010330 | RHEL 8 library files must have mode 0755 or less permissive.
+    exec: find -L /lib /lib64 /usr/lib /usr/lib64 -perm /0022 -type f -exec ls -l {} \;
+    timeout: {{ .Vars.timeout_ms }}
+    exit-status: 0
+    stdout:
+    - '!/^.*/'
+    meta:
+      Cat: 2
+      CCI: CCI-001499
+      Group_Title: SRG-OS-000259-GPOS-00100
+      Rule_ID: SV-230260r627750_rule
+      STIG_ID: RHEL-08-010330
+      Vul_ID: V-230260
+  {{ end }}
+{{ end }}

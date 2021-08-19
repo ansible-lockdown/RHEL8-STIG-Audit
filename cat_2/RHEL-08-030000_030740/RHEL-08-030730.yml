@@ -1,0 +1,17 @@
+{{ if .Vars.RHEL_08_030730 }}
+file:
+   /etc/audit/auditd.conf:
+    title: RHEL_08_030730 | RHEL 8 must notify the System Administrator (SA) and Information System Security Officer (ISSO) (at a minimum) when allocated audit record storage volume reaches 75 percent of the repository maximum audit record storage capacity.
+    exists: true
+    contains:
+    - '/^space_left = 25%/'
+    - '/^space_left_action = email/'
+    - '!/^space_left = ([0-9]|1[0-9]|2[0-4])%'
+    meta:
+      Cat: 2
+      CCI: CCI-001855
+      Group_Title: SRG-OS-000343-GPOS-00134
+      Rule_ID: SV-230483r627750_rule
+      STIG_ID: RHEL-08-030730
+      Vul_ID: V-230483
+{{ end }}

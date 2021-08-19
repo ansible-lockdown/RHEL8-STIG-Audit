@@ -2,18 +2,22 @@
   {{ if .Vars.RHEL_08_010470 }}
 command:
   shosts_check:
-    title: The ".shosts" files are used to configure host-based authentication for individual users or the system via SSH. Host-based authentication is not sufficient for preventing unauthorized access to the system, as it does not require interactive identification and authentication of a connection request, or for the use of two-factor authentication.
-    exec: find / -name '*.shosts'
-    exit-status: 0
+    title: RHEL-08-010470 | The ".shosts" files are used to configure host-based authentication for individual users or the system via SSH. Host-based authentication is not sufficient for preventing unauthorized access to the system, as it does not require interactive identification and authentication of a connection request, or for the use of two-factor authentication.
+    exec: find / -name "*.shosts"
     timeout: {{ .Vars.timeout_ms }}
-  stdout:
-  - '!/.*/'
-  meta:
-    - Cat: 1
-    - CCI: CCI-000366
-    - Group_Title: SRG-OS-000480-GPOS-00227
-    - Rule_ID: SV-230284r627750_rule
-    - STIG_ID: RHEL-08-010470
-    - Vul_ID: V-230284
+    exit-status: 
+        or:
+        - 0
+        - 1
+    timeout: {{ .Vars.timeout_ms }}
+    stdout:
+    - '!/.*/'
+    meta:
+      Cat: 1
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230284r627750_rule
+      STIG_ID: RHEL-08-010470
+      Vul_ID: V-230284
   {{ end }}
 {{ end }}

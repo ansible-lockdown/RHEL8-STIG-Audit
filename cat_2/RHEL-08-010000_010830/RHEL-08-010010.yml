@@ -1,0 +1,19 @@
+{{ if .Vars.run_heavy_tests }}
+  {{ if .Vars.RHEL_08_010010 }}
+command:
+  dnf_check_updates:
+    title: RHEL-08-010010 | RHEL 8 vendor packaged system security patches and updates must be installed and up to date.
+    exit-status: 0
+    timeout: {{ .Vars.timeout_ms }}
+    exec: dnf check-update
+    stdout: 
+    - "!/^[0-9].* packages available/"
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230222r627750_rule
+      STIG_ID: RHEL-08-010010
+      Vul_ID: V-230222
+  {{ end }}
+{{ end }}

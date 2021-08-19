@@ -1,0 +1,55 @@
+{{ if .Vars.RHEL_08_010290 }}
+command: 
+  show_crypto_policy1:
+    title: RHEL-08-010290 | The RHEL 8 SSH daemon must be configured to use only Message Authentication Codes (MACs) employing FIPS 140-2 validated cryptographic hash algorithms. | Live check
+    exec: update-crypto-policies --show
+    exit-status: 0
+    stdout:
+    - '/^FIPS/'
+    meta:
+      Cat: 2
+      CCI: CCI-001453
+      Group_Title: SRG-OS-000250-GPOS-00093
+      Rule_ID: SV-230251r646866_rule
+      STIG_ID: RHEL-08-010290
+      Vul_ID: V-230251
+# Next check is expected to be hashed out as per stig docs
+file:
+  /etc/sysconfig/sshd:
+    title: RHEL-08-010290 | The RHEL 8 SSH daemon must be configured to use only Message Authentication Codes (MACs) employing FIPS 140-2 validated cryptographic hash algorithms. | ssh_config crypto check
+    exists: true
+    contains:
+    - '/^[^#].*rypto_policy.*/'
+    - '/^# crypto_policy=.*/'
+    meta:
+      Cat: 2
+      CCI: CCI-001453
+      Group_Title: SRG-OS-000250-GPOS-00093
+      Rule_ID: SV-230251r646866_rule
+      STIG_ID: RHEL-08-010290
+      Vul_ID: V-230251
+  /etc/crypto-policies/back-ends/openssh.config:
+    title: RHEL-08-010290 | The RHEL 8 SSH daemon must be configured to use only Message Authentication Codes (MACs) employing FIPS 140-2 validated cryptographic hash algorithms. | crypto-policies - ssh_config
+    exists: true
+    contains:
+    - '/^MACs hmac-sha2-512,hmac-sha2-256/'
+    meta:
+      Cat: 2
+      CCI: CCI-001453
+      Group_Title: SRG-OS-000250-GPOS-00093
+      Rule_ID: SV-230251r646866_rule
+      STIG_ID: RHEL-08-010290
+      Vul_ID: V-230251
+  /etc/crypto-policies/back-ends/opensshserver.config:
+    title: RHEL-08-010290 | The RHEL 8 SSH daemon must be configured to use only Message Authentication Codes (MACs) employing FIPS 140-2 validated cryptographic hash algorithms. | crypto-policies - ssh_server
+    exists: true
+    contains:
+    - '/^CRYPTO_POLICY=.-oCiphers=aes256-ctr,aes192-ctr,aes128-ctr -oMACS=hmac-sha2-512,hmac-sha2-256../'
+    meta:
+      Cat: 2
+      CCI: CCI-001453
+      Group_Title: SRG-OS-000250-GPOS-00093
+      Rule_ID: SV-230251r646866_rule
+      STIG_ID: RHEL-08-010290
+      Vul_ID: V-230251
+{{ end }}

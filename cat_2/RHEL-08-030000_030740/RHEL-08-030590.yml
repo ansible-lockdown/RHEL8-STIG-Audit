@@ -1,0 +1,29 @@
+{{ if .Vars.RHEL_08_030590 }}
+file:
+  /etc/audit/audit.rules:
+    title: RHEL_08_030590 | Successful/unsuccessful modifications to the faillock log file in RHEL 8 must generate an audit record. | config check
+    exists: true
+    contains:
+    - '-w /var/log/faillock -p wa -k logins'
+    meta:
+      Cat: 2
+      CCI: CCI-000169
+      Group_Title: SRG-OS-000062-GPOS-00031
+      Rule_ID: SV-230466r627750_rule
+      STIG_ID: RHEL-08-030590
+      Vul_ID: V-230466
+command:
+  auditd_faillock_logins:
+    title: RHEL_08_030590 | Successful/unsuccessful modifications to the faillock log file in RHEL 8 must generate an audit record. | live check
+    exec: auditctl -l | grep -w faillock
+    exit-status: 0
+    stdout:
+    - '-w /var/log/faillock -p wa -k logins'
+    meta:
+      Cat: 2
+      CCI: CCI-000169
+      Group_Title: SRG-OS-000062-GPOS-00031
+      Rule_ID: SV-230466r627750_rule
+      STIG_ID: RHEL-08-030590
+      Vul_ID: V-230466
+{{ end }}

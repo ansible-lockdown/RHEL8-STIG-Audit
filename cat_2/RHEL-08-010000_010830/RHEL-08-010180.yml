@@ -1,0 +1,19 @@
+{{ if .Vars.run_heavy_tests }}
+  {{ if .Vars.RHEL_08_010180 }}
+command: 
+  public_dirs_not_root:
+    title: RHEL-08-010180 | All RHEL 8 public directories must be owned by root or a system account to prevent unauthorized and unintended information transferred via shared system resources.
+    exec: find / -type d -perm -0002 -exec ls -lLd {} \; | awk -F, '$3 != root'
+    timeout: {{ .Vars.timeout_ms }}
+    exit-status: 0
+    stdout:
+    - '!/.*/'
+    meta:
+      Cat: 2
+      CCI: CCI-001090
+      Group_Title: SRG-OS-000138-GPOS-00069
+      Rule_ID: SV-230242r627750_rule
+      STIG_ID: RHEL-08-010180
+      Vul_ID: V-230242
+  {{ end }}
+{{ end }}

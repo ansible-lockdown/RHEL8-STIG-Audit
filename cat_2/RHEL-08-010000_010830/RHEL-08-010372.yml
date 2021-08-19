@@ -1,0 +1,29 @@
+{{ if .Vars.RHEL_08_010372 }}
+command: 
+  kernel_disable_new_kern:
+    title: RHEL-08-010372 | RHEL 8 must prevent the loading of a new kernel for later execution. | file check
+    exec: grep -r kernel.kexec_load_disabled /etc/sysctl.conf /etc/sysctl.d/*.conf
+    exit-status: 0
+    stdout:
+    - '/^.*kernel.kexec_load_disabled.*1/'
+    - '!/^#.*kernel.kexec_load_disabled.*[0-1]/'
+    - '!/^.*kernel.kexec_load_disabled.*0/'
+    meta:
+      Cat: 2
+      CCI: CCI-001749
+      Group_Title: SRG-OS-000366-GPOS-00153
+      Rule_ID: SV-230266r627750_rule
+      STIG_ID: RHEL-08-010372
+      Vul_ID: V-230266
+kernel-param:
+  kernel.kexec_load_disabled:
+    title: RHEL-08-010372 | RHEL 8 must prevent the loading of a new kernel for later execution. | live systcl check
+    value: '1'
+    meta:
+      Cat: 2
+      CCI: CCI-001749
+      Group_Title: SRG-OS-000366-GPOS-00153
+      Rule_ID: SV-230266r627750_rule
+      STIG_ID: RHEL-08-010372
+      Vul_ID: V-230266
+{{ end }}

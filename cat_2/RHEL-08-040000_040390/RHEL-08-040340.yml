@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_08_040340 }}
+file:
+   /etc/ssh/sshd_config:
+    title: RHEL-08-040340 | RHEL 8 remote X connections for interactive users must be disabled unless to fulfill documented and validated mission requirements.
+    exists: true
+    contains:
+    - '/^(?i)X11Forwarding no/'
+    - '!/^(?i)X11Forwarding yes/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230555r627750_rule
+      STIG_ID: RHEL-08-040340
+      Vul_ID: V-230555
+{{ end }}

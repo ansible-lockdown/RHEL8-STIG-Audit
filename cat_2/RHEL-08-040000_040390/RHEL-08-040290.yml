@@ -1,0 +1,20 @@
+{{ if .Vars.RHEL_08_040290 }}
+command:
+  postfix_restricted:
+    title: RHEL-08-040290 | RHEL 8 must be configured to prevent unrestricted mail relaying
+    exec: postconf -n smtpd_client_restrictions
+    skip: {{ .Vars.skip_postfix_check }}
+    exit-status:
+      or:
+      - 0
+      - 127
+    stdout:
+    - '/^smtpd_client_restrictions = permit_mynetworks, reject$/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230550r627750_rule
+      STIG_ID: RHEL-08-040290
+      Vul_ID: V-230550
+{{ end }}

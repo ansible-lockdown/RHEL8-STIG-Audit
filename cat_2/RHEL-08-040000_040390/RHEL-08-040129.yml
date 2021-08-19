@@ -1,0 +1,15 @@
+{{ if .Vars.RHEL_08_040129 }}
+mount:
+  /tmp:
+    title: RHEL-08-040129 | RHEL 8 must mount /var/log/audit with the nodev option
+    exists: true
+    opts:
+    - nodev
+    meta:
+      Cat: 2
+      CCI: CCI-001764
+      Group_Title: SRG-OS-000368-GPOS-00154
+      Rule_ID: SV-230517r627750_rule
+      STIG_ID: RHEL-08-040129
+      Vul_ID: V-230517
+{{ end }}

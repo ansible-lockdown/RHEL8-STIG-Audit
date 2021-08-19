@@ -1,0 +1,15 @@
+{{ if .Vars.RHEL_08_040001 }}
+command:
+  bug_tools_absent:
+    title: RHEL-08-040001 | RHEL 8 must not have any automated bug reporting tools installed.
+    exec: yum list installed abrt*
+    timeout: {{ .Vars.timeout_ms }}
+    exit-status: 1
+    meta:
+      Cat: 2
+      CCI: CCI-000381
+      Group_Title: SRG-OS-000095-GPOS-00049
+      Rule_ID: SV-230488r627750_rule
+      STIG_ID: RHEL-08-040001
+      Vul_ID: V-230488
+{{ end }}

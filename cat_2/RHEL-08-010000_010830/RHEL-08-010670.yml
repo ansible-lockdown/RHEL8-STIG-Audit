@@ -1,0 +1,14 @@
+{{ if .Vars.RHEL_08_010670 }}
+service:
+  kdump.service:
+    title: RHEL-08-010670 | RHEL 8 must disable kernel dumps unless needed.
+    running: false
+    enabled: false
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230310r627750_rule
+      STIG_ID: RHEL-08-010670
+      Vul_ID: V-230310
+{{ end }}

@@ -1,0 +1,29 @@
+{{ if .Vars.RHEL_08_020353 }}
+file:
+  /etc/bashrc:
+    title: RHEL-08-020353 | RHEL 8 must define default permissions for logon and non-logon shells. | bashrc
+    exists: true
+    contains:
+    - '/^(?i)\s+umask 077/'
+    - '!/^(?i)\s+umask [1-7][0-7][0-7]/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230385r627750_rule
+      STIG_ID: RHEL-08-020353
+      Vul_ID: V-230385
+  /etc/csh.cshrc:
+    title: RHEL-08-020353 | RHEL 8 must define default permissions for logon and non-logon shells. | csh.cshrc
+    exists: true
+    contains:
+    - '/^(?i)\s+umask 077/'
+    - '!/^(?i)\s+umask [1-7][0-7][0-7]/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230385r627750_rule
+      STIG_ID: RHEL-08-020353
+      Vul_ID: V-230385
+{{ end }}

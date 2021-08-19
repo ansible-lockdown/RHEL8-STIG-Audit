@@ -1,0 +1,19 @@
+{{ if .Vars.RHEL_08_030720 }}
+command:
+  netstream_driver_auth:
+    title: RHEL_08_030720 | RHEL 8 must authenticate the remote logging server for off-loading audit logs
+    exec: grep -i '$ActionSendStreamDriverAuthMode' /etc/rsyslog.conf /etc/rsyslog.d/*.conf
+    exit-status: 
+      or:
+      - 0
+      - 2
+    stdout:
+    - '/^.*\:\$ActionSendStreamDriverAuthMode x509/name/'
+    meta:
+      Cat: 2
+      CCI: CCI-001851
+      Group_Title: SRG-OS-000342-GPOS-00133
+      Rule_ID: SV-230482r627750_rule
+      STIG_ID: RHEL-08-030720
+      Vul_ID: V-230482
+{{ end }}

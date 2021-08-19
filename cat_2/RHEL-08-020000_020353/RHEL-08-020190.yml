@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_08_020190 }}
+file:
+  /etc/login.defs:
+    title: RHEL-08-020190 | RHEL 8 passwords for new users or password changes must have a 24 hours/1 day minimum password lifetime restriction in /etc/logins.def.
+    exists: true
+    contains:
+    - '/^PASS_MIN_DAYS 1$/'
+    - '!/^PASS_MIN_DAYS (0[2-9]|[1-9][0-9])$/'
+    meta:
+      Cat: 2
+      CCI: CCI-000198
+      Group_Title: SRG-OS-000075-GPOS-00043
+      Rule_ID: SV-230365r627750_rule
+      STIG_ID: RHEL-08-020190
+      Vul_ID: V-230365
+{{ end }}

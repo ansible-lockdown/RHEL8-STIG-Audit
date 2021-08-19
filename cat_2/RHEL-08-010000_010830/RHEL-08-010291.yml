@@ -1,0 +1,55 @@
+{{ if .Vars.RHEL_08_010291 }}
+command: 
+  show_crypto_policy2:
+    title: RHEL-08-010291 | The RHEL 8 operating system must implement DoD-approved encryption to protect the confidentiality of SSH connections. | Live check
+    exec: update-crypto-policies --show
+    exit-status: 0
+    stdout:
+    - 'FIPS'
+    meta:
+      Cat: 2
+      CCI: CCI-001453
+      Group_Title: SRG-OS-000250-GPOS-00093
+      Rule_ID: SV-230252r646869_rule
+      STIG_ID: RHEL-08-010290
+      Vul_ID: V-230252
+# Next check is expected to be hashed out as per stig docs
+file:
+  /etc/sysconfig/sshd:
+    title: RHEL-08-010291 | The RHEL 8 operating system must implement DoD-approved encryption to protect the confidentiality of SSH connections. | ssh_config crypto check
+    exists: true
+    contains:
+    - '/^(?i)# crypto_policy=/'
+    - '!/^.*rypto_policy.*/'
+    meta:
+      Cat: 2
+      CCI: CCI-001453
+      Group_Title: SRG-OS-000250-GPOS-00093
+      Rule_ID: SV-230252r646869_rule
+      STIG_ID: RHEL-08-010291
+      Vul_ID: V-230252
+  /etc/crypto-policies/back-ends/openssh.config:
+    title: RHEL-08-010291 | The RHEL 8 operating system must implement DoD-approved encryption to protect the confidentiality of SSH connections. | crypto-policies - ssh_config
+    exists: true
+    contains:
+    - '/^Ciphers aes256-ctr,aes192-ctr,aes128-ctr/'
+    meta:
+      Cat: 2
+      CCI: CCI-001453
+      Group_Title: SRG-OS-000250-GPOS-00093
+      Rule_ID: SV-230252r646869_rule
+      STIG_ID: RHEL-08-010291
+      Vul_ID: V-230252
+  /etc/crypto-policies/back-ends/opensshserver.config:
+    title: RHEL-08-010291 | The RHEL 8 operating system must implement DoD-approved encryption to protect the confidentiality of SSH connections. | crypto-policies - ssh_server
+    exists: true
+    contains:
+    - '/^CRYPTO_POLICY=.-oCiphers=aes256-ctr,aes192-ctr,aes128-ctr./'
+    meta:
+      Cat: 2
+      CCI: CCI-001453
+      Group_Title: SRG-OS-000250-GPOS-00093
+      Rule_ID: SV-230252r646869_rule
+      STIG_ID: RHEL-08-010291
+      Vul_ID: V-230252
+{{ end }}

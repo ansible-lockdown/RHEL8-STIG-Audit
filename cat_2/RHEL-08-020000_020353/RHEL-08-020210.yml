@@ -1,0 +1,17 @@
+{{ if .Vars.RHEL_08_020210 }}
+command:
+  max_60day_max:
+    title: RHEL-08-020210 | RHEL 8 user account passwords must be configured so that existing passwords are restricted to a 60-day maximum lifetime.
+    exec: "for user in `awk -F: '($3>=1000)&&($7 !~ /nologin/){print $1}' /etc/passwd`; do grep $user /etc/shadow | awk -F : '{print $5}'; done "
+    exit-status: 0
+    stdout:
+    - '/^.*([1-9]|[1-5][0-9]|60)/'
+    - '!/^.*(^0|6[1-9]|[7-9][0-9]|[1-9]{2,9})/'
+    meta:
+      Cat: 2
+      CCI: CCI-000199
+      Group_Title: SRG-OS-000076-GPOS-00044
+      Rule_ID: SV-230367r627750_rule
+      STIG_ID: RHEL-08-020210
+      Vul_ID: V-230367
+{{ end }}

@@ -1,0 +1,18 @@
+{{ if .Vars.RHEL_08_010200 }}
+file: 
+  /etc/ssh/sshd_config:
+    title: RHEL-08-010200 | RHEL 8 must be configured so that all network connections associated with SSH traffic are terminated at the end of the session or after 10 minutes of inactivity, except to fulfill documented and validated mission requirements.
+    exists: true
+    contains:
+    - '/^ClientAliveInterval ([1-9]|[1-5][0-9]{1,2}|600)$/'
+    - '!/^ClientAliveInterval (60[1-9]|6[1-9][0-9]|[7-9][0-9][0-9]{1,3}|[1-9][0-9]{3,})$/'
+    - '/^ClientAliveCountMax 0/'
+    - '!/^ClientAliveCountMax [1-9]/'
+    meta:
+      Cat: 2
+      CCI: CCI-001133
+      Group_Title: SRG-OS-000163-GPOS-00072
+      Rule_ID: SV-230244r627750_rule
+      STIG_ID: RHEL-08-010200
+      Vul_ID: V-230244
+{{ end }}

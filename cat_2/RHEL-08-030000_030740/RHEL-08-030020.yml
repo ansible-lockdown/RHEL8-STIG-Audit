@@ -1,0 +1,15 @@
+{{ if .Vars.RHEL_08_030020 }}
+file:
+  /etc/audit/auditd.conf:
+    title: RHEL-08-030020 | The RHEL 8 System Administrator (SA) and Information System Security Officer (ISSO) (at a minimum) must be alerted of an audit processing failure event.
+    exists: true
+    contains:
+    - '/^(?i)action_mail_acct*=*root/'
+    meta:
+      Cat: 2
+      CCI: CCI-000139
+      Group_Title: SRG-OS-000046-GPOS-00022
+      Rule_ID: SV-230388r627750_rule
+      STIG_ID: RHEL-08-030020
+      Vul_ID: V-230388
+{{ end }}

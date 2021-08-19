@@ -1,0 +1,32 @@
+{{ if .Vars.rhel8stig_gui }}
+{{ if .Vars.RHEL_08_010050 }}
+command:
+  dconf_banner_check:
+    title:
+    exec: grep banner-message-enable /etc/dconf/db/local.d/*
+    exit-status: 0
+    stdout:
+    - '/^banner-message-enable=true/'
+    - '/banner-message-enable.*false/'
+    meta:
+      Cat: 2
+      CCI: CCI-000048
+      Group_Title: SRG-OS-000023-GPOS-00006
+      Rule_ID: SV-230227r627750_rule
+      STIG_ID: RHEL-08-010050
+      Vul_ID: V-230227
+file:
+  {{ .Vars.rhel8stig_banner_file }}:
+    title: RHEL-08-010050 | RHEL 8 must display the Standard Mandatory DoD Notice and Consent Banner before granting local or remote access to the system via a graphical user logon.
+    exists: true
+    contains:
+    - '{{ .Vars.rhel8stig_logon_banner }}'
+    meta:
+      Cat: 2
+      CCI: CCI-000048
+      Group_Title: SRG-OS-000023-GPOS-00006
+      Rule_ID: SV-230227r627750_rule
+      STIG_ID: RHEL-08-010050
+      Vul_ID: V-230227
+  {{ end }}
+{{ end }}

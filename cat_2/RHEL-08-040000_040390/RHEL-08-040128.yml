@@ -1,0 +1,15 @@
+{{ if .Vars.RHEL_08_040128 }}
+mount:
+  /tmp:
+    title: RHEL-08-040128 | RHEL 8 must mount /var/log with the noexec option
+    exists: true
+    opts:
+    - noexec
+    meta:
+      Cat: 2
+      CCI: CCI-001764
+      Group_Title: SRG-OS-000368-GPOS-00154
+      Rule_ID: SV-230516r627750_rule
+      STIG_ID: RHEL-08-040128
+      Vul_ID: V-230516
+{{ end }}

@@ -1,0 +1,14 @@
+{{ if .Vars.RHEL_08_030090 }}
+file:
+  /var/log/audit/audit.log:
+    title: RHEL-08-030090 | RHEL 8 audit logs must be group-owned by root to prevent unauthorized read access.
+    exists: true
+    group: root
+    meta:
+      Cat: 2
+      CCI: CCI-000162
+      Group_Title: SRG-OS-000057-GPOS-00027
+      Rule_ID: SV-230398r627750_rule
+      STIG_ID: RHEL-08-030090
+      Vul_ID: V-230398
+{{ end }}

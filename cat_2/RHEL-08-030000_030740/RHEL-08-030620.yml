@@ -1,0 +1,17 @@
+{{ if .Vars.RHEL_08_030620 }}
+command:
+  auditd_tools_perms:
+    title: RHEL_08_030620 | RHEL 8 audit tools must have a mode of 0755 or less permissive.
+    exec: stat -c "%a %n" /sbin/auditctl /sbin/aureport /sbin/ausearch /sbin/autrace /sbin/auditd /sbin/rsyslogd /sbin/augenrules
+    exit-status: 0
+    stdout:
+    - '/^7[0,5][0,5]/'
+    - '!/^7[6,7][0-9]/'
+    meta:
+      Cat: 2
+      CCI: CCI-001493
+      Group_Title: SRG-OS-000256-GPOS-00097
+      Rule_ID: SV-230472r627750_rule
+      STIG_ID: RHEL-08-030620
+      Vul_ID: V-230472
+{{ end }}

@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_08_040310 }}
+file:
+  /etc/aide.conf:
+    title: RHEL-08-040310 | The RHEL 8 file integrity tool must be configured to verify Access Control Lists (ACLs).
+    exists: true
+    contains:
+    - '/^[^#].*=.*\+acl.*/'
+    - '!/^[^#].*=.*-acl.*/'
+    meta:
+      Cat: 3
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230552r627750_rule
+      STIG_ID: RHEL-08-040310
+      Vul_ID: V-230552
+{{ end }}

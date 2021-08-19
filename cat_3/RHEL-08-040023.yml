@@ -1,0 +1,18 @@
+{{ if .Vars.RHEL_08_040023 }}
+command:
+  SCTP_modprobe:
+    title: RHEL-08-040023 | RHEL 8 must disable the stream control transmission (SCTP) protocol.
+    exec: grep -ri SCTP /etc/modprobe.d/*
+    exit-status: 0
+    stdout:
+    - '/^[^#].*install SCTP \/bin\/true/'
+    - '!/^install SCTP \/bin\/false/'
+    - '/^[^#].*blacklist SCTP/'
+    meta:
+      Cat: 3
+      CCI: CCI-000381
+      Group_Title: SRG-OS-000095-GPOS-00049
+      Rule_ID: SV-230496r627750_rule
+      STIG_ID: RHEL-08-040023
+      Vul_ID: V-230496
+{{ end }}

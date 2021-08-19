@@ -1,0 +1,15 @@
+{{ if .Vars.RHEL_08_030120 }}
+file:
+  /var/log/audit:
+    title: RHEL-08-030120 | RHEL 8 audit log directory must have a mode of 0700 or less permissive to prevent unauthorized read access.
+    exists: true
+    mode: "0700"
+    filetype: directory
+    meta:
+      Cat: 2
+      CCI: CCI-000162
+      Group_Title: SRG-OS-000057-GPOS-00027
+      Rule_ID: SV-230401r627750_rule
+      STIG_ID: RHEL-08-030120
+      Vul_ID: V-230401
+{{ end }}

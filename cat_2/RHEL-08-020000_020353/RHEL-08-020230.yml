@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_08_020230 }}
+file:
+  /etc/security/pwquality.conf:
+    title: RHEL-08-020230 | RHEL 8 passwords must have a minimum of 15 characters
+    exists: true
+    contains:
+    - '/^minlen = (1[5-9]|2[0-9])$/'
+    - '!/^minlen = ([0-9]|1[0-4])$/'
+    meta:
+      Cat: 2
+      CCI: CCI-000205
+      Group_Title: SRG-OS-000078-GPOS-00046
+      Rule_ID: SV-230369r627750_rule
+      STIG_ID: RHEL-08-020230
+      Vul_ID: V-230369
+{{ end }}

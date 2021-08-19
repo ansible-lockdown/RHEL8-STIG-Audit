@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_08_010671 }}
+command:
+  kernel_core_pattern:
+    title: RHEL-08-010671 | RHEL 8 must disable the kernel.core_pattern.
+    exec: sysctl kernel.core_pattern
+    exit-status: 0
+    stdout:
+    - 'kernel.core_pattern = |/bin/false'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230311r627750_rule
+      STIG_ID: RHEL-08-010671
+      Vul_ID: V-230311
+{{ end }}

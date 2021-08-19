@@ -1,0 +1,19 @@
+{{ if .Vars.run_heavy_tests }}
+  {{ if .Vars.RHEL_08_010730 }}
+command:
+  home_dir_750:
+    title: RHEL-08-010730 | All RHEL 8 local interactive user home directories must have mode 0750 or less permissive.
+    exec: "for home_dir in `awk -F: '($3>=1000)&&($7 !~ /nologin/){print $6}' /etc/passwd`; do if [[ `stat -c %a $home_dir` != 7[0,5]0 ]]; then echo $home_dir home_dir_perms_incorrect;fi done"
+    timeout: {{ .Vars.timeout_ms }}
+    exit-status: 0
+    stdout:
+    - '!/^.*/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230321r627750_rule
+      STIG_ID: RHEL-08-010730
+      Vul_ID: V-230321
+  {{ end }}
+{{ end }}

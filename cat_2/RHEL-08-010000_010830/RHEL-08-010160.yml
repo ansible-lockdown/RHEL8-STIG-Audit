@@ -1,0 +1,27 @@
+{{ if .Vars.RHEL_08_010160 }}
+file: 
+  /etc/pam.d/password-auth:
+    title: RHEL-08-010160 | The RHEL 8 pam_unix.so module must use a FIPS 140-2 approved cryptographic hashing algorithm for system authentication | passwd-auth
+    exists: true
+    contains:
+    - '^password sufficient pam_unix.so sha512 rounds=5000'
+    meta:
+      Cat: 2
+      CCI: CCI-000803
+      Group_Title: SRG-OS-000120-GPOS-00061
+      Rule_ID: SV-230237r627750_rule
+      STIG_ID: RHEL-08-010160
+      Vul_ID: V-230237
+  /etc/pam.d/system-auth:
+    title: RHEL-08-010160 | The RHEL 8 pam_unix.so module must use a FIPS 140-2 approved cryptographic hashing algorithm for system authentication | system-auth
+    exists: true
+    contains:
+    - '^password sufficient pam_unix.so sha512 rounds=5000'
+    meta:
+      Cat: 2
+      CCI: CCI-000803
+      Group_Title: SRG-OS-000120-GPOS-00061
+      Rule_ID: SV-230237r627750_rule
+      STIG_ID: RHEL-08-010160
+      Vul_ID: V-230237
+{{ end }}

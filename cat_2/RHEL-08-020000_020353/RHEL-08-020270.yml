@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_08_020270 }}
+command:
+  emergency_user_72:
+    title: RHEL-08-020270 | RHEL 8 emergency accounts must be automatically removed or disabled after the crisis is resolved or within 72 hours.
+    exec: echo "Please check for Emergency accounts"
+    exit-status: 0
+    stdout:
+    - '!/^Please check for Emergency accounts/'
+    meta:
+      Cat: 2
+      CCI: CCI-001682
+      Group_Title: SRG-OS-000123-GPOS-00064
+      Rule_ID: SV-230374r627750_rule
+      STIG_ID: RHEL-08-020270
+      Vul_ID: V-230374
+{{ end }}

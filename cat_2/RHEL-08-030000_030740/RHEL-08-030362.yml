@@ -1,0 +1,31 @@
+{{ if .Vars.RHEL_08_030362 }}
+file:
+  /etc/audit/audit.rules:
+    title: RHEL_08_030362 | Successful/unsuccessful uses of the renameat command in RHEL 8 must generate an audit record. | config check
+    exists: true
+    contains:
+    - '-a always,exit -F arch=b32 -S renameat -F auid>=1000 -F auid!=unset -k delete'
+    - '-a always,exit -F arch=b64 -S renameat -F auid>=1000 -F auid!=unset -k delete'
+    meta:
+      Cat: 2
+      CCI: CCI-000169
+      Group_Title: SRG-OS-000062-GPOS-00031
+      Rule_ID: SV-230440r627750_rule
+      STIG_ID: RHEL-08-030362
+      Vul_ID: V-230440
+command:
+  auditd_renameat_live:
+    title: RHEL_08_030362 | Successful/unsuccessful uses of the renameat command in RHEL 8 must generate an audit record. | live check
+    exec: auditctl -l | grep -w renameat
+    exit-status: 0
+    stdout:
+    - '-a always,exit -F arch=b32 -S renameat -F auid>=1000 -F auid!=-1 -F key=delete'
+    - '-a always,exit -F arch=b64 -S renameat -F auid>=1000 -F auid!=-1 -F key=delete'
+    meta:
+      Cat: 2
+      CCI: CCI-000169
+      Group_Title: SRG-OS-000062-GPOS-00031
+      Rule_ID: SV-230440r627750_rule
+      STIG_ID: RHEL-08-030362
+      Vul_ID: V-230440
+{{ end }}

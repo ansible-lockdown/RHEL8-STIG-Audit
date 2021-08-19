@@ -1,0 +1,19 @@
+{{ if .Vars.RHEL_08_020352 }}
+command:
+  validate_unnecessary_echo:
+    title: RHEL-08-020352 | RHEL 8 must not have unnecessary accounts.
+    exec: grep -ir umask /home/*.*
+    exit-status: 
+      or:
+      - 0
+      - 2
+    stdout:
+    - '!/^.*/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00228
+      Rule_ID: SV-230384r627750_rule
+      STIG_ID: RHEL-08-020352
+      Vul_ID: V-230384
+{{ end }}

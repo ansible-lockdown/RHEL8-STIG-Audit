@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_08_010100 }}
+command: 
+  prv_ssh_keys_have_passwd:
+    title: RHEL-08-010100 | RHEL 8, for certificate-based authentication, must enforce authorized access to the corresponding private key. | user keys
+    exec: for key in /home/*/.ssh/*_rsa; do if [ -f ${key} ]; then ssh-keygen -y -P '' -f $key; else exit 0; fi; done
+    exit-status: 0
+    stdout:
+    - '!/^ssh-rsa/'
+    meta:
+      Cat: 2
+      CCI: CCI-000186
+      Group_Title: SRG-OS-000067-GPOS-00035
+      Rule_ID: SV-230230r627750_rule
+      STIG_ID: RHEL-08-010100
+      Vul_ID: V-230230
+{{ end }}

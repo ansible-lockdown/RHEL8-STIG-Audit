@@ -1,0 +1,47 @@
+{{ if .Vars.RHEL_08_010680 }}
+  {{ if .Vars.rhel8stig_uses_dns }}
+command:
+  more_then_2_nameservers:
+    title: RHEL-08-010680 | For RHEL 8 systems using Domain Name Servers (DNS) resolution, at least two name servers must be configured. | resolv 2+ nameservers
+    exec: grep -c '^nameserver' /etc/resolv.conf
+    exit-status: 0
+    stdout:
+    - '/[2-9]/'
+    - '!/[0-1]/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230316r627750_rule
+      STIG_ID: RHEL-08-010680
+      Vul_ID: V-230316
+file:
+  /etc/nsswitch.conf:
+    title: RHEL-08-010680 | For RHEL 8 systems using Domain Name Servers (DNS) resolution, at least two name servers must be configured. | nsswitch dns check
+    exists: true
+    contains:
+    - '/hosts\:\s*.*dns/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230316r627750_rule
+      STIG_ID: RHEL-08-010680
+      Vul_ID: V-230316
+  {{ end }}
+  {{ if not .Vars.rhel8stig_uses_dns }}
+  /etc/resolv.conf:
+    title: RHEL-08-010680 | For RHEL 8 systems using Domain Name Servers (DNS) resolution, at least two name servers must be configured. | empty resolv.conf
+    exists: true
+    size: 0
+    contains:
+    - '!/.*/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230316r627750_rule
+      STIG_ID: RHEL-08-010680
+      Vul_ID: V-230316
+  {{ end }}
+{{ end }}
