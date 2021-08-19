@@ -4,7 +4,7 @@ file:
     title: RHEL-08-020340 | RHEL 8 must display the date and time of the last successful account logon upon logon.
     exists: true
     contains:
-    - '/^session required pam_lastlog.so showfailed/'
+    - '/^session\s+required\s+pam_lastlog.so showfailed/'
     meta:
       Cat: 3
       CCI: CCI-000366
