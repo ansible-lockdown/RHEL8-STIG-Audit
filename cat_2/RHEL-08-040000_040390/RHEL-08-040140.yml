@@ -23,7 +23,7 @@ service:
       STIG_ID: RHEL-08-040140
       Vul_ID: V-230524
 file:
-  /etc/usbguard/rule.cnf:
+  /etc/usbguard/rules.cnf:
     title: RHEL-08-040140 | RHEL 8 must block unauthorized peripherals before establishing a connection. | rules file
     exists: true
     meta:
