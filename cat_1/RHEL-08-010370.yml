@@ -3,6 +3,7 @@ command:
   gpg_check_default:
     title: RHEL-08-010370 | RHEL 8 must prevent the installation of software, patches, service packs, device drivers, or operating system components from a repository without verification they have been digitally signed using a certificate that is issued by a Certificate Authority (CA) that is recognized and approved by the organization. | dnf_running
     exec: dnf config-manager --dump | grep gpgcheck
+    timeout: {{ .Var.timeout_ms }}
     exit-status: 0
     stdout:
     - '/^gpgcheck.*1/'
@@ -17,6 +18,7 @@ command:
   gpg_check_repos:
     title: RHEL-08-010370 | RHEL 8 must prevent the installation of software, patches, service packs, device drivers, or operating system components from a repository without verification they have been digitally signed using a certificate that is issued by a Certificate Authority (CA) that is recognized and approved by the organization. | repo_check
     exec: grep -cR '.*gpgcheck.*=0' /etc/yum.repos.d/*.repo
+    timeout: {{ .Var.timeout_ms }}
     exit-status: 1
     stdout:
     - '!/.*[1-9][0-9]*$/'
