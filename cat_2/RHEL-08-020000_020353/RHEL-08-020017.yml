@@ -5,10 +5,11 @@ file:
     title: RHEL-08-020017 | RHEL 8 must ensure account lockouts persist. | OS_ver >= 8.2 passwd-auth
     exists: true
     contains:
-    - '/^auth required pam_faillock.so preauth/'
-    - '/^auth required pam_faillock.so authfail/'
+    - '/^auth required pam_faillock.so preauth dir={{ .Vars.rhel8stig_pam_faillock_dir }}/'
+    - '/^auth required pam_faillock.so authfail dir={{ .Vars.rhel8stig_pam_faillock_dir }}/'
     - '/^account required pam_faillock.so/'
     - '!/^#.*pam_faillock.so/'
+    - '!/.*dir=/var/run/faillock/'
     meta:
       Cat: 2
       CCI: CCI-00044
@@ -20,10 +21,11 @@ file:
     title: RHEL-08-020017 | RHEL 8 must ensure account lockouts persist. | OS_ver >= 8.2 system-auth
     exists: true
     contains:
-    - '/^auth required pam_faillock.so preauth/'
-    - '/^auth required pam_faillock.so authfail/'
+    - '/^auth required pam_faillock.so preauth dir={{ .Vars.rhel8stig_pam_faillock_dir }}/'
+    - '/^auth required pam_faillock.so authfail dir={{ .Vars.rhel8stig_pam_faillock_dir }}/'
     - '/^account required pam_faillock.so/'
     - '!/^#.*pam_faillock.so/'
+    - '!/.*dir=/var/run/faillock/'
     meta:
       Cat: 2
       CCI: CCI-00044

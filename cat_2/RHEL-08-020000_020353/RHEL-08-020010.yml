@@ -5,8 +5,8 @@ file:
     title: RHEL-08-020010 | RHEL 8 must automatically lock an account when three unsuccessful logon attempts occur. | OS_ver < 8.2 passwd-auth
     exists: true
     contains:
-    - '/^auth required pam_faillock.so preauth.*\sdeny=[1-3]/'
-    - '/^auth required pam_faillock.so authfail/'
+    - '/^auth required pam_faillock.so preauth dir={{ .Vars.rhel8stig_pam_faillock_dir }}.*\sdeny=[1-3]/'
+    - '/^auth required pam_faillock.so authfail dir={{ .Vars.rhel8stig_pam_faillock_dir }}/'
     - '!/^#.*pam_faillock.so/'
     meta:
       Cat: 2
@@ -19,8 +19,8 @@ file:
     title: RHEL-08-020010 | RHEL 8 must automatically lock an account when three unsuccessful logon attempts occur. | OS_ver < 8.2 system-auth
     exists: true
     contains:
-    - '/^auth required pam_faillock.so preauth.*\sdeny=[1-3]/'
-    - '/^auth required pam_faillock.so authfail/'
+    - '/^auth required pam_faillock.so preauth dir={{ .Vars.rhel8stig_pam_faillock_dir }}.*\sdeny=[1-3]/'
+    - '/^auth required pam_faillock.so authfail dir={{ .Vars.rhel8stig_pam_faillock_dir }}/'
     - '!/^#.*pam_faillock.so/'
     meta:
       Cat: 2

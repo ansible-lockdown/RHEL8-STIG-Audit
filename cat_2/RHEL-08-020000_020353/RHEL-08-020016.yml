@@ -5,8 +5,8 @@ file:
     title: RHEL-08-020016 | RHEL 8 must ensure account lockouts persist. | OS_ver < 8.2 passwd-auth
     exists: true
     contains:
-    - '/^auth required pam_faillock.so preauth.*\sdir=\/.*/'
-    - '/^auth required pam_faillock.so authfail/'
+    - '/^auth required pam_faillock.so preauth dir={{ .Vars.rhel8stig_pam_faillock_dir }}.*\sdir=\/.*/'
+    - '/^auth required pam_faillock.so authfail dir={{ .Vars.rhel8stig_pam_faillock_dir }}/'
     - '/^account required pam_faillock.so/'
     - '!/^#.*pam_faillock.so/'
     meta:
@@ -20,8 +20,8 @@ file:
     title: RHEL-08-020016 | RHEL 8 must ensure account lockouts persist. | OS_ver < 8.2 system-auth
     exists: true
     contains:
-    - '/^auth required pam_faillock.so preauth.*\sunlock_time=0/'
-    - '/^auth required pam_faillock.so authfail/'
+    - '/^auth required pam_faillock.so preauth dir={{ .Vars.rhel8stig_pam_faillock_dir }}.*\sunlock_time=0/'
+    - '/^auth required pam_faillock.so authfail dir={{ .Vars.rhel8stig_pam_faillock_dir }}/'
     - '/^account required pam_faillock.so/'
     - '!/^#.*pam_faillock.so/'
     meta:

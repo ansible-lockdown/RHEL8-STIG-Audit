@@ -415,6 +415,9 @@ rhel8stig_uses_dns: true
 # RHEL_08_010360 if run via ansible it is placed in cron.d setting as manually set in cron.daily
 rhel8stig_aide_cron_file: /etc/cron.daily/aide
 
+# RHEL_08_020010-020023 - RHEL-08-020017 states to not use default dir location which is /var/run/faillock
+rhel8stig_pam_faillock_dir: /var/log/faillock
+
 # RHEL_08_030040 - Options are SYSLOG, SINGLE, and HALT to fit STIG standards
 rhel8stig_auditd_disk_error_action: HALT
 
@@ -427,6 +430,3 @@ rhel8stig_auditd_disk_full_action: HALT
 # RHEL_08_030690 if using remote syslog server
 rhel8stig_remotelog_server: 1.1.1.1
 rhel8stig_remotelog_port: 1549
-
-# RHEL_08_040260-62
-rhel8stig_system_is_router: false
