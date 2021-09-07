@@ -1,0 +1,98 @@
+# Changelog
+
+stig V1R3 23rd July 2021
+
+stig.yml
+
+- linting
+- new rules (see below)
+
+- RHEL-08-010000
+  - update rule and title
+- RHEL-08-010001 - CAT 2
+  - new control
+- RHEL-08-010049 - CAT 2
+  - new control
+- RHEL-08-010050
+  - moved some content to 010049
+  - new rule
+- RHEL-08-010130
+  - moved some content to 010131
+  - new rule
+- RHEL-08-010131 - CAT 2
+  - new control
+- RHEL-08-010140
+  - moved some content to 010141
+  - new rule
+- RHEL-08-010141 - CAT 2
+  - new control
+- RHEL-08-010149 - Added a requirement to set a unique superuser account for BIOS systems.
+- RHEL-08-010150 - Updated the requirement to move the superuser requirement for BIOS to a unique STIG ID.
+- RHEL-08-010151 - Updated requirement to move the emergency mode requirement to a unique STIG ID.
+- RHEL-08-010152 - Added a requirement to require authentication upon booting into emergency mode.
+- RHEL-08-010159 - Added a requirement to configure the pam_unix.so module in the system- auth file to use FIPS algorithms.
+- RHEL-08-010160 - Updated requirement to move the system-auth portion to a unique STIG ID.
+- RHEL-08-010200 - Updated requirement to move the ClientAliveInterval to a unique STIG ID.
+- RHEL-08-010201 - Added a requirement to configure a timeout interval for SSH.
+- RHEL-08-010287 - Added a requirement to configure SSH to use system-wide crypto policies.
+- RHEL-08-010290 - Updated requirement to move configuration of SSH to use system-wide crypto policies to a unique STIG ID and updated statement in Discussion.
+- RHEL-08-010291 - Updated the Vulnerability Discussion, Check, and Fix.
+- RHEL-08-010390 - Updated Check and Fix content by removing extraneous packages.
+- RHEL-08-010400 - Updated command and finding statement in the Check Content.
+- RHEL-08-010422 - Updated the requirement with a containers based statement in the Vulnerability Discussion and added a mission requirement statement in the finding statement.
+- RHEL-08-010472 - Added requirement to install packages required by random number generator entropy gatherer service.
+- RHEL-08-010490, RHEL-08-030630 - Fixed typo in the Check content.
+- RHEL-08-010510 - Updated Check and Fix content.
+- RHEL-08-010521 - Updated requirement to move the GSSAPI portion to a unique STIG ID.
+- RHEL-08-010522 - Added a requirement to not allow GSSAPI authentication via SSH unless to fulfill mission requirements.
+- RHEL-08-010544 - Added requirement to have /var/tmp on a separate file system.
+- RHEL-08-010571 - Updated Check Content with an N/A statement.
+- RHEL-08-010572 - Added requirement for "nosuid" bit set on the /boot/efi directory.
+- RHEL-08-010700 - Updated Rule Title and Vulnerability Discussion.
+- RHEL-08-010710 - Updated Vulnerability Discussion.
+- RHEL-08-010731 - Added a requirement to set the permission mode of the local interactive users home directory files.
+- RHEL-08-010740 - Updated command in Check content.
+- RHEL-08-010741 - Added a requirement to set the group-owner of all local user home directory sub- directories and files.
+- RHEL-08-020011, RHEL-08-020013, RHEL-08- 020015, RHEL-08-020017, RHEL-08-020019, RHEL-08-020021, RHEL-08-020023, RHEL-08- 020330 - Updated the requirement to move the system-auth and password-auth portions to unique STIG IDs.
+- RHEL-08-020025, RHEL-08-020026 - Added a requirement to configure the use of the pam_faillock.so module in the system-auth file.
+- RHEL-08-020031 - Added a requirement to initiate a session lock for graphical user interfaces when the screensaver is activated.
+- RHEL-08-020032 - Added a requirement to disable the user list at logon for graphical user interfaces.
+- RHEL-08-020039 - Added a requirement to install the tmux package.
+- RHEL-08-020040 - Updated the requirement to move the install of the tmux package to a unique STIG ID.
+- RHEL-08-020080 - Updated the requirement to move the idle-delay and screensaver lock-enabled settings to a unique STIG ID.
+- RHEL-08-020081 - Added a requirement to prevent a user from overriding the session idle- delay setting.
+- RHEL-08-020082 - Added a requirement to prevent a user from overriding the screensaver lock- enabled setting.
+- RHEL-08-020331, RHEL-08-020332 - Added a requirement to not allow blank or null passwords in the system-auth file.
+- RHEL-08-030010 - Fixed typo in Check and Fix, and added a restart daemon statement to the Fix text.
+- RHEL-08-030050 - Updated configuration file entry in Fix Text.
+- RHEL-08-030180 - Updated the Rule Title and Check content.
+- RHEL-08-030181 - Added a requirement to start and enable the auditd.service.
+- RHEL-08-030320, RHEL-08-030603 - Fixed typo in Fix text.
+- RHEL-08-030602 - Fixed typo in the finding statement.
+- RHEL-08-030680 - Updated package name throughout requirement.
+- RHEL-08-030730 - Updated the requirement to move the space_left_action to a unique STIG ID.
+- RHEL-08-030731 - Added a requirement to notify the SA and ISSO when the audit storage reaches 75 percent capacity.
+- RHEL-08-040023 - Fixed typos throughout.
+- RHEL-08-040100 - Updated the requirement to move the enable firewall portion to a unique STIG ID.
+- RHEL-08-040101 - Added a requirement to enable the firewall.
+- RHEL-08-040060 - Removed this requirement as the version of openssh that ships with RHEL 8 does not support SSHv1.
+- RHEL-08-040003 - Merged with RHEL-08- 040370.
+- RHEL-08-040370 - Updated CCI mapping.
+- RHEL-08-010830 - Updated Rule Title and Vulnerability Discussion.
+- RHEL-08-010384 - Added requirement to require re-authentication when using sudo.
+- RHEL-08-040135 - Updated the requirement to move the "enable fapolicy" and "configure a deny- all, permit-by-exception policy" portions to unique STIG IDs.
+- RHEL-08-040136 - Added requirement for the fapolicy module to be enabled.
+- RHEL-08-040137 - Added requirement for the fapolicy module to be configured with a deny-all, permit-by-exception policy.
+- RHEL-08-040139 - Added requirement to have the USBGuard installed.
+- RHEL-08-040140 - Updated requirement to move installation and enablement of USBGuard to unique STIG IDs.
+- RHEL-08-040141 - Added requirement to enable the USBGuard.
+- RHEL-08-040150 - Updated Check and Fix content by removing extraneous services.
+- RHEL-08-040159 - Added requirement to have SSH installed.
+- RHEL-08-040160 - Updated requirement to move the installation of SSH to a unique STIG ID.
+- RHEL-08-040162 - Removed requirement for the client configuration of SSH.
+- RHEL-08-040209 - Added requirement to prevent IPv4 ICMP redirect messages from being accepted. - RHEL-08-040210, RHEL-08-040240, RHEL-08- 040250, RHEL-08-040280 - Updated requirement to move the IPv4 portion to a unique STIG ID.
+- RHEL-08-040220, RHEL-08-040230, RHEL-08- 040270 - Updated the "not applicable" statement.
+- RHEL-08-040239 - Added requirement to prevent IPv4 source-routed packets from being forwarded.
+- RHEL-08-040249 - Added requirement to prevent IPv4 source-routed packets from being forwarded by default.
+- RHEL-08-040279 - Added requirement to ignore IPv4 ICMP redirect messages.
+- RHEL-08-040286 - Added requirement to harden the BPF JIT.
