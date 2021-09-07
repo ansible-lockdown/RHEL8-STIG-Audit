@@ -26,13 +26,15 @@ stig.yml
   - new rule
 - RHEL-08-010141 - CAT 2
   - new control
-- RHEL-08-010149 
+- RHEL-08-010149
   - new control - CAT 2
 - RHEL-08-010150
   - moved content to 010149
   - new rule
-- RHEL-08-010151 - Updated requirement to move the emergency mode requirement to a unique STIG ID.
-- RHEL-08-010152 - Added a requirement to require authentication upon booting into emergency mode.
+- RHEL-08-010151
+  - new rule
+- RHEL-08-010152
+  - new control
 - RHEL-08-010159 - Added a requirement to configure the pam_unix.so module in the system- auth file to use FIPS algorithms.
 - RHEL-08-010160 - Updated requirement to move the system-auth portion to a unique STIG ID.
 - RHEL-08-010200 - Updated requirement to move the ClientAliveInterval to a unique STIG ID.
