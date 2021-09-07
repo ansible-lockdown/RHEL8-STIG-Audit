@@ -1,0 +1,17 @@
+{{ if not .Vars.legacy_boot }}
+  {{ if .Vars.RHEL_08_010141 }}
+file:
+  /etc/grub.d/01_users:
+    title: RHEL-08-010140 | RHEL 8 operating systems booted with United Extensible Firmware Interface (UEFI) implemented must require authentication upon booting into single-user mode and maintenance. | grub_cfg
+    exists: true
+    contains:
+    - '/^set superusers="[{{ .Vars.rhel8stig_boot_superuser }}]"/'
+    meta:
+      Cat: 2
+      CCI: CCI-000213
+      Group_Title: SRG-OS-000080-GPOS-00048
+      Rule_ID: SV-244521r743812_rule
+      STIG_ID: RHEL-08-010140
+      Vul_ID: V-244521
+  {{ end }}
+{{ end }}
