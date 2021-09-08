@@ -1,0 +1,31 @@
+{{ if .Vars.rhel8stig_gui }}
+  {{ if .Vars.RHEL_08_020082 }}
+command:
+  gnome_user_lock_enabled:
+    title: RHEL-08-020082 | RHEL 8 must prevent a user from overriding graphical user interface settings.
+    exec: grep -i lock /etc/dconf/db/local.d/locks/*
+    exit-status: 0
+    stdout:
+    - /org/gnome/desktop/screensaver/lock-enabled
+    meta:
+      Cat: 2
+      CCI: CCI-000057
+      Group_Title: SRG-OS-000029-GPOS-00010
+      Rule_ID: SV-244539r743866_rule
+      STIG_ID: RHEL-08-020082
+      Vul_ID: V-244539
+file:
+  /etc/dconf/db/local.d/locks/session:
+    title: RHEL-08-020082 | RHEL 8 must prevent a user from overriding the session idle-delay setting for the graphical user interface. | config check
+    exists: true
+    contains:
+    - '/^\/org\/gnome\/desktop\/screensaver\/lock-enabled/'
+    meta:
+      Cat: 2
+      CCI: CCI-000057
+      Group_Title: SRG-OS-000029-GPOS-00010
+      Rule_ID: SV-244539r743866_rule
+      STIG_ID: RHEL-08-020082
+      Vul_ID: V-244539
+  {{ end }}
+{{ end }}
