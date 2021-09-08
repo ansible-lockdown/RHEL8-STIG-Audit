@@ -11,7 +11,7 @@ command:
       Cat: 2
       CCI: CCI-001084
       Group_Title: SRG-OS-000134-GPOS-00068
-      Rule_ID: SV-230278r627750_rule
+      Rule_ID: SV-230278r743948_rule
       STIG_ID: RHEL-08-010422
       Vul_ID: V-230278
 file:
@@ -20,11 +20,12 @@ file:
     exists: true
     contains:
     - '/^GRUB_CMDLINE_LINUX=.*\svsyscall=none\s.*/'
+    - '!/^#GRUB_CMDLINE_LINUX=.*\svsyscall=.*/'
     meta:
       Cat: 2
       CCI: CCI-001084
       Group_Title: SRG-OS-000134-GPOS-00068
-      Rule_ID: SV-230278r627750_rule
+      Rule_ID: SV-230278r743948_rule
       STIG_ID: RHEL-08-010422
       Vul_ID: V-230278
 {{ end }}
