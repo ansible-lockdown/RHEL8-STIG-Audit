@@ -13,6 +13,7 @@ command:
       Rule_ID: SV-230252r743940_rule
       STIG_ID: RHEL-08-010290
       Vul_ID: V-230252
+file:
   /etc/crypto-policies/back-ends/openssh.config:
     title: RHEL-08-010291 | The RHEL 8 operating system must implement DoD-approved encryption to protect the confidentiality of SSH connections. | crypto-policies - ssh_config
     exists: true

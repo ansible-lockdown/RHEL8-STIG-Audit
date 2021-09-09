@@ -13,6 +13,7 @@ command:
       Rule_ID: SV-230251r743937_rule
       STIG_ID: RHEL-08-010290
       Vul_ID: V-230251
+file:
   /etc/crypto-policies/back-ends/openssh.config:
     title: RHEL-08-010290 | The RHEL 8 SSH daemon must be configured to use only Message Authentication Codes (MACs) employing FIPS 140-2 validated cryptographic hash algorithms. | crypto-policies - ssh_config
     exists: true
