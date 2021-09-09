@@ -1,0 +1,13 @@
+{{ if .Vars.RHEL_08_040139 }}
+package:
+  usbguard:
+    title: RHEL-08-040139 | RHEL 8 must have the USBGuard installed.
+    installed: true
+    meta:
+      Cat: 2
+      CCI: CCI-001958
+      Group_Title: SRG-OS-000378-GPOS-00163
+      Rule_ID:  SV-244547r743890_rule
+      STIG_ID: RHEL-08-040139
+      Vul_ID: V-244547
+{{ end }}

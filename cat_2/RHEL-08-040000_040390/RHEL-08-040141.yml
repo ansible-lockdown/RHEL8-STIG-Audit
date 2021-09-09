@@ -1,0 +1,14 @@
+{{ if .Vars.RHEL_08_040141 }}
+service:
+  usbguard:
+    title: RHEL-08-040141 | RHEL 8 must enable the USBGuard.
+    running: true 
+    enabled: true
+    meta:
+      Cat: 2
+      CCI: CCI-001958
+      Group_Title: SRG-OS-000378-GPOS-00163
+      Rule_ID:  SV-244548r743893_rule
+      STIG_ID: RHEL-08-040141
+      Vul_ID: V-244548
+{{ end }}
