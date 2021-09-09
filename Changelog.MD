@@ -66,7 +66,7 @@ stig.yml
   - updated check
 - RHEL-08-010472
   - new control
-- RHEL-08-010490, RHEL-08-030630
+- RHEL-08-010490
   - update title
 - RHEL-08-010510
   - updated check
@@ -123,36 +123,73 @@ stig.yml
   - new control
 - RHEL-08-020082
   - new control
+- RHEL-08-030010
+  - title change
+- RHEL-08-030050
+  - updated check
+- RHEL-08-030180
+  - title updated
+- RHEL-08-030181
+  - new control
+- RHEL-08-030320
+- RHEL-08-030630
+- RHEL-08-030680
+  - package name updated
+- RHEL-08-030730
+  - moved part check to 030731
+- RHEL-08-030731
+  - new control
+- RHEL-08-040023
+  - updated check
+- RHEL-08-040100
+- RHEL-08-040101
+  - new control
+- RHEL-08-040135
+  - moved some content to 010436 & 010437
+- RHEL-08-040136
+  - new control
+- RHEL-08-040137
+  - new control
+- RHEL-08-040139
+  - new control
+- RHEL-08-040140
+  - moved some content to 0101439 & 010141
+- RHEL-08-040141
+  - new control
+- RHEL-08-040150
+  - changes in requirements
+- RHEL-08-040159
+  - new control
+- RHEL-08-040160
+  - moved some content to 010459
+- RHEL-08-040162
+  - Removed
+- RHEL-08-040209
+  - new control
+- RHEL-08-040210
+  - moved ipv4 to 040209
+  - new title
+- RHEL-08-040220
+- RHEL-08-040230
+- RHEL-08-040239
+  - new control
+- RHEL-08-040240
+  - moved ipv4 to 040239
+  - new title
+- RHEL-08-040249
+  - new control
+- RHEL-08-040250
+  - moved ipv4 to 040249
+- RHEL-08-040270
+- RHEL-08-040279
+  - new control
+- RHEL-08-040280
+  - moved ipv4 check to 040279
+- RHEL-08-040286
+  - new control
+- RHEL-08-040370 - Updated CCI mapping
 
+## CAT-3
 
-- RHEL-08-030010 - Fixed typo in Check and Fix, and added a restart daemon statement to the Fix text.
-- RHEL-08-030050 - Updated configuration file entry in Fix Text.
-- RHEL-08-030180 - Updated the Rule Title and Check content.
-- RHEL-08-030181 - Added a requirement to start and enable the auditd.service.
-- RHEL-08-030320, RHEL-08-030603 - Fixed typo in Fix text.
-- RHEL-08-030602 - Fixed typo in the finding statement.
-- RHEL-08-030680 - Updated package name throughout requirement.
-- RHEL-08-030730 - Updated the requirement to move the space_left_action to a unique STIG ID.
-- RHEL-08-030731 - Added a requirement to notify the SA and ISSO when the audit storage reaches 75 percent capacity.
-- RHEL-08-040023 - Fixed typos throughout.
-- RHEL-08-040100 - Updated the requirement to move the enable firewall portion to a unique STIG ID.
-- RHEL-08-040101 - Added a requirement to enable the firewall.
-- RHEL-08-040060 - Removed this requirement as the version of openssh that ships with RHEL 8 does not support SSHv1.
-- RHEL-08-040003 - Merged with RHEL-08- 040370.
-- RHEL-08-040370 - Updated CCI mapping.
-- RHEL-08-040135 - Updated the requirement to move the "enable fapolicy" and "configure a deny- all, permit-by-exception policy" portions to unique STIG IDs.
-- RHEL-08-040136 - Added requirement for the fapolicy module to be enabled.
-- RHEL-08-040137 - Added requirement for the fapolicy module to be configured with a deny-all, permit-by-exception policy.
-- RHEL-08-040139 - Added requirement to have the USBGuard installed.
-- RHEL-08-040140 - Updated requirement to move installation and enablement of USBGuard to unique STIG IDs.
-- RHEL-08-040141 - Added requirement to enable the USBGuard.
-- RHEL-08-040150 - Updated Check and Fix content by removing extraneous services.
-- RHEL-08-040159 - Added requirement to have SSH installed.
-- RHEL-08-040160 - Updated requirement to move the installation of SSH to a unique STIG ID.
-- RHEL-08-040162 - Removed requirement for the client configuration of SSH.
-- RHEL-08-040209 - Added requirement to prevent IPv4 ICMP redirect messages from being accepted. - RHEL-08-040210, RHEL-08-040240, RHEL-08- 040250, RHEL-08-040280 - Updated requirement to move the IPv4 portion to a unique STIG ID.
-- RHEL-08-040220, RHEL-08-040230, RHEL-08- 040270 - Updated the "not applicable" statement.
-- RHEL-08-040239 - Added requirement to prevent IPv4 source-routed packets from being forwarded.
-- RHEL-08-040249 - Added requirement to prevent IPv4 source-routed packets from being forwarded by default.
-- RHEL-08-040279 - Added requirement to ignore IPv4 ICMP redirect messages.
-- RHEL-08-040286 - Added requirement to harden the BPF JIT.
+- RHEL-08-030602
+- RHEL-08-030603
