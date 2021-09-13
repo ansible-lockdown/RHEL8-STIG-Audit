@@ -46,7 +46,7 @@ while getopts g:o:h option; do
 done
 
 if [[ -z $GROUP ]]; then
-   export auto_group="Not_Defined"
+   export auto_group="ungrouped"
    else
    export auto_group=`echo $GROUP`
 fi
