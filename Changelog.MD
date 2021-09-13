@@ -18,6 +18,8 @@ goss.yml & run_audit.sh
 
 - RHEL-08-010000
   - update rule id and title
+- RHEL-08-010150
+  - moved content to 010149
 - RHEL-08-020330
   - updated checks
 - RHEL-08-020331
@@ -43,8 +45,6 @@ goss.yml & run_audit.sh
   - new control
 - RHEL-08-010149
   - new control
-- RHEL-08-010150
-  - moved content to 010149
 - RHEL-08-010151
 - RHEL-08-010152
   - new control
