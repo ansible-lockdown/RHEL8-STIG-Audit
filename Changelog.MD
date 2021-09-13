@@ -6,6 +6,11 @@ stig.yml
 
 - linting
 - new rules (see below)
+- Added new benchmark metadata to be populated
+
+goss.yml & run_audit.sh
+
+- wrapper script for values and corresponding values for benchmark in goss.yml
 
 ## All control changes have a new rule ID
 
