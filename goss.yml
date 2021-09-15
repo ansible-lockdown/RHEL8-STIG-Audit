@@ -30,5 +30,5 @@ command:
       benchmark_hostname: {{ .Vars.os_hostname }}
       benchmark_machine_uuid: {{ .Vars.machine_uuid }}
       benchmark_os_locale: {{ .Vars.os_locale }}
-      automation_group: {{ .Vars.auto_group }}
+      benchmark_automation_group: {{ .Vars.auto_group }}
     {{ end }}

@@ -1,11 +1,11 @@
-audit_run: dummy_value  # This is forced to wrapper by running the run_audit wrapper script to add more metadata if run via remediation role this is not valid.
+audit_run: dummy_value  # This is forced to become wrapper by running the run_audit script to add more metadata if run via remediation role this is not valid.
 
 rhel8stig_benchmark:
   - "type: STIG"
   - "version: '1.3'"
   - "os: RHEL 8"
   - "fullname: red_hat_enterprise_linux_8"
-# - "automation_group: "  # Ability to group similar servers together - if wrapper define with -g - if remediation uses ansible inventory group
+# - "automation_group: []"  # Ability to group similar servers together - if wrapper define with -g - if remediation uses ansible inventory group
 # - "epoch: "  # Should be populated via wrapper script"
 # - "hostname: "  # Should be populated via wrapper script"
 # - "host_os_version: 8.x"  # Should be populated via wrapper script"
