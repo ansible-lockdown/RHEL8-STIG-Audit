@@ -71,30 +71,34 @@ fi
 export rhel8stig_os_version_pre_8_2=`echo $pre_8_2`
 
 
-
 ## Set the AUDIT json string
 AUDIT_JSON_VARS='{"machine_uuid":"'"$machine_uuid"'","epoch":"'"$epoch"'","os_locale":"'"$os_locale"'","audit_run":"wrapper","os_release":"'"$os_version"'","rhel8stig_os_distribution":"'"$os_name"'","rhel8stig_os_version_pre_8_2":"'"$rhel8stig_os_version_pre_8_2"'","os_hostname":"'"$os_hostname"'","auto_group":"'"$auto_group"'"}'
 
 
-
-## Set AUDIT AUDIT OUT
+## Set AUDIT OUT
 if [[ -z $OUTFILE ]]; then
-   export AUDIT_AUDIT_OUT=$AUDIT_CONTENT_LOCATION/audit_$os_hostname_$epoch.json
+   export AUDIT_OUT=$AUDIT_CONTENT_LOCATION/audit_$os_hostname_$epoch.json
 else
-   export AUDIT_AUDIT_OUT=$OUTFILE
+   export AUDIT_OUT=$OUTFILE
 fi
 
 
+## Run pre checks
+
+if [[ ! -s $AUDIT_BIN ]]; then
+   BIN_MISSING=`echo "WARNING - The audit binary is not available at $AUDIT_BIN "`; echo $BIN_MISSING && exit 1
+
+fi
+
 ## Run commands
 #$AUDIT_BIN -g $AUDIT_CONTENT_DIR/$AUDIT_FILE --vars $AUDIT_CONTENT_DIR/$AUDIT_VARS  --vars-inline $AUDIT_JSON_VARS v -f json -o pretty
-$AUDIT_BIN -g $AUDIT_CONTENT_DIR/$AUDIT_FILE --vars $AUDIT_CONTENT_DIR/$AUDIT_VARS  --vars-inline $AUDIT_JSON_VARS v -f json -o pretty > $AUDIT_AUDIT_OUT
+$AUDIT_BIN -g $AUDIT_CONTENT_DIR/$AUDIT_FILE --vars $AUDIT_CONTENT_DIR/$AUDIT_VARS  --vars-inline $AUDIT_JSON_VARS v -f json -o pretty > $AUDIT_OUT
 
 # create screen output
-
-if [[ `grep -c STIG $AUDIT_AUDIT_OUT` > 0 ]]; then
+if [[ `grep -c STIG $AUDIT_OUT` > 0 ]]; then
    echo  "Success Audit
-`tail -7 $AUDIT_AUDIT_OUT`
-Completed file can be found at $AUDIT_AUDIT_OUT"
+`tail -7 $AUDIT_OUT`
+Completed file can be found at $AUDIT_OUT"
 else
-  echo "Fail Audit - There were issues when running the audit please investigate $AUDIT_AUDIT_OUT"
+  echo "Fail Audit - There were issues when running the audit please investigate $AUDIT_OUT"
 fi
