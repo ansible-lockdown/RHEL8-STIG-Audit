@@ -2,15 +2,26 @@
 
 ## Overview
 
-based on STIG v1r2
+based on STIG v1r3 July 2021
 
-Set of configuration files and directories to run the first stages of STIG of RHEL/CentOS/Rocky 8 servers
+Ability to audit a system using a lightweight binary to check the current state.
 
-This is configured in a directory structure level.
+This is:
 
-This could do with further testing but sections 1.x should be complete
+- very small 11MB
+- lightweight
+- self contained
 
-Goss is run based on the goss.yml file in the top level directory. This specifies the configuration.
+It works using a set of configuration files and directories to audit STIG of RHEL/CentOS 7 servers. These files/directories correlate to the STIG Level and STIG_ID
+
+Tested on
+
+- RHEL8
+- CentOS8
+- Rocky8
+- Alma-Linux 8
+
+feedback on any differences between OSs please raise an issue
 
 ## variables
 
@@ -29,13 +40,76 @@ If a site has specific options e.g. password complexity these can also be set.
 
 ## Usage
 
-You must have [goss](https://github.com/aelsabbahy/goss/) available to your host you would like to test.
+- You must have [goss](https://github.com/aelsabbahy/goss/) available to your host you would like to test.
 
-You must have root access to the system as some commands require privilege information.
+- You must have sudo/root access to the system as some commands require privilege information.
 
-- Run as root not sudo due to sudo and shared memory access
+- Assuming you have already clone this repository you can run goss from where you wish.
 
-Assuming you have already clone this repository you can run goss from where you wish.
+- The ability to run via a wrapper script in the form of run_audit.sh is also available.
+  - This populates benchmark meta fields consistently inline with remediate generated audits
+  - This does need to be run full root privileges
+  - Some variables can be amended to suit your system
+
+```sh
+# run_audit.sh -h
+Script to run the goss audit
+
+Syntax: run_audit.sh [-g|-o|-h]
+options:
+-g     optional - Add a group that the server should be grouped with
+-o     optional - file to output audit data
+-h     Print this Help.
+
+```
+
+This also works alongside the [Ansible Lockdown RHEL8-STIG role](https://github.com/ansible-lockdown/RHEL8-STIG)
+
+Which will:
+
+- install
+- audit
+- remediate
+- audit
+
+## Audit variables
+
+These are found in vars/stig.yml
+Please refer to the file for all options and their meanings
+
+STIG listed variable for every control/benchmark can be turned on/off or section
+
+### The variable files
+
+In this case installed or skipped using the standard name for a package to be installed or _skip to skip a test.
+
+### Extra settings
+
+Some sections can have several options in that case the skip flag maybe passed to the test or exact details relating to your requirements
+e.g.
+
+- rhel8stig_use_gui
+- rhel8stig_is_router
+- rhel8_stig_nameservers:
+  - 8.8.8.8
+  - 9.9.9.9
+
+## Examples
+
+- run via wrapper script
+
+```sh
+# ./run_audit.sh
+Success Audit
+    "summary": {
+        "failed-count": 22,
+        "summary-line": "Count: 356, Failed: 22, Duration: 43.929s",
+        "test-count": 356,
+        "total-duration": 43929451437
+    }
+}
+Completed file can be found at /var/tmp/audit_1631697827.json
+```
 
 - full check
 
@@ -114,10 +188,6 @@ Command: floppy_noexec: stdout: matches expectation: [OK]
 Total Duration: 0.022s
 Count: 12, Failed: 0, Skipped: 0
 ```
-
-## Extra settings
-
-Ability to add your own requirements is available in several sections
 
 ## further information
 
