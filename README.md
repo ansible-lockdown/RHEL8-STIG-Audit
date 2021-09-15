@@ -102,13 +102,13 @@ e.g.
 # ./run_audit.sh
 Success Audit
     "summary": {
-        "failed-count": 22,
-        "summary-line": "Count: 356, Failed: 22, Duration: 43.929s",
-        "test-count": 356,
-        "total-duration": 43929451437
+        "failed-count": 290,
+        "summary-line": "Count: 544, Failed: 290, Duration: 34.588s",
+        "test-count": 544,
+        "total-duration": 34588004404
     }
 }
-Completed file can be found at /var/tmp/audit_1631697827.json
+Completed file can be found at /var/tmp/audit_1631702160.json
 ```
 
 - full check
