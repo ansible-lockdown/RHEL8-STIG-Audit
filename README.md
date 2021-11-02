@@ -197,4 +197,4 @@ Count: 12, Failed: 0, Skipped: 0
 ## Feedback required
 
 - If using nftables or iptables rather than firewalld
-- Rocky fails to update from public repos if enable FIPS due to SSL cert chain
+- RHEL-08-010020 FIPS crypto with ec2 has seen to fail with cert issues.
