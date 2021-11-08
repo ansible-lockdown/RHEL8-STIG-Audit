@@ -1,11 +1,19 @@
-rhel8stig_benchmark:
-- "type: STIG"
-- "version: '1.2'"
-- "os: RHEL 8"
-# - "epoch: " # Should be populated via wrapper script"
-# - hostname: #Should be populated via wrapper script"
+audit_run: dummy_value  # This is forced to become wrapper by running the run_audit script to add more metadata if run via remediation role this is not valid.
 
-rhel8stig_os_distribution: centos
+rhel8stig_benchmark:
+  - "type: STIG"
+  - "version: '1.3'"
+  - "os: RHEL 8"
+  - "fullname: red_hat_enterprise_linux_8"
+# - "automation_group: []"  # Ability to group similar servers together - if wrapper define with -g - if remediation uses ansible inventory group
+# - "epoch: "  # Should be populated via wrapper script"
+# - "hostname: "  # Should be populated via wrapper script"
+# - "host_os_version: 8.x"  # Should be populated via wrapper script"
+# - "host_os_locale: EST"  # Should be populated via wrapper script"
+# - "machine_uuid:  "  # Should be populated via wrapper script"
+
+
+rhel8stig_os_distribution: redhat
 rhel8stig_os_version_pre_8_2: false
 
 # turn the categories on/off
@@ -13,30 +21,28 @@ rhel8stig_cat1: true
 rhel8stig_cat2: true
 rhel8stig_cat3: true
 
-# Some tests may need to scan every filesystem or have an impact on a system 
+# Some tests may need to scan every filesystem or have an impact on a system
 # these may need be scheduled to minimise impact
 run_heavy_tests: true
-timeout_ms: 30000
+timeout_ms: 60000
 
 # If using the supplied graphical interface
 rhel8stig_gui: false
 
 # system acts or requires router networking options
-rhel8stig_system_is_router: False
+rhel8stig_system_is_router: false
 
 # Assist with skips some audit checks
-skip_sssd_check: False
-skip_postfix_check: False
-skip_tftp_check: False
+skip_sssd_check: false
+skip_postfix_check: false
+skip_tftp_check: false
 # If Bios boot
 legacy_boot: true
 rhel8stig_bootloader_path: /boot/grub2/
 
 # If UEFI boot - change for centos/rocky linux
-#legacy_boot: false
-#rhel8stig_bootloader_path: /boot/efi/EFI/redhat/
-
-
+# legacy_boot: false
+# rhel8stig_bootloader_path: /boot/efi/EFI/redhat/
 
 # Cat 1 rules
 RHEL_08_010000: true
@@ -49,6 +55,8 @@ RHEL_08_010460: true
 RHEL_08_010470: true
 RHEL_08_010820: true
 RHEL_08_020330: true
+RHEL_08_020331: true
+RHEL_08_020332: true
 RHEL_08_040000: true
 RHEL_08_040010: true
 RHEL_08_040170: true
@@ -59,9 +67,11 @@ RHEL_08_040200: true
 RHEL_08_040360: true
 
 # Cat 2 rules
+RHEL_08_010001: true
 RHEL_08_010010: true
 RHEL_08_010030: true
 RHEL_08_010040: true  # Variable options below
+RHEL_08_010049: true  # Variable options below
 RHEL_08_010050: true  # Variable options below
 RHEL_08_010060: true  # Variable options below
 RHEL_08_010070: true
@@ -70,7 +80,12 @@ RHEL_08_010100: true
 RHEL_08_010110: true
 RHEL_08_010120: true
 RHEL_08_010130: true
+RHEL_08_010131: true
+RHEL_08_010141: true
+RHEL_08_010149: true
 RHEL_08_010151: true
+RHEL_08_010152: true
+RHEL_08_010159: true
 RHEL_08_010160: true
 RHEL_08_010161: true
 RHEL_08_010162: true
@@ -79,12 +94,14 @@ RHEL_08_010170: true
 RHEL_08_010180: true
 RHEL_08_010190: true
 RHEL_08_010200: true
+RHEL_08_010201: true
 RHEL_08_010210: true
 RHEL_08_010220: true
 RHEL_08_010230: true
 RHEL_08_010240: true
 RHEL_08_010250: true
 RHEL_08_010260: true
+RHEL_08_010287: true
 RHEL_08_010290: true
 RHEL_08_010291: true
 RHEL_08_010293: true
@@ -114,18 +131,22 @@ RHEL_08_010422: true
 RHEL_08_010423: true
 RHEL_08_010430: true
 RHEL_08_010450: true
+RHEL_08_010472: true
 RHEL_08_010480: true
 RHEL_08_010490: true
 RHEL_08_010500: true
 RHEL_08_010510: true
 RHEL_08_010520: true
 RHEL_08_010521: true
+RHEL_08_010522: true
 RHEL_08_010543: true
+RHEL_08_010544: true
 RHEL_08_010550: true
 RHEL_08_010560: true
 RHEL_08_010561: true
 RHEL_08_010570: true
 RHEL_08_010571: true
+RHEL_08_010572: true
 RHEL_08_010580: true
 RHEL_08_010590: true
 RHEL_08_010600: true
@@ -147,7 +168,9 @@ RHEL_08_010700: true
 RHEL_08_010710: true
 RHEL_08_010720: true
 RHEL_08_010730: true
+RHEL_08_010731: true
 RHEL_08_010740: true
+RHEL_08_010741: true
 RHEL_08_010750: true
 RHEL_08_010760: true
 RHEL_08_010770: true
@@ -171,13 +194,20 @@ RHEL_08_020020: true
 RHEL_08_020021: true
 RHEL_08_020022: true
 RHEL_08_020023: true
+RHEL_08_020025: true
+RHEL_08_020026: true
 RHEL_08_020030: true
+RHEL_08_020031: true
+RHEL_08_020032: true
+RHEL_08_020039: true
 RHEL_08_020040: true
 RHEL_08_020041: true
 RHEL_08_020050: true
 RHEL_08_020060: true
 RHEL_08_020070: true
 RHEL_08_020080: true
+RHEL_08_020081: true
+RHEL_08_020082: true
 RHEL_08_020090: true  # TODO
 RHEL_08_020100: true
 RHEL_08_020110: true
@@ -232,6 +262,7 @@ RHEL_08_030170: true
 RHEL_08_030171: true
 RHEL_08_030172: true
 RHEL_08_030180: true
+RHEL_08_030181: true
 RHEL_08_030190: true
 RHEL_08_030200: true
 RHEL_08_030210: true
@@ -301,6 +332,7 @@ RHEL_08_030700: true
 RHEL_08_030710: true
 RHEL_08_030720: true
 RHEL_08_030730: true
+RHEL_08_030731: true
 RHEL_08_030740: true
 RHEL_08_040001: true
 RHEL_08_040002: true
@@ -310,6 +342,7 @@ RHEL_08_040070: true
 RHEL_08_040080: true
 RHEL_08_040090: true
 RHEL_08_040100: true
+RHEL_08_040101: true
 RHEL_08_040110: true
 RHEL_08_040111: true
 RHEL_08_040120: true
@@ -328,27 +361,36 @@ RHEL_08_040132: true
 RHEL_08_040133: true
 RHEL_08_040134: true
 RHEL_08_040135: true
+RHEL_08_040136: true
+RHEL_08_040137: true
+RHEL_08_040139: true
 RHEL_08_040140: true
+RHEL_08_040141: true
 RHEL_08_040150: true
+RHEL_08_040159: true
 RHEL_08_040160: true
 RHEL_08_040161: true
-RHEL_08_040162: true
 RHEL_08_040180: true
+RHEL_08_040209: true
 RHEL_08_040210: true
 RHEL_08_040220: true
 RHEL_08_040230: true
+RHEL_08_040239: true
 RHEL_08_040240: true
+RHEL_08_040249: true
 RHEL_08_040250: true
 RHEL_08_040260: true
 RHEL_08_040261: true
 RHEL_08_040262: true
 RHEL_08_040270: true
+RHEL_08_040279: true
 RHEL_08_040280: true
 RHEL_08_040281: true
 RHEL_08_040282: true
 RHEL_08_040283: true
 RHEL_08_040284: true
 RHEL_08_040285: true
+RHEL_08_040286: true
 RHEL_08_040290: true
 RHEL_08_040320: true
 RHEL_08_040330: true
@@ -400,20 +442,23 @@ MAX_UID: 65000
 
 # RHEL_08_010040-010050-010060
 rhel8stig_banner_file: /etc/issue
-rhel8stig_logon_banner: 
-- 'You are accessing a U.S. Government (USG) Information System (IS) that is provided for USG-authorized use only.'
-- 'By using this IS (which includes any device attached to this IS), you consent to the following conditions:'
-- '-The USG routinely intercepts and monitors communications on this IS for purposes including, but not limited to, penetration testing, COMSEC monitoring, network operations and defense, personnel misconduct (PM), law enforcement (LE), and counterintelligence (CI) investigations.'
-- '-At any time, the USG may inspect and seize data stored on this IS.'
-- '-Communications using, or data stored on, this IS are not private, are subject to routine monitoring, interception, and search, and may be disclosed or used for any USG-authorized purpose.'
-- '-This IS includes security measures (e.g., authentication and access controls) to protect USG interests--not for your personal benefit or privacy.'
-- '-Notwithstanding the above, using this IS does not constitute consent to PM, LE or CI investigative searching or monitoring of the content of privileged communications, or work product, related to personal representation or services by attorneys, psychotherapists, or clergy, and their assistants. Such communications and work product are private and confidential. See User Agreement for details.'
+rhel8stig_logon_banner:
+  - 'You are accessing a U.S. Government (USG) Information System (IS) that is provided for USG-authorized use only.'
+  - 'By using this IS (which includes any device attached to this IS), you consent to the following conditions:'
+  - '-The USG routinely intercepts and monitors communications on this IS for purposes including, but not limited to, penetration testing, COMSEC monitoring, network operations and defense, personnel misconduct (PM), law enforcement (LE), and counterintelligence (CI) investigations.'
+  - '-At any time, the USG may inspect and seize data stored on this IS.'
+  - '-Communications using, or data stored on, this IS are not private, are subject to routine monitoring, interception, and search, and may be disclosed or used for any USG-authorized purpose.'
+  - '-This IS includes security measures (e.g., authentication and access controls) to protect USG interests--not for your personal benefit or privacy.'
+  - '-Notwithstanding the above, using this IS does not constitute consent to PM, LE or CI investigative searching or monitoring of the content of privileged communications, or work product, related to personal representation or services by attorneys, psychotherapists, or clergy, and their assistants. Such communications and work product are private and confidential. See User Agreement for details.'
 
 # RHEL8_08_010680 to change if using hostfile only - seperate checks
 rhel8stig_uses_dns: true
 
 # RHEL_08_010360 if run via ansible it is placed in cron.d setting as manually set in cron.daily
 rhel8stig_aide_cron_file: /etc/cron.daily/aide
+
+# RHEL_08_020010-020023 - RHEL-08-020017 states to not use default dir location which is /var/run/faillock
+rhel8stig_pam_faillock_dir: /var/log/faillock
 
 # RHEL_08_030040 - Options are SYSLOG, SINGLE, and HALT to fit STIG standards
 rhel8stig_auditd_disk_error_action: HALT
@@ -427,6 +472,3 @@ rhel8stig_auditd_disk_full_action: HALT
 # RHEL_08_030690 if using remote syslog server
 rhel8stig_remotelog_server: 1.1.1.1
 rhel8stig_remotelog_port: 1549
-
-# RHEL_08_040260-62
-rhel8stig_system_is_router: false

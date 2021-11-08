@@ -1,0 +1,14 @@
+{{ if .Vars.RHEL_08_040136 }}
+service:
+  fapolicyd:
+    title: RHEL-08-040136 | The RHEL 8 fapolicy module must be enabled.
+    running: true
+    enabled: true
+    meta:
+      Cat: 2
+      CCI: CCI-001764
+      Group_Title: SRG-OS-000368-GPOS-00154
+      Rule_ID: SV-244545r743884_rule
+      STIG_ID: RHEL-08-040136
+      Vul_ID: V-244545
+{{ end }}

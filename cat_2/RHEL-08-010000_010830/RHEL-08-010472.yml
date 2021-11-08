@@ -1,0 +1,13 @@
+{{ if .Vars.RHEL_08_010472 }}
+package:
+  rng-tools:
+    title: RHEL-08-010472 | RHEL 8 must have the packages required to use the hardware random number generator entropy gatherer service.
+    installed: true
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-244527r743830_rule
+      STIG_ID: RHEL-08-010472
+      Vul_ID: V-244527
+{{ end }}

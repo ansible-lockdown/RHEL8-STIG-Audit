@@ -4,13 +4,13 @@ file:
     title: RHEL-08-010510 | The RHEL 8 SSH daemon must not allow compression or must only allow compression after successful authentication.
     exists: true
     contains:
-    - '/^Compression [nN][oO]/'
-    - '!/^Compression [yY][eE][sS]/'
+    - '/^Compression ([Nn][Oo]|delayed)/'
+    - '!/^Compression [Yy][Ee][Ss]/'
     meta:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230289r627750_rule
+      Rule_ID: SV-230289r743954_rule
       STIG_ID: RHEL-08-010510
       Vul_ID: V-230289
 {{ end }}

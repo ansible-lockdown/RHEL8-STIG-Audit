@@ -4,8 +4,8 @@ file:
     title: RHEL-08-010830 | RHEL 8 must not allow users to override SSH environment variables.
     exists: true
     contains:
-    - '/^PermitUserEnvironment [nN][oO]/'
-    - '!/^PermitUserEnvironment [yY][eE][sS]/'
+    - '/^PermitUserEnvironment [Nn][Oo]/'
+    - '!/^PermitUserEnvironment [Yy][Ee][Ss]/'
     meta:
       Cat: 2
       CCI: CCI-000366
