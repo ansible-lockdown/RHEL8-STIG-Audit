@@ -1,6 +1,6 @@
 {{ if .Vars.RHEL_08_040130 }}
 mount:
-  /tmp:
+  /var/log/audit:
     title: RHEL-08-040130 | RHEL 8 must mount /var/log/audit with the nosuid option
     exists: true
     opts:

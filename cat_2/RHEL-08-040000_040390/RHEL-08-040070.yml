@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_040070 }}
 package:
   autofs:
-    title: RHEL-08-040070 | The RHEL 8 file system automounter must be disabled unless required.
+    title: RHEL-08-040070 | The RHEL 8 file system automounter must be disabled unless required. | package
     installed: false
     meta:
       Cat: 2
@@ -12,6 +12,7 @@ package:
       Vul_ID: V-230502
 service:
   autofs:
+    title: RHEL-08-040070 | The RHEL 8 file system automounter must be disabled unless required | service
     running: false
     enabled: false
     meta:

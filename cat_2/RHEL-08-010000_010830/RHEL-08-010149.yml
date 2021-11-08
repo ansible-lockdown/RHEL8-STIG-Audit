@@ -1,0 +1,32 @@
+{{ if .Vars.legacy_boot }}
+  {{ if .Vars.RHEL_08_010149 }}
+file:
+  /boot/grub2/grub.cfg:
+    title: RHEL-08-010149 | RHEL 8 operating systems booted with a BIOS must require a unique superusers name upon booting into single-user and maintenance modes. | boot config
+    exists: true
+    contains:
+    - '/^set superusers="{{ .Vars.rhel8stig_boot_superuser }}/'
+    - '/^export superusers/'
+    meta:
+      Cat: 1
+      CCI: CCI-000213
+      Group_Title: SRG-OS-000080-GPOS-00048
+      Rule_ID: SV-244522r743815_rule
+      STIG_ID: RHEL-08-010149
+      Vul_ID: V-244522
+  /etc/grub.d/01_users:
+    title: RHEL-08-010149 | RHEL 8 operating systems booted with a BIOS must require a unique superusers name upon booting into single-user and maintenance modes. | configured
+    exists: true
+    contains:
+    - '/^set superusers="[{{ .Vars.rhel8stig_boot_superuser }}]/'
+    - '/^export superusers/'
+    - '/^password_pbkdf2 .* \${GRUB_PASSWORD}/'
+    meta:
+      Cat: 1
+      CCI: CCI-000213
+      Group_Title: SRG-OS-000080-GPOS-00048
+      Rule_ID: SV-244522r743815_rule
+      STIG_ID: RHEL-08-010149
+      Vul_ID: V-244522
+  {{ end }}
+{{ end }}

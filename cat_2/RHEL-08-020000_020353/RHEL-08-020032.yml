@@ -1,0 +1,19 @@
+{{ if .Vars.rhel8stig_gui }}
+  {{ if .Vars.RHEL_08_020032 }}
+file:
+  /etc/dconf/db/local.d/02-login-screen:
+    title: RHEL-08-020032 | RHEL 8 must disable the user list at logon for graphical user interfaces
+    exists: true
+    contains:
+    - '[org/gnome/login-screen]'
+    - '/^disable-user-list=true/'
+    - '!/^disable-user-list=false/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-244536r743857_rule
+      STIG_ID: RHEL-08-020032
+      Vul_ID: V-244536
+  {{ end }}
+{{ end }}

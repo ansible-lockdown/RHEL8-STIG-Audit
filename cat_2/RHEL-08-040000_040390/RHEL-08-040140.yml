@@ -1,25 +1,16 @@
 {{ if .Vars.RHEL_08_040140 }}
-package:
-  usbguard:
-    title: RHEL-08-040140 | RHEL 8 must block unauthorized peripherals before establishing a connection. | installed
-    installed: true
+command:
+  usbguard_rules:
+    title: RHEL-08-040140 | RHEL 8 must block unauthorized peripherals before establishing a connection. | live rules
+    exec: usbguard list-rules
+    exit-status: 0
+    stdout:
+    - '/.*/'
     meta:
       Cat: 2
       CCI: CCI-001958
       Group_Title: SRG-OS-000378-GPOS-00163
-      Rule_ID: SV-230524r627750_rule
-      STIG_ID: RHEL-08-040140
-      Vul_ID: V-230524
-service:
-  usbguard:
-    title: RHEL-08-040140 | RHEL 8 must block unauthorized peripherals before establishing a connection. | running and enabled
-    running: true 
-    enabled: true
-    meta:
-      Cat: 2
-      CCI: CCI-001958
-      Group_Title: SRG-OS-000378-GPOS-00163
-      Rule_ID: SV-230524r627750_rule
+      Rule_ID: SV-230524r744026_rule
       STIG_ID: RHEL-08-040140
       Vul_ID: V-230524
 file:
@@ -30,7 +21,7 @@ file:
       Cat: 2
       CCI: CCI-001958
       Group_Title: SRG-OS-000378-GPOS-00163
-      Rule_ID: SV-230524r627750_rule
+      Rule_ID: SV-230524r744026_rule
       STIG_ID: RHEL-08-040140
       Vul_ID: V-230524
 {{ end }}

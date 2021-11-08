@@ -4,7 +4,7 @@ file:
     title: RHEL_08_030590 | Successful/unsuccessful modifications to the faillock log file in RHEL 8 must generate an audit record. | config check
     exists: true
     contains:
-    - '-w /var/log/faillock -p wa -k logins'
+    - '-w {{ .Vars.rhel8stig_pam_faillock_dir }} -p wa -k logins'
     meta:
       Cat: 2
       CCI: CCI-000169
@@ -18,7 +18,7 @@ command:
     exec: auditctl -l | grep -w faillock
     exit-status: 0
     stdout:
-    - '-w /var/log/faillock -p wa -k logins'
+    - '-w {{ .Vars.rhel8stig_pam_faillock_dir }} -p wa -k logins'
     meta:
       Cat: 2
       CCI: CCI-000169

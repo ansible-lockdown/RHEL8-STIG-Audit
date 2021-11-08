@@ -1,6 +1,6 @@
 {{ if .Vars.RHEL_08_040133 }}
 mount:
-  /tmp:
+  /var/tmp:
     title: RHEL-08-040133 | RHEL 8 must mount /var/tmp with the nosuid option
     exists: true
     opts:

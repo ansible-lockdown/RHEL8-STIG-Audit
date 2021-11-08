@@ -1,0 +1,200 @@
+# Changelog
+
+stig V1R3 23rd July 2021
+
+stig.yml
+
+- linting
+- new rules (see below)
+- Added new benchmark metadata to be populated
+
+goss.yml & run_audit.sh
+
+- wrapper script for values and corresponding values for benchmark in goss.yml
+
+## All control changes have a new rule ID
+
+## CAT-1
+
+- RHEL-08-010000
+  - update rule id and title
+- RHEL-08-010150
+  - moved content to 010149
+- RHEL-08-020330
+  - updated checks
+- RHEL-08-020331
+  - new control
+- RHEL-08-020332
+  - new control
+
+## CAT-2
+
+- RHEL-08-010001
+  - new control
+- RHEL-08-010049
+  - new control
+- RHEL-08-010050
+  - moved some content to 010049
+- RHEL-08-010130
+  - moved some content to 010131
+- RHEL-08-010131
+  - new control
+- RHEL-08-010140
+  - moved some content to 010141
+- RHEL-08-010141
+  - new control
+- RHEL-08-010149
+  - new control
+- RHEL-08-010151
+- RHEL-08-010152
+  - new control
+- RHEL-08-010159
+  - new control
+- RHEL-08-010160
+  - moved content to 010159
+- RHEL-08-010200
+  - moved content to 010201
+- RHEL-08-010201
+  - new control
+- RHEL-08-010287
+  - new control
+- RHEL-08-010290
+  - moved content to 010287
+- RHEL-08-010291
+  - tidy up
+- RHEL-08-010384
+- RHEL-08-010390
+  - updated
+- RHEL-08-010400
+  - updated check
+- RHEL-08-010422
+  - updated check
+- RHEL-08-010472
+  - new control
+- RHEL-08-010490
+  - update title
+- RHEL-08-010510
+  - updated check
+- RHEL-08-010521
+  - title
+  - moved content to 010522
+- RHEL-08-010522
+  - new control
+- RHEL-08-010544
+  - new control
+- RHEL-08-010571
+  - updated to bios boot only check
+- RHEL-08-010572
+  - new control
+- RHEL-08-010700
+  - title update
+- RHEL-08-010710
+- RHEL-08-010731
+  - new control
+- RHEL-08-010740
+  - updated rule
+- RHEL-08-010741
+  - new control
+- RHEL-08-010830
+- RHEL-08-020011,
+  - updated checks
+- RHEL-08-020013
+  - updated checks
+- RHEL-08- 020015
+  - updated checks
+- RHEL-08-020017
+  - updated checks
+- RHEL-08-020019
+  - updated checks
+- RHEL-08-020021
+  - updated check
+- RHEL-08-020023
+  - updated checks
+- RHEL-08-020025
+  - new control
+- RHEL-08-020026
+  - new control
+- RHEL-08-020031
+  - new control
+- RHEL-08-020032
+  - new control
+- RHEL-08-020039
+  - new control
+- RHEL-08-020040
+  - moved some comntent to 020039
+- RHEL-08-020080
+  - moved some checks to 020081 & 020082
+- RHEL-08-020081
+  - new control
+- RHEL-08-020082
+  - new control
+- RHEL-08-030010
+  - title change
+- RHEL-08-030050
+  - updated check
+- RHEL-08-030180
+  - title updated
+- RHEL-08-030181
+  - new control
+- RHEL-08-030320
+- RHEL-08-030630
+- RHEL-08-030680
+  - package name updated
+- RHEL-08-030730
+  - moved part check to 030731
+- RHEL-08-030731
+  - new control
+- RHEL-08-040023
+  - updated check
+- RHEL-08-040100
+- RHEL-08-040101
+  - new control
+- RHEL-08-040135
+  - moved some content to 010436 & 010437
+- RHEL-08-040136
+  - new control
+- RHEL-08-040137
+  - new control
+- RHEL-08-040139
+  - new control
+- RHEL-08-040140
+  - moved some content to 0101439 & 010141
+- RHEL-08-040141
+  - new control
+- RHEL-08-040150
+  - changes in requirements
+- RHEL-08-040159
+  - new control
+- RHEL-08-040160
+  - moved some content to 010459
+- RHEL-08-040162
+  - Removed
+- RHEL-08-040209
+  - new control
+- RHEL-08-040210
+  - moved ipv4 to 040209
+  - new title
+- RHEL-08-040220
+- RHEL-08-040230
+- RHEL-08-040239
+  - new control
+- RHEL-08-040240
+  - moved ipv4 to 040239
+  - new title
+- RHEL-08-040249
+  - new control
+- RHEL-08-040250
+  - moved ipv4 to 040249
+- RHEL-08-040270
+- RHEL-08-040279
+  - new control
+- RHEL-08-040280
+  - moved ipv4 check to 040279
+- RHEL-08-040286
+  - new control
+- RHEL-08-040370 - Updated CCI mapping
+
+## CAT-3
+
+- RHEL-08-030602
+- RHEL-08-030603

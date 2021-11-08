@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_08_010287 }}
+file:
+  /etc/sysconfig/sshd:
+    title: RHEL-08-010287 | The RHEL 8 SSH daemon must be configured to use system-wide crypto policies.
+    exists: true
+    contains:
+    - '/^[^#].*rypto_policy.*/'
+    - '/^# crypto_policy=.*/'
+    meta:
+      Cat: 2
+      CCI: CCI-001453
+      Group_Title: SRG-OS-000250-GPOS-00093
+      Rule_ID: SV-244526r743827_rule
+      STIG_ID: RHEL-08-010287
+      Vul_ID: V-244526
+{{ end }}

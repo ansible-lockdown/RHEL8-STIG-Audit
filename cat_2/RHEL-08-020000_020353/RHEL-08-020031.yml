@@ -1,0 +1,33 @@
+{{ if .Vars.rhel8stig_gui }}
+  {{ if .Vars.RHEL_08_020031 }}
+command:
+  gnome_lock_delay:
+    title: RHEL-08-020031 | RHEL 8 must initiate a session lock for graphical user interfaces when the screensaver is activated. | live check
+    exec: gsettings get org.gnome.desktop.screensaver lock-delay
+    exit-status: 0
+    stdout:
+    - '!/^uint32 [1-5]$/'
+    meta:
+      Cat: 2
+      CCI: CCI-000056
+      Group_Title: SRG-OS-000029-GPOS-00010
+      Rule_ID: SV-244535r743854_rule
+      STIG_ID: RHEL-08-020031
+      Vul_ID: V-244535
+file:
+  /etc/dconf/db/local.d/00-screensaver:
+    title: RHEL-08-020031 | RHEL 8 must initiate a session lock for graphical user interfaces when the screensaver is activated.| config check
+    exists: true
+    contains:
+    - '[org/gnome/desktop/screensaver]'
+    - '/^lock-delay=uint32 [1-5]$/'
+    - '!/^lock-delay=uint32 ^([6-9]|[1-9]{2,3})$/'
+    meta:
+      Cat: 2
+      CCI: CCI-000056
+      Group_Title: SRG-OS-000029-GPOS-00010
+      Rule_ID: SV-244535r743854_rule
+      STIG_ID: RHEL-08-020031
+      Vul_ID: V-244535
+  {{ end }}
+{{ end }}
