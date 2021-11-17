@@ -2,12 +2,12 @@
 command:
   cramfs_modprobe:
     title: RHEL-08-040025 | RHEL 8 must disable mounting of cramfs.
-    exec: grep -ri cramfs /etc/modprobe.d/*
+    exec: grep -ri cramfs /etc/modprobe.d/* | grep -v '#'
     exit-status: 0
     stdout:
-    - '/^[^#].*install cramfs \/bin\/true/'
-    - '!/^install cramfs \/bin\/false/'
-    - '/^[^#].*blacklist cramfs/'
+    - '/(?i)^.*:install cramfs \/bin\/true/'
+    - '/(?i)^.*:blacklist cramfs/'
+    - '!/(?i)^.*:install cramfs \/bin\/false/'
     meta:
       Cat: 3
       CCI: CCI-000381

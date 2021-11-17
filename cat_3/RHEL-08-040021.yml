@@ -2,12 +2,12 @@
 command:
   ATM_modprobe:
     title: RHEL-08-040021 | RHEL 8 must disable the asynchronous transfer mode (ATM) protocol.
-    exec: grep -ri ATM /etc/modprobe.d/*
+    exec: grep -ri ATM /etc/modprobe.d/* | grep -v '#'
     exit-status: 0
     stdout:
-    - '/^[^#].*:install ATM \/bin\/true/'
-    - '!/^install ATM \/bin\/false/'
-    - '/^[^#].*blacklist ATM/'
+    - '/(?i)^.*:install ATM \/bin\/true/'
+    - '/(?i)^.*:blacklist ATM/'
+    - '!/(?i)^.*:install ATM \/bin\/false/'
     meta:
       Cat: 3
       CCI: CCI-000381
