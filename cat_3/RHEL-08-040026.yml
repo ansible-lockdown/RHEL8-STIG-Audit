@@ -12,7 +12,7 @@ command:
       Cat: 3
       CCI: CCI-000381
       Group_Title: SRG-OS-000095-GPOS-00049
-      Rule_ID: SV-230499r627750_rule
+      Rule_ID: SV-230499r792924_rule
       STIG_ID: RHEL-08-040026
       Vul_ID: V-230499
 {{ end }}
