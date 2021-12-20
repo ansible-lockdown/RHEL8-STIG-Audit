@@ -11,7 +11,7 @@ file:
       Cat: 2
       CCI: CCI-000213
       Group_Title: SRG-OS-000080-GPOS-00048
-      Rule_ID: SV-244521r743812_rule
+      Rule_ID: SV-244521r792982_rule
       STIG_ID: RHEL-08-010141
       Vul_ID: V-244521
   /etc/grub.d/01_users:
@@ -25,7 +25,24 @@ file:
       Cat: 2
       CCI: CCI-000213
       Group_Title: SRG-OS-000080-GPOS-00048
-      Rule_ID: SV-244521r743812_rule
+      Rule_ID: SV-244521r792982_rule
+      STIG_ID: RHEL-08-010141
+      Vul_ID: V-244521
+command:
+  checkboot_superuser:
+    title: RHEL-08-010141 | RHEL 8 operating systems booted with United Extensible Firmware Interface (UEFI) implemented must require authentication upon booting into single-user mode and maintenance.  | user_check
+    exec: getent passwd {{ .Vars.rhel8stig_boot_superuser }}
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '!/.*/'
+    meta:
+      Cat: 2
+      CCI: CCI-000213
+      Group_Title: SRG-OS-000080-GPOS-00048
+      Rule_ID: SV-244521r792982_rule
       STIG_ID: RHEL-08-010141
       Vul_ID: V-244521
   {{ end }}
