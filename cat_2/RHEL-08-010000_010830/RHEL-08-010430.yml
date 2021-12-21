@@ -13,11 +13,12 @@ kernel-param:
 command:
   check_randomize:
     title: RHEL-08-010430 | RHEL 8 must implement address space layout randomization (ASLR) to protect its memory from unauthorized code execution. | file
-    exec: grep kernel.randomize_va_space /etc/sysctl.d/99-*.conf
+    exec: grep kernel.randomize_va_space /etc/sysctl.d/*.conf
     contains:
-    - '/^kernel.randomize_va_space( |)=( |)2/'
-    - '!/^#kernel.randomize_va_space( |)=( |)/'
-    - '!/^kernel.randomize_va_space( |)=( |)(1|[3-9])/'
+    - '/^.*: kernel.randomize_va_space( |)=( |)2/'
+    - '/^\/etc\/sysctl.d\/99-*.conf/'  # New check filename must start with 99-
+    - '!/^.*: #kernel.randomize_va_space( |)=( |)/'
+    - '!/^.*: kernel.randomize_va_space( |)=( |)(1|[3-9])/'
     meta:
       Cat: 2
       CCI: CCI-002824

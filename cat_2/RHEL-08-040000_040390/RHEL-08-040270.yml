@@ -13,11 +13,12 @@ kernel-param:
 command:
   ipv4_default_send_redirects_check:
     title: RHEL-08-040270 | RHEL 8 must not allow interfaces to perform Internet Control Message Protocol (ICMP) redirects by default. | file_check
-    exec: grep -r net.ipv4.conf.default.send_redirects /etc/sysctl.d/99-*.conf
+    exec: grep -r net.ipv4.conf.default.send_redirects /etc/sysctl.d/*.conf
     exit-status: 0
     stdout:
-    - '/^net.ipv4.conf.default.send_redirects( |)=( |)0/'
-    - '!/^net.ipv4.conf.default.send_redirects( |)=( |)1/'
+    - '/^.*: net.ipv4.conf.default.send_redirects( |)=( |)0/'
+    - '/^\/etc\/sysctl.d\/99-*.conf/'  # New check filename must start with 99-
+    - '!/^.*: net.ipv4.conf.default.send_redirects( |)=( |)1/'
     meta:
       Cat: 2
       CCI: CCI-000366

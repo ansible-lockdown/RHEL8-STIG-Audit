@@ -14,10 +14,18 @@ kernel-param:
 command:
   ipv6_ra_check:
     title: RHEL-08-040261 | RHEL 8 must not accept router advertisements on all IPv6 interfaces. | file_check
-    exec: grep -r net.ipv6.conf.all.accept_ra /etc/sysctl.d/99-*.conf
+    exec: grep -r net.ipv6.conf.all.accept_ra /etc/sysctl.d/*.conf
     exit-status: 0
     stdout:
-    - '/^net.ipv6.conf.all.accept_ra( |)=( |)0/'
-    - '!/^net.ipv6.conf.all.accept_ra( |)=( |)1/'
+    - '/^.*: net.ipv6.conf.all.accept_ra( |)=( |)0/'
+    - '/^\/etc\/sysctl.d\/99-*.conf/'  # New check filename must start with 99-
+    - '!/^.*: net.ipv6.conf.all.accept_ra( |)=( |)1/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230541r792954_rule
+      STIG_ID: RHEL-08-040261
+      Vul_ID: V-230541
   {{ end }}
 {{ end }}

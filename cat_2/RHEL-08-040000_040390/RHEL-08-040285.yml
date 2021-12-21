@@ -13,11 +13,12 @@ kernel-param:
 command:
   ipv4_rp_filter_check:
     title: RHEL-08-040285 | RHEL 8 must use reverse path filtering on all IPv4 interfaces. | file_check
-    exec: grep -r net.ipv4.conf.all.rp_filter /etc/sysctl.d/99-*.conf
+    exec: grep -r net.ipv4.conf.all.rp_filter /etc/sysctl.d/*.conf
     exit-status: 0
     stdout:
-    - '/^net.ipv4.conf.all.rp_filter( |)=( |)1/'
-    - '!/^net.ipv4.conf.all.rp_filter( |)=( |)0/'
+    - '/^.*: net.ipv4.conf.all.rp_filter( |)=( |)1/'
+    - '/^\/etc\/sysctl.d\/99-*.conf/'  # New check filename must start with 99-
+    - '!/^.*: net.ipv4.conf.all.rp_filter( |)=( |)0/'
     meta:
       Cat: 2
       CCI: CCI-000366
