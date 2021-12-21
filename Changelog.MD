@@ -1,6 +1,79 @@
 # Changelog
 
-stig V1R3 23rd July 2021
+## Stig V1R4 27th October 2021
+
+- new rules
+- stig.yml in upper case
+
+## all controls changed have a new ruleid
+
+### Cat 1
+
+- 010020
+
+### Cat 2
+
+- 010141 & 010149 - added extra check
+- 010180 - removed incorporated to 010700
+- 010190
+- 010295
+- 010300
+- 010320 - check rewritten
+- 010330
+- 010372 - check updated
+- 010373 - check updated
+- 010374 - check updated
+- 010384
+- 010421 - check updated
+- 010422 - check updated
+- 010423 - check updated
+
+- 010430 - check updated
+- 010690
+- 020027 - new control
+- 020028 - new control
+- 020050
+- 020353 - added new check
+- 040132
+- 040133
+- 040134
+- 040209 - check updated
+- 040210 - check updated
+- 040220 - check updated
+- 040230 - check updated
+- 040239 - check updated
+- 040240 - check updated
+- 040249 - check updated
+- 040250 - check updated
+- 040259 - new control
+- 040260 - part moved to 040259 & new check
+- 040261 - new check
+- 040262 - new check
+- 040270 - new check
+- 040279 - new check
+- 040280 - new check
+- 040281 - new check
+- 040282 - new check
+- 040283 - new check
+- 040284 - new check
+- 040285 - new check
+- 040286 - new check
+
+### Cat 3
+
+- 010375 - check updated
+- 010376 - check updated
+- 030601 - check updated
+- 030602 - check updated
+- 040004 - check updated
+- 040021 - aligned check
+- 040022 - aligned check
+- 040023 - aligned check
+- 040024 - aligned check
+- 040025
+- 040026
+
+## Stig V1R3 23rd July 2021
 
 stig.yml
 
@@ -14,7 +87,7 @@ goss.yml & run_audit.sh
 
 ## All control changes have a new rule ID
 
-## CAT-1
+### CAT-1
 
 - RHEL-08-010000
   - update rule id and title
@@ -27,7 +100,7 @@ goss.yml & run_audit.sh
 - RHEL-08-020332
   - new control
 
-## CAT-2
+### CAT-2
 
 - RHEL-08-010001
   - new control
@@ -194,7 +267,7 @@ goss.yml & run_audit.sh
   - new control
 - RHEL-08-040370 - Updated CCI mapping
 
-## CAT-3
+### CAT-3
 
 - RHEL-08-030602
 - RHEL-08-030603
