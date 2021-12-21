@@ -13,11 +13,11 @@ kernel-param:
 command:
   dmesg_restrict:
     title: RHEL-08-010375 | RHEL 8 must restrict access to the kernel message buffer. | conf_check
-    exec: grep -r kernel.dmesg_restrict /etc/sysctl.conf /etc/sysctl.d/*.conf
+    exec: grep -r kernel.dmesg_restrict /etc/sysctl.d/99-*.conf
     exit-status: 0
     stdout:
-    - '/^.*\:kernel.dmesg_restrict = 1/'
-    - '!/^.*\:kernel.dmesg_restrict.*0/'
+    - '/^kernel.dmesg_restrict( |)=( |)1/'
+    - '!/^kernel.dmesg_restrict( |)=( |)0/'
     meta:
       Cat: 3
       CCCI: CCI-001090

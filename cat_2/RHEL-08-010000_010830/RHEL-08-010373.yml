@@ -2,12 +2,12 @@
 command: 
   kernel_discetion_acl_sym:
     title: RHEL-08-010373 | RHEL 8 must enable kernel parameters to enforce discretionary access control on symlinks. | file check
-    exec: grep -r fs.protected_symlinks /etc/sysctl.conf /etc/sysctl.d/*.conf
+    exec: grep -r fs.protected_symlinks /etc/sysctl.d/99-*.conf
     exit-status: 0
     stdout:
-    - '/^.*fs.protected_symlinks.*1/'
-    - '!/^#.*fs.protected_symlinks.*[0-1]/'
-    - '!/^.*fs.protected_symlinks.*0]/'
+    - '/^fs.protected_symlinks( |)=( |)1/'
+    - '!/^#fs.protected_symlinks( |)=( |)[0-1]/'
+    - '!/^fs.protected_symlinks( |)=( |)0/'
     meta:
       Cat: 2
       CCI: CCI-001749
