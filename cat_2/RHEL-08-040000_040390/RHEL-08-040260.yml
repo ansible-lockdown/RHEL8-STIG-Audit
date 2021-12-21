@@ -2,8 +2,23 @@
   {{ if .Vars.RHEL_08_040260 }}
 kernel-param:
   net.ipv6.conf.all.forwarding:
-    title: RHEL-08-040260 | RHEL 8 must not enable IPv6 packet forwarding unless the system is a router.
+    title: RHEL-08-040260 | RHEL 8 must not enable IPv6 packet forwarding unless the system is a router. | live_check
     value: '0'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230540r792951_rule
+      STIG_ID: RHEL-08-040260
+      Vul_ID: V-230540
+command:
+  ipv6_forward_check:
+    title: RHEL-08-040260 | RHEL 8 must not enable IPv6 packet forwarding unless the system is a router. | file_check
+    exec: grep -r net.ipv6.conf.all.forwarding /etc/sysctl.d/99-*.conf
+    exit-status: 0
+    stdout:
+    - '/^net.ipv6.conf.all.forwarding( |)=( |)0/'
+    - '!/^net.ipv6.conf.all.forwarding( |)=( |)1/'
     meta:
       Cat: 2
       CCI: CCI-000366

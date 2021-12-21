@@ -2,9 +2,24 @@
   {{ if .Vars.RHEL_08_040259 }}
 kernel-param:
   net.ipv4.ip_forward:
-    title: RHEL-08-040259 | RHEL 8 must not enable IPv4 packet forwarding unless the system is a router.
+    title: RHEL-08-040259 | RHEL 8 must not enable IPv4 packet forwarding unless the system is a router. | live_check
     value: '0'
     meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: V-250317r793008_rule
+      STIG_ID: RHEL-08-040259
+      Vul_ID: V-250317
+command:
+  ipv6_forward_check:
+    title: RHEL-08-040260 | RHEL-08-040259 | RHEL 8 must not enable IPv4 packet forwarding unless the system is a router. | file_check
+    exec: grep -r net.ipv4.conf.all.forwarding /etc/sysctl.d/99-*.conf
+    exit-status: 0
+    stdout:
+    - '/^net.ipv4.conf.all.forwarding( |)=( |)0/'
+    - '!/^net.ipv4.conf.all.forwarding( |)=( |)1/'
+     meta:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
