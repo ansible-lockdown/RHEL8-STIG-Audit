@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_010020 }}
 command:
   fipscheck:
-    title: RHEL-08-010020 | RHEL 8 must implement NIST FIPS-validated cryptography for the following: to provision digital signatures, to generate cryptographic hashes, and to protect data requiring data-at-rest protections in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, and standards. | fipscheck
+    title: RHEL-08-010020 | RHEL 8 must implement NIST FIPS-validated cryptography for the following - to provision digital signatures, to generate cryptographic hashes, and to protect data requiring data-at-rest protections in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, and standards. | fipscheck
     exec: fips-mode-setup --check
     exit-status: 0
     stdout:
@@ -15,7 +15,7 @@ command:
       STIG_ID: RHEL-08-010020
       Vul_ID: V-230223
   fips_live:
-     title: RHEL-08-010020 | RHEL 8 must implement NIST FIPS-validated cryptography for the following: to provision digital signatures, to generate cryptographic hashes, and to protect data requiring data-at-rest protections in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, and standards. | fips_kernel
+     title: RHEL-08-010020 | RHEL 8 must implement NIST FIPS-validated cryptography for the following - to provision digital signatures, to generate cryptographic hashes, and to protect data requiring data-at-rest protections in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, and standards. | fips_kernel
      exec: grub2-editenv list | grep fip
      exit-status: 0
      stdout:
@@ -30,7 +30,7 @@ command:
        Vul_ID: V-230223
 file:
   /proc/sys/crypto/fips_enabled:
-    title: RHEL-08-010020 | RHEL 8 must implement NIST FIPS-validated cryptography for the following: to provision digital signatures, to generate cryptographic hashes, and to protect data requiring data-at-rest protections in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, and standards. | fips_process
+    title: RHEL-08-010020 | RHEL 8 must implement NIST FIPS-validated cryptography for the following - to provision digital signatures, to generate cryptographic hashes, and to protect data requiring data-at-rest protections in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, and standards. | fips_process
     exists: true
     contains:
     - '1'
