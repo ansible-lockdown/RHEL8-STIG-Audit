@@ -37,7 +37,7 @@ command:
      exec: tail /etc/fapolicyd/fapolicyd.rules
      exit-status: 0
      stdout:
-     - '/allow exe=\/usr\/bin\/python3.7 : ftype=text\/x-python/'
+     - '/allow exe={{ .Vars.python_bin }} : ftype=text\/x-python/'
      - '/^deny all all/'
      - '!/none/'
      meta:
