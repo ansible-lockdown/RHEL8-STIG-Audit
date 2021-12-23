@@ -30,7 +30,7 @@ file:
       Vul_ID: V-244522
 command:
   checkboot_superuser:
-    title: RHEL-08-010149 | RHEL 8 operating systems booted with a BIOS must require a unique superusers name upon booting into single-user and maintenance modes. | user check
+    title: RHEL-08-010149 | RHEL 8 operating systems booted with a BIOS must require a unique superusers name upon booting into single-user and maintenance modes. | existing user check
     exec: getent passwd {{ .Vars.rhel8stig_boot_superuser }}
     exit-status:
       or:
