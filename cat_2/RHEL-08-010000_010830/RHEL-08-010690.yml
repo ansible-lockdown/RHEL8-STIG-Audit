@@ -2,7 +2,7 @@
 command:
   init_paths_sys_dirs:
     title: RHEL-08-010690 | Executable search paths within the initialization files of all local interactive RHEL 8 users must only contain paths that resolve to the system default or the users home directory.
-    exec:  grep -i path= /home/*/.*
+    exec: grep -r PATH= /home/*/.[^.]*
     exit-status: 0
     stdout:
     - '/PATH="\$HOME/.local/bin:\$HOME/bin:\$PATH"$/'

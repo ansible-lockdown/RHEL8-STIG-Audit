@@ -16,8 +16,8 @@ command:
     exec: grep -r net.ipv4.icmp_echo_ignore_broadcasts /etc/sysctl.d/99-*.conf
     exit-status: 0
     stdout:
-    - '/^net.ipv4.icmp_echo_ignore_broadcasts( |)=( |)1'
-    - '!/^.*net.ipv4.icmp_echo_ignore_broadcasts( |)=( |)0'
+    - '/^net.ipv4.icmp_echo_ignore_broadcasts( |)=( |)1/'
+    - '!/^.*net.ipv4.icmp_echo_ignore_broadcasts( |)=( |)0/'
     meta:
       Cat: 2
       CCI: CCI-000366

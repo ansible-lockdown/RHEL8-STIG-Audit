@@ -13,12 +13,11 @@ kernel-param:
 command:
   kptr_restrict_check:
     title: RHEL-08-040283 | RHEL 8 must restrict exposed kernel pointer addresses access. | file_check
-    exec: grep -r kernel.kptr_restrict  /etc/sysctl.d/*.conf
+    exec: grep -r kernel.kptr_restrict  /etc/sysctl.d/99-*.conf
     exit-status: 0
     stdout:
-    - '/^.*: kernel.kptr_restrict( |)=( |)1/'
-    - '/^\/etc\/sysctl.d\/99-*.conf/'  # New check filename must start with 99-
-    - '!/^.*: kernel.kptr_restrict( |)=( |)0/'
+    - '/^kernel.kptr_restrict( |)=( |)1/'
+    - '!/^.*kernel.kptr_restrict( |)=( |)0/'
     meta:
       Cat: 2
       CCI: CCI-000366
