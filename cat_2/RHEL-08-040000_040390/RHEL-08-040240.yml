@@ -13,12 +13,11 @@ kernel-param:
 command:
   check_ipv6_source_route:
     title: RHEL-08-040240 | RHEL 8 must not forward IPv6 source-routed packets. | file_check
-    exec: grep net.ipv6.conf.all.accept_source_route /etc/sysctl.d/*.conf
+    exec: grep net.ipv6.conf.all.accept_source_route /etc/sysctl.d/99-*.conf
     exit-status: 0
     stdout:
-    - '/^.*: net.ipv6.conf.all.accept_source_route( |)=( |)0/'
-    - '/^\/etc\/sysctl.d\/99-*.conf/'  # New check filename must start with 99-
-    - '!/^.*: net.ipv6.conf.all.accept_source_route( |)=( |)1/'
+    - '/^net.ipv6.conf.all.accept_source_route( |)=( |)0/'
+    - '!/^.*net.ipv6.conf.all.accept_source_route( |)=( |)1/'
     meta:
       Cat: 2
       CCI: CCI-000366

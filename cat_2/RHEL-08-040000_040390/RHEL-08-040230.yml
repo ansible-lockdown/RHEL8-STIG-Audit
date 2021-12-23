@@ -13,12 +13,11 @@ kernel-param:
 command:
   check_ipv4_ignore_broadcast:
     title: RHEL-08-040230 | RHEL 8 must not respond to Internet Control Message Protocol (ICMP) echoes sent to a broadcast address. | conf_check
-    exec: grep -r net.ipv4.icmp_echo_ignore_broadcasts /etc/sysctl.d/*.conf
+    exec: grep -r net.ipv4.icmp_echo_ignore_broadcasts /etc/sysctl.d/99-*.conf
     exit-status: 0
     stdout:
-    - '/^.*: net.ipv4.icmp_echo_ignore_broadcasts( |)=( |)1'
-    - '/^\/etc\/sysctl.d\/99-*.conf/'  # New check filename must start with 99-
-    - '!/^.*: net.ipv4.icmp_echo_ignore_broadcasts( |)=( |)0'
+    - '/^net.ipv4.icmp_echo_ignore_broadcasts( |)=( |)1'
+    - '!/^.*net.ipv4.icmp_echo_ignore_broadcasts( |)=( |)0'
     meta:
       Cat: 2
       CCI: CCI-000366

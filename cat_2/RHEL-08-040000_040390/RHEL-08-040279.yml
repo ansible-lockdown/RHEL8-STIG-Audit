@@ -13,12 +13,11 @@ kernel-param:
 command:
   ipv4_all_accept_redirects_check:
     title: RHEL-08-040279 | RHEL 8 must ignore IPv4 Internet Control Message Protocol (ICMP) redirect messages.| file_check
-    exec: grep -r net.ipv4.conf.all.accept_redirects /etc/sysctl.d/*.conf
+    exec: grep -r net.ipv4.conf.all.accept_redirects /etc/sysctl.d/99-*.conf
     exit-status: 0
     stdout:
-    - '/^.*: net.ipv4.conf.all.accept_redirects( |)=( |)0/'
-    - '/^\/etc\/sysctl.d\/99-*.conf/'  # New check filename must start with 99-
-    - '!/^.*: net.ipv4.conf.all.accept_redirects( |)=( |)1/'
+    - '/^net.ipv4.conf.all.accept_redirects( |)=( |)0/'
+    - '!/^.*net.ipv4.conf.all.accept_redirects( |)=( |)1/'
     meta:
       Cat: 2
       CCI: CCI-000366

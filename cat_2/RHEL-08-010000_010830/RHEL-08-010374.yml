@@ -2,13 +2,11 @@
 command: 
   kernel_discret_acl_hardlink:
     title: RHEL-08-010374 | RHEL 8 must enable kernel parameters to enforce discretionary access control on hardlinks. | file check
-    exec: grep -r fs.protected_hardlinks /etc/sysctl.d/*.conf
+    exec: grep -r fs.protected_hardlinks /etc/sysctl.d/99-*.conf
     exit-status: 0
     stdout:
-    - '/^.*: fs.protected_hardlinks( |)=( |)1/'
-    - '/^\/etc\/sysctl.d\/99-*.conf/'  # New check filename must start with 99-
-    - '!/^.*: #fs.protected_hardlinks( |)=( |)[0-1]/'
-    - '!/^.*: fs.protected_hardlinks( |)=( |)0/'
+    - '/^fs.protected_hardlinks( |)=( |)1/'
+    - '!/.*fs.protected_hardlinks( |)=( |)0/'
     meta:
       Cat: 2
       CCI: CCI-001749
