@@ -10,13 +10,13 @@ file:
       Cat: 3
       CCI: CCI-000366
       Group_Title: SRG-OS-000062-GPOS-00031
-      Rule_ID: SV-230468r627750_rule
+      Rule_ID: SV-230468r792904_rule
       STIG_ID: RHEL-08-030601
       Vul_ID: V-230468
 command:
   grub_audit_check:
     title: RHEL-08-030601 | RHEL 8 must enable auditing of processes that start prior to the audit daemon. | running grub
-    exec: grub2-editenv - list | grep audit
+    exec: grub2-editenv list | grep audit
     exit-status: 0
     stdout:
     - '/^kernelopts.*\saudit=1\s.*/'
@@ -25,7 +25,7 @@ command:
       Cat: 3
       CCI: CCI-000366
       Group_Title: SRG-OS-000062-GPOS-00031
-      Rule_ID: SV-230468r627750_rule
+      Rule_ID: SV-230468r792904_rule
       STIG_ID: RHEL-08-030601
       Vul_ID: V-230468
 {{ end }}

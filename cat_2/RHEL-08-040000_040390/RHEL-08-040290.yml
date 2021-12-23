@@ -3,13 +3,13 @@ command:
   postfix_restricted:
     title: RHEL-08-040290 | RHEL 8 must be configured to prevent unrestricted mail relaying
     exec: postconf -n smtpd_client_restrictions
-    skip: {{ .Vars.skip_postfix_check }}
     exit-status:
       or:
       - 0
       - 127
     stdout:
     - '/^smtpd_client_restrictions = permit_mynetworks, reject$/'
+    skip: {{ .Vars.skip_postfix_check }}
     meta:
       Cat: 2
       CCI: CCI-000366

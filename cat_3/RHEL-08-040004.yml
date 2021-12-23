@@ -10,13 +10,13 @@ file:
       Cat: 3
       CCI: CCI-000381
       Group_Title: SRG-OS-000095-GPOS-00049
-      Rule_ID: SV-230491r627750_rule
+      Rule_ID: SV-230491r792908_rule
       STIG_ID: RHEL-08-040004
       Vul_ID: V-230491
 command:
   grub_audit_check:
     title: RHEL-08-040004 | RHEL 8 must enable mitigations against processor-based vulnerabilities. | running grub
-    exec: grub2-editenv - list | grep pti
+    exec: grub2-editenv list | grep pti
     exit-status: 0
     stdout:
     - '/^kernelopts.*\spti=on.*/'
@@ -25,7 +25,7 @@ command:
       Cat: 3
       CCI: CCI-000381
       Group_Title: SRG-OS-000095-GPOS-00049
-      Rule_ID: SV-230491r627750_rule
+      Rule_ID: SV-230491r792908_rule
       STIG_ID: RHEL-08-040004
       Vul_ID: V-230491
 {{ end }}

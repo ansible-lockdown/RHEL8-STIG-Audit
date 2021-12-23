@@ -2,13 +2,28 @@
   {{ if .Vars.RHEL_08_040262 }}
 kernel-param:
   net.ipv6.conf.default.accept_ra:
-    title: RHEL-08-040262 | RHEL 8 must not accept router advertisements on all IPv6 interfaces by default. | IPv6
+    title: RHEL-08-040262 | RHEL 8 must not accept router advertisements on all IPv6 interfaces by default. | live_check
     value: '0'
     meta:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230542r627750_rule
+      Rule_ID: SV-230542r792957_rule
+      STIG_ID: RHEL-08-040262
+      Vul_ID: V-230542
+command:
+  ipv6_default_ra_check:
+    title: RHEL-08-040262 | RHEL 8 must not accept router advertisements on all IPv6 interfaces by default. | file_check
+    exec: grep -r net.ipv6.conf.default.accept_ra /etc/sysctl.d/99-*.conf
+    exit-status: 0
+    stdout:
+    - '/^net.ipv6.conf.default.accept_ra( |)=( |)0/'
+    - '!/^.*net.ipv6.conf.default.accept_ra( |)=( |)1/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230542r792957_rule
       STIG_ID: RHEL-08-040262
       Vul_ID: V-230542
   {{ end }}

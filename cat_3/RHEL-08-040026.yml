@@ -2,17 +2,17 @@
 command:
   firewire_modprobe:
     title: RHEL-08-040026 | RHEL 8 must disable IEEE 1394 (FireWire) Support.
-    exec: grep -ri firewire-core /etc/modprobe.d/*
+    exec: grep -ri firewire-core /etc/modprobe.d/* | grep -v '#'
     exit-status: 0
     stdout:
-    - '/^[^#].*install firewire-core \/bin\/true/'
-    - '!/^install firewire-core \/bin\/false/'
-    - '/^[^#].*blacklist firewire-core/'
+    - '/(?i)^.*:install firewire-core \/bin\/true/'
+    - '/(?i)^.*:blacklist firewire-core/'
+    - '!/(?i)^.*:install firewire-core \/bin\/false/'
     meta:
       Cat: 3
       CCI: CCI-000381
       Group_Title: SRG-OS-000095-GPOS-00049
-      Rule_ID: SV-230499r627750_rule
+      Rule_ID: SV-230499r792924_rule
       STIG_ID: RHEL-08-040026
       Vul_ID: V-230499
 {{ end }}
