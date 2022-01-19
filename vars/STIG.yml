@@ -1,16 +1,5 @@
-audit_run: dummy_value  # This is forced to become wrapper by running the run_audit script to add more metadata if run via remediation role this is not valid.
-
-rhel8stig_benchmark:
-  - "type: STIG"
-  - "version: '1.3'"
-  - "os: RHEL 8"
-  - "fullname: red_hat_enterprise_linux_8"
-# - "automation_group: []"  # Ability to group similar servers together - if wrapper define with -g - if remediation uses ansible inventory group
-# - "epoch: "  # Should be populated via wrapper script"
-# - "hostname: "  # Should be populated via wrapper script"
-# - "host_os_version: 8.x"  # Should be populated via wrapper script"
-# - "host_os_locale: EST"  # Should be populated via wrapper script"
-# - "machine_uuid:  "  # Should be populated via wrapper script"
+## metadata for Audit benchmark
+benchmark_version: '1.4'
 
 
 rhel8stig_os_distribution: redhat
@@ -91,7 +80,6 @@ RHEL_08_010161: true
 RHEL_08_010162: true
 RHEL_08_010163: true
 RHEL_08_010170: true
-RHEL_08_010180: true
 RHEL_08_010190: true
 RHEL_08_010200: true
 RHEL_08_010201: true
@@ -196,6 +184,8 @@ RHEL_08_020022: true
 RHEL_08_020023: true
 RHEL_08_020025: true
 RHEL_08_020026: true
+RHEL_08_020027: true
+RHEL_08_020028: true
 RHEL_08_020030: true
 RHEL_08_020031: true
 RHEL_08_020032: true
@@ -379,6 +369,7 @@ RHEL_08_040239: true
 RHEL_08_040240: true
 RHEL_08_040249: true
 RHEL_08_040250: true
+RHEL_08_040259: true
 RHEL_08_040260: true
 RHEL_08_040261: true
 RHEL_08_040262: true
@@ -472,3 +463,6 @@ rhel8stig_auditd_disk_full_action: HALT
 # RHEL_08_030690 if using remote syslog server
 rhel8stig_remotelog_server: 1.1.1.1
 rhel8stig_remotelog_port: 1549
+
+# RHEL_08_040137
+python_bin: '/usr/bin/python'

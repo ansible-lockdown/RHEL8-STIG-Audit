@@ -2,17 +2,17 @@
 command:
   TIPC_modprobe:
     title: RHEL-08-040024 | RHEL 8 must disable the transparent inter-process communication (TIPC) protocol.
-    exec: grep -ri TIPC /etc/modprobe.d/* | grep -v '#'
+    exec: grep -ri tipc /etc/modprobe.d/* | grep -v '#'
     exit-status: 0
     stdout:
-    - '/(?i)^.*:install TIPC \/bin\/true/'
-    - '/(?i)^.*:blacklist TIPC/'
-    - '!/(?i)^.*:install TIPC \/bin\/false/'
+    - '/(?i)^.*:install tipc \/bin\/true/'
+    - '/(?i)^.*:blacklist tipc/'
+    - '!/(?i)^.*:install tipc \/bin\/false/'
     meta:
       Cat: 3
       CCI: CCI-000381
       Group_Title: SRG-OS-000095-GPOS-00049
-      Rule_ID: SV-230497r627750_rule
+      Rule_ID: SV-230497r792920_rule
       STIG_ID: RHEL-08-040024
       Vul_ID: V-230497
 {{ end }}

@@ -7,7 +7,22 @@ kernel-param:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-244552r743905_rule
+      Rule_ID: SV-244552r792993_rule
+      STIG_ID: RHEL-08-040249
+      Vul_ID: V-244552
+command:
+  check_ipv4_def_source_route:
+    title: RHEL-08-040249 | RHEL 8 must not forward IPv4 source-routed packets. | file_check
+    exec: grep net.ipv4.conf.default.accept_source_route /etc/sysctl.d/99-*.conf
+    exit-status: 0
+    stdout:
+    - '/^net.ipv4.conf.default.accept_source_route( |)=( |)0/'
+    - '!/^.*net.ipv4.conf.default.accept_source_route( |)=( |)1/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-244552r792993_rule
       STIG_ID: RHEL-08-040249
       Vul_ID: V-244552
 {{ end }}

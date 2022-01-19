@@ -3,13 +3,13 @@ command:
   check_cert_mfa:
     title: RHEL-08-010400 | RHEL 8 must implement certificate status checking for multifactor authentication.
     exec: grep certificate_verification /etc/sssd/sssd.conf /etc/sssd/conf.d/*.conf | grep -v "^#"
-    skip: {{ .Vars.skip_sssd_check }}
     exit-status:
       or:
       - 0
       - 1
     stdout:
     - '/^certificate_verification = ocsp_dgst=sha1/'
+    skip: {{ .Vars.skip_sssd_check }}
     meta:
       Cat: 2
       CCI: CCI-001948

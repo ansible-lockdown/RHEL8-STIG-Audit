@@ -7,7 +7,22 @@ kernel-param:
       Cat: 2
       CCI: CCI-002824
       Group_Title: SRG-OS-000433-GPOS-00193
-      Rule_ID: SV-230280r627750_rule
+      Rule_ID: SV-230280r792891_rule
+      STIG_ID: RHEL-08-010430
+      Vul_ID: V-230280
+command:
+  check_randomize:
+    title: RHEL-08-010430 | RHEL 8 must implement address space layout randomization (ASLR) to protect its memory from unauthorized code execution. | file
+    exec: grep kernel.randomize_va_space /etc/sysctl.d/99-*.conf
+    exit-status: 0
+    stdout:
+    - '/^kernel.randomize_va_space( |)=( |)2/'
+    - '!/^.*kernel.randomize_va_space( |)=( |)(1|[3-9])/'
+    meta:
+      Cat: 2
+      CCI: CCI-002824
+      Group_Title: SRG-OS-000433-GPOS-00193
+      Rule_ID: SV-230280r792891_rule
       STIG_ID: RHEL-08-010430
       Vul_ID: V-230280
 {{ end }}

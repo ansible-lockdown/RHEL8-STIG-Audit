@@ -16,8 +16,8 @@ command:
     exit-status: 0
     exec: if [ `dmsetup status | awk '{print $NF}' | grep -cv crypt` -ge 1 ] ; then echo "Fail - unencrypted disks"; else echo "OK - System disks encrypted"; fi
     stdout:
-    - "OK - System disks encrypted"
-    - "!/^Fail - unencrypted disks/"
+    - 'OK - System disks encrypted'
+    - '!/Fail - unencrypted disks/'
     meta:
       Cat: 2
       CCI: CCI-001199

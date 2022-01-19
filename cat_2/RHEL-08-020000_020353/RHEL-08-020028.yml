@@ -1,0 +1,17 @@
+{{ if .Vars.rhel8stig_os_version_pre_8_2 }}
+  {{ if .Vars.RHEL_08_020028 }}
+command: 
+  faillock_dir_secontext:
+    title: RHEL-08-020028 | RHEL 8 systems below version 8.2 must configure SELinux context type to allow the use of a non-default faillock tally directory.| OS_ver <= 8.2
+    exec: ls -Zd {{ .Vars.rhel8stig_pam_faillock_dir }} | awk -F':' '{print $3}'
+    contains:
+    - '/^faillog_t$/'
+    meta:
+      Cat: 2
+      CCI: CCI-00044
+      Group_Title: SRG-OS-000021-GPOS-00005
+      Rule_ID: SV-250316r793010_rule
+      STIG_ID: RHEL-08-020028
+      Vul_ID: V-250316
+  {{ end }}
+{{ end }}
