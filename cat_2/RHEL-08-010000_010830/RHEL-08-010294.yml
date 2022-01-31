@@ -4,13 +4,8 @@ file:
     title: RHEL-08-010294 | The RHEL 8 operating system must implement DoD-approved TLS encryption in the OpenSSL package.
     exists: true
     contains:
-    - '!/^#MinProtocol = TLSv1.2/'
-    - '!/^MinProtocol = (DTLS0.9|SSL3.0|TLS1.0|TLS1.1|DTLS1.0)/'
-      or:
-      - '/^MinProtocol = TLSv1.2/'
-        and:
-        - '/^TLS.MinProtocol = TLSv1.2/'
-        - '/^DTLS.MinProtocol = DTLSv1.2/'
+      - '/^(TLS.|)MinProtocol = TLSv1.2/'
+      - '/^DTLS.MinProtocol = DTLSv1.2/'
     meta:
       Cat: 2
       CCI: CCI-001453
