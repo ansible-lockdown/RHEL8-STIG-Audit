@@ -10,7 +10,7 @@ command:
       Cat: 2
       CCI: CCI-001849
       Group_Title: SRG-OS-000341-GPOS-00132
-      Rule_ID: SV-230476r627750_rule
+      Rule_ID: SV-230476r809313_rule
       STIG_ID: RHEL-08-030660
       Vul_ID: V-230476
   audit_log_filesystem_manual:
@@ -23,7 +23,7 @@ command:
       Cat: 2
       CCI: CCI-001849
       Group_Title: SRG-OS-000341-GPOS-00132
-      Rule_ID: SV-230476r627750_rule
+      Rule_ID: SV-230476r809313_rule
       STIG_ID: RHEL-08-030660
       Vul_ID: V-230476
 {{ end }}

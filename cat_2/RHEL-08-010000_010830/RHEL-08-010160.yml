@@ -4,12 +4,12 @@ file:
     title: RHEL-08-010160 |  The RHEL 8 pam_unix.so module must be configured in the password-auth file to use a FIPS 140-2 approved cryptographic hashing algorithm for system authentication.
     exists: true
     contains:
-    - '/^password sufficient pam_unix.so sha512 rounds=([5-9][0-9]{3,})/'
+    - '/^password sufficient pam_unix.so sha512/'
     meta:
       Cat: 2
       CCI: CCI-000803
       Group_Title: SRG-OS-000120-GPOS-00061
-      Rule_ID: SV-230237r743931_rule
+      Rule_ID: SV-230237r809276_rule
       STIG_ID: RHEL-08-010160
       Vul_ID: V-230237
 {{ end }}

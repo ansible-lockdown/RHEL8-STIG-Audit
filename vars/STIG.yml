@@ -15,6 +15,9 @@ rhel8stig_cat3: true
 run_heavy_tests: true
 timeout_ms: 60000
 
+# To be set if not running via run_audit.sh script
+os_release: 8.5  # This is also set and overridden by the run_audit script.
+
 # If using the supplied graphical interface
 rhel8stig_gui: false
 
@@ -36,6 +39,7 @@ rhel8stig_bootloader_path: /boot/grub2/
 # Cat 1 rules
 RHEL_08_010000: true
 RHEL_08_010020: true
+RHEL_08_010121: true
 RHEL_08_010140: true
 RHEL_08_010150: true
 RHEL_08_010370: true
@@ -69,7 +73,6 @@ RHEL_08_010100: true
 RHEL_08_010110: true
 RHEL_08_010120: true
 RHEL_08_010130: true
-RHEL_08_010131: true
 RHEL_08_010141: true
 RHEL_08_010149: true
 RHEL_08_010151: true
@@ -99,17 +102,23 @@ RHEL_08_010300: true
 RHEL_08_010310: true
 RHEL_08_010320: true
 RHEL_08_010330: true
+RHEL_08_010331: true
 RHEL_08_010340: true
+RHEL_08_010341: true
 RHEL_08_010350: true
+RHEL_08_010351: true
+RHEL_08_010359: true
 RHEL_08_010360: true
 RHEL_08_010372: true
 RHEL_08_010373: true
 RHEL_08_010374: true
+RHEL_08_010379: true
 RHEL_08_010380: true
 RHEL_08_010381: true
 RHEL_08_010382: true
 RHEL_08_010383: true
 RHEL_08_010384: true
+RHEL_08_010385: true
 RHEL_08_010390: true
 RHEL_08_010400: true
 RHEL_08_010410: true
@@ -130,7 +139,6 @@ RHEL_08_010522: true
 RHEL_08_010543: true
 RHEL_08_010544: true
 RHEL_08_010550: true
-RHEL_08_010560: true
 RHEL_08_010561: true
 RHEL_08_010570: true
 RHEL_08_010571: true
@@ -200,6 +208,7 @@ RHEL_08_020081: true
 RHEL_08_020082: true
 RHEL_08_020090: true  # TODO
 RHEL_08_020100: true
+RHEL_08_020101: true
 RHEL_08_020110: true
 RHEL_08_020120: true
 RHEL_08_020130: true
@@ -212,6 +221,7 @@ RHEL_08_020190: true
 RHEL_08_020200: true
 RHEL_08_020210: true
 RHEL_08_020220: true
+RHEL_08_020221: true
 RHEL_08_020230: true
 RHEL_08_020231: true
 RHEL_08_020240: true
@@ -232,7 +242,6 @@ RHEL_08_030010: true
 RHEL_08_030020: true
 RHEL_08_030030: true
 RHEL_08_030040: true
-RHEL_08_030050: true
 RHEL_08_030060: true
 RHEL_08_030061: true
 RHEL_08_030062: true
@@ -256,12 +265,8 @@ RHEL_08_030181: true
 RHEL_08_030190: true
 RHEL_08_030200: true
 RHEL_08_030210: true
-RHEL_08_030220: true
-RHEL_08_030230: true
-RHEL_08_030240: true
 RHEL_08_030250: true
 RHEL_08_030260: true
-RHEL_08_030270: true
 RHEL_08_030280: true
 RHEL_08_030290: true
 RHEL_08_030300: true
@@ -281,28 +286,13 @@ RHEL_08_030340: true
 RHEL_08_030350: true
 RHEL_08_030360: true
 RHEL_08_030361: true
-RHEL_08_030362: true
-RHEL_08_030363: true
-RHEL_08_030364: true
-RHEL_08_030365: true
 RHEL_08_030370: true
-RHEL_08_030380: true
 RHEL_08_030390: true
 RHEL_08_030400: true
 RHEL_08_030410: true
 RHEL_08_030420: true
-RHEL_08_030430: true
-RHEL_08_030440: true
-RHEL_08_030450: true
-RHEL_08_030460: true
-RHEL_08_030470: true
 RHEL_08_030480: true
 RHEL_08_030490: true
-RHEL_08_030500: true
-RHEL_08_030510: true
-RHEL_08_030520: true
-RHEL_08_030530: true
-RHEL_08_030540: true
 RHEL_08_030550: true
 RHEL_08_030560: true
 RHEL_08_030570: true
@@ -384,6 +374,7 @@ RHEL_08_040285: true
 RHEL_08_040286: true
 RHEL_08_040290: true
 RHEL_08_040320: true
+RHEL_08_040321: true
 RHEL_08_040330: true
 RHEL_08_040340: true
 RHEL_08_040341: true

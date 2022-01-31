@@ -1,0 +1,15 @@
+{{ if .Vars.RHEL_08_010385 }}
+file:
+  /etc/pam.d/sudo:
+    title: RHEL-08-010385 | The RHEL 8 operating system must not be configured to bypass password requirements for privilege escalation
+    exist: true
+    contains:
+    - '!/*pam_succeed_if/'
+    meta:
+      Cat: 2
+      CCI: CCI-002038
+      Group_Title: SRG-OS-000373-GPOS-00156
+      Rule_ID: SV-251712r810017_rule
+      STIG_ID: RHEL-08-010385
+      Vul_ID: V-251712
+{{ end }}
