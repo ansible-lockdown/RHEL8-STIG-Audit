@@ -3,6 +3,7 @@
 ## Stig V1R5 27th January 2022
 
 - New Rule ID for all listed
+- os_release variable requirements for new rules. Is set by run_audit script but can be manually set in STIG.yml also.
 
 ### Cat 1
 
