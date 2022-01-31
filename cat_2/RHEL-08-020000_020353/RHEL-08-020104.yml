@@ -1,4 +1,4 @@
-{{ if .Vars.os_release > 8.4 }}
+{{ if ge .Vars.os_release 8.4 }}
   {{ if .Vars.RHEL_08_020104 }}
 file: 
    /etc/security/pwquality.conf:
