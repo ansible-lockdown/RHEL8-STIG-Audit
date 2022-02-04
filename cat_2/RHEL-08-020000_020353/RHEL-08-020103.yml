@@ -1,4 +1,4 @@
-{{ if lt .Vars.os_release 8.4 }}
+{{ if lt .Vars.os_release "8.4" }}
   {{ if .Vars.RHEL_08_020103 }}
 file: 
   /etc/pam.d/password-auth:
