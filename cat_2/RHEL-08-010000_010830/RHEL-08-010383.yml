@@ -11,6 +11,9 @@ command:
     - '/^\/etc\/sudoers:Defaults !targetpw/'
     - '/^\/etc\/sudoers:Defaults !rootpw/'
     - '/^\/etc\/sudoers:Defaults !runaspw/'
+    - '!/^\/etc\/sudoers.d/.*:Defaults !targetpw/'
+    - '!/^\/etc\/sudoers.d/.*:Defaults !rootpw/'
+    - '!/^\/etc\/sudoers.d/.*:Defaults !runaspw/'
     meta:
       Cat: 2
       CCI: CCI-002227
