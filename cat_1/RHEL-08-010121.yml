@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_08_010121 }}
+command: 
+  no_blank_passwds:
+    title: RHEL-08-010121 | RHEL 8 must employ FIPS 140-2 approved cryptographic hashing algorithms for all stored passwords.
+    exec: "awk -F: '!$2 {print $1}' /etc/shadow"
+    exit-status: 1
+    stdout:
+    - '!/^.*/'
+    meta:
+      Cat: 1
+      CCI: CCI-000366
+      Group_Title:  SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-251706r809342_rule
+      STIG_ID: RHEL-08-010121
+      Vul_ID: V-251706
+{{ end }}

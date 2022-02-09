@@ -1,5 +1,82 @@
 # Changelog
 
+## Stig V1R5 27th January 2022
+
+- New Rule ID for all listed
+- os_release variable requirements for new rules. Is set by run_audit script but can be manually set in STIG.yml also.
+
+### Cat 1
+
+- RHEL-08-010121 - new control
+
+### Cat 2
+
+- RHEL-08-010030
+- RHEL-08-010090
+- RHEL-08-010130 - updated control
+- RHEL-08-010131 - no longer required
+- RHEL-08-010159 - updated control
+- RHEL-08-010160 - updated control
+- RHEL-08-010287
+- RHEL-08-010294 - updated control
+- RHEL-08-010331 - new control
+- RHEL-08-010341 - new control
+- RHEL-08-010351 - new control
+- RHEL-08-010359 - new control
+- RHEL-08-010360 - updated control
+- RHEL-08-010379 - new control
+- RHEL-08-010383 - 
+- RHEL-08-010384
+- RHEL-08-010385 - new control
+- RHEL-08-010400 - updated control
+- RHEL-08-010560 - no longer required
+- RHEL-08-010572
+- RHEL-08-020041 - updated control
+- RHEL-08-020100 - updated control
+- RHEL-08-020101 - new control
+- RHEL-08-020102 - new control
+- RHEL-08-020103 - new control
+- RHEL-08-020104 - new control
+- RHEL-08-020140
+- RHEL-08-020220 - updated control
+- RHEL-08-020221 - new control
+- RHEL-08-030200 - updated control joined
+- RHEL-08-030210 - Now in 030200
+- RHEL-08-030220 - Now in 030200
+- RHEL-08-030230 - Now in 030200
+- RHEL-08-030240 - Now in 030200
+- RHEL-08-030270 - Now in 030200
+- RHEL-08-030360 - updated control joined
+- RHEL-08-030361 - updated control joined
+- RHEL-08-030362 - joined to 030361
+- RHEL-08-030363 - joined to 030361
+- RHEL-08-030364 - joined to 030361
+- RHEL-08-030365 - joined to 030361
+- RHEL-08-030380 - joined to 030360
+- RHEL-08-030420 - updated control joined
+- RHEL-08-030430 - joined to 030420
+- RHEL-08-030440 - joined to 030420
+- RHEL-08-030450 - joined to 030420
+- RHEL-08-030460 - joined to 030420
+- RHEL-08-030470 - joined to 030420
+- RHEL-08-030480 - updated control joined
+- RHEL-08-030500 - joined to 030480
+- RHEL-08-030510 - joined to 030480
+- RHEL-08-030520 - joined to 030480
+- RHEL-08-030490 - updated control joined
+- RHEL-08-030530 - joined to 030490
+- RHEL-08-030540 - joined to 030490
+- RHEL-08-030660
+- RHEL-08-040020 - updated control joined
+- RHEL-08-040080
+- RHEL-08-040090
+- RHEL-08-040137
+- RHEL-08-040320
+- RHEL-08-040321 - new control
+
+### Cat 3
+
+
 ## Stig V1R4 27th October 2021
 
 - new rules

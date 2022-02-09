@@ -10,11 +10,12 @@ command:
     stdout:
     - '/^\/etc\/sudoers\:Defaults timestamp_timeout=([0-9]|10)/'
     - '!/^\/etc\/sudoers\:Defaults timestamp_timeout.*-\d/'
+    - '/^\/etc\/sudoers.d/.*\:Defaults timestamp_timeout=/'
     meta:
       Cat: 2
       CCI: CCI-002038
       Group_Title: SRG-OS-000373-GPOS-00156
-      Rule_ID: SV-237643r792980_rule
+      Rule_ID: SV-237643r809328_rule
       STIG_ID: RHEL-08-010384
       Vul_ID: V-237643
 {{ end }}
