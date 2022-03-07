@@ -1,5 +1,6 @@
 # Changelog
 
+
 ## Stig V1R5 27th January 2022
 
 - New Rule ID for all listed
@@ -75,6 +76,7 @@
 - RHEL-08-040321 - new control
 
 ### Cat 3
+
 
 
 ## Stig V1R4 27th October 2021
