@@ -8,7 +8,7 @@ file:
       Cat: 2
       CCI: CCI-000048
       Group_Title: SRG-OS-000066-GPOS-00034
-      Rule_ID: SV-230229r627750_rule
+      Rule_ID: SV-230229r809270_rule
       STIG_ID: RHEL-08-010090
       Vul_ID: V-230229
 command:
@@ -26,7 +26,7 @@ command:
       Cat: 2
       CCI: CCI-000048
       Group_Title: SRG-OS-000066-GPOS-00034
-      Rule_ID: SV-230229r627750_rule
+      Rule_ID: SV-230229r809270_rule
       STIG_ID: RHEL-08-010090
       Vul_ID: V-230229
 {{ end }}

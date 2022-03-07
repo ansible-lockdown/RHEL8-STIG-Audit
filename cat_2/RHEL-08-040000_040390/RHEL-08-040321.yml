@@ -1,0 +1,17 @@
+{{ if .Vars.RHEL_08_040321 }}
+command:
+  check_xorgs:
+    title: RHEL-08-040321 | The graphical display manager must not be the default target on RHEL 8 unless approved.
+    exec: systemctl get-default
+    exit-status:
+    - 0
+    stdout:
+    - '/^multi-user.target$/'
+    meta:
+      Cat: 2
+      CCI: CCI-000366
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-251718r809378_rule
+      STIG_ID: RHEL-08-040321
+      Vul_ID: V-251718
+{{ end }}
