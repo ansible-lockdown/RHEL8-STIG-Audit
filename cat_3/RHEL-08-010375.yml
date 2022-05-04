@@ -20,7 +20,7 @@ command:
     - '!/.*kernel.dmesg_restrict( |)=( |)0/'
     meta:
       Cat: 3
-      CCCI: CCI-001090
+      CCI: CCI-001090
       Group_Title: SRG-OS-000138-GPOS-00069
       Rule_ID: SV-230269r792879_rule
       STIG_ID: RHEL-08-010375
