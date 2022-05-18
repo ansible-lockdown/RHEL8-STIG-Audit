@@ -13,7 +13,7 @@ command:
       Cat: 2
       CCI: CCI-001851
       Group_Title: SRG-OS-000342-GPOS-00133
-      Rule_ID: SV-230481r627750_rule
+      Rule_ID: SV-230481r818840_rule
       STIG_ID: RHEL-08-030710
       Vul_ID: V-230481
   netstream_driver_mode:
@@ -30,7 +30,7 @@ command:
       Cat: 2
       CCI: CCI-001851
       Group_Title: SRG-OS-000342-GPOS-00133
-      Rule_ID: SV-230481r627750_rule
+      Rule_ID: SV-230481r818840_rule
       STIG_ID: RHEL-08-030710
       Vul_ID: V-230481
 {{ end }}

@@ -8,7 +8,7 @@ service:
       Cat: 2
       CCI: CCI-000169
       Group_Title: SRG-OS-000062-GPOS-00031
-      Rule_ID: SV-244542r743875_rule
+      Rule_ID: SV-244542r818838_rule
       STIG_ID: RHEL-08-030181
       Vul_ID: V-244542
 {{ end }}
