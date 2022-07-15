@@ -14,11 +14,11 @@ command:
       Rule_ID: SV-230277r792884_rule
       STIG_ID: RHEL-08-010421
       Vul_ID: V-230277
-file:
-  /etc/default/grub:
+  default_grub_poison:
     title: RHEL-08-010421 | RHEL 8 must clear the page allocator to prevent use-after-free attacks. | default grub check
-    exists: true
-    contains:
+    exec: grep page_poison /etc/default/grub
+    exit-status: 0
+    stdout:
     - '/^[^#].*=.*\spage_poison=1\s/'
     meta:
       Cat: 2
