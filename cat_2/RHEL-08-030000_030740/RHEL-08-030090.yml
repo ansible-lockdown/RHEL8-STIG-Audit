@@ -2,7 +2,7 @@
 command:
   audit_log_group:
     title: RHEL-08-030090 | RHEL 8 audit logs must be group-owned by root to prevent unauthorized read access.
-    exec: stat --printf "%G" /var/log/audit/audit.log
+    exec: stat -c "%G" /var/log/audit/audit.log
     exit-status: 0
     stdout:
     - root

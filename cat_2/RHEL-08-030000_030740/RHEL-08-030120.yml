@@ -2,7 +2,7 @@
 command:
   audit_log_dir_perms:
     title: RHEL-08-030120 | RHEL 8 audit log directory must have a mode of 0700 or less permissive to prevent unauthorized read access.
-    exec: stat --printf "%a" /var/log/audit
+    exec: stat -c "%a" /var/log/audit
     exit-status: 0
     stdout:
     - "700"

@@ -2,7 +2,7 @@
 command:
   auditd_conf_perms:
     title: RHEL_08_030610 | RHEL 8 must allow only the Information System Security Manager (ISSM) (or individuals or roles appointed by the ISSM) to select which auditable events are to be audited.
-    exec: stat --printf "%a" /etc/audit/auditd.conf
+    exec: stat -c "%a" /etc/audit/auditd.conf
     exit-status: 0
     stdout:
     - '640'
