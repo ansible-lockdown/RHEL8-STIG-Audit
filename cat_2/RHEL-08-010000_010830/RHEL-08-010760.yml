@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_08_010760 }}
-file:
-  /etc/login.defs:
+command:
+  login_defs_create_home:
     title: RHEL-08-010760 | All RHEL 8 local interactive user accounts must be assigned a home directory upon creation.
-    exists: true
-    contains:
+    exec: grep -i create_home /etc/login.defs
+    exit-status: 0
+    stdout:
     - '/^CREATE_HOME yes/'
     - '!/^CREATE_HOME.*no/'
     meta:

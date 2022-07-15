@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_08_010130 }}
-file:
-  /etc/logins.def:
+command:
+  logins_def_sha_crypt:
     title: RHEL-08-010130 | The RHEL 8 password-auth file must be configured to use a sufficient number of hashing rounds.
-    exists: true
-    contains:
+    exec: grep -i sha_crypt /etc/login.defs
+    exit-status: 0
+    stdout:
     - '^SHA_CRYPT_M(A|I)(N|X)_ROUNDS ([5-9][0-9]{3,})'
     - '!/^SHA_CRYPT_M(A|I)(N|X)_ROUNDS ([1-4][0-9]{0,3})/'
     meta:
