@@ -4,7 +4,7 @@ command:
     title: RHEL_08_030290 | Successful/unsuccessful uses of the passwd command in RHEL 8 must generate an audit record. | config check
     exec: grep -w privileged-passwd /etc/audit/audit.rules
     exit-status: 0
-    stdout::
+    stdout:
     - '-a always,exit -F path=/usr/bin/passwd -F perm=x -F auid>=1000 -F auid!=unset -k privileged-passwd'
     meta:
       Cat: 2

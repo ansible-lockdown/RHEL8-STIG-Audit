@@ -1,5 +1,5 @@
 {{ if .Vars.RHEL_08_030061 }}
-file:
+command:
   auditd_conf_local_events:
     title: RHEL-08-030061 | The RHEL 8 audit system must audit local events.
     exec: grep -i local_events /etc/audit/auditd.conf
