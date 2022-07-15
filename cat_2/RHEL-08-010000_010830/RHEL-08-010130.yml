@@ -5,7 +5,7 @@ command:
     exec: grep -i sha_crypt /etc/login.defs
     exit-status: 0
     stdout:
-    - '^SHA_CRYPT_M(A|I)(N|X)_ROUNDS ([5-9][0-9]{3,})'
+    - '/^SHA_CRYPT_M(A|I)(N|X)_ROUNDS ([5-9][0-9]{3,})/'
     - '!/^SHA_CRYPT_M(A|I)(N|X)_ROUNDS ([1-4][0-9]{0,3})/'
     meta:
       Cat: 2

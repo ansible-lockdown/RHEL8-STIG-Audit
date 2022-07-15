@@ -5,7 +5,7 @@ command:
     exec: grep -i sha512 /etc/login.defs
     exit-status: 0
     stdout:
-    - '!/^ENCRYPT_METHOD((?!SHA512).)*$/'
+    - '!/^ENCRYPT_METHOD(DES|MD5|SHA256)/'
     - '/^ENCRYPT_METHOD SHA512/'
     meta:
       Cat: 2

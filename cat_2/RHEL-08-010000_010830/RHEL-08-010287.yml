@@ -5,8 +5,8 @@ command:
     exec: grep -i crypto /etc/sysconfig/sshd
     exit-status: 0
     stdout:
-    - '/^[^#].*rypto_policy.*/'
-    - '/^# crypto_policy=.*/'
+    - '!/^(\s|)CRYPTO_POLICY.*/'
+    - '/^# CRYPTO_POLICY=.*/'
     meta:
       Cat: 2
       CCI: CCI-001453

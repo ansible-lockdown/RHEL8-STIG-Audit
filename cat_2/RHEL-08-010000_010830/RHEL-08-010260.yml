@@ -3,8 +3,9 @@ command:
   var_log_dir_group:
     title: RHEL-08-010260 | The RHEL 8 /var/log directory must be group-owned by root.
     exec: stat -c "%G" /var/log
-    exists: true
-    group: root
+    exit-status: 0
+    stdout:
+    - root
     meta:
       Cat: 2
       CCI: CCI-001314
