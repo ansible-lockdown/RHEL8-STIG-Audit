@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_08_020300 }}
-file:
-  /etc/security/pwquality.conf:
+command:
+  pwquality_conf_dictcheck:
     title: RHEL-08-020300 | RHEL 8 must prevent the use of dictionary words for passwords.
-    exists: true
-    contains:
+    exec: grep -i dictcheck /etc/security/pwquality.conf
+    exit-status: 0
+    stdout:
     - '/^dictcheck(.=.|=)1$/'
     - '!/^dictcheck(.=.|=)0$/'
     meta:
