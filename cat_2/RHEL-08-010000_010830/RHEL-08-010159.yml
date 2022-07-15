@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_08_010159 }}
-file: 
-  /etc/pam.d/system-auth:
+command:
+  system_auth_pam_unix:
     title: RHEL-08-010159 | The RHEL 8 pam_unix.so module must be configured in the system-auth file to use a FIPS 140-2 approved cryptographic hashing algorithm for system authentication.
-    exists: true
-    contains:
+    exec: grep -i pam_unix /etc/pam.d/system-auth
+    exit-status: 0
+    stdout:
     - '/^password sufficient pam_unix.so sha512/'
     meta:
       Cat: 2

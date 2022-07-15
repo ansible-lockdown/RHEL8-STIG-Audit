@@ -1,10 +1,11 @@
 {{ if not .Vars.rhel8stig_os_version_pre_8_2 }}
   {{ if .Vars.RHEL_08_020026 }}
-file: 
-  /etc/pam.d/password-auth:
+command:
+  password_auth_faillock_module:
     title: RHEL-08-020026 | RHEL 8 must configure the use of the pam_faillock.so module in the /etc/pam.d/password-auth file. | OS_ver >= 8.2
-    exists: true
-    contains:
+    exec: grep -i pam_faillock.so /etc/pam.d/password-auth
+    exit-status: 0
+    stdout:
     - '/^auth required pam_faillock.so preauth/'
     - '/^auth required pam_faillock.so authfail/'
     - '/^account required pam_faillock.so/'
