@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_020332 }}
 command:
   password_auth_nullok:
-    title: RHEL-08-020332 | RHEL 8 must not allow blank or null passwords in the system-auth file.
+    title: RHEL-08-020332 | RHEL 8 must not allow blank or null passwords in the password-auth file.
     exec: grep -i nullok /etc/pam.d/password-auth
     exit-status: 0
     stdout:

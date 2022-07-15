@@ -13,11 +13,11 @@ command:
       Rule_ID: SV-230251r743937_rule
       STIG_ID: RHEL-08-010290
       Vul_ID: V-230251
-file:
-  /etc/crypto-policies/back-ends/openssh.config:
+  crypto_policies_openssh_macs:
     title: RHEL-08-010290 | The RHEL 8 SSH daemon must be configured to use only Message Authentication Codes (MACs) employing FIPS 140-2 validated cryptographic hash algorithms. | crypto-policies - ssh_config
-    exists: true
-    contains:
+    exec: grep -i macs /etc/crypto-policies/back-ends/openssh.config
+    exit-status: 0
+    stdout:
     - '/^MACs hmac-sha2-512,hmac-sha2-256/'
     meta:
       Cat: 2
@@ -26,10 +26,11 @@ file:
       Rule_ID: SV-230251r743937_rule
       STIG_ID: RHEL-08-010290
       Vul_ID: V-230251
-  /etc/crypto-policies/back-ends/opensshserver.config:
+  crypto_policies_openssh_server_macs:
     title: RHEL-08-010290 | The RHEL 8 SSH daemon must be configured to use only Message Authentication Codes (MACs) employing FIPS 140-2 validated cryptographic hash algorithms. | crypto-policies - ssh_server
-    exists: true
-    contains:
+    exec: grep -i crypto /etc/crypto-policies/back-ends/opensshserver.config
+    exit-status: 0
+    stdout:
     - '/^CRYPTO_POLICY=.-oCiphers=aes256-ctr,aes192-ctr,aes128-ctr -oMACS=hmac-sha2-512,hmac-sha2-256../'
     meta:
       Cat: 2
