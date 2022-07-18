@@ -6,7 +6,7 @@ command:
     exec: grep deny /etc/security/faillock.conf
     exit-status: 0
     stdout:
-    - '/^deny [1-3]$/'
+    - '/^deny\s+=\s+[1-3]$/'
     meta:
       Cat: 2
       CCI: CCI-00044

@@ -2,7 +2,7 @@
 command:
   coredump_conf_process_max_size:
     title: RHEL-08-010675 | RHEL 8 must disable core dump backtraces.
-    exec: grep -i processmaxsize /etc/systemd/coredump.conf
+    exec: grep -i processsizemax /etc/systemd/coredump.conf
     exit-status: 0
     stdout:
     - '/^ProcessSizeMax(=|.=.)0/'

@@ -6,9 +6,9 @@ command:
     exec: grep -i pam_faillock /etc/pam.d/system-auth
     exit-status: 0
     stdout:
-    - '/^auth required pam_faillock.so preauth/'
-    - '/^auth required pam_faillock.so authfail/'
-    - '/^account required pam_faillock.so/'
+    - '/^auth\s+required pam_faillock.so preauth/'
+    - '/^auth\s+ required pam_faillock.so authfail/'
+    - '/^account\s+required pam_faillock.so/'
     - '!/^#.*pam_faillock.so/'
     meta:
       Cat: 2

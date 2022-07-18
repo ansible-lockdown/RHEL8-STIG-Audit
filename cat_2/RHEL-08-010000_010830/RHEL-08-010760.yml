@@ -5,8 +5,8 @@ command:
     exec: grep -i create_home /etc/login.defs
     exit-status: 0
     stdout:
-    - '/^CREATE_HOME yes/'
-    - '!/^CREATE_HOME.*no/'
+    - '/^CREATE_HOME\s+yes/'
+    - '!/^CREATE_HOME\s+no/'
     meta:
       Cat: 2
       CCI: CCI-000366

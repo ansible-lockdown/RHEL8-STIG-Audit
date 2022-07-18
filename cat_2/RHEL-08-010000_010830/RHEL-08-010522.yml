@@ -5,8 +5,8 @@ command:
     exec: grep GSSAPI /etc/ssh/sshd_config
     exit-status: 0
     stdout:
-    - '/^GSSAPI Authentication [Nn][Oo]/'
-    - '!/^GSSAPI Authentication [Yy][Ee][Ss]/'
+    - '/^GSSAPIAuthentication [Nn][Oo]/'
+    - '!/^GSSAPIAuthentication [Yy][Ee][Ss]/'
     meta:
       Cat: 2
       CCI: CCI-000366

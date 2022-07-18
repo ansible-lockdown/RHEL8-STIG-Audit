@@ -5,8 +5,8 @@ command:
     exec: grep -i pwquality /etc/pam.d/password-auth
     exit-status: 0
     stdout:
-    - '/^password required pam_pwquality.so/'
-    - '!/^password required pam_pwquality.so/'
+    - '/^password\s+required\s+pam_pwquality.so/'
+    - '!/^password\s+required\s+pam_pwquality.so/'
     meta:
       Cat: 2
       CCI: CCI-000366

@@ -6,7 +6,7 @@ command:
     exit-status: 0
     stdout:
     - '/^Storage(=|.=.)none/'
-    - '!/[^#]torage=none/'
+    - '!/[^#]Storage=none/'
     - '/^Storage(.=.|)[^none]/'  # exclusion in regex not preceded by !
     meta:
       Cat: 2

@@ -19,8 +19,7 @@ command:
     exec: grep -i slub /etc/default/grub
     exit-status: 0
     stdout:
-    - '/^GRUB_CMDLINE_LINUX*=.*\sslub_debug=^P\s.*$/'
-    - '!/^GRUB_CMDLINE_LINUX*=.*\sslub_debug=[^P]\s.*$/'
+    - '/^GRUB_CMDLINE_LINUX*=.*\sslub_debug=P\s.*$/'
     meta:
       Cat: 2
       CCI: CCI-001084
