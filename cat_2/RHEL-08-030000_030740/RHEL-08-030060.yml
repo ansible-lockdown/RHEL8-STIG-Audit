@@ -5,8 +5,8 @@ command:
     exec: grep -i disk_full /etc/audit/auditd.conf
     exit-status: 0
     stdout:
-    - '/^(?i)disk_full_action*=*{{ .Vars.rhel8stig_auditd_disk_full_action }}/'
-    - '!/^(?i)disk_full_action*=*(ignore|suspend)/'
+    - '/^(?i)disk_full_action.*=.*{{ .Vars.rhel8stig_auditd_disk_full_action }}/'
+    - '!/^(?i)disk_full_action.*=.*(ignore|suspend)/'
     meta:
       Cat: 2
       CCI: CCI-000140
