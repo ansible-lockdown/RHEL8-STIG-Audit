@@ -21,7 +21,7 @@ command:
     exec: grep superusers /boot/grub2/grub.cfg
     exit-status: 0
     stdout:
-    - '/^\s+set superusers="{{ .Vars.rhel8stig_boot_superuser }}'/'
+    - '/^\s+set superusers="{{ .Vars.rhel8stig_boot_superuser }}"/'
     - '/^\s+export superusers/'
     meta:
       Cat: 1
