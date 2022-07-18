@@ -7,7 +7,7 @@ file:
     contains:
     - '/^\s+set superusers="[{{ .Vars.rhel8stig_boot_superuser }}]/'
     - '/^\s+export superusers/'
-    - '/^\s+password_pbkdf2 .* \${GRUB2_PASSWORD}/'
+    - '/^\s+password_pbkdf2.*\$\{GRUB2_PASSWORD\}/'
     meta:
       Cat: 1
       CCI: CCI-000213
