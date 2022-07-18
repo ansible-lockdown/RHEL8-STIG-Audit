@@ -2,11 +2,11 @@
 command:
   default_grub_audit:
     title: RHEL-08-030601 | RHEL 8 must enable auditing of processes that start prior to the audit daemon. | config
-    exec: grep -i audit /etc/default/grub
+    exec: grep -i audit= /etc/default/grub
     exit-status: 0
     stdout:
-    - '/^GRUB_CMDLINE_LINUX=.*"audit=1".*/'
-    - '!/^GRUB_CMDLINE_LINUX=.*"audit=0".*/'
+    - '/^GRUB_CMDLINE_LINUX=.*audit=1.*/'
+    - '!/^GRUB_CMDLINE_LINUX=.*audit=0.*/'
     meta:
       Cat: 3
       CCI: CCI-000366
