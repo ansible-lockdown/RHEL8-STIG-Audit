@@ -2,7 +2,7 @@
 command:
   audit_rules_group:
     title: RHEL_08_030170 | RHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/group. | config check
-    exec: grep -w group /etc/audit/audit.rules
+    exec: grep -w group /etc/audit/rules.d/audit.rules
     exit-status: 0
     stdout:
     - '-w /etc/group -p wa -k identity'

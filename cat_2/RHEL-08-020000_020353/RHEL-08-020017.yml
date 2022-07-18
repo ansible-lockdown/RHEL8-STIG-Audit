@@ -7,7 +7,7 @@ command:
     exit-status: 0
     stdout:
     - '/^dir(\s|)=(\s|)\/.*/'
-    - '!/^dir(\s|)=(\s|)\/var\/log\/faillock/'
+    - '/^dir(\s|)=(\s|)\/var\/log\/faillock/'
     meta:
       Cat: 2
       CCI: CCI-00044

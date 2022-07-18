@@ -2,10 +2,10 @@
 command:
   /etc/aide_conf_extended_attrib:
     title: RHEL-08-040300 | The RHEL 8 file integrity tool must be configured to verify extended attributes.
-    exec: grep -i xttr /etc/aide.conf
-    exit-status: true
+    exec: grep -i xattrs /etc/aide.conf
+    exit-status: 0
     stdout:
-    - '/^ALL=.*+xattr.*/'
+    - '/^ALL=.*\+xattr.*/'
     - '/^\/bin All/'
     - '/^\/sbin All/'
     meta:

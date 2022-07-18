@@ -2,7 +2,7 @@
 command:
   auditd_conf_loginuid:
     title: RHEL-08-030122 | RHEL 8 audit system must protect logon UIDs from unauthorized change.
-    exec: grep -i loginuid /etc/audit/auditd.conf
+    exec: grep -i loginuid /etc/audit/audit.rules
     exit-status: 0
     stdout:
     - '/^--loginuid-immutable/'

@@ -2,7 +2,7 @@
 command:
   audit_rules_shadow:
     title: RHEL_08_030130 | RHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/shadow. | conf check
-    exec: grep -w shadow /etc/audit/audit.rules
+    exec: grep -w shadow /etc/audit/rules.d/audit.rules
     exit-status: 0
     stdout:
     - '-w /etc/shadow -p wa -k identity'

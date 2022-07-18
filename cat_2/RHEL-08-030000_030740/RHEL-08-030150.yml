@@ -2,7 +2,7 @@
 command:
   audit_rules_passwd:
     title: RHEL_08_030150 | RHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/passwd. | config check
-    exec: grep -w passwd /etc/audit/audit.rules
+    exec: grep -w passwd /etc/audit/rules.d/audit.rules
     exit-status: 0
     stdout:
     - '-w /etc/passwd -p wa -k identity'

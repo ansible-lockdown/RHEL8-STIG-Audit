@@ -2,7 +2,7 @@
 command:
   sshd_config_x11forward:
     title: RHEL-08-040340 | RHEL 8 remote X connections for interactive users must be disabled unless to fulfill documented and validated mission requirements.
-    exec: grep -i xllfor /etc/ssh/sshd_config
+    exec: grep -i x11forwarding /etc/ssh/sshd_config | grep -v "^#"
     exit-status: 0
     stdout:
     - '/^(?i)X11Forwarding no/'
