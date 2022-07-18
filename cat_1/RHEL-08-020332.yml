@@ -3,9 +3,12 @@ command:
   password_auth_nullok:
     title: RHEL-08-020332 | RHEL 8 must not allow blank or null passwords in the password-auth file.
     exec: grep -i nullok /etc/pam.d/password-auth
-    exit-status: 0
+    exit-status:
+      or:
+      - 0
+      - 1
     stdout:
-    - '!/.*nullok.*/'
+    - '!/.*/'
     meta:
       Cat: 1
       CCI: CCI-000366

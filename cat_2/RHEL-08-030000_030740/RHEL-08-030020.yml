@@ -5,7 +5,7 @@ command:
     exec: grep -i action_mail_acct /etc/audit/auditd.conf
     exit-status: 0
     stdout:
-    - '/^(?i)action_mail_acct*=*root/'
+    - '/^(?i)action_mail_acct.*=.*root/'
     meta:
       Cat: 2
       CCI: CCI-000139

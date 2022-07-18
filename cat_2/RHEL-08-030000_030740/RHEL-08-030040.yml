@@ -5,8 +5,8 @@ command:
     exec: grep -i disk_error_action /etc/audit/auditd.conf
     exit-status: 0
     stdout:
-    - '/^(?i)disk_error_action*=*{{ .Vars.rhel8stig_auditd_disk_error_action }}/'
-    - '!/^(?i)disk_error_action*=*(ignore|suspend)/'
+    - '/^(?i)disk_error_action.*=.*{{ .Vars.rhel8stig_auditd_disk_error_action }}/'
+    - '!/^(?i)disk_error_action.*=.*(ignore|suspend)/'
     meta:
       Cat: 2
       CCI: CCI-000140

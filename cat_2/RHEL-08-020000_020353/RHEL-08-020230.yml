@@ -2,7 +2,7 @@
 command:
   pwquality_conf_minlength:
     title: RHEL-08-020230 | RHEL 8 passwords must have a minimum of 15 characters
-    exec: grep -i minlength /etc/security/pwquality.conf
+    exec: grep -i minlen /etc/security/pwquality.conf
     exit-status: 0
     stdout:
     - '/^minlen = (1[5-9]|2[0-9])$/'

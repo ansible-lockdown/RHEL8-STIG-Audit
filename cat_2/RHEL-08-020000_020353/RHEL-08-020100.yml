@@ -6,7 +6,6 @@ command:
     exit-status: 0
     stdout:
     - '/^password\s+required\s+pam_pwquality.so/'
-    - '!/^password\s+required\s+pam_pwquality.so/'
     meta:
       Cat: 2
       CCI: CCI-000366
