@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_08_030316 }}
-file:
-  /etc/audit/audit.rules:
+command:
+  /etc/audit/audit.rules_setsebool:
     title: RHEL_08_030316 | Successful/unsuccessful uses of setsebool in RHEL 8 must generate an audit record. | config check
-    exists: true
-    contains:
+    exec: grep setsebool /etc/audit/audit.rules
+    exit-status: 0
+    stdout:
     - '-a always,exit -F path=/usr/sbin/setsebool -F perm=x -F auid>=1000 -F auid!=unset -k privileged-unix-update'
     meta:
       Cat: 2
@@ -12,7 +13,6 @@ file:
       Rule_ID: SV-230432r627750_rule
       STIG_ID: RHEL-08-030316
       Vul_ID: V-230432
-command:
   auditd_setsebool_live:
     title: RHEL_08_030316 | Successful/unsuccessful uses of setsebool in RHEL 8 must generate an audit record. | live check
     exec: auditctl -l | grep -w setsebool

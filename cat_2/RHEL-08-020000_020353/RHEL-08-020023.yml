@@ -1,10 +1,11 @@
 {{ if not .Vars.rhel8stig_os_version_pre_8_2 }}
   {{ if .Vars.RHEL_08_020023 }}
-file:
-  /etc/security/faillock.conf:
+command:
+  faillock_conf_deny_root:
     title: RHEL-08-020023 | RHEL 8 must include root when automatically locking an account until the locked account is released by an administrator when three unsuccessful logon attempts occur during a 15-minute time period. | OS_ver >= 8.2 faillock
-    exists: true
-    contains:
+    exec: grep deny_root /etc/security/faillock.conf
+    exit-status: 0
+    stdout:
     - '/^even_deny_root/'
     meta:
       Cat: 2

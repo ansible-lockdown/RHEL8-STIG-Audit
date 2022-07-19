@@ -2,8 +2,11 @@
 command: 
   no_blank_passwds:
     title: RHEL-08-010121 | RHEL 8 must employ FIPS 140-2 approved cryptographic hashing algorithms for all stored passwords.
-    exec: "awk -F: '!$2 {print $1}' /etc/shadow"
-    exit-status: 1
+    exec: cut -d ':' -f1,2 /etc/shadow |grep -Ei "(:\$|\s+)"
+    exit-status: 
+      or:
+      - 0 
+      - 1
     stdout:
     - '!/^.*/'
     meta:

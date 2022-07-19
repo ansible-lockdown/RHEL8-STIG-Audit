@@ -15,10 +15,11 @@ command:
       STIG_ID: RHEL-08-020082
       Vul_ID: V-244539
 file:
-  /etc/dconf/db/local.d/locks/session:
+  dconf_session_lock_user_idle:
     title: RHEL-08-020082 | RHEL 8 must prevent a user from overriding the session idle-delay setting for the graphical user interface. | config check
-    exists: true
-    contains:
+    exec: grep -E "lock-enabled" /etc/dconf/db/local.d/locks/session
+    exit-status: 0
+    stdout:
     - '/^\/org\/gnome\/desktop\/screensaver\/lock-enabled/'
     meta:
       Cat: 2

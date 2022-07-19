@@ -1,10 +1,11 @@
 {{ if not .Vars.rhel8stig_os_version_pre_8_2 }}
   {{ if .Vars.RHEL_08_020021 }}
-file:
-  /etc/security/faillock.conf:
+command:
+  faillock_conf_log_username:
     title: RHEL-08-020021 | RHEL 8 must log user name information when unsuccessful logon attempts occur. | OS_ver >= 8.2 faillock
-    exists: true
-    contains:
+    exec: grep audit /etc/security/faillock.conf
+    exit-status: 0
+    stdout:
     - '/^audit/'
     meta:
       Cat: 2

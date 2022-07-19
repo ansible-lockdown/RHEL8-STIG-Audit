@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_08_020230 }}
-file:
-  /etc/security/pwquality.conf:
+command:
+  pwquality_conf_minlength:
     title: RHEL-08-020230 | RHEL 8 passwords must have a minimum of 15 characters
-    exists: true
-    contains:
+    exec: grep -i minlen /etc/security/pwquality.conf
+    exit-status: 0
+    stdout:
     - '/^minlen = (1[5-9]|2[0-9])$/'
     - '!/^minlen = ([0-9]|1[0-4])$/'
     meta:

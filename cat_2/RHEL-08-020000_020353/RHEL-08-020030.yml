@@ -14,11 +14,11 @@ command:
       Rule_ID: SV-230347r627750_rule
       STIG_ID: RHEL-08-020030
       Vul_ID: V-230347
-file:
-  /etc/dconf/db/local.d/00-screensaver:
+  dconf_00_screensaver:
     title: RHEL-08-020030 | RHEL 8 must enable a user session lock until that user re-establishes access using established identification and authentication procedures for graphical user sessions
-    exists: true
-    contains:
+    exec: grep -E "screensave|lock-enabled" /etc/dconf/db/local.d/00-screensaver
+    exit-status: 0
+    stdout:
     - '[org/gnome/desktop/screensaver]'
     - '/^lock-enabled=true/'
     meta:

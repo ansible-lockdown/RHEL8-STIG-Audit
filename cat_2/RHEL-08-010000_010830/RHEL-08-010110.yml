@@ -1,10 +1,11 @@
 {{ if .Vars.RHEL_08_010110 }}
-file: 
-  /etc/login.defs:
+command:
+  login_defs_sha512:
     title: RHEL-08-010110 | RHEL 8 must encrypt all stored passwords with a FIPS 140-2 approved cryptographic hashing algorithm.
-    exists: true
-    contains:
-    - '!/^ENCRYPT_METHOD((?!SHA512).)*$/'
+    exec: grep -i sha512 /etc/login.defs
+    exit-status: 0
+    stdout:
+    - '!/^ENCRYPT_METHOD(DES|MD5|SHA256)/'
     - '/^ENCRYPT_METHOD SHA512/'
     meta:
       Cat: 2

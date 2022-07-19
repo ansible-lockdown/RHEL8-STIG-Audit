@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_08_030350 }}
-file:
-  /etc/audit/audit.rules:
+command:
+  audit_rules_newgrp:
     title: RHEL_08_030350 | Successful/unsuccessful uses of newgrpin RHEL 8 must generate an audit record. | config check
-    exists: true
-    contains:
+    exec: grep newgrp /etc/audit/audit.rules
+    exit-status: 0
+    stdout:
     - '-a always,exit -F path=/usr/bin/newgrp -F perm=x -F auid>=1000 -F auid!=unset -k priv_cmd'
     meta:
       Cat: 2
@@ -12,7 +13,6 @@ file:
       Rule_ID: SV-230437r627750_rule
       STIG_ID: RHEL-08-030350
       Vul_ID: V-230437
-command:
   auditd_newgrp_live:
     title: RHEL_08_030350 | Successful/unsuccessful uses of newgrp in RHEL 8 must generate an audit record. | live check
     exec: auditctl -l | grep -w newgrp

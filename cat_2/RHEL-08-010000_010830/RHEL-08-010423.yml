@@ -14,13 +14,12 @@ command:
       Rule_ID: SV-230279r792888_rule
       STIG_ID: RHEL-08-010423
       Vul_ID: V-230279
-file:
-  /etc/default/grub:
+  default_grub_slub:
     title: RHEL-08-010423 | RHEL 8 must clear SLUB/SLAB objects to prevent use-after-free attacks. | default slub grub check
-    exists: true
-    contains:
-    - '/^GRUB_CMDLINE_LINUX*=.*\sslub_debug=^P\s.*$/'
-    - '!/^GRUB_CMDLINE_LINUX*=.*\sslub_debug=[^P]\s.*$/'
+    exec: grep -i slub /etc/default/grub
+    exit-status: 0
+    stdout:
+    - '/^GRUB_CMDLINE_LINUX*=.*\sslub_debug=P\s.*$/'
     meta:
       Cat: 2
       CCI: CCI-001084

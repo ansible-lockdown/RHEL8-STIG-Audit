@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_08_020350}}
-file:
-  /etc/ssh/sshd_config:
+command:
+  sshd_config_printlastlog:
     title: RHEL-08-020350 | RHEL 8 must display the date and time of the last successful account logon upon an SSH logon.
-    exists: true
-    contains:
+    exec: grep -i printlastlog /etc/ssh/sshd_config
+    exit-status: 0
+    stdout:
     - '/^(?i)PrintLastLog yes/'
     - '!/^(?i)PrintLastLog no/'
     meta:

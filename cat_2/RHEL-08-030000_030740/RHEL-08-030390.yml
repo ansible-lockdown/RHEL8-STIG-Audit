@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_08_030390 }}
-file:
-  /etc/audit/audit.rules:
+command:
+  audit_rules_del_module:
     title: RHEL_08_030390 | Successful/unsuccessful uses of the delete_module command in RHEL 8 must generate an audit record. | config check
-    exists: true
-    contains:
+    exec: grep delete_module /etc/audit/audit.rules
+    exit-status: 0
+    stdout:
     - '-a always,exit -F arch=b32 -S delete_module -F auid>=1000 -F auid!=unset -k module_chng'
     - '-a always,exit -F arch=b64 -S delete_module -F auid>=1000 -F auid!=unset -k module_chng'
     meta:
@@ -13,7 +14,6 @@ file:
       Rule_ID: SV-230446r627750_rule
       STIG_ID: RHEL-08-030390
       Vul_ID: V-230446
-command:
   auditd_delete_module_live:
     title: RHEL_08_030390 | Successful/unsuccessful uses of the delete_module command in RHEL 8 must generate an audit record. | live check
     exec: auditctl -l | grep -w delete_module

@@ -1,13 +1,14 @@
 {{ if not .Vars.rhel8stig_os_version_pre_8_2 }}
   {{ if .Vars.RHEL_08_020025 }}
-file:
-  /etc/pam.d/system-auth:
+command:
+  system_auth_faillock:
     title: RHEL-08-020025 | RHEL 8 must configure the use of the pam_faillock.so module in the /etc/pam.d/system-auth file. | OS_ver >= 8.2
-    exists: true
-    contains:
-    - '/^auth required pam_faillock.so preauth/'
-    - '/^auth required pam_faillock.so authfail/'
-    - '/^account required pam_faillock.so/'
+    exec: grep -i pam_faillock /etc/pam.d/system-auth
+    exit-status: 0
+    stdout:
+    - '/^auth\s+required pam_faillock.so preauth/'
+    - '/^auth\s+ required pam_faillock.so authfail/'
+    - '/^account\s+required pam_faillock.so/'
     - '!/^#.*pam_faillock.so/'
     meta:
       Cat: 2

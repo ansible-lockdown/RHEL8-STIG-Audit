@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_08_020310}}
-file:
-  /etc/login.defs:
+command:
+  login_defs_fail_delay:
     title: RHEL-08-020310 | RHEL 8 must require the change of at least four character classes when passwords are changed.
-    exists: true
-    contains:
+    exec: grep -i fail_delay /etc/login.defs
+    exit-status: 0
+    stdout:
     - '/^FAIL_DELAY [4-5]$/'
     - '!/^FAIL_DELAY [0-3]$/'
     meta:

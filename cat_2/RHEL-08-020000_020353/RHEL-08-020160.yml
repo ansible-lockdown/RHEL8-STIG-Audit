@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_08_020160 }}
-file:
-  /etc/security/pwquality.conf:
+command:
+  pwquality_conf_minclass:
     title: RHEL-08-020160 | RHEL 8 must require the change of at least four character classes when passwords are changed.
-    exists: true
-    contains:
+    exec: grep -i minclass /etc/security/pwquality.conf
+    exit-status: 0
+    stdout:
     - '/^minclass = [4-9]$/'
     - '!/^minclass = [0-3]$/'
     meta:

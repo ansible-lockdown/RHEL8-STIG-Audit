@@ -3,8 +3,7 @@ command:
   check_xorgs:
     title: RHEL-08-040321 | The graphical display manager must not be the default target on RHEL 8 unless approved.
     exec: systemctl get-default
-    exit-status:
-    - 0
+    exit-status: 0
     stdout:
     - '/^multi-user.target$/'
     meta:

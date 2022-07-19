@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_08_020280 }}
-file:
-  /etc/security/pwquality.conf:
+command:
+  pwquality_conf_ocredit:
     title: RHEL-08-020280 | All RHEL 8 passwords must contain at least one special character.
-    exists: true
-    contains:
+    exec: grep -i ocredit /etc/security/pwquality.conf
+    exit-status: 0
+    stdout:
     - '/^ocredit = -1$/'
     - '!/^ocredit = \d.*/'
     meta:

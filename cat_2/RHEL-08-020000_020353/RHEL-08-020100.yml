@@ -1,11 +1,11 @@
 {{ if .Vars.RHEL_08_020100 }}
-file: 
-  /etc/pam.d/password-auth:
+command:
+  password_auth_pwquality:
     title: RHEL-08-020100 | RHEL 8 must ensure a password complexity module is enabled. | passwd-auth
-    exists: true
-    contains:
-    - '/^password required pam_pwquality.so/'
-    - '!/^password required pam_pwquality.so/'
+    exec: grep -i pwquality /etc/pam.d/password-auth
+    exit-status: 0
+    stdout:
+    - '/^password\s+required\s+pam_pwquality.so/'
     meta:
       Cat: 2
       CCI: CCI-000366

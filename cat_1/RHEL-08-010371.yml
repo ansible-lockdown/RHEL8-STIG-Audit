@@ -15,11 +15,11 @@ command:
       Rule_ID: SV-230265r627750_rule
       STIG_ID: RHEL-08-010371
       Vul_ID: V-230265
-file:
-  /etc/dnf/dnf.conf:
+  dnf_conf_localpkg:
     title: RHEL-08-010371 | RHEL 8 must prevent the installation of software, patches, service packs, device drivers, or operating system components of local packages without verification they have been digitally signed using a certificate that is issued by a Certificate Authority (CA) that is recognized and approved by the organization. | dnf_conf
-    exists: true
-    contains:
+    exec: grep -i ^localpkg_gpgcheck /etc/dnf/dnf.conf
+    exit-status: 0
+    stdout:
     - '/^localpkg_gpgcheck.*(1|[tT]rue|yes)/'
     - '!/^localpkg_gpgcheck.*(0|[fF]alse|no)/'
     meta:

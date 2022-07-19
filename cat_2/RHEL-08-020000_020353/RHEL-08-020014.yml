@@ -1,10 +1,11 @@
 {{ if .Vars.rhel8stig_os_version_pre_8_2 }}
   {{ if .Vars.RHEL_08_020014  }}
-file: 
-  /etc/pam.d/password-auth:
+command:
+  password_auth_unlock_time:
     title: RHEL-08-020014 | RHEL 8 must automatically lock an account until the locked account is released by an administrator when three unsuccessful logon attempts occur during a 15-minute time period. | OS_ver < 8.2 passwd-auth
-    exists: true
-    contains:
+    exec: grep -i dir /etc/pam.d/password-auth
+    exit-status: 0
+    stdout:
     - '/^auth required pam_faillock.so preauth dir={{ .Vars.rhel8stig_pam_faillock_dir }}.*\sunlock_time=0/'
     - '/^auth required pam_faillock.so authfail dir={{ .Vars.rhel8stig_pam_faillock_dir }}/'
     - '/^account required pam_faillock.so/'
@@ -16,10 +17,11 @@ file:
       Rule_ID: SV-230336r627750_rule
       STIG_ID: RHEL-08-020014
       Vul_ID: V-230336
-  /etc/pam.d/system-auth:
+  system_auth_unlock_time:
     title: RHEL-08-020014 | RHEL 8 must automatically lock an account until the locked account is released by an administrator when three unsuccessful logon attempts occur during a 15-minute time period. | OS_ver < 8.2 system-auth
-    exists: true
-    contains:
+    exec: grep -i dir /etc/pam.d/system-auth
+    exit-status: 0
+    stdout:
     - '/^auth required pam_faillock.so preauth dir={{ .Vars.rhel8stig_pam_faillock_dir }}.*\sunlock_time=0/'
     - '/^auth required pam_faillock.so authfail dir={{ .Vars.rhel8stig_pam_faillock_dir }}/'
     - '/^account required pam_faillock.so/'

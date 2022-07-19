@@ -5,9 +5,12 @@ command:
     title: RHEL-08-010750 | All RHEL 8 local interactive user home directories defined in the /etc/passwd file must exist.
     exec: "ls -ld $(awk -F: '($3>=1000)&&($7 !~ /nologin/){print $6}' /etc/passwd)"
     timeout: {{ .Vars.timeout_ms }}
-    exit-status: 0
-    stdout:
-    - '!/^.*/'
+    exit-status:
+      or:
+      - 0
+      - 2
+    stderr:
+    - '!/cannot access/'
     meta:
       Cat: 2
       CCI: CCI-000366

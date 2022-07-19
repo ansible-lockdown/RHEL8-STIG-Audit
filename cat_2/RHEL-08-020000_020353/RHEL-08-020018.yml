@@ -1,10 +1,11 @@
 {{ if .Vars.rhel8stig_os_version_pre_8_2 }}
   {{ if .Vars.RHEL_08_020018  }}
-file: 
-  /etc/pam.d/password-auth:
+command:
+  password_auth_silent:
     title: RHEL-08-020018 | RHEL 8 must prevent system messages from being presented when three unsuccessful logon attempts occur | OS_ver < 8.2 passwd-auth
-    exists: true
-    contains:
+    exec: grep -i dir /etc/pam.d/password-auth
+    exit-status: 0
+    stdout:
     - '/^auth required pam_faillock.so preauth dir={{ .Vars.rhel8stig_pam_faillock_dir }}.*\ssilent.*/'
     - '/^auth required pam_faillock.so authfail dir={{ .Vars.rhel8stig_pam_faillock_dir }}'
     - '/^account required pam_faillock.so/'
@@ -16,10 +17,11 @@ file:
       Rule_ID: SV-230340r627750_rule
       STIG_ID: RHEL-08-020018
       Vul_ID: V-230340
-  /etc/pam.d/system-auth:
+  system_auth_silent:
     title: RHEL-08-020018 | RHEL 8 must prevent system messages from being presented when three unsuccessful logon attempts occur | OS_ver < 8.2 system-auth
-    exists: true
-    contains:
+    exec: grep -i dir /etc/pam.d/system-auth
+    exit-status: 0
+    stdout:
     - '/^auth required pam_faillock.so preauth dir={{ .Vars.rhel8stig_pam_faillock_dir }}.*\ssilent.*/'
     - '/^auth required pam_faillock.so authfail dir={{ .Vars.rhel8stig_pam_faillock_dir }}/'
     - '/^account required pam_faillock.so/'

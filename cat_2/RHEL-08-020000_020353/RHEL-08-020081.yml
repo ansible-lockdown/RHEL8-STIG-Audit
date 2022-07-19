@@ -14,11 +14,11 @@ command:
       Rule_ID: SV-244538r743863_rule
       STIG_ID: RHEL-08-020081
       Vul_ID: V-244538
-file:
-  /etc/dconf/db/local.d/locks/session:
+  dconf_lock_user_idle_delay_changes:
     title: RHEL-08-020081 | RHEL 8 must prevent a user from overriding the session idle-delay setting for the graphical user interface. | config check
-    exists: true
-    contains:
+    exec: grep -E "screensaver" /etc/dconf/db/local.d/locks/session
+    exit-status: 0
+    stdout:
     - '/^\/org\/gnome\/desktop\/screensaver\/idle-delay/'
     meta:
       Cat: 2

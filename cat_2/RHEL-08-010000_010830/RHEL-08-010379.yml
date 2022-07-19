@@ -4,7 +4,7 @@ file:
     title: RHEL-08-010379 | RHEL 8 must specify the default "include" directory for the /etc/sudoers file.
     exists: true
     contains:
-    - '/^#includedir /etc/sudoers.d'
+    - '/^#includedir /etc/sudoers.d/'
     meta:
       Cat: 2
       CCI: CCI-000366

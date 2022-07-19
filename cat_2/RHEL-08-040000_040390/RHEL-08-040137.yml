@@ -34,7 +34,7 @@ file:
 command:
   fapolicy_deny_rule:
      title: RHEL-08-040137 | The RHEL 8 fapolicy module must be configured to employ a deny-all, permit-by-exception policy to allow the execution of authorized software programs | deny_rules
-     exec: tail /etc/fapolicyd/fapolicyd.rules
+     exec: tail /etc/fapolicyd/fapolicyd.rules /etc/fapolicyd/rules.d/99-stig.rules 
      exit-status: 0
      stdout:
      - '/allow exe={{ .Vars.python_bin }} : ftype=text\/x-python/'

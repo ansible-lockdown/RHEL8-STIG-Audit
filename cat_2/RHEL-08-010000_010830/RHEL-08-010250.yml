@@ -1,9 +1,11 @@
 {{ if .Vars.RHEL_08_010250 }}
-file: 
-  /var/log/messages:
+command:
+  var_log_dir_owner:
     title: RHEL-08-010250 | The RHEL 8 /var/log directory must be owned by root.
-    exists: true
-    owner: root
+    exec: stat -c "%U" /var/log
+    exit-status: 0
+    stdout:
+    - 'root'
     meta:
       Cat: 2
       CCI: CCI-001314

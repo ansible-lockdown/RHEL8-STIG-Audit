@@ -1,10 +1,11 @@
 {{ if .Vars.RHEL_08_030731 }}
-file:
-   /etc/audit/auditd.conf:
+command:
+  auditd_conf_space_left_action:
     title: RHEL_08_030731 | RHEL 8 must notify the System Administrator (SA) and Information System Security Officer (ISSO) (at a minimum) when allocated audit record storage volume 75 percent utilization.
-    exists: true
-    contains:
-    - '/^space_left_action = email/'
+    exec: grep -i space_left_action /etc/audit/auditd.conf
+    exit-status: 0
+    stdout:
+    - '/^(?i)space_left_action = email/'
     meta:
       Cat: 2
       CCI: CCI-001855

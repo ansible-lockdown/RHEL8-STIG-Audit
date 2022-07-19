@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_08_030250 }}
-file:
-  /etc/audit/audit.rules:
+command:
+  audit_rules_priv_chage:
     title: RHEL_08_030250 | Successful/unsuccessful uses of the chage command in RHEL 8 must generate an audit record. | config check
-    exists: true
-    contains:
+    exec: grep -w privileged-chage /etc/audit/audit.rules
+    exit-status: 0
+    stdout:
     - '-a always,exit -F path=/usr/bin/chage -F perm=x -F auid>=1000 -F auid!=unset -k privileged-chage'
     meta:
       Cat: 2
@@ -12,7 +13,6 @@ file:
       Rule_ID: SV-230418r627750_rule
       STIG_ID: RHEL-08-030250
       Vul_ID: V-230418
-command:
   auditd_priv_chage_live:
     title: RHEL_08_030250 | Successful/unsuccessful uses of the chage command in RHEL 8 must generate an audit record. | live check
     exec: auditctl -l | grep -w privileged-chage
