@@ -4,6 +4,7 @@
 
 - auditd config tests now exntded for mutliple locations
 - pwquality based checks extended for all files
+- all files linted for blank line at end of file
 - new Rule ID for listed
 
   - RHEL-08-010372
