@@ -2,7 +2,7 @@
 command:
   pwquality_conf_maxclassrepeat:
     title: RHEL-08-020140 | RHEL 8 must require the maximum number of repeating characters of the same character class be limited to four when passwords are changed.
-    exec: grep -i maxclassrepeat /etc/security/pwquality.conf*
+    exec: grep -iR maxclassrepeat /etc/security/pwquality.conf*
     exit-status: 0
     stdout:
     - '/.*:(\s|)maxclassrepeat = [1-4]$/'

@@ -2,7 +2,7 @@
 command:
   pwquality_conf_dcredit:
     title: RHEL-08-020130 | RHEL 8 must enforce password complexity by requiring that at least one numeric character be used.
-    exec: grep -i dcredit /etc/security/pwquality.conf*
+    exec: grep -iR dcredit /etc/security/pwquality.conf*
     exit-status: 0
     stdout:
     - '/.*:(\s|)dcredit = -1/'

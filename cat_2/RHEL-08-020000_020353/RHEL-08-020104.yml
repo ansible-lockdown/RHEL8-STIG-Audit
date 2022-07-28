@@ -3,7 +3,7 @@
 command:
   pwquality_conf_retry:
     title: RHEL-08-020104 | RHEL 8 systems, version 8.4 and above, must ensure the password complexity module is configured for three retries or less.
-    exec: grep -i retry /etc/security/pwquality.conf*
+    exec: grep -iR retry /etc/security/pwquality.conf*
     exit-status: 0
     stdout:
     - '/.*:(\s|)retry(\s|)=(\s|)[1-3]/'

@@ -2,7 +2,7 @@
 command:
   pwquality_conf_ucredit:
     title: RHEL-08-020110 | RHEL 8 must enforce password complexity by requiring that at least one uppercase character be used.
-    exec: grep -i ucredit /etc/security/pwquality.conf*
+    exec: grep -iR ucredit /etc/security/pwquality.conf*
     exit-status: 0
     stdout:
     - '/.*:(\s|)ucredit = -1/'

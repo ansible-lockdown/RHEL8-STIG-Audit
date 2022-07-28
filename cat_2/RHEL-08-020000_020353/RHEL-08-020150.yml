@@ -2,7 +2,7 @@
 command:
   pwquality_conf_maxrepeat:
     title: RHEL-08-020150 | RHEL 8 must require the maximum number of repeating characters be limited to three when passwords are changed.
-    exec: grep -i maxrepeat /etc/security/pwquality.conf*
+    exec: grep -iR maxrepeat /etc/security/pwquality.conf*
     exit-status: 0
     stdout:
     - '/.*:(\s|)maxrepeat = [1-3]$/'
