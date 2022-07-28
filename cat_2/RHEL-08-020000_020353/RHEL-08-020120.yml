@@ -2,16 +2,16 @@
 command:
   pwquality_conf_lcredit:
     title: RHEL-08-020120 | RHEL 8 must enforce password complexity by requiring that at least one lower-case character be used.
-    exec: grep -i lcredit /etc/security/pwquality.conf
+    exec: grep -i lcredit /etc/security/pwquality.conf*
     exit-status: 0
     stdout:
-    - '/^lcredit = -1/'
-    - '!/^lcredit = [0-9]/'
+    - '/.*:(\s|)lcredit = -1/'
+    - '!/.*:(\s|)lcredit = [0-9]/'
     meta:
       Cat: 2
       CCI: CCI-000193
       Group_Title: SRG-OS-000070-GPOS-00038
-      Rule_ID: SV-230358r627750_rule
+      Rule_ID: SV-230358r833315_rule
       STIG_ID: RHEL-08-020120
       Vul_ID: V-230358
 {{ end }}

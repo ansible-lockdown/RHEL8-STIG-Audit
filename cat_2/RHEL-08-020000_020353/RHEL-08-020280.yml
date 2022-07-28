@@ -2,16 +2,16 @@
 command:
   pwquality_conf_ocredit:
     title: RHEL-08-020280 | All RHEL 8 passwords must contain at least one special character.
-    exec: grep -i ocredit /etc/security/pwquality.conf
+    exec: grep -i ocredit /etc/security/pwquality.conf*
     exit-status: 0
     stdout:
-    - '/^ocredit = -1$/'
-    - '!/^ocredit = \d.*/'
+    - '/.*:(\s|)ocredit = -1$/'
+    - '!/.*:(\s|)ocredit = \d.*/'
     meta:
       Cat: 2
       CCI: CCI-001619
       Group_Title: SRG-OS-000266-GPOS-00101
-      Rule_ID: SV-230375r627750_rule
+      Rule_ID: SV-230375r833329_rule
       STIG_ID: RHEL-08-020280
       Vul_ID: V-230375
 {{ end }}

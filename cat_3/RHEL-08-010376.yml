@@ -7,7 +7,7 @@ kernel-param:
       Cat: 3
       CCI: CCI-001090
       Group_Title: SRG-OS-000138-GPOS-00069
-      Rule_ID: SV-230270r818828_rule
+      Rule_ID: SV-230270r833298_rule
       STIG_ID: RHEL-08-010376
       Vul_ID: V-230270
 command:
@@ -22,7 +22,7 @@ command:
       Cat: 3
       CCI: CCI-001090
       Group_Title: SRG-OS-000138-GPOS-00069
-      Rule_ID: SV-230270r818828_rule
+      Rule_ID: SV-230270r833298_rule
       STIG_ID: RHEL-08-010376
       Vul_ID: V-230270
 {{ end }}

@@ -2,7 +2,7 @@
 command: 
   kernel_disable_new_kern:
     title: RHEL-08-010372 | RHEL 8 must prevent the loading of a new kernel for later execution. | file check
-    exec: grep -r kernel.kexec_load_disabled /etc/sysctl.d/99-*.conf
+    exec: grep -r kernel.kexec_load_disabled grep -r net.core.bpf_jit_harden /run/sysctl.d/*.conf /usr/local/lib/sysctl.d/*.conf /usr/lib/sysctl.d/*.conf /lib/sysctl.d/*.conf /etc/sysctl.conf /etc/sysctl.d/*.conf
     exit-status: 0
     stdout:
     - '/^kernel.kexec_load_disabled( |)=( |)1/'
@@ -11,7 +11,7 @@ command:
       Cat: 2
       CCI: CCI-001749
       Group_Title: SRG-OS-000366-GPOS-00153
-      Rule_ID: SV-230266r818816_rule
+      Rule_ID: SV-230266r833290_rule
       STIG_ID: RHEL-08-010372
       Vul_ID: V-230266
 kernel-param:
@@ -22,7 +22,7 @@ kernel-param:
       Cat: 2
       CCI: CCI-001749
       Group_Title: SRG-OS-000366-GPOS-00153
-      Rule_ID: SV-230266r818816_rule
+      Rule_ID: SV-230266r833290_rule
       STIG_ID: RHEL-08-010372
       Vul_ID: V-230266
 {{ end }}

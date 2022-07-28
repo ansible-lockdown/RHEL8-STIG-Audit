@@ -7,13 +7,13 @@ kernel-param:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-244553r818884_rule
+      Rule_ID: SV-244553r833379_rule
       STIG_ID: RHEL-08-040279
       Vul_ID: V-24533
 command:
   ipv4_all_accept_redirects_check:
     title: RHEL-08-040279 | RHEL 8 must ignore IPv4 Internet Control Message Protocol (ICMP) redirect messages.| file_check
-    exec: grep -r net.ipv4.conf.all.accept_redirects /etc/sysctl.d/99-*.conf
+    exec: grep -r net.ipv4.conf.all.accept_redirects grep -r net.core.bpf_jit_harden /run/sysctl.d/*.conf /usr/local/lib/sysctl.d/*.conf /usr/lib/sysctl.d/*.conf /lib/sysctl.d/*.conf /etc/sysctl.conf /etc/sysctl.d/*.conf
     exit-status: 0
     stdout:
     - '/^net.ipv4.conf.all.accept_redirects( |)=( |)0/'
@@ -22,7 +22,7 @@ command:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-244553r818884_rule
+      Rule_ID: SV-244553r833379_rule
       STIG_ID: RHEL-08-040279
       Vul_ID: V-24533
 {{ end }}

@@ -9,7 +9,7 @@ file:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-251711r810015_rule
+      Rule_ID: SV-251711r833385_rule
       STIG_ID: RHEL-08-010379
       Vul_ID: V-251711
 {{ end }}

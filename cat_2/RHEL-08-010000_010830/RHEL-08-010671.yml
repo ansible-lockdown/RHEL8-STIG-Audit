@@ -10,13 +10,13 @@ command:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230311r818834_rule
+      Rule_ID: SV-230311r833305_rule
       STIG_ID: RHEL-08-010671
       Vul_ID: V-230311
 command:
   check_randomize:
     title: RHEL-08-010671 | RHEL 8 must disable the kernel.core_pattern. | file_check
-    exec: grep kernel.core_pattern /etc/sysctl.d/99-*.conf
+    exec: grep kernel.core_pattern grep -r net.core.bpf_jit_harden /run/sysctl.d/*.conf /usr/local/lib/sysctl.d/*.conf /usr/lib/sysctl.d/*.conf /lib/sysctl.d/*.conf /etc/sysctl.conf /etc/sysctl.d/*.conf
     exit-status: 0
     stdout:
     - '/^kernel.core_pattern( |)=( |)|\/bin\/false/'
@@ -25,7 +25,7 @@ command:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230311r818834_rule
+      Rule_ID: SV-230311r833305_rule
       STIG_ID: RHEL-08-010671
       Vul_ID: V-230311
 {{ end }}

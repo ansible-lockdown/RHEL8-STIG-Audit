@@ -7,13 +7,13 @@ kernel-param:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230547r818896_rule
+      Rule_ID: SV-230547r833363_rule
       STIG_ID: RHEL-08-040283
       Vul_ID: V-230547
 command:
   kptr_restrict_check:
     title: RHEL-08-040283 | RHEL 8 must restrict exposed kernel pointer addresses access. | file_check
-    exec: grep -r kernel.kptr_restrict  /etc/sysctl.d/99-*.conf
+    exec: grep -r kernel.kptr_restrict grep -r net.core.bpf_jit_harden /run/sysctl.d/*.conf /usr/local/lib/sysctl.d/*.conf /usr/lib/sysctl.d/*.conf /lib/sysctl.d/*.conf /etc/sysctl.conf /etc/sysctl.d/*.conf
     exit-status: 0
     stdout:
     - '/^kernel.kptr_restrict( |)=( |)1/'
@@ -22,7 +22,7 @@ command:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230547r818896_rule
+      Rule_ID: SV-230547r833363_rule
       STIG_ID: RHEL-08-040283
       Vul_ID: V-230547
 {{ end }}

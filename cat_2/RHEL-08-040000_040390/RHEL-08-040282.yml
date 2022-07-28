@@ -7,13 +7,13 @@ kernel-param:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230546r818893_rule
+      Rule_ID: SV-230546r833361_rule
       STIG_ID: RHEL-08-040282
       Vul_ID: V-230546
 command:
   yama_ptrace_check:
     title: RHEL-08-040282 | RHEL 8 must restrict usage of ptrace to descendant processes. | file_check
-    exec: grep -r kernel.yama.ptrace_scope /etc/sysctl.d/99-*.conf
+    exec: grep -r kernel.yama.ptrace_scope grep -r net.core.bpf_jit_harden /run/sysctl.d/*.conf /usr/local/lib/sysctl.d/*.conf /usr/lib/sysctl.d/*.conf /lib/sysctl.d/*.conf /etc/sysctl.conf /etc/sysctl.d/*.conf
     exit-status: 0
     stdout:
     - '/^kernel.yama.ptrace_scope( |)=( |)1/'
@@ -22,7 +22,7 @@ command:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230546r818893_rule
+      Rule_ID: SV-230546r833361_rule
       STIG_ID: RHEL-08-040282
       Vul_ID: V-230546
 {{ end }}

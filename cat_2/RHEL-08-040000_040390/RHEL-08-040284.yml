@@ -7,13 +7,13 @@ kernel-param:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230548r818899_rule
+      Rule_ID: SV-230548r833365_rule
       STIG_ID: RHEL-08-040284
       Vul_ID: V-230548
 command:
   user_max_namespace_check:
     title: RHEL-08-040284 | RHEL 8 must disable the use of user namespaces. | file_check
-    exec: grep -r user.max_user_namespaces /etc/sysctl.d/99-*.conf
+    exec: grep -r user.max_user_namespaces grep -r net.core.bpf_jit_harden /run/sysctl.d/*.conf /usr/local/lib/sysctl.d/*.conf /usr/lib/sysctl.d/*.conf /lib/sysctl.d/*.conf /etc/sysctl.conf /etc/sysctl.d/*.conf
     exit-status: 0
     stdout:
     - '/^user.max_user_namespaces( |)=( |)0/'
@@ -22,7 +22,7 @@ command:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230548r818899_rule
+      Rule_ID: SV-230548r833365_rule
       STIG_ID: RHEL-08-040284
       Vul_ID: V-230548
 {{ end }}
