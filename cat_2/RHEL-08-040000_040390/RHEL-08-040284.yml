@@ -13,8 +13,11 @@ kernel-param:
 command:
   user_max_namespace_check:
     title: RHEL-08-040284 | RHEL 8 must disable the use of user namespaces. | file_check
-    exec: grep -r user.max_user_namespaces grep -r net.core.bpf_jit_harden /run/sysctl.d/*.conf /usr/local/lib/sysctl.d/*.conf /usr/lib/sysctl.d/*.conf /lib/sysctl.d/*.conf /etc/sysctl.conf /etc/sysctl.d/*.conf
-    exit-status: 0
+    exec: grep -iR user.max_user_namespaces /run/sysctl.d/*.conf /usr/local/lib/sysctl.d/*.conf /usr/lib/sysctl.d/*.conf /lib/sysctl.d/*.conf /etc/sysctl.conf /etc/sysctl.d/*.conf
+    exit-status:
+      or:
+      - 0
+      - 2
     stdout:
     - '/^user.max_user_namespaces( |)=( |)0/'
     - '!/^.*user.max_user_namespaces( |)=( |)1/'

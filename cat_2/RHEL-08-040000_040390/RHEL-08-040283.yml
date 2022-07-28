@@ -13,8 +13,11 @@ kernel-param:
 command:
   kptr_restrict_check:
     title: RHEL-08-040283 | RHEL 8 must restrict exposed kernel pointer addresses access. | file_check
-    exec: grep -r kernel.kptr_restrict grep -r net.core.bpf_jit_harden /run/sysctl.d/*.conf /usr/local/lib/sysctl.d/*.conf /usr/lib/sysctl.d/*.conf /lib/sysctl.d/*.conf /etc/sysctl.conf /etc/sysctl.d/*.conf
-    exit-status: 0
+    exec: grep -iR kernel.kptr_restrict /run/sysctl.d/*.conf /usr/local/lib/sysctl.d/*.conf /usr/lib/sysctl.d/*.conf /lib/sysctl.d/*.conf /etc/sysctl.conf /etc/sysctl.d/*.conf
+    exit-status:
+      or:
+      - 0
+      - 2
     stdout:
     - '/^kernel.kptr_restrict( |)=( |)1/'
     - '!/^.*kernel.kptr_restrict( |)=( |)0/'

@@ -13,8 +13,11 @@ kernel-param:
 command:
   bpf_syscall_check:
     title: RHEL-08-040281 | RHEL 8 must disable access to network bpf syscall from unprivileged processes. | file_check
-    exec: grep -r kernel.unprivileged_bpf_disabled grep -r net.core.bpf_jit_harden /run/sysctl.d/*.conf /usr/local/lib/sysctl.d/*.conf /usr/lib/sysctl.d/*.conf /lib/sysctl.d/*.conf /etc/sysctl.conf /etc/sysctl.d/*.conf
-    exit-status: 0
+    exec: grep -iR kernel.unprivileged_bpf_disabled /run/sysctl.d/*.conf /usr/local/lib/sysctl.d/*.conf /usr/lib/sysctl.d/*.conf /lib/sysctl.d/*.conf /etc/sysctl.conf /etc/sysctl.d/*.conf
+    exit-status:
+      or:
+      - 0
+      - 2
     stdout:
     - '/^kernel.unprivileged_bpf_disabled( |)=( |)1/'
     - '!/^.*kernel.unprivileged_bpf_disabled( |)=( |)0/'

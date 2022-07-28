@@ -14,8 +14,11 @@ kernel-param:
 command:
   ipv4_forward_check:
     title: RHEL-08-040259 | RHEL 8 must not enable IPv4 packet forwarding unless the system is a router. | file_check
-    exec: grep -r net.ipv4.ip_forward grep -r net.core.bpf_jit_harden /run/sysctl.d/*.conf /usr/local/lib/sysctl.d/*.conf /usr/lib/sysctl.d/*.conf /lib/sysctl.d/*.conf /etc/sysctl.conf /etc/sysctl.d/*.conf
-    exit-status: 0
+    exec: grep -iR net.ipv4.ip_forward /run/sysctl.d/*.conf /usr/local/lib/sysctl.d/*.conf /usr/lib/sysctl.d/*.conf /lib/sysctl.d/*.conf /etc/sysctl.conf /etc/sysctl.d/*.conf
+    exit-status:
+      or:
+      - 0
+      - 2
     stdout:
     - '/^net.net.ipv4.ip_forward( |)=( |)0/'
     - '!/^.*net.net.ipv4.ip_forward( |)=( |)1/'

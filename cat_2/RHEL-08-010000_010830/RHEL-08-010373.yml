@@ -2,8 +2,11 @@
 command: 
   fs_protected_symlinks:
     title: RHEL-08-010373 | RHEL 8 must enable kernel parameters to enforce discretionary access control on symlinks. | file check
-    exec: grep -r fs.protected_symlinks grep -r net.core.bpf_jit_harden /run/sysctl.d/*.conf /usr/local/lib/sysctl.d/*.conf /usr/lib/sysctl.d/*.conf /lib/sysctl.d/*.conf /etc/sysctl.conf /etc/sysctl.d/*.conf
-    exit-status: 0
+    exec: grep -iR fs.protected_symlinks /run/sysctl.d/*.conf /usr/local/lib/sysctl.d/*.conf /usr/lib/sysctl.d/*.conf /lib/sysctl.d/*.conf /etc/sysctl.conf /etc/sysctl.d/*.conf
+    exit-status:
+      or:
+      - 0
+      - 2
     stdout:
     - '/^fs.protected_symlinks( |)=( |)1/'
     - '!/.*fs.protected_symlinks( |)=( |)0/'
