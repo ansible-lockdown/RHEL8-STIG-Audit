@@ -1,5 +1,59 @@
 # Changelog
 
+## Stig V1R7 27th July 2022
+
+- auditd config tests now exntded for mutliple locations
+- pwquality based checks extended for all files
+- all files linted for blank line at end of file
+- new Rule ID for listed
+
+  - RHEL-08-010372
+  - RHEL-08-010373
+  - RHEL-08-010375
+  - RHEL-08-010376
+  - RHEL-08-010379
+  - RHEL-08-010380
+  - RHEL-08-010383
+  - RHEL-08-010384
+  - RHEL-08-010430
+  - RHEL-08-010671
+  - RHEL-08-010672
+  - RHEL-08-020041
+  - RHEL-08-020104
+  - RHEL-08-020110
+  - RHEL-08-020120
+  - RHEL-08-020130
+  - RHEL-08-020140
+  - RHEL-08-020150
+  - RHEL-08-020160
+  - RHEL-08-020170
+  - RHEL-08-020230
+  - RHEL-08-020280
+  - RHEL-08-020300
+  - RHEL-08-030650
+  - RHEL-08-040111
+  - RHEL-08-040170
+  - RHEL-08-040209
+  - RHEL-08-040210
+  - RHEL-08-040220
+  - RHEL-08-040230
+  - RHEL-08-040239
+  - RHEL-08-040240
+  - RHEL-08-040250
+  - RHEL-08-040259
+  - RHEL-08-040260
+  - RHEL-08-040261
+  - RHEL-08-040262
+  - RHEL-08-040270
+  - RHEL-08-040279
+  - RHEL-08-040280
+  - RHEL-08-040281
+  - RHEL-08-040282
+  - RHEL-08-040283
+  - RHEL-08-040284
+  - RHEL-08-040285
+  - RHEL-08-040286
+
 ## Stig V1R6 27th April 2022
 
 - new Rule ID for all listed

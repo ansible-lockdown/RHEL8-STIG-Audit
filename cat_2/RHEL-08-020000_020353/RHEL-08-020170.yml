@@ -2,16 +2,16 @@
 command:
   pwquality_conf_difok:
     title: RHEL-08-020170 | RHEL 8 must require the change of at least 8 characters when passwords are changed.
-    exec: grep -i difok /etc/security/pwquality.conf
+    exec: grep -iR difok /etc/security/pwquality.conf*
     exit-status: 0
     stdout:
-    - '/^difok = ([8-9]|1[0-9])$/'
-    - '!/^difok = [1-7]$/'
+    - '/.*:(\s|)difok = ([8-9]|1[0-9])$/'
+    - '!/.*:(\s|)difok = [1-7]$/'
     meta:
       Cat: 2
       CCI: CCI-000195
       Group_Title: SRG-OS-000072-GPOS-00040
-      Rule_ID: SV-230363r627750_rule
+      Rule_ID: SV-230363r833325_rule
       STIG_ID: RHEL-08-020170
       Vul_ID: V-230363
 {{ end }}

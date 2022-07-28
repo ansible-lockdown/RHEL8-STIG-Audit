@@ -1,5 +1,5 @@
 ## metadata for Audit benchmark
-benchmark_version: '1.5'
+benchmark_version: '1.7'
 
 
 rhel8stig_os_distribution: redhat

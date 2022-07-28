@@ -2,16 +2,19 @@
 command: 
   fs_protected_symlinks:
     title: RHEL-08-010373 | RHEL 8 must enable kernel parameters to enforce discretionary access control on symlinks. | file check
-    exec: grep -r fs.protected_symlinks /etc/sysctl.d/99-*.conf
-    exit-status: 0
+    exec: grep -iR fs.protected_symlinks /run/sysctl.d/*.conf /usr/local/lib/sysctl.d/*.conf /usr/lib/sysctl.d/*.conf /lib/sysctl.d/*.conf /etc/sysctl.conf /etc/sysctl.d/*.conf
+    exit-status:
+      or:
+      - 0
+      - 2
     stdout:
-    - '/^fs.protected_symlinks( |)=( |)1/'
-    - '!/.*fs.protected_symlinks( |)=( |)0/'
+    - '/.*:(\s|)fs.protected_symlinks( |)=( |)1/'
+    - '!/.*:(\s|)fs.protected_symlinks( |)=( |)0/'
     meta:
       Cat: 2
       CCI: CCI-001749
       Group_Title: SRG-OS-000312-GPOS-00122
-      Rule_ID: SV-230267r818819_rule
+      Rule_ID: SV-230267r833292_rule
       STIG_ID: RHEL-08-010373
       Vul_ID: V-230267
 kernel-param:
@@ -22,7 +25,7 @@ kernel-param:
       Cat: 2
       CCI: CCI-001749
       Group_Title: SRG-OS-000312-GPOS-00122
-      Rule_ID: SV-230267r818819_rule
+      Rule_ID: SV-230267r833292_rule
       STIG_ID: RHEL-08-010373
       Vul_ID: V-230267
 {{ end }}

@@ -2,7 +2,7 @@
 command:
   aide_conf_crypto:
     title: RHEL_08_030650 | RHEL 8 must use cryptographic mechanisms to protect the integrity of audit tools.
-    exec: grep "/usr/sbin" /etc/aide.conf
+    exec: grep -E '(\/usr\/sbin\/(audit|au|rsys))' /etc/aide.conf
     exit-status: 0
     stdout:
     - '/usr/sbin/auditctl p+i+n+u+g+s+b+acl+xattrs+sha512'
@@ -16,7 +16,7 @@ command:
       Cat: 2
       CCI: CCI-001496
       Group_Title: SRG-OS-000278-GPOS-00108
-      Rule_ID: SV-230475r627750_rule
+      Rule_ID: SV-230475r833333_rule
       STIG_ID: RHEL-08-030650
       Vul_ID: V-230475
 {{ end }}

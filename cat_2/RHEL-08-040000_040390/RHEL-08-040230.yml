@@ -7,22 +7,25 @@ kernel-param:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230537r818854_rule
+      Rule_ID: SV-230537r833344_rule
       STIG_ID: RHEL-08-040230
       Vul_ID: V-230537
 command:
   check_ipv4_ignore_broadcast:
     title: RHEL-08-040230 | RHEL 8 must not respond to Internet Control Message Protocol (ICMP) echoes sent to a broadcast address. | conf_check
-    exec: grep -r net.ipv4.icmp_echo_ignore_broadcasts /etc/sysctl.d/99-*.conf
-    exit-status: 0
+    exec: grep -iR net.ipv4.icmp_echo_ignore_broadcasts /run/sysctl.d/*.conf /usr/local/lib/sysctl.d/*.conf /usr/lib/sysctl.d/*.conf /lib/sysctl.d/*.conf /etc/sysctl.conf /etc/sysctl.d/*.conf
+    exit-status:
+      or:
+      - 0
+      - 2
     stdout:
-    - '/^net.ipv4.icmp_echo_ignore_broadcasts( |)=( |)1/'
-    - '!/^.*net.ipv4.icmp_echo_ignore_broadcasts( |)=( |)0/'
+    - '/.*:(\s|)net.ipv4.icmp_echo_ignore_broadcasts( |)=( |)1/'
+    - '!/.*:(\s|)net.ipv4.icmp_echo_ignore_broadcasts( |)=( |)0/'
     meta:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230537r818854_rule
+      Rule_ID: SV-230537r833344_rule
       STIG_ID: RHEL-08-040230
       Vul_ID: V-230537
     

@@ -2,16 +2,16 @@
 command:
   pwquality_conf_dcredit:
     title: RHEL-08-020130 | RHEL 8 must enforce password complexity by requiring that at least one numeric character be used.
-    exec: grep -i dcredit /etc/security/pwquality.conf
+    exec: grep -iR dcredit /etc/security/pwquality.conf*
     exit-status: 0
     stdout:
-    - '/^dcredit = -1/'
-    - '!/^dcredit = [0-9]/'
+    - '/.*:(\s|)dcredit = -1/'
+    - '!/.*:(\s|)dcredit = [0-9]/'
     meta:
       Cat: 2
       CCI: CCI-000194
       Group_Title: SRG-OS-000071-GPOS-00039
-      Rule_ID: SV-230359r627750_rule
+      Rule_ID: SV-230359r833317_rule
       STIG_ID: RHEL-08-020130
       Vul_ID: V-230359
 {{ end }}
