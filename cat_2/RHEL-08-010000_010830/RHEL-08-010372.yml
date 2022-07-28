@@ -8,8 +8,8 @@ command:
       - 0
       - 2
     stdout:
-    - '/^kernel.kexec_load_disabled( |)=( |)1/'
-    - '!/.*kernel.kexec_load_disabled( |)=( |)0/'
+    - '/.*:(\s|)kernel.kexec_load_disabled( |)=( |)1/'
+    - '!/.*:(\s|)kernel.kexec_load_disabled( |)=( |)0/'
     meta:
       Cat: 2
       CCI: CCI-001749

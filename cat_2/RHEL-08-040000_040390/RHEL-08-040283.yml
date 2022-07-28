@@ -19,8 +19,8 @@ command:
       - 0
       - 2
     stdout:
-    - '/^kernel.kptr_restrict( |)=( |)1/'
-    - '!/^.*kernel.kptr_restrict( |)=( |)0/'
+    - '/.*:(\s|)kernel.kptr_restrict( |)=( |)1/'
+    - '!/.*:(\s|)kernel.kptr_restrict( |)=( |)0/'
     meta:
       Cat: 2
       CCI: CCI-000366

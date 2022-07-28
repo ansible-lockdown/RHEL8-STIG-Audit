@@ -19,8 +19,8 @@ command:
       - 0
       - 2
     stdout:
-    - '/^net.ipv4.conf.all.rp_filter( |)=( |)1/'
-    - '!/^.*net.ipv4.conf.all.rp_filter( |)=( |)0/'
+    - '/.*:(\s|)net.ipv4.conf.all.rp_filter( |)=( |)1/'
+    - '!/.*:(\s|)net.ipv4.conf.all.rp_filter( |)=( |)0/'
     meta:
       Cat: 2
       CCI: CCI-000366

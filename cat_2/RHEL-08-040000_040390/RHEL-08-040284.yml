@@ -19,8 +19,8 @@ command:
       - 0
       - 2
     stdout:
-    - '/^user.max_user_namespaces( |)=( |)0/'
-    - '!/^.*user.max_user_namespaces( |)=( |)1/'
+    - '/.*:(\s|)user.max_user_namespaces( |)=( |)0/'
+    - '!/.*:(\s|)user.max_user_namespaces( |)=( |)1/'
     meta:
       Cat: 2
       CCI: CCI-000366

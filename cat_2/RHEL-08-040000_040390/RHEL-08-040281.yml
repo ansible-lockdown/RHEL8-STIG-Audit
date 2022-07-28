@@ -19,8 +19,8 @@ command:
       - 0
       - 2
     stdout:
-    - '/^kernel.unprivileged_bpf_disabled( |)=( |)1/'
-    - '!/^.*kernel.unprivileged_bpf_disabled( |)=( |)0/'
+    - '/.*:(\s|)kernel.unprivileged_bpf_disabled( |)=( |)1/'
+    - '!/.*:(\s|)kernel.unprivileged_bpf_disabled( |)=( |)0/'
     meta:
       Cat: 2
       CCI: CCI-000366

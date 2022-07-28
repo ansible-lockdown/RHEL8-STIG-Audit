@@ -19,8 +19,8 @@ command:
       - 0
       - 2
     stdout:
-    - '/^net.ipv4.conf.default.accept_source_route( |)=( |)0/'
-    - '!/^.*net.ipv4.conf.default.accept_source_route( |)=( |)1/'
+    - '/.*:(\s|)net.ipv4.conf.default.accept_source_route( |)=( |)0/'
+    - '!/.*:(\s|)net.ipv4.conf.default.accept_source_route( |)=( |)1/'
     meta:
       Cat: 2
       CCI: CCI-000366

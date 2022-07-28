@@ -20,8 +20,8 @@ command:
       - 0
       - 2
     stdout:
-    - '/^net.ipv6.conf.default.accept_ra( |)=( |)0/'
-    - '!/^.*net.ipv6.conf.default.accept_ra( |)=( |)1/'
+    - '/.*:(\s|)net.ipv6.conf.default.accept_ra( |)=( |)0/'
+    - '!/.*:(\s|)net.ipv6.conf.default.accept_ra( |)=( |)1/'
     meta:
       Cat: 2
       CCI: CCI-000366

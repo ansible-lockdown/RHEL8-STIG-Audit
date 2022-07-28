@@ -19,8 +19,8 @@ command:
       - 0
       - 2
     stdout:
-    - '/^kernel.yama.ptrace_scope( |)=( |)1/'
-    - '!/^.*kernel.yama.ptrace_scope( |)=( |)0/'
+    - '/.*:(\s|)kernel.yama.ptrace_scope( |)=( |)1/'
+    - '!/.*:(\s|)kernel.yama.ptrace_scope( |)=( |)0/'
     meta:
       Cat: 2
       CCI: CCI-000366

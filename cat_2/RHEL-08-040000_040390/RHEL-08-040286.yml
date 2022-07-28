@@ -19,8 +19,8 @@ command:
       - 0
       - 2
     stdout:
-    - '/^net.core.bpf_jit_harden( |)=( |)2/'
-    - '!/^.*net.core.bpf_jit_harden( |)=( |)(0|1)/'
+    - '/.*:(\s|)net.core.bpf_jit_harden( |)=( |)2/'
+    - '!/.*:(\s|)net.core.bpf_jit_harden( |)=( |)(0|1)/'
     meta:
       Cat: 2
       CCI: CCI-000366

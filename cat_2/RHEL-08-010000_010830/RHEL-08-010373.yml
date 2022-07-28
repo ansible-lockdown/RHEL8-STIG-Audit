@@ -8,8 +8,8 @@ command:
       - 0
       - 2
     stdout:
-    - '/^fs.protected_symlinks( |)=( |)1/'
-    - '!/.*fs.protected_symlinks( |)=( |)0/'
+    - '/.*:(\s|)fs.protected_symlinks( |)=( |)1/'
+    - '!/.*:(\s|)fs.protected_symlinks( |)=( |)0/'
     meta:
       Cat: 2
       CCI: CCI-001749

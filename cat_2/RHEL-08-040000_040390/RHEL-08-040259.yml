@@ -20,8 +20,8 @@ command:
       - 0
       - 2
     stdout:
-    - '/^net.net.ipv4.ip_forward( |)=( |)0/'
-    - '!/^.*net.net.ipv4.ip_forward( |)=( |)1/'
+    - '/.*:(\s|)net.net.ipv4.ip_forward( |)=( |)0/'
+    - '!/.*:(\s|)net.net.ipv4.ip_forward( |)=( |)1/'
     meta:
       Cat: 2
       CCI: CCI-000366
