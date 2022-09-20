@@ -2,7 +2,8 @@
 
 ## Stig V1R7 27th July 2022
 
-- auditd config tests now exntded for mutliple locations
+- auditd config tests now extended for multiple locations
+- default location is now /opt
 - pwquality based checks extended for all files
 - all files linted for blank line at end of file
 - new Rule ID for listed
