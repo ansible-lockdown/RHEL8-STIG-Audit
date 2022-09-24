@@ -1,11 +1,13 @@
 {{ if not .Vars.rhel8stig_os_version_pre_8_2 }}
   {{ if .Vars.RHEL_08_020017 }}
-file: 
-  /etc/security/faillock.conf:
+command:
+  faillock_conf_persist:
     title: RHEL-08-020017 | RHEL 8 must ensure account lockouts persist. | OS_ver >= 8.2
-    exists: true
-    contains:
-    - '/^dir = \/var\/log\/faillock/'
+    exec: grep dir /etc/security/faillock.conf
+    exit-status: 0
+    stdout:
+    - '/^dir(\s|)=(\s|)\/.*/'
+    - '/^dir(\s|)=(\s|)\/var\/log\/faillock/'
     meta:
       Cat: 2
       CCI: CCI-00044

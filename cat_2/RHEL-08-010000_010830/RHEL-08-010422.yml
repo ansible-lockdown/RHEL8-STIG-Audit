@@ -14,11 +14,11 @@ command:
       Rule_ID: SV-230278r792886_rule
       STIG_ID: RHEL-08-010422
       Vul_ID: V-230278
-file:
-  /etc/default/grub:
+  default_grub_syscall:
     title: RHEL-08-010422 | RHEL 8 must disable virtual syscalls. | default vsyscall grub check
-    exists: true
-    contains:
+    exec: grep syscall /etc/default/grub
+    exit-status: 0
+    stdout:
     - '/^GRUB_CMDLINE_LINUX=.*\svsyscall=none\s.*/'
     - '!/^#GRUB_CMDLINE_LINUX=.*\svsyscall=.*/'
     meta:

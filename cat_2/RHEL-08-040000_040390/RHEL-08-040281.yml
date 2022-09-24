@@ -7,22 +7,25 @@ kernel-param:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230545r818890_rule
+      Rule_ID: SV-230545r833359_rule
       STIG_ID: RHEL-08-040281
       Vul_ID: V-230545
 command:
   bpf_syscall_check:
     title: RHEL-08-040281 | RHEL 8 must disable access to network bpf syscall from unprivileged processes. | file_check
-    exec: grep -r kernel.unprivileged_bpf_disabled /etc/sysctl.d/99-*.conf
-    exit-status: 0
+    exec: grep -iR kernel.unprivileged_bpf_disabled /run/sysctl.d/*.conf /usr/local/lib/sysctl.d/*.conf /usr/lib/sysctl.d/*.conf /lib/sysctl.d/*.conf /etc/sysctl.conf /etc/sysctl.d/*.conf
+    exit-status:
+      or:
+      - 0
+      - 2
     stdout:
-    - '/^kernel.unprivileged_bpf_disabled( |)=( |)1/'
-    - '!/^.*kernel.unprivileged_bpf_disabled( |)=( |)0/'
+    - '/.*:(\s|)kernel.unprivileged_bpf_disabled( |)=( |)1/'
+    - '!/.*:(\s|)kernel.unprivileged_bpf_disabled( |)=( |)0/'
     meta:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230545r818890_rule
+      Rule_ID: SV-230545r833359_rule
       STIG_ID: RHEL-08-040281
       Vul_ID: V-230545
 {{ end }}

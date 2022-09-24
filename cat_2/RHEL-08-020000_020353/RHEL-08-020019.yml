@@ -1,10 +1,11 @@
 {{ if not .Vars.rhel8stig_os_version_pre_8_2 }}
   {{ if .Vars.RHEL_08_020019 }}
-file:
-  /etc/security/faillock.conf:
+command:
+  faillock_conf_silence_system_msg:
     title: RHEL-08-020019 | RHEL 8 must prevent system messages from being presented when three unsuccessful logon attempts occur. | OS_ver >= 8.2
-    exists: true
-    contains:
+    exec: grep -i silent /etc/security/faillock.conf
+    exit-status: 0
+    stdout:
     - '/^silent/'
     meta:
       Cat: 2

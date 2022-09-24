@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_08_030302 }}
-file:
-  /etc/audit/audit.rules:
+command:
+  audit_rules_mount:
     title: RHEL_08_030302 | Successful/unsuccessful uses of the mount syscall in RHEL 8 must generate an audit record. | config check
-    exists: true
-    contains:
+    exec: grep -w mount /etc/audit/audit.rules
+    exit-status: 0
+    stdout:
     - '-a always,exit -F arch=b32 -S mount -F auid>=1000 -F auid!=unset -k privileged-mount'
     - '-a always,exit -F arch=b64 -S mount -F auid>=1000 -F auid!=unset -k privileged-mount'
     meta:
@@ -13,7 +14,6 @@ file:
       Rule_ID: SV-230425r627750_rule
       STIG_ID: RHEL-08-030302
       Vul_ID: V-230425
-command:
   auditd_mount_live:
     title: RHEL_08_030302 | Successful/unsuccessful uses of the mount syscall in RHEL 8 must generate an audit record. | live check
     exec: auditctl -l | grep -w mount

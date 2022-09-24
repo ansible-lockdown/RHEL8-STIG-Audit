@@ -4,16 +4,30 @@ file:
     title: RHEL-08-020041 | RHEL 8 must ensure session control is automatically started at shell initialization.
     exists: true
     contains:
-      - '/^If [ "$PS1" ]; then/'
-      - '/^parent=$(ps -o ppid= -p $$)/'
-      - '/^name=$(ps -o comm= -p $parent)/'
-      - '/^case "$name" in (sshd|login) exec tmux ;; esac/'
-      - '/^fi/'
+    - '/^if \[ "\$PS1" \]; then/'
+    - '/^parent=\$\(ps -o ppid= -p \$\$\)/'
+    - '/^name=\$\(ps -o comm= -p \$parent\)/'
+    - '/^case "\$name" in \(sshd|login\) exec tmux ;; esac/'
+    - '/^fi/'
     meta:
       Cat: 2
       CCI: CCI-000056
       Group_Title: SRG-OS-000028-GPOS-00009
-      Rule_ID: SV-230349r810020_rule
+      Rule_ID: SV-230349r833388_rule
+      STIG_ID: RHEL-08-020040
+      Vul_ID: V-230348
+command:
+  tmux_running:
+    title: RHEL-08-020041 | RHEL 8 must ensure session control is automatically started at shell initialization.
+    exec: ps -ef | grep tmux | grep -v grep
+    exit-status: 0
+    stdout:
+    - '/.*tmux.*/'
+    meta:
+      Cat: 2
+      CCI: CCI-000056
+      Group_Title: SRG-OS-000028-GPOS-00009
+      Rule_ID: SV-230349r833388_rule
       STIG_ID: RHEL-08-020040
       Vul_ID: V-230348
 {{ end }}

@@ -29,11 +29,11 @@ command:
       Rule_ID: SV-230264r627750_rule
       STIG_ID: RHEL-08-010370
       Vul_ID: V-230264
-file:
-  /etc/dnf/dnf.conf:
+  dnf_conf_gpgcheck:
     title: RHEL-08-010370 | RHEL 8 must prevent the installation of software, patches, service packs, device drivers, or operating system components from a repository without verification they have been digitally signed using a certificate that is issued by a Certificate Authority (CA) that is recognized and approved by the organization. | dnf_conf
-    exists: true
-    contains:
+    exec: grep -i ^gpgcheck /etc/dnf/dnf.conf
+    exit-status: 0
+    stdout:
     - '/^gpgcheck.*1/'
     - '!/^gpgcheck.*0/'
     meta:

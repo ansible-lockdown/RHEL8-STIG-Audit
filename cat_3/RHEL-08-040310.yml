@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_08_040310 }}
-file:
-  /etc/aide.conf:
+command:
+  aide_conf_acl:
     title: RHEL-08-040310 | The RHEL 8 file integrity tool must be configured to verify Access Control Lists (ACLs).
-    exists: true
-    contains:
+    exec: grep -i acl /etc/aide.conf
+    exit-status: 0
+    stdout:
     - '/^[^#].*=.*\+acl.*/'
     - '!/^[^#].*=.*-acl.*/'
     meta:

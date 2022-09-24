@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_08_030400 }}
-file:
-  /etc/audit/audit.rules:
+command:
+  audit_rules_crontab:
     title: RHEL_08_030400 | Successful/unsuccessful uses of the crontab command in RHEL 8 must generate an audit record. | config check
-    exists: true
-    contains:
+    exec: grep crontab /etc/audit/audit.rules
+    exit-status: 0
+    stdout:
     - '-a always,exit -F path=/usr/bin/crontab -F perm=x -F auid>=1000 -F auid!=unset -k privileged-crontab'
     meta:
       Cat: 2
@@ -12,7 +13,6 @@ file:
       Rule_ID: SV-230447r627750_rule
       STIG_ID: RHEL-08-030400
       Vul_ID: V-230447
-command:
   auditd_crontab_live:
     title: RHEL_08_030400 | Successful/unsuccessful uses of the crontab command in RHEL 8 must generate an audit record. | live check
     exec: auditctl -l | grep -w crontab

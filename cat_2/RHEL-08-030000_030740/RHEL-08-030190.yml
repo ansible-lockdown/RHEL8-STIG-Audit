@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_08_030190 }}
-file:
-  /etc/audit/audit.rules:
+command:
+  audit_rules_priv_change:
     title: RHEL_08_030190 | Successful/unsuccessful uses of the su command in RHEL 8 must generate an audit record. | config check
-    exists: true
-    contains:
+    exec: grep -w priv_change /etc/audit/audit.rules
+    exit-status: 0
+    stdout:
     - '-a always,exit -F path=/usr/bin/su -F perm=x -F auid>=1000 -F auid!=unset -k privileged-priv_change'
     meta:
       Cat: 2
@@ -12,7 +13,6 @@ file:
       Rule_ID: SV-230412r627750_rule
       STIG_ID: RHEL-08-030190
       Vul_ID: V-230412
-command:
   auditd_priv_change_live:
     title: RHEL_08_030190 | Successful/unsuccessful uses of the su command in RHEL 8 must generate an audit record. | live check
     exec: auditctl -l | grep -w priv_change

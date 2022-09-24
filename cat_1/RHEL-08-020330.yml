@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_08_020330 }}
-file:
-  /etc/ssh/sshd_config:
+command:
+  sshd_config_empty_passwd:
     title: RHEL-08-020330 | RHEL 8 must not allow accounts configured with blank or null passwords
-    exists: true
-    contains:
+    exec: grep -i emptypasswords /etc/ssh/sshd_config
+    exit-status: 0
+    stdout:
     - '/PermitEmptyPasswords.*no/'
     - '!/PermitEmptyPasswords.*yes/'
     meta:

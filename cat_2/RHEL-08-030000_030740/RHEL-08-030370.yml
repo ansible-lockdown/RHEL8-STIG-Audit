@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_08_030370 }}
-file:
-  /etc/audit/audit.rules:
+command:
+  audit_rules_gpasswd:
     title: RHEL_08_030370 | Successful/unsuccessful uses of the gpasswd command in RHEL 8 must generate an audit record. | config check
-    exists: true
-    contains:
+    exec: grep gpasswd /etc/audit/audit.rules
+    exit-status: 0
+    stdout:
     - '-a always,exit -F path=/usr/bin/gpasswd -F perm=x -F auid>=1000 -F auid!=unset -k privileged-gpasswd'
     meta:
       Cat: 2
@@ -12,7 +13,6 @@ file:
       Rule_ID: SV-230444r627750_rule
       STIG_ID: RHEL-08-030370
       Vul_ID: V-230444
-command:
   auditd_gpasswd_live:
     title: RHEL_08_030370 | Successful/unsuccessful uses of the gpasswd command in RHEL 8 must generate an audit record. | live check
     exec: auditctl -l | grep -w gpasswd

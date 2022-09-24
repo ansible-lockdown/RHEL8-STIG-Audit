@@ -1,10 +1,11 @@
 {{ if .Vars.RHEL_08_030120 }}
-file:
-  /var/log/audit:
+command:
+  audit_log_dir_perms:
     title: RHEL-08-030120 | RHEL 8 audit log directory must have a mode of 0700 or less permissive to prevent unauthorized read access.
-    exists: true
-    mode: "0700"
-    filetype: directory
+    exec: stat -c "%a" /var/log/audit
+    exit-status: 0
+    stdout:
+    - "700"
     meta:
       Cat: 2
       CCI: CCI-000162

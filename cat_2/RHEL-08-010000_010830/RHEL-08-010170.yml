@@ -13,11 +13,11 @@ command:
       Rule_ID: SV-230240r627750_rule
       STIG_ID: RHEL-08-010170
       Vul_ID: V-230240
-file: 
-  /etc/selinux/config:
+  selinux_conf_enforce:
     title: RHEL-08-010170 | RHEL 8 must use a Linux Security Module configured to enforce limits on system services. | configured settings
-    exists: true
-    contains:
+    exec: grep SELINUX /etc/selinux/config
+    exit-status: 0
+    stdout:
     - '/^SELINUX=[eE]nforcing/'
     - '!/^SELINUX=[dD]disabled/'
     - '!/^SELINUX=[pP]ermissive/'

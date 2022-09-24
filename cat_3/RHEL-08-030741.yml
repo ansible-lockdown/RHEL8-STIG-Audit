@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_08_030741 }}
-file:
-   /etc/chrony.conf:
+command:
+  chrony_disable_server:
     title: RHEL-08-030741 | RHEL 8 must disable the chrony daemon from acting as a server.
-    exists: true
-    contains:
+    exec: grep port /etc/chrony.conf
+    exit-status: 0
+    stdout:
     - '/^port 0/'
     - '!/^port [1-9]{1,9}'
     meta:

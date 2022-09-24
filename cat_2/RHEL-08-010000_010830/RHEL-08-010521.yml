@@ -1,11 +1,12 @@
 {{ if .Vars.RHEL_08_010521 }}
-file:
-  /etc/ssh/sshd_config:
+command:
+  sshd_config_Kerberos:
     title: RHEL-08-010521 | The RHEL 8 SSH daemon must not allow Kerberos authentication, except to fulfill documented and validated mission requirements.
-    exists: true
-    contains:
-    - '/^Kerberos Authentication [Nn][Oo]/'
-    - '!/^Kerberos Authentication [Yy][Ee][Ss]/'
+    exec: grep Kerberos /etc/ssh/sshd_config
+    exit-status: 0
+    stdout:
+    - '/^KerberosAuthentication [Nn][Oo]/'
+    - '!/^KerberosAuthentication [Yy][Ee][Ss]/'
     meta:
       Cat: 2
       CCI: CCI-000366

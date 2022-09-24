@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_08_030490 }}
-file:
-  /etc/audit/audit.rules:
+command:
+  audit_rules_perm_mod:
     title: RHEL_08_030490 | Successful/unsuccessful uses of the chmod command in RHEL 8 must generate an audit record. | config check
-    exists: true
-    contains:
+    exec: grep perm_mod /etc/audit/audit.rules
+    exit-status: 0
+    stdout:
     - '-a always,exit -F arch=b32 -S chmod,fchmod,fchmodat -F auid>=1000 -F auid!=unset -k perm_mod'
     - '-a always,exit -F arch=b64 -S chmod,fchmod,fchmodat -F auid>=1000 -F auid!=unset -k perm_mod'
     meta:
@@ -13,7 +14,6 @@ file:
       Rule_ID: SV-230456r810462_rule
       STIG_ID: RHEL-08-030490
       Vul_ID: V-230456
-command:
   auditd_chmod_live:
     title: RHEL_08_030490 | Successful/unsuccessful uses of the chmod command in RHEL 8 must generate an audit record. | live check
     exec: auditctl -l | grep -w chmod

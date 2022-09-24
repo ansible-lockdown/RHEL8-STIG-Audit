@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_08_030320 }}
-file:
-  /etc/audit/audit.rules:
+commmand:
+  audit_rules_keysign:
     title: RHEL_08_030320 | Successful/unsuccessful uses of ssh-keysign in RHEL 8 must generate an audit record. | config check
-    exists: true
-    contains:
+    exec: grep ssk-keysign /etc/audit/audit.rules
+    exit-status: 0
+    stdout:
     - '-a always,exit -F path=/usr/libexec/openssh/ssh-keysign -F perm=x -F auid>=1000 -F auid!=unset -k privileged-ssh'
     meta:
       Cat: 2
@@ -12,7 +13,6 @@ file:
       Rule_ID: SV-230434r744002_rule
       STIG_ID: RHEL-08-030320
       Vul_ID: V-230434
-command:
   auditd_ssh_keysign_live:
     title: RHEL_08_030320 | Successful/unsuccessful uses of ssh-keysign in RHEL 8 must generate an audit record. | live check
     exec: auditctl -l | grep -w keysign

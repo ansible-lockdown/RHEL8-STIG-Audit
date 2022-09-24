@@ -14,11 +14,11 @@ command:
       Rule_ID: SV-230354r743990_rule
       STIG_ID: RHEL-08-020080
       Vul_ID: V-230347
-file:
-  /etc/dconf/db/local.d/locks/session:
+  dconf_user_lock_override:
     title: RHEL-08-020080 | RHEL 8 must prevent a user from overriding graphical user interface settings. | config check
-    exists: true
-    contains:
+    exec: grep -E "screensave|lock-enabled" /etc/dconf/db/local.d/locks/session
+    exit-status: 0
+    stdout:
     - '/^\/org\/gnome\/desktop\/screensaver\/lock-delay/'
     meta:
       Cat: 2

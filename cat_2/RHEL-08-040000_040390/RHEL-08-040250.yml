@@ -7,22 +7,25 @@ kernel-param:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230539r818866_rule
+      Rule_ID: SV-230539r838722_rule
       STIG_ID: RHEL-08-040250
       Vul_ID: V-230539
 command:
   check_ipv6_def_source_route:
     title: RHEL-08-040250 | RHEL 8 must not forward IPv6 source-routed packets. | file_check
-    exec: grep net.ipv6.conf.default.accept_source_route /etc/sysctl.d/99-*.conf
-    exit-status: 0
+    exec: grep -iR net.ipv6.conf.default.accept_source_route /run/sysctl.d/*.conf /usr/local/lib/sysctl.d/*.conf /usr/lib/sysctl.d/*.conf /lib/sysctl.d/*.conf /etc/sysctl.conf /etc/sysctl.d/*.conf
+    exit-status:
+      or:
+      - 0
+      - 2
     stdout:
-    - '/^net.ipv6.conf.default.accept_source_route( |)=( |)0/'
-    - '!/^.*net.ipv6.conf.default.accept_source_route( |)=( |)1/'
+    - '/.*:(\s|)net.ipv6.conf.default.accept_source_route( |)=( |)0/'
+    - '!/.*:(\s|)net.ipv6.conf.default.accept_source_route( |)=( |)1/'
     meta:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230539r818866_rule
+      Rule_ID: SV-230539r838722_rule
       STIG_ID: RHEL-08-040250
       Vul_ID: V-230539
 {{ end }}

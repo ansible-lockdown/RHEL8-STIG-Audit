@@ -13,11 +13,11 @@ command:
       Rule_ID: SV-230282r627750_rule
       STIG_ID: RHEL-08-010450
       Vul_ID: V-230282
-file:
-  /etc/selinux/config:
+  selinux_config_targeted:
     title: RHEL-08-010450 | RHEL 8 must enable the SELinux targeted policy. | sestatus boot check
-    exists: true
-    contains:
+    exec: grep SELINUXTYPE /etc/selinux/config
+    exit-status: 0
+    stdout:
     - '/^SELINUXTYPE(.=.|=)targeted$/'
     - '!/^SELINUXTYPE(.=.|)(=|)(minimum|mls)/'
     meta:

@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_08_030280 }}
-file:
-  /etc/audit/audit.rules:
+command:
+  audit_rules_ssh_agent:
     title: RHEL_08_030280 | Successful/unsuccessful uses of the ssh-agent in RHEL 8 must generate an audit record. | config check
-    exists: true
-    contains:
+    exec: grep -w ssh-agent /etc/audit/audit.rules
+    exit-status: 0
+    stdout:
     - '-a always,exit -F path=/usr/bin/ssh-agent -F perm=x -F auid>=1000 -F auid!=unset -k privileged-ssh'
     meta:
       Cat: 2

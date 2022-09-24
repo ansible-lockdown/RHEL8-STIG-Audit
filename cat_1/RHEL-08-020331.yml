@@ -1,10 +1,14 @@
 {{ if .Vars.RHEL_08_020331 }}
-file:
-  /etc/pam.d/system-auth:
+command:
+  system_auth_nullok:
     title: RHEL-08-020331 | RHEL 8 must not allow blank or null passwords in the system-auth file.
-    exists: true
-    contains:
-    - '!/.*nullok.*/'
+    exec: grep -i nullok /etc/pam.d/system-auth
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '!/.*/'
     meta:
       Cat: 1
       CCI: CCI-000366

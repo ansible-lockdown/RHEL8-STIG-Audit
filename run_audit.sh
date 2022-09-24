@@ -25,7 +25,7 @@ AUDIT_CONTENT_LOCATION="${AUDIT_CONTENT_LOCATION:-/var/tmp}"  # Location of the 
 
 # Goss benchmark variables (these should not need changing unless new release)
 BENCHMARK=STIG  # Benchmark Name aligns to the audit
-BENCHMARK_VER=V1R6
+BENCHMARK_VER=V1R7
 BENCHMARK_OS=RHEL8
 
 # help output

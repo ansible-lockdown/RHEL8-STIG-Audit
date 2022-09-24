@@ -14,11 +14,11 @@ command:
       Rule_ID: SV-244535r743854_rule
       STIG_ID: RHEL-08-020031
       Vul_ID: V-244535
-file:
-  /etc/dconf/db/local.d/00-screensaver:
+  dconf_screenlock:
     title: RHEL-08-020031 | RHEL 8 must initiate a session lock for graphical user interfaces when the screensaver is activated.| config check
-    exists: true
-    contains:
+    exec: grep -E "screensave|lock-delay" /etc/dconf/db/local.d/00-screensaver
+    exit-status: 0
+    stdout:
     - '[org/gnome/desktop/screensaver]'
     - '/^lock-delay=uint32 [1-5]$/'
     - '!/^lock-delay=uint32 ^([6-9]|[1-9]{2,3})$/'

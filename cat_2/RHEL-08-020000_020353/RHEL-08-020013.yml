@@ -1,10 +1,11 @@
 {{ if not .Vars.rhel8stig_os_version_pre_8_2}}
   {{ if .Vars.RHEL_08_020013 }}
-file: 
-  /etc/security/faillock.conf:
+command:
+  faillock_conf_fail_interval:
     title: RHEL-08-020013 | RHEL 8 must automatically lock an account when three unsuccessful logon attempts occur during a 15-minute time period. | OS_ver >= 8.2
-    exists: true
-    contains:
+    exec: grep fail_interval /etc/security/faillock.conf
+    exit-status: 0
+    stdout:
     - '/^fail_interval = (^[1-8][0-9]{0,2}|900)/'
     - '!/^fail_interval = ^(0|90[1-9]|9[1-9]{1,9})/'
     meta:

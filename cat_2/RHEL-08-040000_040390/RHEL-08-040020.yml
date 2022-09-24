@@ -5,8 +5,8 @@ command:
     exec: grep -r uvcvideo /etc/modprobe.d/* | grep "/bin/true"
     exit-status: 0
     stdout:
-    - '/^install uvcvideo /bin/true/'
-    - '!/^install uvcvideo /bin/false/'
+    - '/^\/etc\/modprobe.d/.*:install uvcvideo /bin/true/'
+    - '!/^\/etc\/modprobe.d/.*:install uvcvideo /bin/false/'
     meta:
       Cat: 2
       CCI: CCI-000381

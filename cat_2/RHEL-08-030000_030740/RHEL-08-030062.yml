@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_08_030062 }}
-file:
-  /etc/audit/auditd.conf:
+command:
+  auditd_conf_name_format:
     title: RHEL-08-030062 | RHEL 8 must label all off-loaded audit logs before sending them to the central log server.
-    exists: true
-    contains:
+    exec: grep -i name_format /etc/audit/auditd.conf
+    exit-status: 0
+    stdout:
     - '/^(?i)name_format = (hostname|fqd|numeric)/'
     meta:
       Cat: 2

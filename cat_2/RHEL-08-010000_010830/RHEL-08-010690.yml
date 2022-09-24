@@ -6,7 +6,7 @@ command:
     exit-status: 0
     stdout:
     - '/PATH="\$HOME/.local/bin:\$HOME/bin:\$PATH"$/'
-    - 'export PATH'
+    - '!/export PATH/'
     - '!/PATH="\/.*/'
     meta:
       Cat: 2

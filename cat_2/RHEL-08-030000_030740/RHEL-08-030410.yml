@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_08_030410 }}
-file:
-  /etc/audit/audit.rules:
+command:
+  audit_rules_chsh:
     title: RHEL_08_030410 | Successful/unsuccessful uses of the chsh command in RHEL 8 must generate an audit record. | config check
-    exists: true
-    contains:
+    exec: grep chsh /etc/audit/audit.rules
+    exit-status: 0
+    stdout:
     - '-a always,exit -F path=/usr/bin/chsh -F perm=x -F auid>=1000 -F auid!=unset -k priv_cmd'
     meta:
       Cat: 2
@@ -12,7 +13,6 @@ file:
       Rule_ID: SV-230448r627750_rule
       STIG_ID: RHEL-08-030410
       Vul_ID: V-230448
-command:
   auditd_chsh_live:
     title: RHEL_08_030410 | Successful/unsuccessful uses of the chsh command in RHEL 8 must generate an audit record. | live check
     exec: auditctl -l | grep -w chsh

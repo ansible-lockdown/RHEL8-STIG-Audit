@@ -4,7 +4,7 @@ file:
     title: RHEL-08-010385 | The RHEL 8 operating system must not be configured to bypass password requirements for privilege escalation
     exists: true
     contains:
-    - '!/*pam_succeed_if/'
+    - '!/.*pam_succeed_if/'
     meta:
       Cat: 2
       CCI: CCI-002038

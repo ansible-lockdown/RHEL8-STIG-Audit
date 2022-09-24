@@ -1,9 +1,10 @@
 {{ if .Vars.RHEL_08_010500 }}
-file:
-  /etc/ssh/sshd_config:
+command:
+  sshd_config_strictmodes:
     title: RHEL-08-010500 | The RHEL 8 SSH daemon must perform strict mode checking of home directory configuration files.
-    exists: true
-    contains:
+    exec: grep StrictModes /etc/ssh/sshd_config
+    exit-status: 0
+    stdout:
     - '/^StrictModes [yY][eE][sS]/'
     - '!/^StrictModes [nN][oO]/'
     meta:
