@@ -3,7 +3,7 @@
 command:
   home_dir_file_750:
     title: RHEL-08-010731 | All RHEL 8 local interactive user home directory files must have mode 0750 or less permissive.
-    exec: find /home/*/[^.]* -type f -exec stat -c '%n %a' {} \; | grep -v "[6|7][0|4|5][0]"
+    exec: find /home/*/ -name "*" -type f -exec stat -c '%n %a' {} \; | grep -v "[6|7][0|4|5][0]"
     timeout: {{ .Vars.timeout_ms }}
     exit-status: 0
     stdout:
