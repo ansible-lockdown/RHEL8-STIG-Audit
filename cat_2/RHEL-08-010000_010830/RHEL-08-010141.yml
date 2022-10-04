@@ -18,9 +18,9 @@ file:
     title: RHEL-08-010141 | RHEL 8 operating systems booted with United Extensible Firmware Interface (UEFI) implemented must require authentication upon booting into single-user mode and maintenance. | configured
     exists: true
     contains:
-    - '/^set superusers="[{{ .Vars.rhel8stig_boot_superuser }}]/'
+    - '/^set superusers="{{ .Vars.rhel8stig_boot_superuser }}"/'
     - '/^export superusers/'
-    - '/^password_pbkdf2 .* \${GRUB_PASSWORD}/'
+    - '/^\s+password_pbkdf2 {{ .Vars.rhel8stig_boot_superuser }} \\\${GRUB2_PASSWORD}/'
     meta:
       Cat: 2
       CCI: CCI-000213
