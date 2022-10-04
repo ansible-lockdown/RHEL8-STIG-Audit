@@ -5,7 +5,7 @@ command:
     exec: grep -i xattrs /etc/aide.conf
     exit-status: 0
     stdout:
-    - '/^ALL=.*\+xattr.*/'
+    - '/^(ALL|FIPSR)=.*\+xattr.*/'
     - '/^\/bin All/'
     - '/^\/sbin All/'
     meta:
