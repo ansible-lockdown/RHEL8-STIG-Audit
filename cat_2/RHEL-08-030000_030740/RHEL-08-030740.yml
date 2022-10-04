@@ -5,7 +5,7 @@ command:
     exec: grep server /etc/chrony.conf
     exit-status: 0
     stdout:
-    - '/^server \d.us.pool.ntp.mil iburst maxpoll ([1-9]1[0-6])/'
+    - '/^server 0.us.pool.ntp.mil iburst maxpoll ([1-9]1[0-6])/'
     meta:
       Cat: 2
       CCI: CCI-000189
