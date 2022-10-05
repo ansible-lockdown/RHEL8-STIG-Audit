@@ -20,7 +20,6 @@ command:
       - 2
     stdout:
     - '/\/etc\/sysctl.d\/99-sysctl.conf:(\s|)kernel.yama.ptrace_scope( |)=( |)1/'
-    - '!/.*:(\s|)kernel.yama.ptrace_scope( |)=( |)0/'
     meta:
       Cat: 2
       CCI: CCI-000366
