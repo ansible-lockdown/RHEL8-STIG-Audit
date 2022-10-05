@@ -16,7 +16,10 @@ command:
   nx_cpu_check:
     title: RHEL-08-010420 | RHEL 8 must implement non-executable data to protect its memory from unauthorized code execution. | cpu nx abilty
     exec: grep -w 'flags' /proc/cpuinfo | grep -v nx
-    exit-status: 0
+    exit-status: 
+      or:
+      - 0
+      - 1
     stdout:
     - '!/.*/'
     meta:
