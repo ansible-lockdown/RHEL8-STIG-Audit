@@ -3,7 +3,7 @@
 command: 
   pwds_are_sha512:
     title: RHEL-08-010120 | RHEL 8 must employ FIPS 140-2 approved cryptographic hashing algorithms for all stored passwords.
-    exec: for user in `cat /etc/passwd | awk -v MIN_UID={{ .Vars.MIN_UID }} -v MAX_UID={{ .Vars.MAX_UID }} -F':'  '$3 >= MIN_UID && $3 < MAX_UID { print $0}' | cut -d':' -f1`; do grep $user /etc/shadow | grep -cv '\$6\$'; done
+    exec: for user in `cat /etc/passwd | awk -v MIN_UID={{ .Vars.MIN_UID }} -v MAX_UID={{ .Vars.MAX_UID }} -F':'  '$3 >= MIN_UID && $3 < MAX_UID { print $0}' | cut -d':' -f1`; do grep $user /etc/shadow | grep -cv '\$6\$.*'; done
     timeout: {{ .Vars.timeout_ms }}
     exit-status: 1
     stdout:
