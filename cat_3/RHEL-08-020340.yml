@@ -7,9 +7,9 @@ file:
     - '/^session\s+required\s+pam_lastlog.so showfailed/'
     meta:
       Cat: 3
-      CCI: CCI-000366
+      CCI: CCI-000052
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230381r627750_rule
+      Rule_ID: SV-230381r858726_rule
       STIG_ID: RHEL-08-020340
       Vul_ID: V-230381
 {{ end }}
