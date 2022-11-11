@@ -8,7 +8,7 @@ kernel-param:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230542r833353_rule
+      Rule_ID: SV-230542r858814_rule
       STIG_ID: RHEL-08-040262
       Vul_ID: V-230542
 command:
@@ -26,7 +26,7 @@ command:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230542r833353_rule
+      Rule_ID: SV-230542r858814_rule
       STIG_ID: RHEL-08-040262
       Vul_ID: V-230542
   {{ end }}
