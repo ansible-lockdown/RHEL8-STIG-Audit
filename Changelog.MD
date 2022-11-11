@@ -1,5 +1,83 @@
 # Changelog
 
+## Stig V1R8 22nd Oct 2022
+
+- auditd outfile name change to include benchmark name
+- new Rule ID for listed
+
+- CAT 1
+  - RHEL-08-010000
+  - RHEL-08-020330 - added ssh_config.d path & stdout check
+
+- CAT 2
+  - RHEL-08-010040 - added ssh_config.d path & stdout check
+  - RHEL-08-010090 - Title update
+  - RHEL-08-010200 - added ssh_config.d path & stdout check
+  - RHEL-08-010201 - added ssh_config.d path & stdout check
+  - RHEL-08-010360
+  - RHEL-08-010372
+  - RHEL-08-010373
+  - RHEL-08-010374
+  - RHEL-08-010383
+  - RHEL-08-010384
+  - RHEL-08-010400
+  - RHEL-08-010430
+  - RHEL-08-010500 - added ssh_config.d path & stdout check
+  - RHEL-08-010510 - added ssh_config.d path & stdout check
+  - RHEL-08-010520 - added ssh_config.d path & stdout check
+  - RHEL-08-010521 - added ssh_config.d path & stdout check
+  - RHEL-08-010522 - added ssh_config.d path & stdout check
+  - RHEL-08-010550 - added ssh_config.d path & stdout check
+  - RHEL-08-010671 - updated regex
+  - RHEL-08-010830 - added ssh_config.d path & stdout check
+  - RHEL-08-020090 - Initial
+  - RHEL-08-020104
+  - RHEL-08-020110
+  - RHEL-08-020120
+  - RHEL-08-020130
+  - RHEL-08-020140
+  - RHEL-08-020150
+  - RHEL-08-020160
+  - RHEL-08-020170
+  - RHEL-08-020190
+  - RHEL-08-020221
+  - RHEL-08-020230
+  - RHEL-08-020280
+  - RHEL-08-020300
+  - RHEL-08-020350 - CCI update
+  - RHEL-08-020352 - update test
+  - RHEL-08-040137 - updated tests for versions and rule id
+  - RHEL-08-040161 - added ssh_config.d path & stdout check
+  - RHEL-08-040209
+  - RHEL-08-040210
+  - RHEL-08-040220
+  - RHEL-08-040230
+  - RHEL-08-040239
+  - RHEL-08-040240
+  - RHEL-08-040249
+  - RHEL-08-040250
+  - RHEL-08-040259
+  - RHEL-08-040260
+  - RHEL-08-040261
+  - RHEL-08-040262
+  - RHEL-08-040270
+  - RHEL-08-040279
+  - RHEL-08-040280
+  - RHEL-08-040281
+  - RHEL-08-040282
+  - RHEL-08-040283
+  - RHEL-08-040284
+  - RHEL-08-040285
+  - RHEL-08-040286
+  - RHEL-08-040340 - added ssh_config.d path & stdout check
+  - RHEL-08-040341 - added ssh_config.d path & stdout check
+  - RHEL-08-040400 - new control
+
+- CAT 3
+  - RHEL-08-010375 - updated check
+  - RHEL-08-010376 - updated check
+  - RHEL-08-020340 - CCI updated
+  
 ## Stig V1R7 27th July 2022
 
 - auditd config tests now exntded for mutliple locations
