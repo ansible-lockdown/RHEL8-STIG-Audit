@@ -10,11 +10,12 @@ file:
       Cat: 2
       CCI: CCI-001764
       Group_Title: SRG-OS-000368-GPOS-00154
-      Rule_ID: SV-244546r809339_rule
+      Rule_ID: SV-244546r858730_rule
       STIG_ID: RHEL-08-040137
       Vul_ID: V-244546
 command:
-  fapolicy_deny_rule:
+  {{ if le .Vars.os_release "8.4" }}
+  fapolicy_deny_rule_84:
      title: RHEL-08-040137 | The RHEL 8 fapolicy module must be configured to employ a deny-all, permit-by-exception policy to allow the execution of authorized software programs | deny_rules
      exec: tail /etc/fapolicyd/fapolicyd.rules /etc/fapolicyd/rules.d/99-stig.rules
      exit-status:
@@ -29,9 +30,30 @@ command:
       Cat: 2
       CCI: CCI-001764
       Group_Title: SRG-OS-000368-GPOS-00154
-      Rule_ID: SV-244546r809339_rule
+      Rule_ID: SV-244546r858730_rule
       STIG_ID: RHEL-08-040137
       Vul_ID: V-244546
+  {{ end }}
+  {{ if ge .Vars.os_release "8.5" }}
+  fapolicy_deny_rule_85:
+     title: RHEL-08-040137 | The RHEL 8 fapolicy module must be configured to employ a deny-all, permit-by-exception policy to allow the execution of authorized software programs | deny_rules
+     exec: tail /etc/fapolicyd/compiled.rules
+     exit-status:
+       or:
+       - 0
+       - 1
+     stdout:
+     - '/allow exe={{ .Vars.python_bin }} : ftype=text\/x-python/'
+     - '/^deny all all/'
+     - '!/none/'
+     meta:
+      Cat: 2
+      CCI: CCI-001764
+      Group_Title: SRG-OS-000368-GPOS-00154
+      Rule_ID: SV-244546r858730_rule
+      STIG_ID: RHEL-08-040137
+      Vul_ID: V-244546
+  {{ end }}
   fapolicy_mounts:
      title: RHEL-08-040137 | The RHEL 8 fapolicy module must be configured to employ a deny-all, permit-by-exception policy to allow the execution of authorized software programs | mounts
      exec: for mount in `df -h --local | tail -n +2 | grep -v efi | awk '{print $NF}'`; do if [ `grep -cw $mount /etc/fapolicyd/fapolicyd.mounts` -eq 0 ]; then echo $mount FAIL; fi; done
@@ -42,7 +64,7 @@ command:
       Cat: 2
       CCI: CCI-001764
       Group_Title: SRG-OS-000368-GPOS-00154
-      Rule_ID: SV-244546r809339_rule
+      Rule_ID: SV-244546r858730_rule
       STIG_ID: RHEL-08-040137
       Vul_ID: V-244546
 {{ end }}
