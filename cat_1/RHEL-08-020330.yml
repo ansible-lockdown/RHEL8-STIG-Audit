@@ -2,16 +2,19 @@
 command:
   sshd_config_empty_passwd:
     title: RHEL-08-020330 | RHEL 8 must not allow accounts configured with blank or null passwords
-    exec: grep -i emptypasswords /etc/ssh/sshd_config
-    exit-status: 0
+    exec: grep -i emptypasswords /etc/ssh/sshd_config /etc/ssh/ssh_config.d/*.conf
+    exit-status:
+      or:
+      - 0
+      - 2
     stdout:
-    - '/PermitEmptyPasswords.*no/'
-    - '!/PermitEmptyPasswords.*yes/'
+    - '/.*:PermitEmptyPasswords.*no/'
+    - '!/.*:PermitEmptyPasswords.*yes/'
     meta:
       Cat: 1
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230380r743993_rule
+      Rule_ID: SV-230380r858715_rule
       STIG_ID: RHEL-08-020330
       Vul_ID: V-230380
 {{ end }}

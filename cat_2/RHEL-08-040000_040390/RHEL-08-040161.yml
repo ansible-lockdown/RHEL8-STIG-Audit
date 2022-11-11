@@ -2,15 +2,18 @@
 command:
   sshd_config_rekeylimit:
     title: RHEL-08-040161 | RHEL 8 must force a frequent session key renegotiation for SSH connections to the server.
-    exec: grep -i rekey /etc/ssh/sshd_config
-    exit-status: 0
+    exec: grep -i rekey /etc/ssh/sshd_config /etc/sshd/conf.d
+    exit-status:
+      or:
+      - 0
+      - 2
     stdout:
-    - '/^RekeyLimit 1G 1h/'
+    - '/.*:RekeyLimit 1G 1h/'
     meta:
       Cat: 2
       CCI: CCI-000068
       Group_Title: SRG-OS-000033-GPOS-00014
-      Rule_ID: SV-230527r627750_rule
+      Rule_ID: SV-230527r858719_rule
       STIG_ID: RHEL-08-040161
       Vul_ID: V-230527
 {{ end }}

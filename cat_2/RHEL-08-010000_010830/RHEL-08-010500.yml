@@ -2,16 +2,19 @@
 command:
   sshd_config_strictmodes:
     title: RHEL-08-010500 | The RHEL 8 SSH daemon must perform strict mode checking of home directory configuration files.
-    exec: grep StrictModes /etc/ssh/sshd_config
-    exit-status: 0
+    exec: grep StrictModes /etc/ssh/sshd_config /etc/ssh/ssh_config.d/*.conf
+    exit-status:
+      or:
+      - 0
+      - 2
     stdout:
-    - '/^StrictModes [yY][eE][sS]/'
-    - '!/^StrictModes [nN][oO]/'
+    - '/.*:StrictModes [yY][eE][sS]/'
+    - '!/.*:StrictModes [nN][oO]/'
     meta:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230288r627750_rule
+      Rule_ID: SV-230288r858701_rule
       STIG_ID: RHEL-08-010500
       Vul_ID: V-230288
 {{ end }}

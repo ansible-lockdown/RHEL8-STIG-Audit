@@ -2,16 +2,19 @@
 command:
   sshd_config_x11_uselocalhost:
     title: RHEL-08-040341 | The RHEL 8 SSH daemon must prevent remote hosts from connecting to the proxy display.
-    exec: grep -i x11uselocalhost /etc/ssh/sshd_config
-    exit-status: 0
+    exec: grep -i x11uselocalhost /etc/ssh/sshd_config /etc/ssh/ssh_config.d/*.conf
+    exit-status:
+      or:
+      - 0
+      - 1
     stdout:
-    - '/^(?i)X11UseLocalhost yes/'
-    - '!/^(?i)X11UseLocalhost no/'
+    - '/.*:(?i)X11UseLocalhost yes/'
+    - '!/.*:(?i)X11UseLocalhost\s+no/'
     meta:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230556r627750_rule
+      Rule_ID: SV-230556r858723_rule
       STIG_ID: RHEL-08-040341
       Vul_ID: V-230556
 {{ end }}

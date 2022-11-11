@@ -2,16 +2,19 @@
 command:
   sshd_config_ClientAliveInterval:
     title: RHEL-08-010201 | The RHEL 8 SSH daemon must be configured with a timeout interval.
-    exec: grep ClientAliveInterval /etc/ssh/sshd_config
-    exit-status: 0
+    exec: grep ClientAliveInterval /etc/ssh/sshd_config /etc/sshd/conf.d
+    exit-status:
+      or:
+      - 0
+      - 2
     stdout:
-    - '/^ClientAliveInterval ([1-9]|[1-5][0-9]{1,2}|600)$/'
-    - '!/^ClientAliveInterval (60[1-9]|6[1-9][0-9]|[7-9][0-9][0-9]{1,3}|[1-9][0-9]{3,})$/'
+    - '/.*:ClientAliveInterval ([1-9]|[1-5][0-9]{1,2}|600)$/'
+    - '!/.*:ClientAliveInterval (60[1-9]|6[1-9][0-9]|[7-9][0-9][0-9]{1,3}|[1-9][0-9]{3,})$/'
     meta:
       Cat: 2
       CCI: CCI-001133
       Group_Title: SRG-OS-000163-GPOS-00072
-      Rule_ID: SV-244525r743824_rule
+      Rule_ID: SV-244525r858699_rule
       STIG_ID: RHEL-08-010201
       Vul_ID: V-244525
 {{ end }}

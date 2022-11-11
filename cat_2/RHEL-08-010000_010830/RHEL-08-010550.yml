@@ -2,16 +2,19 @@
 command:
   sshd_config_permitroot:
     title: RHEL-08-010550 | RHEL 8 must not permit direct logons to the root account using remote access via SSH.
-    exec: grep PermitRootLogin /etc/ssh/sshd_config
-    exit-status: 0
+    exec: grep PermitRootLogin /etc/ssh/sshd_config /etc/sshd/conf.d
+    exit-status:
+      or:
+      - 0
+      - 2
     stdout:
-    - '/^PermitRootLogin [nN][oO]/'
-    - '!/^PermitRootLogin [yY][eE][sS]/'
+    - '/.*:PermitRootLogin [nN][oO]/'
+    - '!/.*:PermitRootLogin\s+[yY][eE][sS]/'
     meta:
       Cat: 2
       CCI: CCI-000770
       Group_Title: SRG-OS-000109-GPOS-00056
-      Rule_ID: SV-230296r627750_rule
+      Rule_ID: SV-230296r858711_rule
       STIG_ID: RHEL-08-010550
       Vul_ID: V-230296
 {{ end }}
