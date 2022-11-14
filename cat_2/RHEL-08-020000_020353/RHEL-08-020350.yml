@@ -9,9 +9,9 @@ command:
     - '!/^(?i)PrintLastLog no/'
     meta:
       Cat: 2
-      CCI: CCI-000366
+      CCI: CCI-000052
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230382r627750_rule
+      Rule_ID: SV-230382r858717_rule
       STIG_ID: RHEL-08-020350
       Vul_ID: V-230382
 {{ end }}

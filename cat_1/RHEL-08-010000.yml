@@ -4,12 +4,12 @@ file:
     title: RHEL-08-010000 | RHEL 8 must be a vendor-supported release. (Not checking for EUS)
     exists: true
     contains:
-    - '/.* 8.[4-8]/'
+    - '/.* 8.[6-8]/'
     meta:
       Cat: 1
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230221r743913_rule
+      Rule_ID: SV-230221r858734_rule
       STIG_ID: RHEL-08-010000
       Vul_ID: V-230221
 {{ end }}

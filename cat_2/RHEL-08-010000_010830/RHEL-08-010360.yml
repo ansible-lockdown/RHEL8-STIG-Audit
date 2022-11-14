@@ -10,7 +10,7 @@ command:
       Cat: 2
       CCI: CCI-001744
       Group_Title: SRG-OS-000363-GPOS-00150
-      Rule_ID: SV-230263r627750_rule
+      Rule_ID: SV-230263r858725_rule
       STIG_ID: RHEL-08-010360
       Vul_ID: V-230263
   aide_cron_job:
@@ -26,7 +26,7 @@ command:
       Cat: 2
       CCI: CCI-001744
       Group_Title: SRG-OS-000363-GPOS-00150
-      Rule_ID: SV-230263r627750_rule
+      Rule_ID: SV-230263r858725_rule
       STIG_ID: RHEL-08-010360
       Vul_ID: V-230263
 file:
@@ -39,7 +39,7 @@ file:
       Cat: 2
       CCI: CCI-001744
       Group_Title: SRG-OS-000363-GPOS-00150
-      Rule_ID: SV-230263r627750_rule
+      Rule_ID: SV-230263r858725_rule
       STIG_ID: RHEL-08-010360
       Vul_ID: V-230263
 {{ end }}

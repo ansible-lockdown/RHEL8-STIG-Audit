@@ -2,7 +2,6 @@
 command:
   check_cert_mfa:
     title: RHEL-08-010400 | RHEL 8 must implement certificate status checking for multifactor authentication.
-    #exec: grep certificate_verification /etc/sssd/sssd.conf /etc/sssd/conf.d/*.conf | grep -v "^#"
     exec: for file in `ls /etc/sssd/sssd.conf /etc/sssd/conf.d/*`; do awk '/\[/{prefix=$0; next} $1{print prefix $0}' $file | grep '\[sssd\]certificate_verification'; done
     exit-status:
       or:
@@ -15,7 +14,7 @@ command:
       Cat: 2
       CCI: CCI-001948
       Group_Title: SRG-OS-000375-GPOS-00160
-      Rule_ID: SV-230274r809281_rule
+      Rule_ID: SV-230274r858741_rule
       STIG_ID: RHEL-08-010400
       Vul_ID: V-230274
 {{ end }}

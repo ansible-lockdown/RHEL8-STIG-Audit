@@ -1,0 +1,28 @@
+{{ if .Vars.RHEL_08_020090 }}
+command:
+  pki_auth_sssd:
+    title: RHEL-08-020090 | RHEL 8 must map the authenticated identity to the user or group account for PKI-based authentication.
+    exec: cat /etc/sssd/sssd.conf
+    exit-status: 0
+    skip: {{ .Vars.skip_sssd_check }}
+    stdout:
+    - '/^[sssd]/'
+    - '/^config_file_version = 2/'
+    - '/^services = pam, sudo, ssh/'
+    - '/^domains = .*/'
+    - '/^[pam]/'
+    - '/^pam_cert_auth = True/'
+    - '/^[domain/.*]/'
+    - '/^id_provider = ldap/'
+    - '/^[certmap/.*/rule_name]/'
+    - '/^matchrule =,SAN..*EDIPI@mil'
+    - '/^maprule = (userCertificate;binary={cert!bin})/'
+    - '/domains = .*/'
+    meta:
+      Cat: 2
+      CCI: CCI-000048
+      Group_Title: SRG-OS-000068-GPOS-00036
+      Rule_ID: SV-230355r858743_rule
+      STIG_ID: RHEL-08-020090
+      Vul_ID: V-230355
+{{ end }}

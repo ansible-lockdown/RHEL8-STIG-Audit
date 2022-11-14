@@ -1,0 +1,16 @@
+{{ if .Vars.RHEL_08_040400 }}
+command:
+   selinux_grouping:
+    title: RHEL-08-040400 | RHEL 8 must prevent non-privileged users from executing privileged functions, including disabling, circumventing, or altering implemented security safeguards/countermeasures.
+    exec: echo "Manual Investigation to confirm selinux context for rule"
+    exit-status: 0
+    stdout:
+    - '!/.*/'
+    meta:
+      Cat: 2
+      CCI: CCI-002265
+      Group_Title: SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-254520r858835_rule
+      STIG_ID: RHEL-08-040400
+      Vul_ID: V-254520
+{{ end }}
