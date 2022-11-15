@@ -2,7 +2,7 @@
 
 ## Overview
 
-based on STIG v1r5 January 2022
+based on STIG v1r8 27th Oct 2022
 
 Ability to audit a system using a lightweight binary to check the current state.
 
