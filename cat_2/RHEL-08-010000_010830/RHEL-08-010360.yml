@@ -10,20 +10,23 @@ command:
       Cat: 2
       CCI: CCI-001744
       Group_Title: SRG-OS-000363-GPOS-00150
-      Rule_ID: SV-230263r627750_rule
+      Rule_ID: SV-230263r858725_rule
       STIG_ID: RHEL-08-010360
       Vul_ID: V-230263
   aide_cron_job:
     title: RHEL-08-010360 | The RHEL 8 file integrity tool must notify the system administrator when changes to the baseline configuration or anomalies in the operation of any security functions are discovered within an organizationally defined frequency. | cron job
     exec: grep aide /etc/crontab /var/spool/cron/root /etc/cron.d/aide
-    exit-status: 2
+    exit-status: 
+      or:
+      - 0
+      - 2
     stdout:
     - '/^\/(etc|var).*\:(0|[0-5][0-9]) (0|[0-2][0-9]) \* \* \* root \/usr\/sbin\/aide/'
     meta:
       Cat: 2
       CCI: CCI-001744
       Group_Title: SRG-OS-000363-GPOS-00150
-      Rule_ID: SV-230263r627750_rule
+      Rule_ID: SV-230263r858725_rule
       STIG_ID: RHEL-08-010360
       Vul_ID: V-230263
 file:
@@ -36,7 +39,7 @@ file:
       Cat: 2
       CCI: CCI-001744
       Group_Title: SRG-OS-000363-GPOS-00150
-      Rule_ID: SV-230263r627750_rule
+      Rule_ID: SV-230263r858725_rule
       STIG_ID: RHEL-08-010360
       Vul_ID: V-230263
 {{ end }}

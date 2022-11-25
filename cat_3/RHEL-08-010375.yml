@@ -7,14 +7,17 @@ kernel-param:
       Cat: 3
       CCI: CCI-001090
       Group_Title: SRG-OS-000138-GPOS-00069
-      Rule_ID: SV-230269r833296_rule
+      Rule_ID: SV-230269r858756_rule
       STIG_ID: RHEL-08-010375
       Vul_ID: V-230269
 command:
   dmesg_restrict:
     title: RHEL-08-010375 | RHEL 8 must restrict access to the kernel message buffer. | conf_check
-    exec: grep -r kernel.dmesg_restrict /etc/sysctl.d/99-*.conf
-    exit-status: 0
+    exec: grep -r kernel.dmesg_restrict /run/sysctl.d/*.conf /usr/local/lib/sysctl.d/*.conf /usr/lib/sysctl.d/*.conf /lib/sysctl.d/*.conf /etc/sysctl.conf /etc/sysctl.d/*.conf
+    exit-status:
+      or:
+      - 0
+      - 2
     stdout:
     - '/^kernel.dmesg_restrict( |)=( |)1/'
     - '!/.*kernel.dmesg_restrict( |)=( |)0/'
@@ -22,7 +25,7 @@ command:
       Cat: 3
       CCI: CCI-001090
       Group_Title: SRG-OS-000138-GPOS-00069
-      Rule_ID: SV-230269r833296_rule
+      Rule_ID: SV-230269r858756_rule
       STIG_ID: RHEL-08-010375
       Vul_ID: V-230269
 {{ end }}

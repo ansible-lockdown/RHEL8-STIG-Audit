@@ -6,11 +6,12 @@ command:
     exit-status: 0
     stdout:
     - 'kernel.core_pattern = |/bin/false'
+    - 'kernel.core_pattern =.*(?<!\|\/bin\/false)$/'
     meta:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230311r833305_rule
+      Rule_ID: SV-230311r858769_rule
       STIG_ID: RHEL-08-010671
       Vul_ID: V-230311
 command:
@@ -23,12 +24,12 @@ command:
       - 2
     stdout:
     - '/^kernel.core_pattern( |)=( |)|\/bin\/false/'
-    - '!/kernel.core_pattern.*true/'
+    - '!/^kernel.core_pattern =.*(?<!\|\/bin\/false)$/'
     meta:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230311r833305_rule
+      Rule_ID: SV-230311r858769_rule
       STIG_ID: RHEL-08-010671
       Vul_ID: V-230311
 {{ end }}

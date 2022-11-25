@@ -2,16 +2,19 @@
 command:
   sshd_config_gssapi:
     title: RHEL-08-010522 | The RHEL 8 SSH daemon must not allow GSSAPI authentication, except to fulfill documented and validated mission requirements.
-    exec: grep GSSAPI /etc/ssh/sshd_config
-    exit-status: 0
+    exec: grep GSSAPI /etc/ssh/sshd_config/etc/sshd/conf.d
+    exit-status:
+      or:
+      - 0
+      - 2
     stdout:
-    - '/^GSSAPIAuthentication [Nn][Oo]/'
-    - '!/^GSSAPIAuthentication [Yy][Ee][Ss]/'
+    - '/.*:GSSAPIAuthentication [Nn][Oo]/'
+    - '!/.*:GSSAPIAuthentication\s+[Yy][Ee][Ss]/'
     meta:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-244528r743833_rule
+      Rule_ID: SV-244528r858709_rule
       STIG_ID: RHEL-08-010522
       Vul_ID: V-244528
 {{ end }}

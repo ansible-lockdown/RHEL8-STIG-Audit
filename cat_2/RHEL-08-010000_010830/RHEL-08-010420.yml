@@ -15,10 +15,13 @@ command:
       Vul_ID: V-230276
   nx_cpu_check:
     title: RHEL-08-010420 | RHEL 8 must implement non-executable data to protect its memory from unauthorized code execution. | cpu nx abilty
-    exec: grep -wc 'nx' /proc/cpuinfo
-    exit-status: 0
+    exec: grep -w 'flags' /proc/cpuinfo | grep -v nx
+    exit-status: 
+      or:
+      - 0
+      - 1
     stdout:
-    - '1'
+    - '!/.*/'
     meta:
       Cat: 2
       CCI: CCI-001953

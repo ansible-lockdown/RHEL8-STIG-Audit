@@ -2,15 +2,19 @@
 command: 
   sshd_config_banner:
     title: RHEL-08-010040 | RHEL 8 must display the Standard Mandatory DoD Notice and Consent Banner before granting local or remote access to the system via a ssh logon. | ssh uses banner file
-    exec: grep -i banner /etc/ssh/sshd_config
-    exit-status: 0
+    exec: grep -i banner /etc/ssh/sshd_config /etc/ssh/ssh_config.d/*.conf
+    exit-status:
+      or:
+      - 0
+      - 2
     stdout:
-    - '/^Banner {{ .Vars.rhel8stig_banner_file }}/'
+    - '/.*:Banner {{ .Vars.rhel8stig_banner_file }}/'
+    - '/.*:Banner.*(?<!{{ .Vars.rhel8stig_banner_file }})$/'
     meta:
       Cat: 2
       CCI: CCI-000048
       Group_Title: SRG-OS-000023-GPOS-00006
-      Rule_ID: SV-230225r627750_rule
+      Rule_ID: SV-230225r858694_rule
       STIG_ID: RHEL-08-010040
       Vul_ID: V-230225
   check_login_banner:
@@ -23,7 +27,7 @@ command:
       Cat: 2
       CCI: CCI-000048
       Group_Title: SRG-OS-000023-GPOS-00006
-      Rule_ID: SV-230225r627750_rule
+      Rule_ID: SV-230225r858694_rule
       STIG_ID: RHEL-08-010040
       Vul_ID: V-230225
 {{ end }}
