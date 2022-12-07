@@ -19,8 +19,8 @@ command:
       - 0
       - 2
     stdout:
-    - '/^kernel.perf_event_paranoid( |)=( |)2/'
-    - '!/^.*kernel.perf_event_paranoid( |)=( |)([0,1]|3-9])/'
+    - '/.*:kernel.perf_event_paranoid( |)=( |)2/'
+    - '!/.*:kernel.perf_event_paranoid( |)=( |)([0,1]|3-9])/'
     meta:
       Cat: 3
       CCI: CCI-001090
