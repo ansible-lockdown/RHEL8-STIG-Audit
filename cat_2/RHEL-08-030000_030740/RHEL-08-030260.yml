@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_030260 }}
 command:
   audit_rules_chcon:
-    title: RHEL_08_030260 | Successful/unsuccessful uses of the chcon command in RHEL 8 must generate an audit record. | config check
+    title: RHEL-08-030260 | Successful/unsuccessful uses of the chcon command in RHEL 8 must generate an audit record. | config check
     exec: grep -w chcon /etc/audit/audit.rules
     exit-status: 0
     stdout:
@@ -14,7 +14,7 @@ command:
       STIG_ID: RHEL-08-030260
       Vul_ID: V-230419
   auditd_chcon_live:
-    title: RHEL_08_030260 | Successful/unsuccessful uses of the chcon command in RHEL 8 must generate an audit record. | live check
+    title: RHEL-08-030260 | Successful/unsuccessful uses of the chcon command in RHEL 8 must generate an audit record. | live check
     exec: auditctl -l | grep -w chcon
     exit-status: 0
     stdout:

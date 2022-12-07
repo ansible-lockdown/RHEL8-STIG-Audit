@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_030280 }}
 command:
   audit_rules_ssh_agent:
-    title: RHEL_08_030280 | Successful/unsuccessful uses of the ssh-agent in RHEL 8 must generate an audit record. | config check
+    title: RHEL-08-030280 | Successful/unsuccessful uses of the ssh-agent in RHEL 8 must generate an audit record. | config check
     exec: grep -w ssh-agent /etc/audit/audit.rules
     exit-status: 0
     stdout:
@@ -15,7 +15,7 @@ command:
       Vul_ID: V-230421
 command:
   auditd_ssh_agent_live:
-    title: RHEL_08_030280 | Successful/unsuccessful uses of the ssh-agent in RHEL 8 must generate an audit record. | live check
+    title: RHEL-08-030280 | Successful/unsuccessful uses of the ssh-agent in RHEL 8 must generate an audit record. | live check
     exec: auditctl -l | grep -w ssh-agent
     exit-status: 0
     stdout:

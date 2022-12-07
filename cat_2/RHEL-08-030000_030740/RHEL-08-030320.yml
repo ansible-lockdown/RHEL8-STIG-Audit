@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_030320 }}
 commmand:
   audit_rules_keysign:
-    title: RHEL_08_030320 | Successful/unsuccessful uses of ssh-keysign in RHEL 8 must generate an audit record. | config check
+    title: RHEL-08-030320 | Successful/unsuccessful uses of ssh-keysign in RHEL 8 must generate an audit record. | config check
     exec: grep ssk-keysign /etc/audit/audit.rules
     exit-status: 0
     stdout:
@@ -14,7 +14,7 @@ commmand:
       STIG_ID: RHEL-08-030320
       Vul_ID: V-230434
   auditd_ssh_keysign_live:
-    title: RHEL_08_030320 | Successful/unsuccessful uses of ssh-keysign in RHEL 8 must generate an audit record. | live check
+    title: RHEL-08-030320 | Successful/unsuccessful uses of ssh-keysign in RHEL 8 must generate an audit record. | live check
     exec: auditctl -l | grep -w keysign
     exit-status: 0
     stdout:

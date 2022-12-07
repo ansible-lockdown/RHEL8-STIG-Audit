@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_030670 }}
 package:
   rsyslog:
-    title: RHEL_08_030670 | RHEL 8 must have the packages required for offloading audit logs installed.
+    title: RHEL-08-030670 | RHEL 8 must have the packages required for offloading audit logs installed.
     installed: true
     meta:
       Cat: 2

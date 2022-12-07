@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_030580 }}
 command:
   audit_rules_kmod:
-    title: RHEL_08_030580 | Successful/unsuccessful uses of the kmod command in RHEL 8 must generate an audit record. | config check
+    title: RHEL-08-030580 | Successful/unsuccessful uses of the kmod command in RHEL 8 must generate an audit record. | config check
     exec: grep kmod /etc/audit/audit.rules
     exit-status: 0
     stdout:
@@ -14,7 +14,7 @@ command:
       STIG_ID: RHEL-08-030580
       Vul_ID: V-230465
   auditd_kmod_live:
-    title: RHEL_08_030580 | Successful/unsuccessful uses of the kmod command in RHEL 8 must generate an audit record. | live check
+    title: RHEL-08-030580 | Successful/unsuccessful uses of the kmod command in RHEL 8 must generate an audit record. | live check
     exec: auditctl -l | grep -w kmod
     exit-status: 0
     stdout:

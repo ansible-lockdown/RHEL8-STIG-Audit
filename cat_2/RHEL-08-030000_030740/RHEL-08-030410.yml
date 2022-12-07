@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_030410 }}
 command:
   audit_rules_chsh:
-    title: RHEL_08_030410 | Successful/unsuccessful uses of the chsh command in RHEL 8 must generate an audit record. | config check
+    title: RHEL-08-030410 | Successful/unsuccessful uses of the chsh command in RHEL 8 must generate an audit record. | config check
     exec: grep chsh /etc/audit/audit.rules
     exit-status: 0
     stdout:
@@ -14,7 +14,7 @@ command:
       STIG_ID: RHEL-08-030410
       Vul_ID: V-230448
   auditd_chsh_live:
-    title: RHEL_08_030410 | Successful/unsuccessful uses of the chsh command in RHEL 8 must generate an audit record. | live check
+    title: RHEL-08-030410 | Successful/unsuccessful uses of the chsh command in RHEL 8 must generate an audit record. | live check
     exec: auditctl -l | grep -w chsh
     exit-status: 0
     stdout:

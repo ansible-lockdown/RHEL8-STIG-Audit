@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_030200 }}
 command:
   audit_rules_lremovexattr:
-    title: RHEL_08_030200 | The RHEL 8 audit system must be configured to audit any usage of the setxattr, fsetxattr, lsetxattr, removexattr, fremovexattr, and lremovexattr system calls. | config check
+    title: RHEL-08-030200 | The RHEL 8 audit system must be configured to audit any usage of the setxattr, fsetxattr, lsetxattr, removexattr, fremovexattr, and lremovexattr system calls. | config check
     exec: grep -w lremovexattr /etc/audit/audit.rules
     exit-status: 0
     stdout:
@@ -17,7 +17,7 @@ command:
       STIG_ID: RHEL-08-030200
       Vul_ID: V-230413
   auditd_lremovexattr_live:
-    title: RHEL_08_030200 | The RHEL 8 audit system must be configured to audit any usage of the setxattr, fsetxattr, lsetxattr, removexattr, fremovexattr, and lremovexattr system calls. | live check
+    title: RHEL-08-030200 | The RHEL 8 audit system must be configured to audit any usage of the setxattr, fsetxattr, lsetxattr, removexattr, fremovexattr, and lremovexattr system calls. | live check
     exec: auditctl -l | grep -w lremovexattr
     exit-status: 0
     stdout:

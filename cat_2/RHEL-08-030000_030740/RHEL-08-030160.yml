@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_030160 }}
 command:
   audit_rules_gshadow:
-    title: RHEL_08_030160 | RHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/gshadow. | config check
+    title: RHEL-08-030160 | RHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/gshadow. | config check
     exec: grep -w gshadow /etc/audit/rules.d/audit.rules
     exit-status: 0
     stdout:
@@ -14,7 +14,7 @@ command:
       STIG_ID: RHEL-08-030160
       Vul_ID: V-230407
   auditd_gshadow_live:
-    title: RHEL_08_030160 | RHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/gshadow. | live check
+    title: RHEL-08-030160 | RHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/gshadow. | live check
     exec: auditctl -l | grep -w gshadow
     exit-status: 0
     stdout:

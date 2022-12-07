@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_030150 }}
 command:
   audit_rules_passwd:
-    title: RHEL_08_030150 | RHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/passwd. | config check
+    title: RHEL-08-030150 | RHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/passwd. | config check
     exec: grep -w passwd /etc/audit/rules.d/audit.rules
     exit-status: 0
     stdout:
@@ -14,7 +14,7 @@ command:
       STIG_ID: RHEL-08-030150
       Vul_ID: V-230406
   auditd_passwd_live:
-    title: RHEL_08_030150 | RHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/passwd. | live check
+    title: RHEL-08-030150 | RHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/passwd. | live check
     exec: auditctl -l | grep -w passwd
     exit-status: 0
     stdout:

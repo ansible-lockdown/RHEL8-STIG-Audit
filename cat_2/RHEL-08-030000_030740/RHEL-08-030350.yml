@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_030350 }}
 command:
   audit_rules_newgrp:
-    title: RHEL_08_030350 | Successful/unsuccessful uses of newgrpin RHEL 8 must generate an audit record. | config check
+    title: RHEL-08-030350 | Successful/unsuccessful uses of newgrpin RHEL 8 must generate an audit record. | config check
     exec: grep newgrp /etc/audit/audit.rules
     exit-status: 0
     stdout:
@@ -14,7 +14,7 @@ command:
       STIG_ID: RHEL-08-030350
       Vul_ID: V-230437
   auditd_newgrp_live:
-    title: RHEL_08_030350 | Successful/unsuccessful uses of newgrp in RHEL 8 must generate an audit record. | live check
+    title: RHEL-08-030350 | Successful/unsuccessful uses of newgrp in RHEL 8 must generate an audit record. | live check
     exec: auditctl -l | grep -w newgrp
     exit-status: 0
     stdout:
