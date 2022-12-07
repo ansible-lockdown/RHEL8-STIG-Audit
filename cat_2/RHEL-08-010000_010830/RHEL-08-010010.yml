@@ -5,9 +5,10 @@ command:
     title: RHEL-08-010010 | RHEL 8 vendor packaged system security patches and updates must be installed and up to date.
     exit-status: 0
     timeout: {{ .Vars.timeout_ms }}
-    exec: dnf check-update
+    exec: dnf check-update | grep -cE "\.noarch|\.x86_64|\.386"
     stdout: 
-    - "!/^[0-9].* packages available/"
+    - "/^0/"
+    - "!/^[1-9]/"
     meta:
       Cat: 2
       CCI: CCI-000366
