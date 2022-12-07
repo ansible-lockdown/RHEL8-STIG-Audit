@@ -9,7 +9,7 @@ command:
       - 2
     stdout:
     - '/.*:Banner {{ .Vars.rhel8stig_banner_file }}/'
-    - '/.*:Banner.*(?<!{{ .Vars.rhel8stig_banner_file }})$/'
+    - '/.*:Banner\s.*([^{{ .Vars.rhel8stig_banner_file }}])$/'
     meta:
       Cat: 2
       CCI: CCI-000048
