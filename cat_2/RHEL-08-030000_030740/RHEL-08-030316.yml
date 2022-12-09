@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_030316 }}
 command:
   /etc/audit/audit.rules_setsebool:
-    title: RHEL_08_030316 | Successful/unsuccessful uses of setsebool in RHEL 8 must generate an audit record. | config check
+    title: RHEL-08-030316 | Successful/unsuccessful uses of setsebool in RHEL 8 must generate an audit record. | config check
     exec: grep setsebool /etc/audit/audit.rules
     exit-status: 0
     stdout:
@@ -14,7 +14,7 @@ command:
       STIG_ID: RHEL-08-030316
       Vul_ID: V-230432
   auditd_setsebool_live:
-    title: RHEL_08_030316 | Successful/unsuccessful uses of setsebool in RHEL 8 must generate an audit record. | live check
+    title: RHEL-08-030316 | Successful/unsuccessful uses of setsebool in RHEL 8 must generate an audit record. | live check
     exec: auditctl -l | grep -w setsebool
     exit-status: 0
     stdout:

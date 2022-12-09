@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_030315 }}
 command:
   audit_rules_userhelper:
-    title: RHEL_08_030315 | Successful/unsuccessful uses of userhelper in RHEL 8 must generate an audit record. | config check
+    title: RHEL-08-030315 | Successful/unsuccessful uses of userhelper in RHEL 8 must generate an audit record. | config check
     exec: grep userhelper /etc/audit/audit.rules
     exit-status: 0
     stdout:
@@ -14,7 +14,7 @@ command:
       STIG_ID: RHEL-08-030315
       Vul_ID: V-230431
   auditd_userhelper_live:
-    title: RHEL_08_030315 | Successful/unsuccessful uses of userhelper in RHEL 8 must generate an audit record. | live check
+    title: RHEL-08-030315 | Successful/unsuccessful uses of userhelper in RHEL 8 must generate an audit record. | live check
     exec: auditctl -l | grep -w userhelper
     exit-status: 0
     stdout:

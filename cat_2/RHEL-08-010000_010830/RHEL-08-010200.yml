@@ -9,7 +9,7 @@ command:
       - 2
     stdout:
     - '/.*:ClientAliveCountMax 1$/'
-    - '!/.*:ClientAliveCountMax (0|[2-9]|1[0-9];{0,}))/'
+    - '!/.*:ClientAliveCountMax (0|[2-9]|1[0-9];{0,})/'
     meta:
       Cat: 2
       CCI: CCI-001133

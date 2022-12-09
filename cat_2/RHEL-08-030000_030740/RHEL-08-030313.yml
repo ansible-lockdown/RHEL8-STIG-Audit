@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_030313 }}
 command:
   audit_rules_semanage:
-    title: RHEL_08_030313 | Successful/unsuccessful uses of semanage in RHEL 8 must generate an audit record. | config check
+    title: RHEL-08-030313 | Successful/unsuccessful uses of semanage in RHEL 8 must generate an audit record. | config check
     exec: grep semanage /etc/audit/audit.rules
     exit-status: 0
     stdout:
@@ -14,7 +14,7 @@ command:
       STIG_ID: RHEL-08-030313
       Vul_ID: V-230429
   auditd_semanage_live:
-    title: RHEL_08_030313 | Successful/unsuccessful uses of semanage in RHEL 8 must generate an audit record. | live check
+    title: RHEL-08-030313 | Successful/unsuccessful uses of semanage in RHEL 8 must generate an audit record. | live check
     exec: auditctl -l | grep -w semanage
     exit-status: 0
     stdout:

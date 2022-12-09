@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_030590 }}
 command:
   audit_rules_faillock:
-    title: RHEL_08_030590 | Successful/unsuccessful modifications to the faillock log file in RHEL 8 must generate an audit record. | config check
+    title: RHEL-08-030590 | Successful/unsuccessful modifications to the faillock log file in RHEL 8 must generate an audit record. | config check
     exec: grep faillock /etc/audit/audit.rules
     exit-status: 0
     stdout:
@@ -14,7 +14,7 @@ command:
       STIG_ID: RHEL-08-030590
       Vul_ID: V-230466
   auditd_faillock_logins:
-    title: RHEL_08_030590 | Successful/unsuccessful modifications to the faillock log file in RHEL 8 must generate an audit record. | live check
+    title: RHEL-08-030590 | Successful/unsuccessful modifications to the faillock log file in RHEL 8 must generate an audit record. | live check
     exec: auditctl -l | grep -w faillock
     exit-status: 0
     stdout:

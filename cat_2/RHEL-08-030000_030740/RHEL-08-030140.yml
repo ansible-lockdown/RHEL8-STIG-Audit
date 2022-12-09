@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_030140 }}
 command:
   audit_rules_opasswd:
-    title: RHEL_08_030140 | RHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/security/opasswd. | config check
+    title: RHEL-08-030140 | RHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/security/opasswd. | config check
     exec: grep opasswd /etc/audit/audit.rules
     exit-status: 0
     stdout:
@@ -14,7 +14,7 @@ command:
       STIG_ID: RHEL-08-030140
       Vul_ID: V-230405
   auditd_opasswd_live:
-    title: RHEL_08_030130 | RHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/security/opasswd. | live check
+    title: RHEL-08-030130 | RHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/security/opasswd. | live check
     exec: auditctl -l | grep -w opasswd
     exit-status: 0
     stdout:

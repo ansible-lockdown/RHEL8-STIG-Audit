@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_030180 }}
 package:
   audit:
-    title: RHEL_08_030180 | The RHEL 8 audit package must be installed
+    title: RHEL-08-030180 | The RHEL 8 audit package must be installed
     installed: true
     meta:
       Cat: 2

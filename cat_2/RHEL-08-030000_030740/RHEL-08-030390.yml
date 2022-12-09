@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_030390 }}
 command:
   audit_rules_del_module:
-    title: RHEL_08_030390 | Successful/unsuccessful uses of the delete_module command in RHEL 8 must generate an audit record. | config check
+    title: RHEL-08-030390 | Successful/unsuccessful uses of the delete_module command in RHEL 8 must generate an audit record. | config check
     exec: grep delete_module /etc/audit/audit.rules
     exit-status: 0
     stdout:
@@ -15,7 +15,7 @@ command:
       STIG_ID: RHEL-08-030390
       Vul_ID: V-230446
   auditd_delete_module_live:
-    title: RHEL_08_030390 | Successful/unsuccessful uses of the delete_module command in RHEL 8 must generate an audit record. | live check
+    title: RHEL-08-030390 | Successful/unsuccessful uses of the delete_module command in RHEL 8 must generate an audit record. | live check
     exec: auditctl -l | grep -w delete_module
     exit-status: 0
     stdout:
