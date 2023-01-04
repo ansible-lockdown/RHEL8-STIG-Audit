@@ -9,7 +9,6 @@ command:
       - 2
     stdout:
     - '/.*:Banner {{ .Vars.rhel8stig_banner_file }}/'
-    - '/.*:Banner\s.*([^{{ .Vars.rhel8stig_banner_file }}])$/'
     meta:
       Cat: 2
       CCI: CCI-000048
@@ -21,8 +20,10 @@ command:
     title: RHEL-08-010040 | RHEL 8 must display the Standard Mandatory DoD Notice and Consent Banner before granting local or remote access to the system via a ssh logon. | banner content check
     exec: cat {{ .Vars.rhel8stig_banner_file }}
     exit-status: 0
+    {{ range .Vars.rhel8stig_logon_banner }}
     stdout:
-    - '{{ .Vars.rhel8stig_logon_banner }}'
+    - {{ . }}
+    {{ end }}
     meta:
       Cat: 2
       CCI: CCI-000048
