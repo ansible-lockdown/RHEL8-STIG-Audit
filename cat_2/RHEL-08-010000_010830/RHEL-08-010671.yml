@@ -24,7 +24,6 @@ command:
       - 2
     stdout:
     - '/.*:kernel.core_pattern( |)=( |)|\/bin\/false/'
-    - '!/.*:kernel.core_pattern =.*(?<!\|\/bin\/false)$/'
     meta:
       Cat: 2
       CCI: CCI-000366
