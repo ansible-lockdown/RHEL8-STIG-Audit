@@ -16,7 +16,7 @@ command:
       CCI: CCI-001090
       Group_Title: SRG-OS-000138-GPOS-00069
       Rule_ID: SV-230243r792857_rule
-      STIG_ID: RHEL-08-010180
+      STIG_ID: RHEL-08-010190
       Vul_ID: V-230243
   {{ end }}
 {{ end }}
