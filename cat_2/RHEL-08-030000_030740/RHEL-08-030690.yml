@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_030690 }}
 command:
   remote_log_server_configured:
-    title: RHEL_08_030690 | The RHEL 8 audit records must be off-loaded onto a different system or storage media from the system being audited.
+    title: RHEL-08-030690 | The RHEL 8 audit records must be off-loaded onto a different system or storage media from the system being audited.
     exec: grep "*.* @@{{ .Vars.rhel8stig_remotelog_server }}:{{ .Vars.rhel8stig_remotelog_port }}" /etc/rsyslog.conf /etc/rsyslog/d.*.conf
     exit-status: 
       or:

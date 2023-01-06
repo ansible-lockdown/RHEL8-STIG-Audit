@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_030490 }}
 command:
   audit_rules_perm_mod:
-    title: RHEL_08_030490 | Successful/unsuccessful uses of the chmod command in RHEL 8 must generate an audit record. | config check
+    title: RHEL-08-030490 | Successful/unsuccessful uses of the chmod command in RHEL 8 must generate an audit record. | config check
     exec: grep perm_mod /etc/audit/audit.rules
     exit-status: 0
     stdout:
@@ -15,7 +15,7 @@ command:
       STIG_ID: RHEL-08-030490
       Vul_ID: V-230456
   auditd_chmod_live:
-    title: RHEL_08_030490 | Successful/unsuccessful uses of the chmod command in RHEL 8 must generate an audit record. | live check
+    title: RHEL-08-030490 | Successful/unsuccessful uses of the chmod command in RHEL 8 must generate an audit record. | live check
     exec: auditctl -l | grep -w chmod
     exit-status: 0
     stdout:

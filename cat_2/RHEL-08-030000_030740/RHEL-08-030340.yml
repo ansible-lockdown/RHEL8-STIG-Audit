@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_030340 }}
 command:
   audit_rules_timestamp:
-    title: RHEL_08_030340 | Successful/unsuccessful uses of pam_timestamp_check in RHEL 8 must generate an audit record. | config check
+    title: RHEL-08-030340 | Successful/unsuccessful uses of pam_timestamp_check in RHEL 8 must generate an audit record. | config check
     exec: grep pam_timestamp_check /etc/audit/audit.rules
     exit-status: 0
     stdout:
@@ -14,7 +14,7 @@ command:
       STIG_ID: RHEL-08-030340
       Vul_ID: V-230436
   auditd_pam_timestamp_check_live:
-    title: RHEL_08_030340 | Successful/unsuccessful uses of pam_timestamp_check in RHEL 8 must generate an audit record. | live check
+    title: RHEL-08-030340 | Successful/unsuccessful uses of pam_timestamp_check in RHEL 8 must generate an audit record. | live check
     exec: auditctl -l | grep -w pam_timestamp_check
     exit-status: 0
     stdout:

@@ -19,8 +19,8 @@ command:
       - 0
       - 2
     stdout:
-    - '/^kernel.dmesg_restrict( |)=( |)1/'
-    - '!/.*kernel.dmesg_restrict( |)=( |)0/'
+    - '/.*:kernel.dmesg_restrict( |)=( |)1/'
+    - '!/.*:kernel.dmesg_restrict( |)=( |)0/'
     meta:
       Cat: 3
       CCI: CCI-001090

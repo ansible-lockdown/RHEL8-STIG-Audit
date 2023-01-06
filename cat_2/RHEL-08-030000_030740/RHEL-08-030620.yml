@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_030620 }}
 command:
   auditd_tools_perms:
-    title: RHEL_08_030620 | RHEL 8 audit tools must have a mode of 0755 or less permissive.
+    title: RHEL-08-030620 | RHEL 8 audit tools must have a mode of 0755 or less permissive.
     exec: stat -c "%a %n" /sbin/auditctl /sbin/aureport /sbin/ausearch /sbin/autrace /sbin/auditd /sbin/rsyslogd /sbin/augenrules
     exit-status: 0
     stdout:

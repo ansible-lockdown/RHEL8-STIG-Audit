@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_030730 }}
 command:
   auditd_conf_space_left:
-    title: RHEL_08_030730 | RHEL 8 must take action when allocated audit record storage volume reaches 75 percent of the repository maximum audit record storage capacity
+    title: RHEL-08-030730 | RHEL 8 must take action when allocated audit record storage volume reaches 75 percent of the repository maximum audit record storage capacity
     exec: grep -iw space_left /etc/audit/auditd.conf
     exit-status: 0
     stdout:

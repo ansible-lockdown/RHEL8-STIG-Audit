@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_030560 }}
 command:
   audit_rules_usermod:
-    title: RHEL_08_030560 | Successful/unsuccessful uses of the usermod command in RHEL 8 must generate an audit record. | config check
+    title: RHEL-08-030560 | Successful/unsuccessful uses of the usermod command in RHEL 8 must generate an audit record. | config check
     exec: grep usermod /etc/audit/audit.rules
     exit-status: 0
     stdout:
@@ -14,7 +14,7 @@ command:
       STIG_ID: RHEL-08-030560
       Vul_ID: V-230463
   auditd_usermod_live:
-    title: RHEL_08_030560 | Successful/unsuccessful uses of the usermod command in RHEL 8 must generate an audit record. | live check
+    title: RHEL-08-030560 | Successful/unsuccessful uses of the usermod command in RHEL 8 must generate an audit record. | live check
     exec: auditctl -l | grep -w usermod
     exit-status: 0
     stdout:

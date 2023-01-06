@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_030550 }}
 command:
   audit_rules_sudo:
-    title: RHEL_08_030550 | Successful/unsuccessful uses of the sudo command in RHEL 8 must generate an audit record. | config check
+    title: RHEL-08-030550 | Successful/unsuccessful uses of the sudo command in RHEL 8 must generate an audit record. | config check
     exec: grep -w sudo /etc/audit/audit.rules
     exit-status: 0
     stdout:
@@ -14,7 +14,7 @@ command:
       STIG_ID: RHEL-08-030550
       Vul_ID: V-230462
   auditd_sudo_cmd_live:
-    title: RHEL_08_030550 | Successful/unsuccessful uses of the sudo command in RHEL 8 must generate an audit record. | live check
+    title: RHEL-08-030550 | Successful/unsuccessful uses of the sudo command in RHEL 8 must generate an audit record. | live check
     exec: auditctl -l | grep -w sudo
     exit-status: 0
     stdout:

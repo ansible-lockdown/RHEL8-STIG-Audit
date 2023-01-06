@@ -3,9 +3,10 @@ command:
   validate_unnecessary_echo:
     title: RHEL-08-020352 | RHEL 8 must not have unnecessary accounts.
     exec: grep -ir umask /home/*.* | grep -v '.bash_history'
-    exit-status: 
+    exit-status:
       or:
       - 0
+      - 1
       - 2
     stdout:
     - '!/^.*/'

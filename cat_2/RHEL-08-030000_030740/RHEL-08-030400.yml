@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_030400 }}
 command:
   audit_rules_crontab:
-    title: RHEL_08_030400 | Successful/unsuccessful uses of the crontab command in RHEL 8 must generate an audit record. | config check
+    title: RHEL-08-030400 | Successful/unsuccessful uses of the crontab command in RHEL 8 must generate an audit record. | config check
     exec: grep crontab /etc/audit/audit.rules
     exit-status: 0
     stdout:
@@ -14,7 +14,7 @@ command:
       STIG_ID: RHEL-08-030400
       Vul_ID: V-230447
   auditd_crontab_live:
-    title: RHEL_08_030400 | Successful/unsuccessful uses of the crontab command in RHEL 8 must generate an audit record. | live check
+    title: RHEL-08-030400 | Successful/unsuccessful uses of the crontab command in RHEL 8 must generate an audit record. | live check
     exec: auditctl -l | grep -w crontab
     exit-status: 0
     stdout:

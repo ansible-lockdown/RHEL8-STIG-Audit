@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_030360 }}
 command:
   audit_rules_init_module:
-    title: RHEL_08_030360 | Successful/unsuccessful uses of the init_module command in RHEL 8 must generate an audit record. | config check
+    title: RHEL-08-030360 | Successful/unsuccessful uses of the init_module command in RHEL 8 must generate an audit record. | config check
     exec: grep init_module /etc/audit/audit.rules
     exit-status: 0
     stdout:
@@ -15,7 +15,7 @@ command:
       STIG_ID: RHEL-08-030360
       Vul_ID: V-230438
   auditd_init_module_live:
-    title: RHEL_08_030360 | Successful/unsuccessful uses of the init_module command in RHEL 8 must generate an audit record. | live check
+    title: RHEL-08-030360 | Successful/unsuccessful uses of the init_module command in RHEL 8 must generate an audit record. | live check
     exec: auditctl -l | grep -w init_module
     exit-status: 0
     stdout:

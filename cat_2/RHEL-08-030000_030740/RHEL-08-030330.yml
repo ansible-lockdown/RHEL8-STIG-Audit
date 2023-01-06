@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_030330 }}
 command:
   audit_rules_setfacl:
-    title: RHEL_08_030330 | Successful/unsuccessful uses of setfacl in RHEL 8 must generate an audit record. | config check
+    title: RHEL-08-030330 | Successful/unsuccessful uses of setfacl in RHEL 8 must generate an audit record. | config check
     exec: grep -w setfacl /etc/audit/audit.rules
     exit-status: 0
     stdout:
@@ -14,7 +14,7 @@ command:
       STIG_ID: RHEL-08-030330
       Vul_ID: V-230435
   auditd_setfacl_live:
-    title: RHEL_08_030330 | Successful/unsuccessful uses of setfacl in RHEL 8 must generate an audit record. | live check
+    title: RHEL-08-030330 | Successful/unsuccessful uses of setfacl in RHEL 8 must generate an audit record. | live check
     exec: auditctl -l | grep -w setfacl
     exit-status: 0
     stdout:

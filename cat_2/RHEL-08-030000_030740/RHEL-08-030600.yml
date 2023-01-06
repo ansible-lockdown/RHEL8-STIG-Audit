@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_030600 }}
 command:
   audit_rules_lastlog:
-    title: RHEL_08_030600 | Successful/unsuccessful modifications to the lastlog file in RHEL 8 must generate an audit record. | config check
+    title: RHEL-08-030600 | Successful/unsuccessful modifications to the lastlog file in RHEL 8 must generate an audit record. | config check
     exec: grep lastlog /etc/audit/audit.rules
     exit-status: 0
     stdout:
@@ -14,7 +14,7 @@ command:
       STIG_ID: RHEL-08-030600
       Vul_ID: V-230467
   auditd_lastlog_logins:
-    title: RHEL_08_030600 | Successful/unsuccessful modifications to the lastlog file in RHEL 8 must generate an audit record. | live check
+    title: RHEL-08-030600 | Successful/unsuccessful modifications to the lastlog file in RHEL 8 must generate an audit record. | live check
     exec: auditctl -l | grep -w lastlog
     exit-status: 0
     stdout:
