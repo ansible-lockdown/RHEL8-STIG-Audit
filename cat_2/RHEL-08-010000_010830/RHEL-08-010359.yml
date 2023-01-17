@@ -14,6 +14,7 @@ command:
   aide-db-check:
     title: RHEL-08-010359 | The RHEL 8 operating system must use a file integrity tool to verify correct operation of all security functions.| check aide db"
     exec: aide --check
+    timeout: {{ .Vars.timeout_ms }}
     exit-status:
       or:
       - 0
