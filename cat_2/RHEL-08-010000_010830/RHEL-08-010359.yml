@@ -7,7 +7,45 @@ package:
       Cat: 2
       CCI: CCI-002696
       Group_Title: SRG-OS-000445-GPOS-00199
-      Rule_ID: SV-251710r809354_rule
+      Rule_ID: SV-251710r880730_rule
+      STIG_ID: RHEL-08-010359
+      Vul_ID: V-251710
+command:
+  aide-db-check:
+    title: RHEL-08-010359 | The RHEL 8 operating system must use a file integrity tool to verify correct operation of all security functions.| check aide db"
+    exec: aide --check
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '/^End timestamp/'
+    meta:
+      Cat: 2
+      CCI: CCI-002696
+      Group_Title: SRG-OS-000445-GPOS-00199
+      Rule_ID: SV-251710r880730_rule
+      STIG_ID: RHEL-08-010359
+      Vul_ID: V-251710
+file:
+  /var/lib/aide/aide.db.gz:
+    title: RHEL-08-010359 | The RHEL 8 operating system must use a file integrity tool to verify correct operation of all security functions.| aide db file"
+    exists: true
+    meta:
+      Cat: 2
+      CCI: CCI-002696
+      Group_Title: SRG-OS-000445-GPOS-00199
+      Rule_ID: SV-251710r880730_rule
+      STIG_ID: RHEL-08-010359
+      Vul_ID: V-251710
+  /var/lib/aide/aide.db.new.gz:
+    title: RHEL-08-010359 | The RHEL 8 operating system must use a file integrity tool to verify correct operation of all security functions.| aide db new file"
+    exists: absent
+    meta:
+      Cat: 2
+      CCI: CCI-002696
+      Group_Title: SRG-OS-000445-GPOS-00199
+      Rule_ID: SV-251710r880730_rule
       STIG_ID: RHEL-08-010359
       Vul_ID: V-251710
 {{ end }}
