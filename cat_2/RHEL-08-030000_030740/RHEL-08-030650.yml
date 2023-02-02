@@ -16,7 +16,7 @@ command:
       Cat: 2
       CCI: CCI-001496
       Group_Title: SRG-OS-000278-GPOS-00108
-      Rule_ID: SV-230475r833333_rule
+      Rule_ID: SV-230475r880722_rule
       STIG_ID: RHEL-08-030650
       Vul_ID: V-230475
 {{ end }}

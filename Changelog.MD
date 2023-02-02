@@ -1,5 +1,12 @@
 # Changelog
 
+## Stig V1R9 23 Jan 2023
+
+- update to run_audit.sh to allow for Oracle linux
+- alignment with STIG release with remediate
+- some tests extended to check for more options
+- fixed banner variable
+
 ## Stig V1R8 22nd Oct 2022
 
 - auditd outfile name change to include benchmark name
