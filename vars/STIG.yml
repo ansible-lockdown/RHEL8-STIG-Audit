@@ -1,5 +1,5 @@
 ## metadata for Audit benchmark
-benchmark_version: '1.8'
+benchmark_version: '1.9'
 
 
 rhel8stig_os_distribution: redhat
@@ -132,7 +132,6 @@ RHEL_08_010472: true
 RHEL_08_010480: true
 RHEL_08_010490: true
 RHEL_08_010500: true
-RHEL_08_010510: true
 RHEL_08_010520: true
 RHEL_08_010521: true
 RHEL_08_010522: true
@@ -381,6 +380,7 @@ RHEL_08_040321: true
 RHEL_08_040330: true
 RHEL_08_040340: true
 RHEL_08_040341: true
+RHEL_08_040342: true
 RHEL_08_040350: true
 RHEL_08_040370: true
 RHEL_08_040380: true
@@ -430,7 +430,7 @@ MAX_UID: 65000
 rhel8stig_banner_file: /etc/issue
 rhel8stig_logon_banner:
   - You are accessing a U.S. Government (USG) Information System (IS) that is provided for USG-authorized use only.
-  - By using this IS (which includes any device attached to this IS), you consent to the following conditions:
+  - By using this IS (which includes any device attached to this IS), you consent to the following conditions
   - -The USG routinely intercepts and monitors communications on this IS for purposes including, but not limited to, penetration testing, COMSEC monitoring, network operations and defense, personnel misconduct (PM), law enforcement (LE), and counterintelligence (CI) investigations.
   - -At any time, the USG may inspect and seize data stored on this IS.
   - -Communications using, or data stored on, this IS are not private, are subject to routine monitoring, interception, and search, and may be disclosed or used for any USG-authorized purpose.

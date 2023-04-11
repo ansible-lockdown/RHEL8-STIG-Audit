@@ -13,9 +13,9 @@ file:
       Cat: 2
       CCI: CCI-000056
       Group_Title: SRG-OS-000028-GPOS-00009
-      Rule_ID: SV-230349r833388_rule
-      STIG_ID: RHEL-08-020040
-      Vul_ID: V-230348
+      Rule_ID: SV-230349r880737_rule
+      STIG_ID: RHEL-08-020041
+      Vul_ID: V-230349
 command:
   tmux_running:
     title: RHEL-08-020041 | RHEL 8 must ensure session control is automatically started at shell initialization.
@@ -27,7 +27,7 @@ command:
       Cat: 2
       CCI: CCI-000056
       Group_Title: SRG-OS-000028-GPOS-00009
-      Rule_ID: SV-230349r833388_rule
-      STIG_ID: RHEL-08-020040
-      Vul_ID: V-230348
+      Rule_ID: SV-230349r880737_rule
+      STIG_ID: RHEL-08-020041
+      Vul_ID: V-230349
 {{ end }}

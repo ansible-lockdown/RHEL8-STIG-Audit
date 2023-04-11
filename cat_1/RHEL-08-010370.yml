@@ -12,7 +12,7 @@ command:
       Cat: 1
       CCI: CCI-001749
       Group_Title: SRG-OS-000366-GPOS-00153
-      Rule_ID: SV-230264r627750_rule
+      Rule_ID: SV-230264r880711_rule
       STIG_ID: RHEL-08-010370
       Vul_ID: V-230264
   gpg_check_repos:
@@ -26,7 +26,7 @@ command:
       Cat: 1
       CCI: CCI-001749
       Group_Title: SRG-OS-000366-GPOS-00153
-      Rule_ID: SV-230264r627750_rule
+      Rule_ID: SV-230264r880711_rule
       STIG_ID: RHEL-08-010370
       Vul_ID: V-230264
   dnf_conf_gpgcheck:
@@ -40,7 +40,7 @@ command:
       Cat: 1
       CCI: CCI-001749
       Group_Title: SRG-OS-000366-GPOS-00153
-      Rule_ID: SV-230264r627750_rule
+      Rule_ID: SV-230264r880711_rule
       STIG_ID: RHEL-08-010370
       Vul_ID: V-230264
 {{ end }}
