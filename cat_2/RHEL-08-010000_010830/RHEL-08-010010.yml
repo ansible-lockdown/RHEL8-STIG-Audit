@@ -3,7 +3,10 @@
 command:
   dnf_check_updates:
     title: RHEL-08-010010 | RHEL 8 vendor packaged system security patches and updates must be installed and up to date.
-    exit-status: 0
+    exit-status: 
+      or:
+      - 0
+      - 1 
     timeout: {{ .Vars.timeout_ms }}
     exec: dnf check-update | grep -v Last | grep -cE "\.noarch|\.x86_64|\.386"
     stdout: 
