@@ -1,5 +1,5 @@
 ## metadata for Audit benchmark
-benchmark_version: '1.9'
+benchmark_version: '1.10'
 
 
 rhel8stig_os_distribution: redhat
@@ -62,6 +62,7 @@ RHEL_08_040360: true
 # Cat 2 rules
 RHEL_08_010001: true
 RHEL_08_010010: true
+RHEL_08_010019: true
 RHEL_08_010030: true
 RHEL_08_010040: true  # Variable options below
 RHEL_08_010049: true  # Variable options below
@@ -107,6 +108,7 @@ RHEL_08_010340: true
 RHEL_08_010341: true
 RHEL_08_010350: true
 RHEL_08_010351: true
+RHEL_08_010358: true
 RHEL_08_010359: true
 RHEL_08_010360: true
 RHEL_08_010372: true
