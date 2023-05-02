@@ -1,0 +1,13 @@
+{{ if .Vars.RHEL_08_010358 }}
+package:
+  aide:
+    title: RHEL-08-010358 | The RHEL 8 operating system must use a file integrity tool to verify correct operation of all security functions.
+    installed: true
+    meta:
+      Cat: 2
+      CCI: CCI-001744
+      Group_Title: SRG-OS-000363-GPOS-00150
+      Rule_ID: SV-2556974r902755_rule
+      STIG_ID: RHEL-08-010358
+      Vul_ID: V-256974
+{{ end }}
