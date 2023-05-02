@@ -1,5 +1,27 @@
 # Changelog
 
+## Stig V1R10 27th April 2023
+
+- Added new controls
+  - RHEL-08-10019
+  - RHEL-08-10358
+- updated control IDs
+  - RHEL-08-10360
+  - RHEL-08-10540
+  - RHEL-08-10541
+  - RHEL-08-10544
+  - RHEL-08-10800
+  - RHEL-08-20040
+  - RHEL-08-20100
+  - RHEL-08-20101
+  - RHEL-08-20102
+  - RHEL-08-20103
+  - RHEL-08-20220
+  - RHEL-08-20221
+  - RHEL-08-20270
+  - RHEL-08-30070
+  - RHEL-08-40150
+
 ## Stig V1R9 23 Jan 2023
 
 - update to run_audit.sh to allow for Oracle linux
