@@ -1,8 +1,24 @@
 ## metadata for Audit benchmark
 benchmark_version: '1.10'
 
-
+# set to redhat/rock/alma/oracle
 rhel8stig_os_distribution: redhat
+gpg_package: /etc/pki/rpm-gpg/RPM-GPG-KEY-RPM-GPG-KEY-redhat-release
+
+##rocky example rocky
+# rhel8stig_os_distribution: rocky
+# gpg_package: /etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial
+#gpg_key:
+#  - name: 'Release Engineering'
+#    fingerprint: '7051 C470 A929 F454 CEBE  37B7 15AF 5DAC 6D74 5A60'
+
+## Alma
+# rhel8stig_os_distribution: almalinux
+# gpg_package: /etc/pki/rpm-gpg/RPM-GPG-KEY-AlmaLinux
+# gpg_key:
+#  - name: 'AlmaLinux'
+#    fingerprint: '5E9B 8F56 17B5 066C E920  57C3 488F CF7C 3ABB 34F8'
+
 rhel8stig_os_version_pre_8_2: false
 
 # turn the categories on/off
