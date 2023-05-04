@@ -2,7 +2,7 @@
 
 ## Overview
 
-based on STIG v1r8 27th Oct 2022
+based on STIG v1r10 27th April 2023
 
 Ability to audit a system using a lightweight binary to check the current state.
 
@@ -25,11 +25,11 @@ feedback on any differences between OSs please raise an issue
 
 ## Join us
 
-On our [Discord Server](https://discord.gg/JFxpSgPFEJ) to ask questions, discuss features, or just chat with other Ansible-Lockdown users
+On our [Discord Server](https://discord.io/ansible-lockdown) to ask questions, discuss features, or just chat with other Ansible-Lockdown users
 
 ## Requirements
 
-You must have [goss](https://github.com/aelsabbahy/goss/) available to your host you would like to test.
+You must have [goss](https://github.com/goss-org/goss/) available to your host you would like to test.
 
 You must have sudo/root access to the system as some commands require privilege information.
 
@@ -37,7 +37,7 @@ Assuming you have already clone this repository you can run goss from where you 
 
 Please refer to the audit documentation for usage.
 
-- [Audit Documents](https://github.com/ansible-lockdown/RHEL8-STIG/docs/Security_remediation_and_auditing.md)
+- [Audit Documents](https://ansible-lockdown.readthedocs.io/en/latest/audit/getting-started-audit.html)
 
 This also works alongside the [Ansible Lockdown RHEL8-STIG role](https://github.com/ansible-lockdown/RHEL8-STIG)
 

@@ -7,7 +7,7 @@ mount:
       Cat: 3
       CCI: CCI-000366
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230293r627750_rule
+      Rule_ID: SV-230293r902720_rule
       STIG_ID: RHEL-08-010541
       Vul_ID: V-230293
 {{ end }}

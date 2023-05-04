@@ -5,13 +5,13 @@ command:
     exec: grep -i pwhistory /etc/pam.d/system-auth
     exit-status: 0
     stdout:
-    - '/^password\s+required pam_pwhistory.so.*\sremember=5.*/'
-    - '!/^password\s+required pam_pwhistory.so.*\sremember=[0-4].*/'
+    - '/^password\s+requisite pam_pwhistory.so.*\sremember=5.*/'
+    - '!/^password\s+requisite pam_pwhistory.so.*\sremember=[0-4].*/'
     meta:
       Cat: 2
       CCI: CCI-00200
       Group_Title: SRG-OS-000077-GPOS-00045
-      Rule_ID: SV-230368r810414_rule
+      Rule_ID: SV-230368r902759_rule
       STIG_ID: RHEL-08-020220
       Vul_ID: V-230368
 {{ end }}

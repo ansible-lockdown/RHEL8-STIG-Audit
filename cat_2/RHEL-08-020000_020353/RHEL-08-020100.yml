@@ -5,12 +5,12 @@ command:
     exec: grep -i pwquality /etc/pam.d/password-auth
     exit-status: 0
     stdout:
-    - '/^password\s+required\s+pam_pwquality.so/'
+    - '/^password\s+requisite\s+pam_pwquality.so/'
     meta:
       Cat: 2
       CCI: CCI-000366
       Group_Title: SRG-OS-000069-GPOS-00037
-      Rule_ID: SV-230356r809379_rule
+      Rule_ID: SV-230356r902728_rule
       STIG_ID: RHEL-08-020100
       Vul_ID: V-230356
 {{ end }}

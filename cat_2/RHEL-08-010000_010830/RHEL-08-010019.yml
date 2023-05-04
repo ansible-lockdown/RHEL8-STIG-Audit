@@ -1,0 +1,23 @@
+{{ if .Vars.RHEL_08_010019 }}
+command:
+  gpg_crypto_keys:
+    title: RHEL-08-010019 | RHEL 8 must ensure cryptographic verification of vendor software packages. | {{ .Vars.rpm_gpg_key }}
+    exit-status:
+      or:
+      - 0
+      - 1
+    timeout: {{ .Vars.timeout_ms }}
+    exec: gpg -q --keyid-format short --with-fingerprint {{ .Vars.rpm_gpg_key }}
+    stdout:
+    {{ range .Vars.gpg_keys }}
+    - "{{ .name }}"
+    - "{{ .fingerprint }}"
+    {{ end }}
+    meta:
+      Cat: 2
+      CCI: CCI-001749
+      Group_Title: SRG-OS-000366-GPOS-00153
+      Rule_ID: SV-256973r902752_rule
+      STIG_ID: RHEL-08-010019
+      Vul_ID: V-256973
+{{ end }}
