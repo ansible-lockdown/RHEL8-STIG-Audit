@@ -4,6 +4,11 @@ benchmark_version: '1.10'
 # set to redhat/rocky/alma/oracle
 rhel8stig_os_distribution: redhat
 gpg_package: /etc/pki/rpm-gpg/RPM-GPG-KEY-RPM-GPG-KEY-redhat-release
+gpg_key:
+  - name: 'release key 2'
+    fingerprint: '567E 347A D004 4ADE 55BA  8A5F 199E 2F91 FD43 1D51'
+  - name: 'auxiliary key'
+    fingerprint: '6A6A A7C9 7C88 90AE C6AE  BFE2 F76F 66C3 D408 2792'
 
 ##rocky example rocky
 # rhel8stig_os_distribution: rocky
