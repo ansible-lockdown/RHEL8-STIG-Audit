@@ -10,7 +10,7 @@ command:
       Cat: 2
       CCI: CCI-001453
       Group_Title: SRG-OS-000250-GPOS-00093
-      Rule_ID: SV-230251r743937_rule
+      Rule_ID: SV-230251r917870_rule
       STIG_ID: RHEL-08-010290
       Vul_ID: V-230251
   crypto_policies_openssh_server_macs:
@@ -18,12 +18,12 @@ command:
     exec: grep -i crypto /etc/crypto-policies/back-ends/opensshserver.config
     exit-status: 0
     stdout:
-    - '/^CRYPTO_POLICY=.-oCiphers=aes256-ctr,aes192-ctr,aes128-ctr -oMACS=hmac-sha2-512,hmac-sha2-256./'
+    - '/^CRYPTO_POLICY=.*-oMACS=hmac-sha2-512,hmac-sha2-256,hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com.*/'
     meta:
       Cat: 2
       CCI: CCI-001453
       Group_Title: SRG-OS-000250-GPOS-00093
-      Rule_ID: SV-230251r743937_rule
+      Rule_ID: SV-230251r917870_rule
       STIG_ID: RHEL-08-010290
       Vul_ID: V-230251
 {{ end }}
