@@ -489,6 +489,7 @@ rhel8stig_auditd_disk_full_action: HALT
 # RHEL_08_030690 if using remote syslog server
 rhel8stig_remotelog_server: 1.1.1.1
 rhel8stig_remotelog_port: 1549
+rhel8stig_remotelog_protocol: '@@'
 
 # RHEL_08_040137
 python_bin: '/usr/bin/python'
