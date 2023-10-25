@@ -1,6 +1,15 @@
 # Changelog
 
+## STIG V1R12 25th Oct 2023
+
+- 010020
+- 010471
+- 030741
+- 030742
+- 040400
+
 ## STIG V1R11 26th July 2023
+
 Controls updated
 
 - CAT2:
@@ -126,7 +135,7 @@ Controls updated
   - RHEL-08-010375 - updated check
   - RHEL-08-010376 - updated check
   - RHEL-08-020340 - CCI updated
-  
+
 ## Stig V1R7 27th July 2022
 
 - auditd config tests now exntded for mutliple locations
@@ -241,7 +250,7 @@ Controls updated
 - RHEL-08-010359 - new control
 - RHEL-08-010360 - updated control
 - RHEL-08-010379 - new control
-- RHEL-08-010383 - 
+- RHEL-08-010383 -
 - RHEL-08-010384
 - RHEL-08-010385 - new control
 - RHEL-08-010400 - updated control
