@@ -2,6 +2,8 @@
 
 ## STIG V1R12 25th Oct 2023
 
+run_audit.sh updated
+ directory renamed
 - 010020
 - 010471
 - 030741
