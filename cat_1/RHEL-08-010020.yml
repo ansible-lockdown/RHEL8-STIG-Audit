@@ -11,7 +11,7 @@ command:
       Cat: 1
       CCI: CCI-000068
       Group_Title: SRG-OS-000033-GPOS-00014
-      Rule_ID: SV-230223r792855_rule
+      Rule_ID: SV-230223r928585_rule
       STIG_ID: RHEL-08-010020
       Vul_ID: V-230223
   fips_live:
@@ -25,7 +25,7 @@ command:
        Cat: 1
        CCI: CCI-000068
        Group_Title: SRG-OS-000033-GPOS-00014
-       Rule_ID: SV-230223r792855_rule
+       Rule_ID: SV-230223r928585_rule
        STIG_ID: RHEL-08-010020
        Vul_ID: V-230223
 file:
@@ -38,7 +38,7 @@ file:
       Cat: 1
       CCI: CCI-000068
       Group_Title: SRG-OS-000033-GPOS-00014
-      Rule_ID: SV-230223r792855_rule
+      Rule_ID: SV-230223r928585_rule
       STIG_ID: RHEL-08-010020
       Vul_ID: V-230223
 {{ end }}
