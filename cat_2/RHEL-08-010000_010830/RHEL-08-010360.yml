@@ -1,5 +1,5 @@
 {{ if .Vars.RHEL_08_010360 }}
-command: 
+command:
   aide_cron_file:
     title: RHEL-08-010360 | The RHEL 8 file integrity tool must notify the system administrator when changes to the baseline configuration or anomalies in the operation of any security functions are discovered within an organizationally defined frequency. | job script
     exec: ls -al /etc/cron.* | grep aide | awk '{print $1" "$NF}'
@@ -16,7 +16,7 @@ command:
   aide_cron_job:
     title: RHEL-08-010360 | The RHEL 8 file integrity tool must notify the system administrator when changes to the baseline configuration or anomalies in the operation of any security functions are discovered within an organizationally defined frequency. | cron job
     exec: grep aide /etc/crontab /var/spool/cron/root /etc/cron.d/aide
-    exit-status: 
+    exit-status:
       or:
       - 0
       - 2
@@ -33,7 +33,7 @@ file:
   {{ .Vars.rhel8stig_aide_cron_file }}:
     title: RHEL-08-010360 | The RHEL 8 file integrity tool must notify the system administrator when changes to the baseline configuration or anomalies in the operation of any security functions are discovered within an organizationally defined frequency. | notification
     exists: true
-    contains:
+    contents:
     - '/^.*\/usr\/sbin\/aide --check | /var/spool/mail -s .* - Daily aide integrity check run" root@localhost/'
     meta:
       Cat: 2

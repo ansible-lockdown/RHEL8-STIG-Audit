@@ -3,7 +3,7 @@
   /etc/security/faillock.conf:
     title: RHEL-08-020015 | RHEL 8 must automatically lock an account until the locked account is released by an administrator when three unsuccessful logon attempts occur during a 15-minute time period. | OS_ver >= 8.2
     exists: true
-    contains:
+    contents:
     - '/^unlock_time = 0/'
     - '!/^unlock_time = ^[1-9]/'
     meta:

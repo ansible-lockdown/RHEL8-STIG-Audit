@@ -4,7 +4,7 @@ file:
   /etc/dconf/db/local.d/02-login-screen:
     title: RHEL-08-020032 | RHEL 8 must disable the user list at logon for graphical user interfaces
     exists: true
-    contains:
+    contents:
     - '[org/gnome/login-screen]'
     - '/^disable-user-list=true/'
     - '!/^disable-user-list=false/'
