@@ -1,8 +1,9 @@
 {{ if .Vars.RHEL_08_010590 }}
 mount:
-  /home:
+  home_noexec:
     title: RHEL-08-010590 | RHEL 8 must prevent code from being executed on file systems that contain user home directories.
     exists: true
+    mount: /home
     opts:
     - noexec
     meta:
