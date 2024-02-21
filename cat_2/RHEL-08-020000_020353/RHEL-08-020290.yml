@@ -1,8 +1,9 @@
 {{ if .Vars.RHEL_08_020290 }}
 file:
-  /etc/sssd/sssd.conf:
+  sssd_limit_cache:
     title: RHEL-08-020290 | RHEL 8 must prohibit the use of cached authentications after one day.
     exists: true
+    path: /etc/sssd/sssd.conf
     contains:
     - '/^cache_credentials = [Tt]rue.*offline_credentials_expiration = 1/'
     - '/^cache_credentials = [Ff]alse$/'
