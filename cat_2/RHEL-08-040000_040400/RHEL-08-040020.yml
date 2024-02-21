@@ -18,7 +18,7 @@ file:
   /etc/modprobe.d/blacklist.conf:
     title: RHEL-08-040020 | RHEL 8 must cover or disable the built-in or attached camera when not in use. | blacklist.conf
     exists: true
-    contains:
+    contents:
     - 'blacklist uvcvideo'
     meta:
       Cat: 2
