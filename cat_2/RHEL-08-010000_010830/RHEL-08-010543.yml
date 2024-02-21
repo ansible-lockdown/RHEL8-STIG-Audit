@@ -1,8 +1,9 @@
 {{ if .Vars.RHEL_08_010543 }}
 mount:
-  /tmp:
+  tmp_exists:
     title: RHEL-08-010543 | A separate RHEL 8 filesystem must be used for the /tmp directory.
     exists: true
+    mountpoint: /tmp
     meta:
       Cat: 2
       CCI: CCI-000366

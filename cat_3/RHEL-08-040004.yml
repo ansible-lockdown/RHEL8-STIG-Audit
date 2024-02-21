@@ -14,7 +14,7 @@ command:
       Rule_ID: SV-230491r818842_rule
       STIG_ID: RHEL-08-040004
       Vul_ID: V-230491
-  grub_audit_check:
+  grub_pti_check:
     title: RHEL-08-040004 | RHEL 8 must enable mitigations against processor-based vulnerabilities. | running grub
     exec: grub2-editenv list | grep pti
     exit-status: 0

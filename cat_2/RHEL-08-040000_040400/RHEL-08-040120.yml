@@ -1,8 +1,9 @@
 {{ if .Vars.RHEL_08_040120 }}
 mount:
-  /dev/shm:
+  dev_shm_nodev:
     title: RHEL-08-040120 | RHEL 8 must mount /dev/shm with the nodev option
     exists: true
+    mountpoint: /dev/shm
     opts:
     - nodev
     filesystem: tmpfs
