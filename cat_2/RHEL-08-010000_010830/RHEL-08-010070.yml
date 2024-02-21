@@ -1,5 +1,5 @@
 {{ if .Vars.RHEL_08_010070 }}
-file: 
+file:
   /etc/rsyslog.conf:
     title: RHEL-08-010070 | All RHEL 8 remote access methods must be monitored.
     exists: true
@@ -13,8 +13,9 @@ file:
       STIG_ID: RHEL-08-010070
       Vul_ID: V-230228
 service:
-  rsyslog:
+  rsyslog_010070:
     title: RHEL-08-010070 | All RHEL 8 remote access methods must be monitored.
+    name: rsyslog
     running: true
     enabled: true
     meta:
