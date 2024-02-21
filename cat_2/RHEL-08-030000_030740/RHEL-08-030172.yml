@@ -1,6 +1,6 @@
 {{ if .Vars.RHEL_08_030172 }}
 command:
-  audit_rules_sudoers:
+  audit_rules_sudoers_d:
     title: RHEL-08-030172 | RHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/sudoers.d/. | config check
     exec: grep -w sudoers.d /etc/audit/rules.d/audit.rules
     exit-status: 0
