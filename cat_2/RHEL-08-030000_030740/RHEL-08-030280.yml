@@ -13,7 +13,6 @@ command:
       Rule_ID: SV-230421r627750_rule
       STIG_ID: RHEL-08-030280
       Vul_ID: V-230421
-command:
   auditd_ssh_agent_live:
     title: RHEL-08-030280 | Successful/unsuccessful uses of the ssh-agent in RHEL 8 must generate an audit record. | live check
     exec: auditctl -l | grep -w ssh-agent
