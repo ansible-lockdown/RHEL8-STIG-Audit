@@ -1,9 +1,9 @@
 {{ if .Vars.RHEL_08_040172}}
 file:
-  /etc/systemd/system.conf: 
+  /etc/systemd/system.conf:
     title: RHEL-08-040172 | The systemd Ctrl-Alt-Delete burst key sequence in RHEL 8 must be disabled.
     exists: true
-    contains:
+    contents:
     - '/^CtrlAltDelBurstAction=none/'
     meta:
       Cat: 1

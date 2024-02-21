@@ -1,9 +1,9 @@
 {{ if .Vars.RHEL_08_010152 }}
-file: 
+file:
   /usr/lib/systemd/system/emergency.service:
     title: RHEL-08-010152 | RHEL 8 operating systems must require authentication upon booting into emergency mode.
     exists: true
-    contains:
+    contents:
     - '/^ExecStart=-/usr/lib/systemd/systemd-sulogin-shell emergency/'
     meta:
       Cat: 2

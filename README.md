@@ -105,13 +105,13 @@ to equal
 < ---------cut ------- >
 
 Title: CAT_2 | RHEL-07-010280 | Must be configured so that passwords are a minimum of 15 characters in length.
-File: /etc/security/pwquality.conf: contains: patterns not found: [/^minlen = 15/]
+File: /etc/security/pwquality.conf: contents: patterns not found: [/^minlen = 15/]
 
 Title: CAT_2 | RHEL-07-040500 | Must for networked systems, synchronize clocks with a server that is synchronized to one of the redundant United States Naval Observatory (USNO) time servers, a time server designated for the appropriate DoD network (NIPRNet/SIPRNet), and/or the Global Positioning System (GPS).
-File: /etc/chrony.conf: contains: patterns not found: [/^server.*maxpoll 10/]
+File: /etc/chrony.conf: contents: patterns not found: [/^server.*maxpoll 10/]
 
 Title: CAT_2 | RHEL-07-010310 | Must disable account identifiers (individuals, groups, roles, and devices) if the password expires.
-File: /etc/default/useradd: contains: patterns not found: [/^INACTIVE=0/]
+File: /etc/default/useradd: contents: patterns not found: [/^INACTIVE=0/]
 
 Total Duration: 31.127s
 Count: 308, Failed: 162, Skipped: 21
@@ -135,13 +135,13 @@ goss -g Cat_2/RHEL-07-020240.yml  --vars vars/stig.yml v -f documentation
 Title: CAT_2 | RHEL-07-020240 | Must define default permissions for all authenticated users in such a way that the user can only read and modify their own files.
 File: /etc/login.defs: exists: matches expectation: [true]
 File: /etc/login.defs: mode: matches expectation: ["0644"]
-File: /etc/login.defs: contains: patterns not found: [/^UMASK 077]
+File: /etc/login.defs: contents: patterns not found: [/^UMASK 077]
 
 
 Failures/Skipped:
 
 Title: CAT_2 | RHEL-07-020240 | Must define default permissions for all authenticated users in such a way that the user can only read and modify their own files.
-File: /etc/login.defs: contains: patterns not found: [/^UMASK 077]
+File: /etc/login.defs: contents: patterns not found: [/^UMASK 077]
 
 Total Duration: 0.000s
 Count: 3, Failed: 1, Skipped: 0

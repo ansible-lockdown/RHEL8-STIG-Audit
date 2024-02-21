@@ -19,7 +19,7 @@ file:
   /etc/nsswitch.conf:
     title: RHEL-08-010680 | For RHEL 8 systems using Domain Name Servers (DNS) resolution, at least two name servers must be configured. | nsswitch dns check
     exists: true
-    contains:
+    contents:
     - '/hosts\:\s*.*dns/'
     meta:
       Cat: 2
@@ -34,7 +34,7 @@ file:
     title: RHEL-08-010680 | For RHEL 8 systems using Domain Name Servers (DNS) resolution, at least two name servers must be configured. | empty resolv.conf
     exists: true
     size: 0
-    contains:
+    contents:
     - '!/.*/'
     meta:
       Cat: 2

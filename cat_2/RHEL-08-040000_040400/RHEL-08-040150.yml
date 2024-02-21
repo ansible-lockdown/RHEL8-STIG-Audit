@@ -3,7 +3,7 @@ file:
   /etc/firewalld/firewalld.conf:
     title: RHEL-08-040150 | A firewall must be able to protect against or limit the effects of Denial of Service (DoS) attacks by ensuring RHEL 8 can implement rate-limiting measures on impacted network interfaces. | firewall backend check
     exists: true
-    contains:
+    contents:
     - '/^FirewallBackend=nftables/'
     - '!/^FirewallBackend=iptables/'
     meta:

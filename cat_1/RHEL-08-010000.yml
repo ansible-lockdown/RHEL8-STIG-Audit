@@ -3,7 +3,7 @@ file:
   /etc/redhat-release:
     title: RHEL-08-010000 | RHEL 8 must be a vendor-supported release. (Not checking for EUS)
     exists: true
-    contains:
+    contents:
     - '/.* 8.[6-8]/'
     meta:
       Cat: 1
