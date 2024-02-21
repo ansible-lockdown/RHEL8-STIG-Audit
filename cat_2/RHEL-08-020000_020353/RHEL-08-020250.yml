@@ -4,7 +4,7 @@ file:
     title: RHEL-08-020250 | RHEL 8 must implement smart card logon for multifactor authentication for access to interactive accounts.
     path: /etc/sssd/sssd.conf
     exists: true
-    contains:
+    contents:
     - '/^pam_cert_auth = [tT]rue/'
     - '!/^pam_cert_auth = [fF]alse/'
     skip: {{ .Vars.skip_sssd_check }}
@@ -18,7 +18,7 @@ file:
   /etc/pam.d/smartcard-auth:
     title: RHEL-08-020250 | RHEL 8 must implement smart card logon for multifactor authentication for access to interactive accounts.
     exists: true
-    contains:
+    contents:
     - '/^auth sufficient\s+pam_sss.so [try_cert_auth|require_cert_auth]/'
     skip: {{ .Vars.skip_sssd_check }}
     meta:
@@ -32,7 +32,7 @@ file:
     title: RHEL-08-020250 | RHEL 8 must implement smart card logon for multifactor authentication for access to interactive accounts.
     exists: true
     skip: {{ .Vars.skip_sssd_check }}
-    contains:
+    contents:
     - '/^auth.*\spam_sss.so [try_cert_auth|require_cert_auth]/'
     meta:
       Cat: 2

@@ -3,7 +3,7 @@ file:
   /etc/shells:
     title: RHEL-08-020042 | RHEL 8 must prevent users from disabling session control mechanisms.
     exists: true
-    contains:
+    contents:
     - '!/.*tmux.*/'
     meta:
       Cat: 3

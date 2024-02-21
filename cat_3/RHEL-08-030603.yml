@@ -3,7 +3,7 @@ file:
   /etc/usbguard/usbguard-daemon.conf:
     title: RHEL-08-030603 | RHEL 8 must enable Linux audit logging for the USBGuard daemon.
     exists: true
-    contains:
+    contents:
     - '/^AuditBackend=LinuxAudit/'
     meta:
       Cat: 3

@@ -4,7 +4,7 @@ file:
     title: RHEL-08-020040 | RHEL 8 must enable a user session lock until that user re-establishes access using established identification and authentication procedures for command line sessions.
     exists: true
     path: /etc/tmux.conf
-    contains:
+    contents:
     - '/^set -g lock-command vlock/'
     - '/^bind X lock-session/'
     meta:

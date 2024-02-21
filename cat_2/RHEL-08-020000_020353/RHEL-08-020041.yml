@@ -3,7 +3,7 @@ file:
   /etc/profile.d/tmux.sh:
     title: RHEL-08-020041 | RHEL 8 must ensure session control is automatically started at shell initialization.
     exists: true
-    contains:
+    contents:
     - '/^if \[ "\$PS1" \]; then/'
     - '/^parent=\$\(ps -o ppid= -p \$\$\)/'
     - '/^name=\$\(ps -o comm= -p \$parent\)/'
