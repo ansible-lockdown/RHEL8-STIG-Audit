@@ -1,8 +1,9 @@
 {{ if .Vars.RHEL_08_040134 }}
 mount:
-  /var/tmp:
+  var_tmp_noexec:
     title: RHEL-08-040134 | RHEL 8 must mount /var/tmp with the noexec option
     exists: true
+    mountpoint: /var/tmp
     opts:
     - noexec
     meta:

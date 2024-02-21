@@ -1,8 +1,9 @@
 {{ if .Vars.RHEL_08_040127 }}
 mount:
-  /var/log:
+  var_log_nosuid:
     title: RHEL-08-040127 | RHEL 8 must mount /var/log with the nosuid option
     exists: true
+    mountpoint: /var/log
     opts:
     - nosuid
     meta:
