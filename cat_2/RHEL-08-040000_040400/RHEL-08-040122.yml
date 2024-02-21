@@ -1,8 +1,9 @@
 {{ if .Vars.RHEL_08_040122 }}
 mount:
-  /dev/shm:
+  dev_shm_noexec:
     title: RHEL-08-040122 | RHEL 8 must mount /dev/shm with the noexec option
     exists: true
+    mountpoint: /dev/shm
     opts:
     - noexec
     filesystem: tmpfs
