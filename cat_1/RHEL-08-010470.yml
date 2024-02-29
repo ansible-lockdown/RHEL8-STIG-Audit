@@ -9,7 +9,6 @@ command:
         or:
         - 0
         - 1
-    timeout: {{ .Vars.timeout_ms }}
     stdout:
     - '!/.*/'
     meta:
