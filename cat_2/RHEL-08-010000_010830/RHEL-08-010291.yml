@@ -10,20 +10,20 @@ command:
       Cat: 2
       CCI: CCI-001453
       Group_Title: SRG-OS-000250-GPOS-00093
-      Rule_ID: SV-230252r743940_rule
-      STIG_ID: RHEL-08-010290
+      Rule_ID: SV-230252r917873_rule
+      STIG_ID: RHEL-08-010291
       Vul_ID: V-230252
   crypto_policies_openssh_server_ciphers:
     title: RHEL-08-010291 | The RHEL 8 operating system must implement DoD-approved encryption to protect the confidentiality of SSH connections. | crypto-policies - ssh_server
     exec: grep -i crypto /etc/crypto-policies/back-ends/opensshserver.config
     exit-status: 0
     stdout:
-    - '/^CRYPTO_POLICY=.-oCiphers=aes256-ctr,aes192-ctr,aes128-ctr./'
+    - '/^CRYPTO_POLICY=.*-oCiphers=aes256-ctr,aes192-ctr,aes128-ctr,aes256-gcm@openssh.com,aes128-gcm@openssh.com.*/'
     meta:
       Cat: 2
       CCI: CCI-001453
       Group_Title: SRG-OS-000250-GPOS-00093
-      Rule_ID: SV-230252r743940_rule
+      Rule_ID: SV-230252r917873_rule
       STIG_ID: RHEL-08-010291
       Vul_ID: V-230252
 {{ end }}

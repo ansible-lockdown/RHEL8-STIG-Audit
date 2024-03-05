@@ -7,13 +7,13 @@ file:
     - '/^if \[ "\$PS1" \]; then/'
     - '/^parent=\$\(ps -o ppid= -p \$\$\)/'
     - '/^name=\$\(ps -o comm= -p \$parent\)/'
-    - '/^case "\$name" in \(sshd|login\) exec tmux ;; esac/'
+    - '/^case "\$name" in \(sshd|login\) tmux ;; esac/'
     - '/^fi/'
     meta:
       Cat: 2
       CCI: CCI-000056
       Group_Title: SRG-OS-000028-GPOS-00009
-      Rule_ID: SV-230349r880737_rule
+      Rule_ID: SV-230349r917920_rule
       STIG_ID: RHEL-08-020041
       Vul_ID: V-230349
 command:
@@ -27,7 +27,7 @@ command:
       Cat: 2
       CCI: CCI-000056
       Group_Title: SRG-OS-000028-GPOS-00009
-      Rule_ID: SV-230349r880737_rule
+      Rule_ID: SV-230349r917920_rule
       STIG_ID: RHEL-08-020041
       Vul_ID: V-230349
 {{ end }}
