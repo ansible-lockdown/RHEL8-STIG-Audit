@@ -14,7 +14,7 @@ file:
       Rule_ID: SV-257258r942953_rule
       STIG_ID: RHEL-08-020035
       Vul_ID: V-257258
-  stopidle_logind.conf:
+  killuserproc_logind.conf:
     title: RHEL-08-020035 | RHEL 8 must terminate idle user sessions.
     path: /etc/systemd/logind.conf
     exists: true
