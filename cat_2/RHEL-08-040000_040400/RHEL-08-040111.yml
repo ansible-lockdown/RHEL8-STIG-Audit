@@ -3,7 +3,7 @@ file:
   /etc/modprobe.d/bluetooth.conf:
     title: RHEL-08-040111 | RHEL 8 must be configured to disable USB mass storage.
     exists: true
-    contains:
+    contents:
     - 'install bluetooth /bin/true'
     - '!/.*false/'
     meta:

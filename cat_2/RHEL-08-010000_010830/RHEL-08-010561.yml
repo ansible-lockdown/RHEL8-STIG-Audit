@@ -1,7 +1,8 @@
 {{ if .Vars.RHEL_08_010561 }}
 service:
-  rsyslog:
+  rsyslog_010561:
     title: RHEL-08-010561 | The rsyslog service must be running in RHEL 8.
+    name: rsyslog
     running: true
     enabled: true
     meta:

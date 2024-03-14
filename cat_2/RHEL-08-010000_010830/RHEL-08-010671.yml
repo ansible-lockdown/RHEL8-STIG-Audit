@@ -14,8 +14,7 @@ command:
       Rule_ID: SV-230311r858769_rule
       STIG_ID: RHEL-08-010671
       Vul_ID: V-230311
-command:
-  check_randomize:
+  check_kernel_core:
     title: RHEL-08-010671 | RHEL 8 must disable the kernel.core_pattern. | file_check
     exec: grep -iR kernel.core_pattern /run/sysctl.d/*.conf /usr/local/lib/sysctl.d/*.conf /usr/lib/sysctl.d/*.conf /lib/sysctl.d/*.conf /etc/sysctl.conf /etc/sysctl.d/*.conf
     exit-status:

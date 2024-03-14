@@ -1,8 +1,9 @@
 {{ if .Vars.RHEL_08_040132 }}
 mount:
-  /var/tmp:
+  var_tmp_nodev:
     title: RHEL-08-040132 | RHEL 8 must mount /var/tmp with the nodev option
     exists: true
+    mountpoint: /var/tmp
     opts:
     - nodev
     meta:

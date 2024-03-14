@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_010358 }}
 package:
-  aide:
-    title: RHEL-08-010358 | The RHEL 8 operating system must use a file integrity tool to verify correct operation of all security functions.
+  mailx:
+    title: RHEL-08-010358 | RHEL 8 must be configured to allow sending email notifications of unauthorized configuration changes to designated personnel.
     installed: true
     meta:
       Cat: 2

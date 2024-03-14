@@ -3,7 +3,7 @@ file:
   /etc/crypto-policies/back-ends/gnutls.config:
     title: RHEL-08-010295 | The RHEL 8 operating system must implement DoD-approved TLS encryption in the GnuTLS package.
     exists: true
-    contains:
+    contents:
     - '/\+VERS-ALL\:-VERS-DTLS0.9\:-VERS-SSL3.0\:-VERS-TLS1.0\:-VERS-TLS1.1\:-VERS-DTLS1.0/'
     - '!/\+VERS\+(DTLS0.9|SSL3.0|TLS1.0|TLS1.1|DTLS1.0)/'
     meta:

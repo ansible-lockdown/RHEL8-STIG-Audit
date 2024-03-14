@@ -1,5 +1,19 @@
 # Changelog
 
+## STIG V1R12 25th Oct 2023
+
+Updated to use goss 0.4.4
+many controls updated, duplicates identified and resolved
+
+run_audit.sh updated
+directory renamed
+
+- 010020
+- 010471
+- 030741
+- 030742
+- 040400
+
 ## STIG V1R11 26th July 2023
 
 Controls updated

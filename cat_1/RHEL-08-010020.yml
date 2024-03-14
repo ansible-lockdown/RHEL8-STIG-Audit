@@ -11,7 +11,7 @@ command:
       Cat: 1
       CCI: CCI-000068
       Group_Title: SRG-OS-000033-GPOS-00014
-      Rule_ID: SV-230223r792855_rule
+      Rule_ID: SV-230223r928585_rule
       STIG_ID: RHEL-08-010020
       Vul_ID: V-230223
   fips_live:
@@ -25,20 +25,20 @@ command:
        Cat: 1
        CCI: CCI-000068
        Group_Title: SRG-OS-000033-GPOS-00014
-       Rule_ID: SV-230223r792855_rule
+       Rule_ID: SV-230223r928585_rule
        STIG_ID: RHEL-08-010020
        Vul_ID: V-230223
 file:
   /proc/sys/crypto/fips_enabled:
     title: RHEL-08-010020 | RHEL 8 must implement NIST FIPS-validated cryptography for the following - to provision digital signatures, to generate cryptographic hashes, and to protect data requiring data-at-rest protections in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, and standards. | fips_process
     exists: true
-    contains:
+    contents:
     - '1'
     meta:
       Cat: 1
       CCI: CCI-000068
       Group_Title: SRG-OS-000033-GPOS-00014
-      Rule_ID: SV-230223r792855_rule
+      Rule_ID: SV-230223r928585_rule
       STIG_ID: RHEL-08-010020
       Vul_ID: V-230223
 {{ end }}

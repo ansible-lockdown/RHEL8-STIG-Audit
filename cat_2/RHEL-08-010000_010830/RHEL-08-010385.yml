@@ -3,7 +3,7 @@ file:
   /etc/pam.d/sudo:
     title: RHEL-08-010385 | The RHEL 8 operating system must not be configured to bypass password requirements for privilege escalation
     exists: true
-    contains:
+    contents:
     - '!/.*pam_succeed_if/'
     meta:
       Cat: 2

@@ -4,7 +4,7 @@ file:
   /etc/gdm/custom.conf:
     title: RHEL-08-010820 | Unattended or automatic logon via the RHEL 8 graphical user interface must not be allowed.
     exists: true
-    contains:
+    contents:
     - '/^AutomaticLoginEnable=false/'
     - '!/#AutomaticLoginEnable=false/'
     - '!/^AutomaticLoginEnable=[tT]rue/'
