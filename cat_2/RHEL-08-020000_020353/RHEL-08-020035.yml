@@ -1,7 +1,8 @@
 {{ if .Vars.RHEL_08_020035 }}
 file:
-  /etc/systemd/logind.conf:
+  stopidle_logind.conf:
     title: RHEL-08-020035 | RHEL 8 must terminate idle user sessions.
+    path: /etc/systemd/logind.conf
     exists: true
     contents:
     - '/^StopIdleSessionSec=900/'
@@ -10,7 +11,21 @@ file:
       Cat: 2
       CCI: CCI-001133
       Group_Title: SRG-OS-000163-GPOS-00072
-      Rule_ID: SV-257258r917891_rule
+      Rule_ID: SV-257258r942953_rule
+      STIG_ID: RHEL-08-020035
+      Vul_ID: V-257258
+  stopidle_logind.conf:
+    title: RHEL-08-020035 | RHEL 8 must terminate idle user sessions.
+    path: /etc/systemd/logind.conf
+    exists: true
+    contents:
+    - '/^KillUserProccesses=no/'
+    - '!/^(?i)KillUserProccesses\s*=\s*yes/'
+    meta:
+      Cat: 2
+      CCI: CCI-001133
+      Group_Title: SRG-OS-000163-GPOS-00072
+      Rule_ID: SV-257258r942953_rule
       STIG_ID: RHEL-08-020035
       Vul_ID: V-257258
 {{ end }}

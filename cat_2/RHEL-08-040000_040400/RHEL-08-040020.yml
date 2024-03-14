@@ -5,13 +5,13 @@ command:
     exec: grep -r uvcvideo /etc/modprobe.d/* | grep "/bin/true"
     exit-status: 0
     stdout:
-    - '/^\/etc\/modprobe.d/.*:install uvcvideo /bin/true/'
-    - '!/^\/etc\/modprobe.d/.*:install uvcvideo /bin/false/'
+    - '/^\/etc\/modprobe.d/.*:install uvcvideo /bin/false/'
+    - '!/^\/etc\/modprobe.d/.*:install uvcvideo /bin/true/'
     meta:
       Cat: 2
       CCI: CCI-000381
       Group_Title: SRG-OS-000095-GPOS-00049
-      Rule_ID: SV-230493r809316_rule
+      Rule_ID: SV-230493r942915_rule
       STIG_ID: RHEL-08-040020
       Vul_ID: V-230493
 file:
@@ -24,7 +24,7 @@ file:
       Cat: 2
       CCI: CCI-000381
       Group_Title: SRG-OS-000095-GPOS-00049
-      Rule_ID: SV-230493r809316_rule
+      Rule_ID: SV-230493r942915_rule
       STIG_ID: RHEL-08-040020
       Vul_ID: V-230493
 {{ end }}

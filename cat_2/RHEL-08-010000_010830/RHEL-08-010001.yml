@@ -7,7 +7,7 @@ package:
       Cat: 2
       CCI: CCI-001233
       Group_Title: SRG-OS-000191-GPOS-00080
-      Rule_ID: SV-245540r754730_rule
+      Rule_ID: SV-245540r942951_rule
       STIG_ID: RHEL-08-010001
       Vul_ID: V-245540
 service:
@@ -19,7 +19,7 @@ service:
       Cat: 2
       CCI: CCI-001233
       Group_Title: SRG-OS-000191-GPOS-00080
-      Rule_ID: SV-245540r754730_rule
+      Rule_ID: SV-245540r942951_rule
       STIG_ID: RHEL-08-010001
       Vul_ID: V-245540
 {{ end }}

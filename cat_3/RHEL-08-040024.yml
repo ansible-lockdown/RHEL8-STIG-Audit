@@ -5,9 +5,9 @@ command:
     exec: grep -ri tipc /etc/modprobe.d/* | grep -v '#'
     exit-status: 0
     stdout:
-    - '/(?i)^.*:install tipc \/bin\/true/'
+    - '/(?i)^.*:install tipc \/bin\/false/'
     - '/(?i)^.*:blacklist tipc/'
-    - '!/(?i)^.*:install tipc \/bin\/false/'
+    - '!/(?i)^.*:install tipc \/bin\/true/'
     meta:
       Cat: 3
       CCI: CCI-000381

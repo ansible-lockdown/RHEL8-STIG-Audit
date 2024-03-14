@@ -1,16 +1,18 @@
 {{ if .Vars.RHEL_08_040111 }}
-file:
-  /etc/modprobe.d/bluetooth.conf:
-    title: RHEL-08-040111 | RHEL 8 must be configured to disable USB mass storage.
-    exists: true
-    contents:
-    - 'install bluetooth /bin/true'
-    - '!/.*false/'
+command:
+  disable_bluetooth:
+    title: RHEL-08-040111 | RHEL 8 Bluetooth must be disabled.
+    exec: grep -ri bluetooth /etc/modprobe.d/* | grep -v '#'
+    exit-status: 0
+    stdout:
+    - '/(?i)^.*:install bluetooth \/bin\/false/'
+    - '/(?i)^.*:blacklist bluetooth/'
+    - '!/(?i)^.*:install bluetooth \/bin\/true/'
     meta:
       Cat: 2
       CCI: CCI-001443
       Group_Title: SRG-OS-000300-GPOS-00118
-      Rule_ID: SV-230507r833336_rule
+      Rule_ID: SV-230507r942939_rule
       STIG_ID: RHEL-08-040111
       Vul_ID: V-230507
 {{ end }}
