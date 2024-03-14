@@ -5,14 +5,14 @@ command:
     exec: grep -ri atm /etc/modprobe.d/* | grep -v '#'
     exit-status: 0
     stdout:
-    - '/(?i)^.*:install atm \/bin\/true/'
+    - '/(?i)^.*:install atm \/bin\/false/'
     - '/(?i)^.*:blacklist atm/'
-    - '!/(?i)^.*:install atm \/bin\/false/'
+    - '!/(?i)^.*:install atm \/bin\/true/'
     meta:
       Cat: 3
       CCI: CCI-000381
       Group_Title: SRG-OS-000095-GPOS-00049
-      Rule_ID: SV-230494r792911_rule
+      Rule_ID: SV-230494r942918_rule
       STIG_ID: RHEL-08-040021
       Vul_ID: V-230494
 {{ end }}

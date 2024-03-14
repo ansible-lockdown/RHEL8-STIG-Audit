@@ -5,14 +5,14 @@ command:
     exec: grep -ri firewire-core /etc/modprobe.d/* | grep -v '#'
     exit-status: 0
     stdout:
-    - '/(?i)^.*:install firewire-core \/bin\/true/'
+    - '/(?i)^.*:install firewire-core \/bin\/false/'
     - '/(?i)^.*:blacklist firewire-core/'
-    - '!/(?i)^.*:install firewire-core \/bin\/false/'
+    - '!/(?i)^.*:install firewire-core \/bin\/true/'
     meta:
       Cat: 3
       CCI: CCI-000381
       Group_Title: SRG-OS-000095-GPOS-00049
-      Rule_ID: SV-230499r792924_rule
+      Rule_ID: SV-230499r942933_rule
       STIG_ID: RHEL-08-040026
       Vul_ID: V-230499
 {{ end }}
