@@ -5,9 +5,9 @@ command:
     exec: grep -ri cramfs /etc/modprobe.d/* | grep -v '#'
     exit-status: 0
     stdout:
-    - '/(?i)^.*:install cramfs \/bin\/true/'
+    - '/(?i)^.*:install cramfs \/bin\/false/'
     - '/(?i)^.*:blacklist cramfs/'
-    - '!/(?i)^.*:install cramfs \/bin\/false/'
+    - '!/(?i)^.*:install cramfs \/bin\/true/'
     meta:
       Cat: 3
       CCI: CCI-000381
