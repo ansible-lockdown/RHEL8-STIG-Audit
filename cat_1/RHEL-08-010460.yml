@@ -5,11 +5,10 @@ command:
     title: RHEL-08-010460 | The "shosts.equiv" files are used to configure host-based authentication for the system via SSH. Host-based authentication is not sufficient for preventing unauthorized access to the system, as it does not require interactive identification and authentication of a connection request, or for the use of two-factor authentication.
     exec: find / -name shosts.equiv
     timeout: {{ .Vars.timeout_ms }}
-    exit-status: 
+    exit-status:
         or:
         - 0
         - 1
-    timeout: {{ .Vars.timeout_ms }}
     stdout:
     - '!/.*/'
     meta:
