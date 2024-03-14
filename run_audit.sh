@@ -21,7 +21,7 @@
 
 # Goss benchmark variables (these should not need changing unless new release)
 BENCHMARK=STIG  # Benchmark Name aligns to the audit
-BENCHMARK_VER=v1r12
+BENCHMARK_VER=v1r13
 BENCHMARK_OS=RHEL8
 
 # Goss host Variables
