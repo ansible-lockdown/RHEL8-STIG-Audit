@@ -13,7 +13,7 @@ command:
       Cat: 2
       CCI: CCI-000048
       Group_Title: SRG-OS-000023-GPOS-00006
-      Rule_ID: SV-230225r858694_rule
+      Rule_ID: SV-230225r951590_rule
       STIG_ID: RHEL-08-010040
       Vul_ID: V-230225
 file:
@@ -26,7 +26,7 @@ file:
       Cat: 2
       CCI: CCI-000048
       Group_Title: SRG-OS-000023-GPOS-00006
-      Rule_ID: SV-230225r858694_rule
+      Rule_ID: SV-230225r951590_rule
       STIG_ID: RHEL-08-010040
       Vul_ID: V-230225
 {{ end }}
