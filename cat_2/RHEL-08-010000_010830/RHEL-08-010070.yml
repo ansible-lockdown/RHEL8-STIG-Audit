@@ -9,7 +9,7 @@ file:
       Cat: 2
       CCI: CCI-000067
       Group_Title: SRG-OS-000032-GPOS-00013
-      Rule_ID: SV-230228r627750_rule
+      Rule_ID: SV-230228r951592_rule
       STIG_ID: RHEL-08-010070
       Vul_ID: V-230228
 service:
@@ -22,7 +22,7 @@ service:
       Cat: 2
       CCI: CCI-000067
       Group_Title: SRG-OS-000032-GPOS-00013
-      Rule_ID: SV-230228r627750_rule
+      Rule_ID: SV-230228r951592_rule
       STIG_ID: RHEL-08-010070
       Vul_ID: V-230228
 {{ end }}
