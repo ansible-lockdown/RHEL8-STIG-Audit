@@ -6,7 +6,6 @@ file:
     path: {{ .Vars.rhel8stig_bootloader_path }}/user.cfg
     exists: true
     contents:
-    contents:
     - '/^GRUB2_PASSWORD={{ .Vars.rhel8stig_password_hash }}/'
     - '/^GRUB2_PASSWORD=grub.pbkdf2.sha512/'
     meta:
