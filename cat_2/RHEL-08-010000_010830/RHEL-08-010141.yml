@@ -1,11 +1,13 @@
 {{ if not .Vars.legacy_boot }}
   {{ if .Vars.RHEL_08_010141 }}
 file:
-  {{ .Vars.rhel8stig_bootloader_path }}/user.cfg:
-    title: RHEL-08-010141 | RHEL 8 operating systems booted with United Extensible Firmware Interface (UEFI) implemented must require authentication upon booting into single-user mode and maintenance. | grub_cfg
+  grub_unique_user:
+    title: RHEL-08-010141 | RHEL 8 operating systems booted with United Extensible Firmware Interface (UEFI) must require a unique superusers name upon booting into single-user mode and maintenance. | grub_cfg
+    path: {{ .Vars.rhel8stig_bootloader_path }}/user.cfg:
     exists: true
     contents:
-    - '/^GRUB2_PASSWORD=grub.pbkdf2.sha512.*/'
+    - '!/^set superusers="[root]/'
+    - '/^export superusers/'
     meta:
       Cat: 2
       CCI: CCI-000213
