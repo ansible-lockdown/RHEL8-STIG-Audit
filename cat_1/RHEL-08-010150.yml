@@ -1,7 +1,7 @@
 {{ if .Vars.legacy_boot }}
 {{ if .Vars.RHEL_08_010150 }}
 file:
-  grub_single_user_auth:
+  grub_user_password_bios:
     title: RHEL-08-010150 | RHEL 8 operating systems booted with United Extensible Firmware Interface (UEFI) implemented must require authentication upon booting into single-user mode and maintenance. | user_cfg
     exists: true
     path: {{ .Vars.rhel8stig_bootloader_path }}/user.cfg
