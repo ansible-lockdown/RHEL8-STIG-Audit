@@ -19,6 +19,7 @@ command:
       or:
       - 0
       - 1
+      - 7
     stdout:
     - '/^End timestamp/'
     meta:
