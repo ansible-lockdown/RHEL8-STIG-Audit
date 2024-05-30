@@ -1,10 +1,12 @@
+---
+
 {{ if .Vars.RHEL_08_010000 }}
 file:
   /etc/redhat-release:
     title: RHEL-08-010000 | RHEL 8 must be a vendor-supported release. (Not checking for EUS)
     exists: true
     contents:
-    - '/.* 8.[6-8]/'
+    - '/.* 8.(8-9|10)/'
     meta:
       Cat: 1
       CCI: CCI-000366
