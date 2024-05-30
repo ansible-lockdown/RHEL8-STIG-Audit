@@ -1,4 +1,6 @@
-{{ if .Vars.RHEL_08_010400 }}
+---
+{{ if not .Vars.skip_sssd_check }}
+  {{ if .Vars.RHEL_08_010400 }}
 command:
   check_cert_mfa:
     title: RHEL-08-010400 | RHEL 8 must implement certificate status checking for multifactor authentication.
@@ -9,7 +11,6 @@ command:
       - 1
     stdout:
     - '/^[sssd]certificate_verification = ocsp_dgst=sha1/'
-    skip: {{ .Vars.skip_sssd_check }}
     meta:
       Cat: 2
       CCI: CCI-001948
@@ -17,4 +18,5 @@ command:
       Rule_ID: SV-230274r858741_rule
       STIG_ID: RHEL-08-010400
       Vul_ID: V-230274
+  {{ end }}
 {{ end }}
