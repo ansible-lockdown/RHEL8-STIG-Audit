@@ -1,9 +1,9 @@
-{{ if .Vars.RHEL_08_010090 }}
-file: 
+{{ if not .Vars.skip_sssd_check }}
+  {{ if .Vars.RHEL_08_010090 }}
+file:
   /etc/sssd/pki/sssd_auth_ca_db.pem:
     title: RHEL-08-010090 | Verify RHEL 8 for PKI-based authentication has valid certificates by constructing a certification path (which includes status information) to an accepted trust anchor. | pem file exists in correct place
     exists: true
-    skip: {{ .Vars.skip_sssd_check }}
     meta:
       Cat: 2
       CCI: CCI-000048
@@ -21,7 +21,6 @@ command:
     - 'Not After : Dec 30 18:46:41 2029 GMT'
     - 'Signature Algorithm: sha256WithRSAEncryption'
     - 'fOs/QbP1b0s6Xq5vk3aY0vGZnUXEjnI='
-    skip: {{ .Vars.skip_sssd_check }}
     meta:
       Cat: 2
       CCI: CCI-000048
@@ -29,4 +28,5 @@ command:
       Rule_ID: SV-230229r858739_rule
       STIG_ID: RHEL-08-010090
       Vul_ID: V-230229
+  {{ end }}
 {{ end }}
