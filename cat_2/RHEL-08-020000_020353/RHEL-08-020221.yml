@@ -5,8 +5,8 @@ command:
     exec: grep -i pwhistory /etc/pam.d/password-auth
     exit-status: 0
     stdout:
-    - '/^password\s+required pam_pwhistory.so.*\sremember=5.*/'
-    - '!/^password\s+required pam_pwhistory.so.*\sremember=[0-4].*/'
+    - '/^password\s+(required|requisite) pam_pwhistory.so.*\sremember=5.*/'
+    - '!/^password\s+(required|requisite) pam_pwhistory.so.*\sremember=[0-4].*/'
     meta:
       Cat: 2
       CCI: CCI-00200
