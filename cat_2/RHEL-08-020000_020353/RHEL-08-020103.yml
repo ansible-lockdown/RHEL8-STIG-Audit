@@ -1,4 +1,4 @@
-{{ if lt .Vars.os_release "8.4" }}
+{{ if lt .Vars.OS_ver "8.4" }}
   {{ if .Vars.RHEL_08_020103 }}
 command:
   password_auth_retry:
