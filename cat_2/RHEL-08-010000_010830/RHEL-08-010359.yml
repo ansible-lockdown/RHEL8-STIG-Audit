@@ -19,6 +19,7 @@ command:
       or:
       - 0
       - 1
+      - 7
     stdout:
     - '/^End timestamp/'
     meta:
@@ -41,7 +42,7 @@ file:
       Vul_ID: V-251710
   /var/lib/aide/aide.db.new.gz:
     title: RHEL-08-010359 | The RHEL 8 operating system must use a file integrity tool to verify correct operation of all security functions.| aide db new file"
-    exists: absent
+    exists: false
     meta:
       Cat: 2
       CCI: CCI-002696

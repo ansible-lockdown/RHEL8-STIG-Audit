@@ -1,12 +1,14 @@
+---
+
 {{ if .Vars.RHEL_08_010671 }}
 command:
   kernel_core_pattern:
-    title: RHEL-08-010671 | RHEL 8 must disable the kernel.core_pattern. | live _check
+    title: RHEL-08-010671 | RHEL 8 must disable the kernel.core_pattern. | live_check
     exec: sysctl kernel.core_pattern
     exit-status: 0
     stdout:
     - 'kernel.core_pattern = |/bin/false'
-    - 'kernel.core_pattern =.*(?<!\|\/bin\/false)$/'
+    - '!/kernel.core_pattern = /|\/bin\/true/'
     meta:
       Cat: 2
       CCI: CCI-000366

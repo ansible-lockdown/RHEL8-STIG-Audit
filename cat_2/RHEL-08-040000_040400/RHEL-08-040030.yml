@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_040030 }}
 command:
   check_firewall_manually:
-    title: RHEL-08-040030 | RHEL 8 must be configured to prohibit or restrict the use of functions, ports, protocols, and/or services, as defined in the Ports, Protocols, and Services Management (PPSM) Category Assignments List (CAL) and vulnerability assessments.
+    title: RHEL-08-040030 | RHEL 8 must be configured to prohibit or restrict the use of functions, ports, protocols, and/or services, as defined in the Ports, Protocols, and Services Management (PPSM) Category Assignments List (CAL) and vulnerability assessments. | Manual Check
     exec: echo "Please investigate firewall is configured as expected"
     exit-status: 0
     stdout:
