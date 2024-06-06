@@ -33,6 +33,8 @@ gpg_key:
 
 rhel8stig_os_version_pre_8_2: false
 
+# Please adjust accordingly
+OS_ver: 8.4
 # turn the categories on/off
 rhel8stig_cat1: true
 rhel8stig_cat2: true

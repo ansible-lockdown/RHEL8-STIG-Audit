@@ -1,12 +1,14 @@
+---
+
 {{ if .Vars.RHEL_08_040020 }}
 command:
   uvcvideo_modprobe:
     title: RHEL-08-040020 | RHEL 8 must cover or disable the built-in or attached camera when not in use. | modprobe.conf
-    exec: grep -r uvcvideo /etc/modprobe.d/* | grep "/bin/true"
+    exec: grep -r uvcvideo /etc/modprobe.d/*
     exit-status: 0
     stdout:
-    - '/^\/etc\/modprobe.d/.*:install uvcvideo /bin/false/'
-    - '!/^\/etc\/modprobe.d/.*:install uvcvideo /bin/true/'
+    - '/^\/etc\/modprobe.d/.*:install uvcvideo \/bin\/false/'
+    - '!/^\/etc\/modprobe.d/.*:install uvcvideo \/bin\/true/'
     meta:
       Cat: 2
       CCI: CCI-000381
