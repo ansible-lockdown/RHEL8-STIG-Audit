@@ -1,5 +1,5 @@
 {{ if .Vars.RHEL_08_010170 }}
-command: 
+command:
   getenforce:
     title: RHEL-08-010170 | RHEL 8 must use a Linux Security Module configured to enforce limits on system services. | selinux running status
     exec: getenforce
@@ -9,8 +9,9 @@ command:
     meta:
       Cat: 2
       CCI: CCI-001084
+      NIST800-53R4: SC-3
       Group_Title: SRG-OS-000134-GPOS-00068
-      Rule_ID: SV-230240r627750_rule
+      Rule_ID: SV-230240r1017059_rule
       STIG_ID: RHEL-08-010170
       Vul_ID: V-230240
   selinux_conf_enforce:
@@ -24,8 +25,9 @@ command:
     meta:
       Cat: 2
       CCI: CCI-001084
+      NIST800-53R4: SC-3
       Group_Title: SRG-OS-000134-GPOS-00068
-      Rule_ID: SV-230240r627750_rule
+      Rule_ID: SV-230240r1017059_rule
       STIG_ID: RHEL-08-010170
       Vul_ID: V-230240
 {{ end }}

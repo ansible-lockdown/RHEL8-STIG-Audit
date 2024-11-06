@@ -12,6 +12,7 @@ command:
     meta:
       Cat: 2
       CCI: CCI-000048
+      NIST800-53R4: AC-8
       Group_Title: SRG-OS-000023-GPOS-00006
       Rule_ID: SV-230225r951590_rule
       STIG_ID: RHEL-08-010040
@@ -25,6 +26,7 @@ file:
     meta:
       Cat: 2
       CCI: CCI-000048
+      NIST800-53R4: AC-8
       Group_Title: SRG-OS-000023-GPOS-00006
       Rule_ID: SV-230225r951590_rule
       STIG_ID: RHEL-08-010040

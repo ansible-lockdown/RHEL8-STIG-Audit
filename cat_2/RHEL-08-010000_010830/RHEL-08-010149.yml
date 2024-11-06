@@ -11,8 +11,9 @@ file:
     meta:
       Cat: 1
       CCI: CCI-000213
+      NIST800-53R4: AC-3
       Group_Title: SRG-OS-000080-GPOS-00048
-      Rule_ID: SV-244522r792984_rule
+      Rule_ID: SV-244522r1017328_rule
       STIG_ID: RHEL-08-010149
       Vul_ID: V-244522
 command:
@@ -26,8 +27,9 @@ command:
     meta:
       Cat: 1
       CCI: CCI-000213
+      NIST800-53R4: AC-3
       Group_Title: SRG-OS-000080-GPOS-00048
-      Rule_ID: SV-244522r792984_rule
+      Rule_ID: SV-244522r1017328_rule
       STIG_ID: RHEL-08-010149
       Vul_ID: V-244522
   checkboot_superuser:
@@ -42,8 +44,9 @@ command:
     meta:
       Cat: 1
       CCI: CCI-000213
+      NIST800-53R4: AC-3
       Group_Title: SRG-OS-000080-GPOS-00048
-      Rule_ID: SV-244522r792984_rule
+      Rule_ID: SV-244522r1017328_rule
       STIG_ID: RHEL-08-010149
       Vul_ID: V-244522
   {{ end }}

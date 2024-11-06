@@ -8,8 +8,9 @@ file:
     meta:
       Cat: 2
       CCI: CCI-000213
+      NIST800-53R4: AC-3
       Group_Title: SRG-OS-000080-GPOS-00048
-      Rule_ID: SV-230236r627750_rule
+      Rule_ID: SV-230236r1017055_rule
       STIG_ID: RHEL-08-010151
       Vul_ID: V-230236
 {{ end }}

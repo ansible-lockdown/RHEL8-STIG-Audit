@@ -7,8 +7,9 @@ file:
     meta:
       Cat: 2
       CCI: CCI-000048
+      NIST800-53R4: IA-5
       Group_Title: SRG-OS-000066-GPOS-00034
-      Rule_ID: SV-230229r858739_rule
+      Rule_ID: SV-230229r1017048_rule
       STIG_ID: RHEL-08-010090
       Vul_ID: V-230229
 command:
@@ -24,8 +25,9 @@ command:
     meta:
       Cat: 2
       CCI: CCI-000048
+      NIST800-53R4: IA-5
       Group_Title: SRG-OS-000066-GPOS-00034
-      Rule_ID: SV-230229r858739_rule
+      Rule_ID: SV-230229r1017048_rule
       STIG_ID: RHEL-08-010090
       Vul_ID: V-230229
   {{ end }}
