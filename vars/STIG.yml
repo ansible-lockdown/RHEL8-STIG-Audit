@@ -1,5 +1,5 @@
 ## metadata for Audit benchmark
-benchmark_version: '1.13'
+benchmark_version: '2.1'
 
 # set to redhat/rocky/alma/oracle
 rhel8stig_os_distribution: redhat
@@ -34,7 +34,7 @@ gpg_key:
 rhel8stig_os_version_pre_8_2: false
 
 # Please adjust accordingly
-OS_ver: 8.4
+OS_ver: 8.10
 # turn the categories on/off
 rhel8stig_cat1: true
 rhel8stig_cat2: true
@@ -43,7 +43,7 @@ rhel8stig_cat3: true
 # Some tests may need to scan every filesystem or have an impact on a system
 # these may need be scheduled to minimise impact
 run_heavy_tests: true
-timeout_ms: 60000
+timeout_ms: 120000
 
 # To be set if not running via run_audit.sh script
 os_release: 8.5  # This is also set and overridden by the run_audit script.
@@ -90,7 +90,6 @@ RHEL_08_040200: true
 RHEL_08_040360: true
 
 # Cat 2 rules
-RHEL_08_010001: true
 RHEL_08_010010: true
 RHEL_08_010019: true
 RHEL_08_010030: true
@@ -229,12 +228,8 @@ RHEL_08_020030: true
 RHEL_08_020031: true
 RHEL_08_020032: true
 RHEL_08_020035: true
-RHEL_08_020039: true
-RHEL_08_020040: true
-RHEL_08_020041: true
 RHEL_08_020050: true
 RHEL_08_020060: true
-RHEL_08_020070: true
 RHEL_08_020080: true
 RHEL_08_020081: true
 RHEL_08_020082: true
@@ -255,8 +250,6 @@ RHEL_08_020180: true
 RHEL_08_020190: true
 RHEL_08_020200: true
 RHEL_08_020210: true
-RHEL_08_020220: true
-RHEL_08_020221: true
 RHEL_08_020230: true
 RHEL_08_020231: true
 RHEL_08_020240: true
@@ -431,7 +424,6 @@ RHEL_08_010540: true
 RHEL_08_010541: true
 RHEL_08_010542: true
 RHEL_08_020024: true
-RHEL_08_020042: true
 RHEL_08_020340: true
 RHEL_08_030063: true
 RHEL_08_030601: true
