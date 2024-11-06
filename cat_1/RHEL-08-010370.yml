@@ -11,6 +11,7 @@ command:
     meta:
       Cat: 1
       CCI: CCI-001749
+      NIST800-53R4: CM-5
       Group_Title: SRG-OS-000366-GPOS-00153
       Rule_ID: SV-230264r880711_rule
       STIG_ID: RHEL-08-010370
@@ -25,6 +26,7 @@ command:
     meta:
       Cat: 1
       CCI: CCI-001749
+      NIST800-53R4: CM-5
       Group_Title: SRG-OS-000366-GPOS-00153
       Rule_ID: SV-230264r880711_rule
       STIG_ID: RHEL-08-010370
@@ -39,8 +41,9 @@ command:
     meta:
       Cat: 1
       CCI: CCI-001749
+      NIST800-53R4: CM-5
       Group_Title: SRG-OS-000366-GPOS-00153
-      Rule_ID: SV-230264r880711_rule
+      Rule_ID: SV-230264r1017377_rule
       STIG_ID: RHEL-08-010370
       Vul_ID: V-230264
 {{ end }}

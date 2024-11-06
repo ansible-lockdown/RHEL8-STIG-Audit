@@ -11,8 +11,9 @@ file:
     meta:
       Cat: 1
       CCI: CCI-000366
+      NIST800-53R4: CM-6
       Group_Title: SRG-OS-000480-GPOS-00229
-      Rule_ID: SV-230329r627750_rule
+      Rule_ID: SV-230329r1017140_rule
       STIG_ID: RHEL-08-010820
       Vul_ID: V-230329
   {{ end }}

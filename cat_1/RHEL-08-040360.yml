@@ -3,11 +3,12 @@ package:
   vsftpd:
     title: RHEL-08-040360 | A File Transfer Protocol (FTP) server package must not be installed unless mission essential on RHEL 8.
     installed: false
-    meta: 
+    meta:
       Cat: 1
       CCI: CCI-000366
+      NIST800-53R4: CM-6
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230558r627750_rule
+      Rule_ID: SV-230558r1017320_rule
       STIG_ID: RHEL-08-040360
       Vul_ID: V-230558
 {{ end }}

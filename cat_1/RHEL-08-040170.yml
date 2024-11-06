@@ -1,6 +1,6 @@
 {{ if .Vars.RHEL_08_040170 }}
 command:
-  ctrl_alt_del: 
+  ctrl_alt_del:
     title: RHEL-08-040170 | The x86 Ctrl-Alt-Delete key sequence must be disabled on RHEL 8.
     exec: systemctl status ctrl-alt-del.target
     exit-status: 3
@@ -9,8 +9,9 @@ command:
     meta:
       Cat: 1
       CCI: CCI-000366
+      NIST800-53R4: CM-6
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230529r833338_rule
+      Rule_ID: SV-230529r1017289_rule
       STIG_ID: RHEL-08-040170
       Vul_ID: V-230529
 {{ end }}
