@@ -9,8 +9,9 @@ command:
     meta:
       Cat: 2
       CCI: CCI-000366
+      NIST800-53R4: CM-6
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230379r627750_rule
+      Rule_ID: SV-230379r1017190_rule
       STIG_ID: RHEL-08-020320
       Vul_ID: V-230379
   validate_sys_acct:
@@ -22,8 +23,9 @@ command:
     meta:
       Cat: 2
       CCI: CCI-000366
+      NIST800-53R4: CM-6
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230379r627750_rule
+      Rule_ID: SV-230379r1017190_rule
       STIG_ID: RHEL-08-020320
       Vul_ID: V-230379
 {{ end }}

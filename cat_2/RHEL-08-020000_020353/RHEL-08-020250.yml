@@ -13,8 +13,13 @@ file:
     meta:
       Cat: 2
       CCI: CCI-000765
-      Group_Title: SRG-OS-000105-GPOS-00052
-      Rule_ID: SV-230372r627750_rule
+      NIST800-53R4: IA-2
+      Group_Title:
+      - SRG-OS-000105-GPOS-00052
+      - SRG-OS-000106-GPOS-00053
+      - SRG-OS-000107-GPOS-00054
+      - SRG-OS-000108-GPOS-00055
+      Rule_ID: SV-230372r1017184_rule
       STIG_ID: RHEL-08-020250
       Vul_ID: V-230372
   /etc/pam.d/smartcard-auth:
@@ -25,8 +30,13 @@ file:
     meta:
       Cat: 2
       CCI: CCI-000765
-      Group_Title: SRG-OS-000105-GPOS-00052
-      Rule_ID: SV-230372r627750_rule
+      NIST800-53R4: IA-2
+      Group_Title:
+      - SRG-OS-000105-GPOS-00052
+      - SRG-OS-000106-GPOS-00053
+      - SRG-OS-000107-GPOS-00054
+      - SRG-OS-000108-GPOS-00055
+      Rule_ID: SV-230372r1017184_rule
       STIG_ID: RHEL-08-020250
       Vul_ID: V-230372
   /etc/pam.d/system-auth:
@@ -37,8 +47,13 @@ file:
     meta:
       Cat: 2
       CCI: CCI-000765
-      Group_Title: SRG-OS-000105-GPOS-00052
-      Rule_ID: SV-230372r627750_rule
+      NIST800-53R4: IA-2
+      Group_Title:
+      - SRG-OS-000105-GPOS-00052
+      - SRG-OS-000106-GPOS-00053
+      - SRG-OS-000107-GPOS-00054
+      - SRG-OS-000108-GPOS-00055
+      Rule_ID: SV-230372r1017184_rule
       STIG_ID: RHEL-08-020250
       Vul_ID: V-230372
   {{ end }}

@@ -10,8 +10,9 @@ command:
     meta:
       Cat: 2
       CCI: CCI-000205
+      NIST800-53R4: IA-5
       Group_Title: SRG-OS-000078-GPOS-00046
-      Rule_ID: SV-230369r858785_rule
+      Rule_ID: SV-230369r1017181_rule
       STIG_ID: RHEL-08-020230
       Vul_ID: V-230369
 {{ end }}

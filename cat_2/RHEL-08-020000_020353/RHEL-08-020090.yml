@@ -21,9 +21,10 @@ command:
     - '/domains = .*/'
     meta:
       Cat: 2
-      CCI: CCI-000048
+      CCI: CCI-000187
+      NIST800-53R4: IA-5
       Group_Title: SRG-OS-000068-GPOS-00036
-      Rule_ID: SV-230355r858743_rule
+      Rule_ID: SV-230355r1017168_rule
       STIG_ID: RHEL-08-020090
       Vul_ID: V-230355
   {{ end }}

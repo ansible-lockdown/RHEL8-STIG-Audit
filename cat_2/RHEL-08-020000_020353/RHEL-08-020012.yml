@@ -12,9 +12,11 @@ command:
     - '!/^#.*pam_faillock.so/'
     meta:
       Cat: 2
-      CCI: CCI-00044
-      Group_Title: SRG-OS-000021-GPOS-00005
-      Rule_ID: SV-230334r627750_rule
+      NIST800-53R4: AC-7
+      Group_Title:
+      - SRG-OS-000021-GPOS-00005
+      - SRG-OS-000329-GPOS-00128
+      Rule_ID: SV-230334r1017146_rule
       STIG_ID: RHEL-08-020012
       Vul_ID: V-230334
   system_auth_login_time:
@@ -28,9 +30,11 @@ command:
     - '!/^#.*pam_faillock.so/'
     meta:
       Cat: 2
-      CCI: CCI-00044
-      Group_Title: SRG-OS-000021-GPOS-00005
-      Rule_ID: SV-230334r627750_rule
+      NIST800-53R4: AC-7
+      Group_Title:
+      - SRG-OS-000021-GPOS-00005
+      - SRG-OS-000329-GPOS-00128
+      Rule_ID: SV-230334r1017146_rule
       STIG_ID: RHEL-08-020012
       Vul_ID: V-230334
   {{ end }}

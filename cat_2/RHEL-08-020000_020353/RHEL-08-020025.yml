@@ -13,8 +13,11 @@ command:
     meta:
       Cat: 2
       CCI: CCI-00044
-      Group_Title: SRG-OS-000021-GPOS-00005
-      Rule_ID: SV-244533r743848_rule
+      NIST800-53R4: AC-7
+      Group_Title:
+      - SRG-OS-000021-GPOS-00005
+      - SRG-OS-000329-GPOS-00128
+      Rule_ID: SV-244533r1017340_rule
       STIG_ID: RHEL-08-020025
       Vul_ID: V-244533
   {{ end }}

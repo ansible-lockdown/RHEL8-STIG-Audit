@@ -10,8 +10,12 @@ command:
     meta:
       Cat: 2
       CCI: CCI-000056
-      Group_Title: SRG-OS-000029-GPOS-00010
-      Rule_ID: SV-244535r743854_rule
+      NIST800-53R4: AC-11
+      Group_Title:
+      - SRG-OS-000029-GPOS-00010
+      - SRG-OS-000031-GPOS-00012
+      - SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-244535r1017342_rule
       STIG_ID: RHEL-08-020031
       Vul_ID: V-244535
   dconf_screenlock:
@@ -25,8 +29,12 @@ command:
     meta:
       Cat: 2
       CCI: CCI-000056
-      Group_Title: SRG-OS-000029-GPOS-00010
-      Rule_ID: SV-244535r743854_rule
+      NIST800-53R4: AC-11
+      Group_Title:
+      - SRG-OS-000029-GPOS-00010
+      - SRG-OS-000031-GPOS-00012
+      - SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-244535r1017342_rule
       STIG_ID: RHEL-08-020031
       Vul_ID: V-244535
   {{ end }}

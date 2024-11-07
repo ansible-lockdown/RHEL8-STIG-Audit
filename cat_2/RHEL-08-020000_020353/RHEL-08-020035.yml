@@ -12,8 +12,9 @@ file:
     meta:
       Cat: 2
       CCI: CCI-001133
+      NIST800-53R4: SC-10
       Group_Title: SRG-OS-000163-GPOS-00072
-      Rule_ID: SV-257258r942953_rule
+      Rule_ID: SV-257258r1017375_rule
       STIG_ID: RHEL-08-020035
       Vul_ID: V-257258
   killuserproc_logind.conf:
@@ -26,8 +27,9 @@ file:
     meta:
       Cat: 2
       CCI: CCI-001133
+      NIST800-53R4: SC-10
       Group_Title: SRG-OS-000163-GPOS-00072
-      Rule_ID: SV-257258r942953_rule
+      Rule_ID: SV-257258r1017375_rule
       STIG_ID: RHEL-08-020035
       Vul_ID: V-257258
 {{ end }}

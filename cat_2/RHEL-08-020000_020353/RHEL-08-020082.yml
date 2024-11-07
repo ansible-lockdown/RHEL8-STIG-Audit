@@ -10,8 +10,12 @@ command:
     meta:
       Cat: 2
       CCI: CCI-000057
-      Group_Title: SRG-OS-000029-GPOS-00010
-      Rule_ID: SV-244539r743866_rule
+      NIST800-53R4: AC-11
+      Group_Title:
+      - SRG-OS-000029-GPOS-00010
+      - SRG-OS-000031-GPOS-00012
+      - SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-244539r1017346_rule
       STIG_ID: RHEL-08-020082
       Vul_ID: V-244539
 file:
@@ -24,8 +28,12 @@ file:
     meta:
       Cat: 2
       CCI: CCI-000057
-      Group_Title: SRG-OS-000029-GPOS-00010
-      Rule_ID: SV-244539r743866_rule
+      NIST800-53R4: AC-11
+      Group_Title:
+      - SRG-OS-000029-GPOS-00010
+      - SRG-OS-000031-GPOS-00012
+      - SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-244539r1017346_rule
       STIG_ID: RHEL-08-020082
       Vul_ID: V-244539
   {{ end }}

@@ -10,7 +10,10 @@ command:
     meta:
       Cat: 2
       CCI: CCI-000057
-      Group_Title: SRG-OS-000029-GPOS-00009
+      NIST800-53R4: AC-11
+      Group_Title:
+      - SRG-OS-000029-GPOS-00010
+      - SRG-OS-000031-GPOS-00012
       Rule_ID: SV-230352r646876_rule
       STIG_ID: RHEL-08-020060
       Vul_ID: V-230352

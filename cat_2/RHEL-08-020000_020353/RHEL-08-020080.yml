@@ -10,8 +10,12 @@ command:
     meta:
       Cat: 2
       CCI: CCI-000057
-      Group_Title: SRG-OS-000029-GPOS-00010
-      Rule_ID: SV-230354r743990_rule
+      NIST800-53R4: AC-11
+      Group_Title:
+      - SRG-OS-000029-GPOS-00010
+      - SRG-OS-000031-GPOS-00012
+      - SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230354r1017167_rule
       STIG_ID: RHEL-08-020080
       Vul_ID: V-230347
   dconf_user_lock_override:
@@ -23,9 +27,13 @@ command:
     meta:
       Cat: 2
       CCI: CCI-000057
-      Group_Title: SRG-OS-000029-GPOS-00010
-      Rule_ID: SV-230354r743990_rule
+      NIST800-53R4: AC-11
+      Group_Title:
+      - SRG-OS-000029-GPOS-00010
+      - SRG-OS-000031-GPOS-00012
+      - SRG-OS-000480-GPOS-00227
+      Rule_ID: SV-230354r1017167_rule
       STIG_ID: RHEL-08-020080
-      Vul_ID: V-230347
+      Vul_ID: V-230354
   {{ end }}
 {{ end }}
