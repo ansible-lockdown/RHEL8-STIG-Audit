@@ -6,8 +6,9 @@ mount:
     meta:
       Cat: 3
       CCI: CCI-000366
+      NIST800-53R4: CM-6
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230294r627750_rule
+      Rule_ID: SV-230294r1017105_rule
       STIG_ID: RHEL-08-010542
       Vul_ID: V-230294
 {{ end }}

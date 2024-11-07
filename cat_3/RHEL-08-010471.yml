@@ -9,8 +9,9 @@ service:
     meta:
       Cat: 3
       CCI: CCI-000366
+      NIST800-53R4: CM-6
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230285r928587_rule
+      Rule_ID: SV-230285r1017096_rule
       STIG_ID: RHEL-08-010471
       Vul_ID: V-230285
 {{ end }}

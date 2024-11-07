@@ -5,12 +5,13 @@ command:
     exec: grep -i strong /etc/sysconfig/sshd
     exit-status: 0
     stdout:
-    - '/^SSH_USE_STRONG_RNG=32/'
+    - '/^SSH_USE_STRONG_RNG\s*=\s*32/'
     meta:
       Cat: 3
       CCI: CCI-000366
+      NIST800-53R4: CM-6
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230253r627750_rule
+      Rule_ID: SV-230253r1017071_rule
       STIG_ID: RHEL-08-010292
       Vul_ID: V-230253
 {{ end }}

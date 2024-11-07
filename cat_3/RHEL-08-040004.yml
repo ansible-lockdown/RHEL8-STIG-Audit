@@ -10,8 +10,9 @@ command:
     meta:
       Cat: 3
       CCI: CCI-000381
+      NIST800-53R4: CM-7
       Group_Title: SRG-OS-000095-GPOS-00049
-      Rule_ID: SV-230491r818842_rule
+      Rule_ID: SV-230491r1017274_rule
       STIG_ID: RHEL-08-040004
       Vul_ID: V-230491
   grub_pti_check:
@@ -24,8 +25,9 @@ command:
     meta:
       Cat: 3
       CCI: CCI-000381
+      NIST800-53R4: CM-7
       Group_Title: SRG-OS-000095-GPOS-00049
-      Rule_ID: SV-230491r818842_rule
+      Rule_ID: SV-230491r1017274_rule
       STIG_ID: RHEL-08-040004
       Vul_ID: V-230491
 {{ end }}

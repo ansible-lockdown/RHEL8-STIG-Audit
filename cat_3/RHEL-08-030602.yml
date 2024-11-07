@@ -10,8 +10,9 @@ command:
     meta:
       Cat: 3
       CCI: CCI-001849
+      NIST800-53R4: AU-4
       Group_Title: SRG-OS-000341-GPOS-00132
-      Rule_ID: SV-230469r792906_rule
+      Rule_ID: SV-230469r958752_rule
       STIG_ID: RHEL-08-030602
       Vul_ID: V-230469
   grub_audit_backlog:
@@ -24,8 +25,9 @@ command:
     meta:
       Cat: 3
       CCI: CCI-001849
+      NIST800-53R4: AU-4
       Group_Title: SRG-OS-000341-GPOS-00132
-      Rule_ID: SV-230469r792906_rule
+      Rule_ID: SV-230469r958752_rule
       STIG_ID: RHEL-08-030602
       Vul_ID: V-230469
 {{ end }}

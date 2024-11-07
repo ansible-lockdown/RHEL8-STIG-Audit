@@ -10,8 +10,17 @@ command:
     meta:
       Cat: 3
       CCI: CCI-000366
-      Group_Title: SRG-OS-000062-GPOS-00031
-      Rule_ID: SV-230468r792904_rule
+      NIST800-53R4: AU-12
+      Group_Title:
+      - SRG-OS-000062-GPOS-00031
+      - SRG-OS-000037-GPOS-00015
+      - SRG-OS-000042-GPOS-00020
+      - SRG-OS-000062-GPOS-00031
+      - SRG-OS-000392-GPOS-00172
+      - SRG-OS-000462-GPOS-00206
+      - SRG-OS-000471-GPOS-00215
+      - SRG-OS-000473-GPOS-00218
+      Rule_ID: SV-230468r1017260_rule
       STIG_ID: RHEL-08-030601
       Vul_ID: V-230468
   grub_audit_check:
@@ -24,8 +33,17 @@ command:
     meta:
       Cat: 3
       CCI: CCI-000366
-      Group_Title: SRG-OS-000062-GPOS-00031
-      Rule_ID: SV-230468r792904_rule
+      NIST800-53R4: AU-12
+      Group_Title:
+      - SRG-OS-000062-GPOS-00031
+      - SRG-OS-000037-GPOS-00015
+      - SRG-OS-000042-GPOS-00020
+      - SRG-OS-000062-GPOS-00031
+      - SRG-OS-000392-GPOS-00172
+      - SRG-OS-000462-GPOS-00206
+      - SRG-OS-000471-GPOS-00215
+      - SRG-OS-000473-GPOS-00218
+      Rule_ID: SV-230468r1017260_rule
       STIG_ID: RHEL-08-030601
       Vul_ID: V-230468
 {{ end }}
