@@ -6,8 +6,9 @@ package:
     meta:
       Cat: 2
       CCI: CCI-000778
+      NIST800-53R4: IA-3
       Group_Title: SRG-OS-000114-GPOS-00059
-      Rule_ID: SV-230502r627750_rule
+      Rule_ID: SV-230502r1017284_rule
       STIG_ID: RHEL-08-040070
       Vul_ID: V-230502
 service:
@@ -18,8 +19,9 @@ service:
     meta:
       Cat: 2
       CCI: CCI-000778
+      NIST800-53R4: IA-3
       Group_Title: SRG-OS-000114-GPOS-00059
-      Rule_ID: SV-230502r627750_rule
+      Rule_ID: SV-230502r1017284_rule
       STIG_ID: RHEL-08-040070
       Vul_ID: V-230502
 {{ end }}

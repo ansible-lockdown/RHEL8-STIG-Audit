@@ -6,8 +6,9 @@ kernel-param:
     meta:
       Cat: 2
       CCI: CCI-000366
+      NIST800-53R4: CM-6
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-244550r858791_rule
+      Rule_ID: SV-244550r1017350_rule
       STIG_ID: RHEL-08-040209
       Vul_ID: V-244550
 command:
@@ -24,8 +25,9 @@ command:
     meta:
       Cat: 2
       CCI: CCI-000366
+      NIST800-53R4: CM-6
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-244550r858791_rule
+      Rule_ID: SV-244550r1017350_rule
       STIG_ID: RHEL-08-040209
       Vul_ID: V-244550
 {{ end }}

@@ -10,8 +10,17 @@ command:
     meta:
       Cat: 2
       CCI: CCI-000169
-      Group_Title: SRG-OS-000062-GPOS-00031
-      Rule_ID: SV-230455r810459_rule
+      NIST800-53R4: AU-12
+      Group_Title:
+      - SRG-OS-000062-GPOS-00031
+      - SRG-OS-000037-GPOS-00015
+      - SRG-OS-000042-GPOS-00020
+      - SRG-OS-000392-GPOS-00172
+      - SRG-OS-000462-GPOS-00206
+      - SRG-OS-000471-GPOS-00215
+      - SRG-OS-000064-GPOS-00033
+      - SRG-OS-000466-GPOS-00210
+      Rule_ID: SV-230455r1017251_rule
       STIG_ID: RHEL-08-030480
       Vul_ID: V-230455
   auditd_chown_live:
@@ -24,8 +33,17 @@ command:
     meta:
       Cat: 2
       CCI: CCI-000169
-      Group_Title: SRG-OS-000062-GPOS-00031
-      Rule_ID: SV-230455r810459_rule
+      NIST800-53R4: AU-12
+      Group_Title:
+      - SRG-OS-000062-GPOS-00031
+      - SRG-OS-000037-GPOS-00015
+      - SRG-OS-000042-GPOS-00020
+      - SRG-OS-000392-GPOS-00172
+      - SRG-OS-000462-GPOS-00206
+      - SRG-OS-000471-GPOS-00215
+      - SRG-OS-000064-GPOS-00033
+      - SRG-OS-000466-GPOS-00210
+      Rule_ID: SV-230455r1017251_rule
       STIG_ID: RHEL-08-030480
       Vul_ID: V-230455
 {{ end }}

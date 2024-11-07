@@ -3,7 +3,7 @@ command:
   netstream_driver:
     title: RHEL-08-030710 | RHEL 8 must encrypt the transfer of audit records off-loaded onto a different system or media from the system being audited.
     exec: grep -i '$DefaultNetstreamDriver' /etc/rsyslog.conf /etc/rsyslog.d/*.conf
-    exit-status: 
+    exit-status:
       or:
       - 0
       - 2
@@ -12,14 +12,17 @@ command:
     meta:
       Cat: 2
       CCI: CCI-001851
-      Group_Title: SRG-OS-000342-GPOS-00133
-      Rule_ID: SV-230481r818840_rule
+      NIST800-53R4: AU-4
+      Group_Title:
+      - SRG-OS-000342-GPOS-00133
+      - SRG-OS-000479-GPOS-00224
+      Rule_ID: SV-230481r958754_rule
       STIG_ID: RHEL-08-030710
       Vul_ID: V-230481
   netstream_driver_mode:
     title: RHEL-08-030710 | RHEL 8 must encrypt the transfer of audit records off-loaded onto a different system or media from the system being audited.
     exec: grep -i '$ActionSendStreamDriverMode' /etc/rsyslog.conf /etc/rsyslog.d/*.conf
-    exit-status: 
+    exit-status:
       or:
       - 0
       - 2
@@ -29,8 +32,11 @@ command:
     meta:
       Cat: 2
       CCI: CCI-001851
-      Group_Title: SRG-OS-000342-GPOS-00133
-      Rule_ID: SV-230481r818840_rule
+      NIST800-53R4: AU-4
+      Group_Title:
+      - SRG-OS-000342-GPOS-00133
+      - SRG-OS-000479-GPOS-00224
+      Rule_ID: SV-230481r958754_rule
       STIG_ID: RHEL-08-030710
       Vul_ID: V-230481
 {{ end }}

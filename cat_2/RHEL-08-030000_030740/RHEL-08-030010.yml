@@ -3,8 +3,8 @@ command:
   cron_logging:
     title:  Cron logging must be implemented in RHEL 8.
     exec: grep -s cron /etc/rsyslog.conf /etc/rsyslog.d/*.conf
-    exit-status: 
-      or: 
+    exit-status:
+      or:
       - 0
       - 2
     stdout:
@@ -13,8 +13,9 @@ command:
     meta:
       Cat: 2
       CCI: CCI-000366
+      NIST800-53R4: CM-6
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230387r743996_rule
+      Rule_ID: SV-230387r1017195_rule
       STIG_ID: RHEL-08-030010
       Vul_ID: V-230387
 {{ end }}

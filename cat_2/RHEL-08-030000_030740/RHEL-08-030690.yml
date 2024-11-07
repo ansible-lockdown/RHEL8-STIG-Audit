@@ -3,7 +3,7 @@ command:
   remote_log_server_configured:
     title: RHEL-08-030690 | The RHEL 8 audit records must be off-loaded onto a different system or storage media from the system being audited.
     exec: grep "*.* @@{{ .Vars.rhel8stig_remotelog_server }}:{{ .Vars.rhel8stig_remotelog_port }}" /etc/rsyslog.conf /etc/rsyslog/d.*.conf
-    exit-status: 
+    exit-status:
       or:
       - 0
       - 2
@@ -12,8 +12,11 @@ command:
     meta:
       Cat: 2
       CCI: CCI-001851
-      Group_Title: SRG-OS-000342-GPOS-00133
-      Rule_ID: SV-230479r917883_rule
+      NIST800-53R4: AU-4
+      Group_Title:
+      - SRG-OS-000342-GPOS-00133
+      - SRG-OS-000479-GPOS-00224
+      Rule_ID: SV-230479r958754_rule
       STIG_ID: RHEL-08-030690
       Vul_ID: V-230479
 {{ end }}

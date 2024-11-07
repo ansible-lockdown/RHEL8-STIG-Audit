@@ -7,8 +7,9 @@ service:
     meta:
       Cat: 2
       CCI: CCI-002418
+      NIST800-53R4: SC-8
       Group_Title: SRG-OS-000423-GPOS-00187
-      Rule_ID: SV-230526r916422_rule
+      Rule_ID: SV-230526r958908_rule
       STIG_ID: RHEL-08-040160
       Vul_ID: V-230526
 {{ end }}
