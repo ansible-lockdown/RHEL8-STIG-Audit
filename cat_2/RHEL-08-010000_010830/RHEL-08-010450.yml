@@ -9,8 +9,9 @@ command:
     meta:
       Cat: 2
       CCI: CCI-002696
+      NIST800-53R4: SI-6
       Group_Title: SRG-OS-000445-GPOS-00199
-      Rule_ID: SV-230282r627750_rule
+      Rule_ID: SV-230282r958944_rule
       STIG_ID: RHEL-08-010450
       Vul_ID: V-230282
   selinux_config_targeted:
@@ -23,8 +24,9 @@ command:
     meta:
       Cat: 2
       CCI: CCI-002696
+      NIST800-53R4: SI-6
       Group_Title: SRG-OS-000445-GPOS-00199
-      Rule_ID: SV-230282r627750_rule
+      Rule_ID: SV-230282r958944_rule
       STIG_ID: RHEL-08-010450
       Vul_ID: V-230282
 {{ end }}

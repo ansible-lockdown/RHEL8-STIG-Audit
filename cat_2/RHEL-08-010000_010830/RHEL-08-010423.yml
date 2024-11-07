@@ -9,9 +9,11 @@ command:
     - '!/^kernelopts=.*\sslub_debug=[^P]\s.*$/'
     meta:
       Cat: 2
-      CCI: CCI-001084
-      Group_Title: SRG-OS-000134-GPOS-00068
-      Rule_ID: SV-230279r951598_rule
+      NIST800-53R4: SC-3
+      Group_Title:
+      - SRG-OS-000134-GPOS-00068
+      - SRG-OS-000433-GPOS-00192
+      Rule_ID: SV-230279r1017092_rule
       STIG_ID: RHEL-08-010423
       Vul_ID: V-230279
   default_grub_slub:
@@ -23,8 +25,11 @@ command:
     meta:
       Cat: 2
       CCI: CCI-001084
-      Group_Title: SRG-OS-000134-GPOS-00068
-      Rule_ID: SV-230279r951598_rule
+      NIST800-53R4: SC-3
+      Group_Title:
+      - SRG-OS-000134-GPOS-00068
+      - SRG-OS-000433-GPOS-00192
+      Rule_ID: SV-230279r1017092_rule
       STIG_ID: RHEL-08-010423
       Vul_ID: V-230279
 {{ end }}

@@ -10,8 +10,13 @@ command:
     meta:
       Cat: 2
       CCI: CCI-001453
-      Group_Title: SRG-OS-000250-GPOS-00093
-      Rule_ID: SV-244526r809334_rule
+      NIST800-53R4: AC-17
+      Group_Title:
+      - SRG-OS-000250-GPOS-00093
+      - SRG-OS-000393-GPOS-00173
+      - SRG-OS-000394-GPOS-00174
+      - SRG-OS-000125-GPOS-00065
+      Rule_ID: SV-244526r1017332_rule
       STIG_ID: RHEL-08-010287
       Vul_ID: V-244526
 {{ end }}

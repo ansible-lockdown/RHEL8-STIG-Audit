@@ -8,13 +8,14 @@ command:
       - 0
       - 2
     stdout:
-    - '/.*:StrictModes [yY][eE][sS]/'
-    - '!/.*:StrictModes [nN][oO]/'
+    - '/(?i).*:StrictModes yes/'
+    - '!/(?i).*:StrictModes no/'
     meta:
       Cat: 2
       CCI: CCI-000366
+      NIST800-53R4: CM-6
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230288r858701_rule
+      Rule_ID: SV-230288r1017099_rule
       STIG_ID: RHEL-08-010500
       Vul_ID: V-230288
 {{ end }}

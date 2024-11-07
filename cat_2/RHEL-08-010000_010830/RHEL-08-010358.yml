@@ -6,8 +6,9 @@ package:
     meta:
       Cat: 2
       CCI: CCI-001744
+      NIST800-53R4: CM-3
       Group_Title: SRG-OS-000363-GPOS-00150
-      Rule_ID: SV-2556974r902755_rule
+      Rule_ID: SV-256974r1017374_rule
       STIG_ID: RHEL-08-010358
       Vul_ID: V-256974
 {{ end }}

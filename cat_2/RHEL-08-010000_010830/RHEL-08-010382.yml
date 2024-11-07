@@ -1,9 +1,9 @@
 {{ if .Vars.RHEL_08_010382 }}
-command: 
+command:
   sudo_all_chk:
     title: RHEL-08-010382 | RHEL 8 must restrict privilege elevation to authorized personnel.
     exec: grep -iw 'ALL' /etc/sudoers /etc/sudoers.d/* | grep -v '.*\:#'
-    exit-status: 
+    exit-status:
       or:
       - 0
       - 1
@@ -13,8 +13,9 @@ command:
     meta:
       Cat: 2
       CCI: CCI-000366
+      NIST800-53R4: CM-6
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-237641r646893_rule
+      Rule_ID: SV-237641r1017324_rule
       STIG_ID: RHEL-08-010382
       Vul_ID: V-237641
 {{ end }}

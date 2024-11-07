@@ -9,8 +9,11 @@ file:
     meta:
       Cat: 2
       CCI: CCI-001453
-      Group_Title: SRG-OS-000250-GPOS-00093
-      Rule_ID: SV-230256r792859_rule
+      NIST800-53R4: AC-17
+      Group_Title:
+      - SRG-OS-000250-GPOS-00093
+      - SRG-OS-000423-GPOS-00187
+      Rule_ID: SV-230256r1017076_rule
       STIG_ID: RHEL-08-010295
       Vul_ID: V-230256
 {{ end }}

@@ -9,8 +9,12 @@ command:
     meta:
       Cat: 2
       CCI: CCI-001744
-      Group_Title: SRG-OS-000363-GPOS-00150
-      Rule_ID: SV-230263r902716_rule
+      NIST800-53R4: CM-3
+      Group_Title:
+      - SRG-OS-000363-GPOS-00150
+      - SRG-OS-000446-GPOS-00200
+      - SRG-OS-000447-GPOS-00201
+      Rule_ID: SV-230263r1017083_rule
       STIG_ID: RHEL-08-010360
       Vul_ID: V-230263
   aide_cron_job:
@@ -25,8 +29,12 @@ command:
     meta:
       Cat: 2
       CCI: CCI-001744
-      Group_Title: SRG-OS-000363-GPOS-00150
-      Rule_ID: SV-230263r902716_rule
+      NIST800-53R4: CM-3
+      Group_Title:
+      - SRG-OS-000363-GPOS-00150
+      - SRG-OS-000446-GPOS-00200
+      - SRG-OS-000447-GPOS-00201
+      Rule_ID: SV-230263r1017083_rule
       STIG_ID: RHEL-08-010360
       Vul_ID: V-230263
 file:
@@ -38,8 +46,12 @@ file:
     meta:
       Cat: 2
       CCI: CCI-001744
-      Group_Title: SRG-OS-000363-GPOS-00150
-      Rule_ID: SV-230263r902716_rule
+      NIST800-53R4: CM-3
+      Group_Title:
+      - SRG-OS-000363-GPOS-00150
+      - SRG-OS-000446-GPOS-00200
+      - SRG-OS-000447-GPOS-00201
+      Rule_ID: SV-230263r1017083_rule
       STIG_ID: RHEL-08-010360
       Vul_ID: V-230263
 {{ end }}

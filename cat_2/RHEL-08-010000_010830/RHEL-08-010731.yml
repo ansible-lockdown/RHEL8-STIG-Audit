@@ -5,7 +5,7 @@ command:
     title: RHEL-08-010731 | All RHEL 8 local interactive user home directory files must have mode 0750 or less permissive.
     exec: find /home/*/ -name "*" -type f -exec stat -c '%n %a' {} \; | grep -v "[6|7][0|4|5][0]" | grep -Ev ".(ba|c|z)sh(_profile|rc|_logout)"
     timeout: {{ .Vars.timeout_ms }}
-    exit-status: 
+    exit-status:
       or:
       - 0
       - 1
@@ -14,8 +14,9 @@ command:
     meta:
       Cat: 2
       CCI: CCI-000366
+      NIST800-53R4: CM-6
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-244531r743842_rule
+      Rule_ID: SV-244531r1017338_rule
       STIG_ID: RHEL-08-010731
       Vul_ID: V-244531
   {{ end }}

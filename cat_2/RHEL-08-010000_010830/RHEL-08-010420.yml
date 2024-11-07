@@ -9,14 +9,15 @@ command:
     meta:
       Cat: 2
       CCI: CCI-001953
+      NIST800-53R4: SI-16
       Group_Title: SRG-OS-000433-GPOS-00192
-      Rule_ID: SV-230276r627750_rule
+      Rule_ID: SV-230276r958928_rule
       STIG_ID: RHEL-08-010420
       Vul_ID: V-230276
   nx_cpu_check:
     title: RHEL-08-010420 | RHEL 8 must implement non-executable data to protect its memory from unauthorized code execution. | cpu nx abilty
     exec: grep -w 'flags' /proc/cpuinfo | grep -v nx
-    exit-status: 
+    exit-status:
       or:
       - 0
       - 1
@@ -25,8 +26,9 @@ command:
     meta:
       Cat: 2
       CCI: CCI-001953
+      NIST800-53R4: SI-16
       Group_Title: SRG-OS-000433-GPOS-00192
-      Rule_ID: SV-230276r627750_rule
+      Rule_ID: SV-230276r958928_rule
       STIG_ID: RHEL-08-010420
       Vul_ID: V-230276
 {{ end }}
