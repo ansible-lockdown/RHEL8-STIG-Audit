@@ -23,9 +23,9 @@
 # lower case variables are discovered or built from other variables
 
 # Goss benchmark variables (these should not need changing unless new release)
-BENCHMARK=CIS # Benchmark Name aligns to the audit
-BENCHMARK_VER=2.0.0
-BENCHMARK_OS=RHEL9
+BENCHMARK=STIG # Benchmark Name aligns to the audit
+BENCHMARK_VER=v2r1
+BENCHMARK_OS=RHEL8
 
 # Goss host Variables
 AUDIT_BIN="${AUDIT_BIN:-/usr/local/bin/goss}"  # location of the goss executable
