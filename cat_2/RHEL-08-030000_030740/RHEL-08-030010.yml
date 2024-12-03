@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_030010 }}
 command:
   cron_logging:
-    title:  Cron logging must be implemented in RHEL 8.
+    title: RHEL-08-030010 |Cron logging must be implemented in RHEL 8.
     exec: grep -s cron /etc/rsyslog.conf /etc/rsyslog.d/*.conf
     exit-status:
       or:
