@@ -27,6 +27,7 @@ BENCHMARK=STIG # Benchmark Name aligns to the audit
 BENCHMARK_VER=v2r1
 BENCHMARK_OS=RHEL8
 
+
 # Goss host Variables
 AUDIT_BIN="${AUDIT_BIN:-/usr/local/bin/goss}"  # location of the goss executable
 AUDIT_BIN_MIN_VER="0.4.4"
@@ -203,7 +204,7 @@ echo
 $AUDIT_BIN -g "$audit_content_dir/$AUDIT_FILE" --vars "$varfile_path"  --vars-inline "$audit_json_vars" v $format_output > "$audit_out"
 
 # create screen output
-if [ "$(grep -c test-count "$audit_out")" -ge 1 ]  || [ "$format" = junit ] || [ "$format" = tap ]; then
+if [ "$(grep -c Count: "$audit_out")" -ge 1 ]  || [ "$format" = junit ] || [ "$format" = tap ]; then
   eval $output_summary
   echo "Completed file can be found at $audit_out"
   echo "###############"
@@ -213,3 +214,4 @@ else
   echo -e "Fail: There were issues when running the audit please investigate $audit_out";
   exit 1
 fi
+
