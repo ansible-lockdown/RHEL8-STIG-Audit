@@ -2,7 +2,7 @@
 command:
   audit_rules_opasswd:
     title: RHEL-08-030140 | RHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/security/opasswd. | config check
-    exec: grep opasswd /etc/audit/audit.rules
+    exec: grep opasswd /etc/audit/rules.d/*
     exit-status: 0
     stdout:
     - '-w /etc/security/opasswd -p wa -k identity'

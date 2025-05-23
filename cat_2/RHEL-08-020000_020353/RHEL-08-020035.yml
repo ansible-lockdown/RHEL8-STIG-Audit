@@ -3,18 +3,18 @@
 {{ if .Vars.RHEL_08_020035 }}
 file:
   stopidle_logind.conf:
-    title: RHEL-08-020035 | RHEL 8 must terminate idle user sessions.
+    title: RHEL-08-020035 | RHEL 8.7 and higher must terminate idle user sessions.
     path: /etc/systemd/logind.conf
     exists: true
     contents:
-    - '/^StopIdleSessionSec\s*=\s*900/'
-    - '!/^StopIdleSessionSec\s*=\s*([1-9][0-9]|[1-8][0-9][0-9]|9[0-9][1-9]|[1-9][0-9]{3,})$/'
+    - '/^StopIdleSessionSec\s*=\s*600/'
+    - '!/^StopIdleSessionSec\s*=\s*([1-9][0-9]|[1-5][0-9][0-9]|6[0-9][1-9]|[1-9][0-9]{3,})$/'
     meta:
       Cat: 2
       CCI: CCI-001133
       NIST800-53R4: SC-10
       Group_Title: SRG-OS-000163-GPOS-00072
-      Rule_ID: SV-257258r1017375_rule
+      Rule_ID: SV-257258r1069328_rule
       STIG_ID: RHEL-08-020035
       Vul_ID: V-257258
   killuserproc_logind.conf:
@@ -22,14 +22,14 @@ file:
     path: /etc/systemd/logind.conf
     exists: true
     contents:
-    - '/^KillUserProccesses=no/'
-    - '!/^(?i)KillUserProccesses\s*=\s*yes/'
+    - '/^KillUserProcesses\s*=\s*no/'
+    - '!/(?i)^KillUserProcesses\s*=\s*yes/'
     meta:
       Cat: 2
       CCI: CCI-001133
       NIST800-53R4: SC-10
       Group_Title: SRG-OS-000163-GPOS-00072
-      Rule_ID: SV-257258r1017375_rule
+      Rule_ID: SV-257258r1069328_rule
       STIG_ID: RHEL-08-020035
       Vul_ID: V-257258
 {{ end }}

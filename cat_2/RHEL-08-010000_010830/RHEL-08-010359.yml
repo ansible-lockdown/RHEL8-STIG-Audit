@@ -20,6 +20,7 @@ command:
       or:
       - 0
       - 1
+      - 5
       - 7
     stdout:
     - '/^End timestamp/'

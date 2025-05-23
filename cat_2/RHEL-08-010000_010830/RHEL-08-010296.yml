@@ -1,0 +1,18 @@
+{{ if .Vars.RHEL_08_010296 }}
+file:
+  crypto_policies_openssh_macs:
+    title: RHEL-08-010296 | RHEL 8 SSH client must be configured to use only Message Authentication Codes (MACs) employing FIPS 140-3 validated cryptographic hash algorithms. | openssh.config
+    path: /etc/crypto-policies/back-ends/openssh.config
+    exists: true
+    contents:
+    - '/^MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512,hmac-sha2-256/'
+    meta:
+      Cat: 2
+      CCI: CCI-001453
+      NIST800-53R4: AC-17
+      Group_Title:
+      - SRG-OS-000250-GPOS-00093
+      Rule_ID: SV-272482r1069414_rule
+      STIG_ID: RHEL-08-010296
+      Vul_ID: V-272482
+{{ end }}

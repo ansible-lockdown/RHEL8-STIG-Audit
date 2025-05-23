@@ -15,7 +15,7 @@ file:
       CCI: CCI-002007
       NIST800-53R4: IA-5
       Group_Title: SRG-OS-000383-GPOS-00166
-      Rule_ID: SV-230376r958828_rule
+      Rule_ID: SV-230376r1069307_rule
       STIG_ID: RHEL-08-020290
       Vul_ID: V-230376
   {{ end }}

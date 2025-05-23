@@ -5,14 +5,14 @@ command:
     exec: grep -i sha_crypt /etc/login.defs
     exit-status: 0
     stdout:
-    - '/^SHA_CRYPT_M(A|I)(N|X)_ROUNDS ([5-9][0-9]{3,})/'
-    - '!/^SHA_CRYPT_M(A|I)(N|X)_ROUNDS ([1-4][0-9]{0,3})/'
+    - '/^SHA_CRYPT_M(A|I)(N|X)_ROUNDS ([1-9][0-9]{4,})/'
+    - '!/^SHA_CRYPT_M(A|I)(N|X)_ROUNDS ([1-9][0-9]{0,4}$)/'
     meta:
       Cat: 2
       CCI: CCI-000196
       NIST800-53R4: IA-5
       Group_Title: SRG-OS-000073-GPOS-00041
-      Rule_ID: SV-230233r1017052_rule
+      Rule_ID: SV-230233r1044790_rule
       STIG_ID: RHEL-08-010130
       Vul_ID: V-230233
 {{ end }}

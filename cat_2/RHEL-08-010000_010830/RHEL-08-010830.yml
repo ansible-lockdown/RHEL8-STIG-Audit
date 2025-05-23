@@ -8,14 +8,14 @@ command:
       - 0
       - 2
     stdout:
-    - '/.*:PermitUserEnvironment [Nn][Oo]/'
-    - '!/.*:PermitUserEnvironment\s+[Yy][Ee][Ss]/'
+    - '/(?i).*:PermitUserEnvironment no/'
+    - '!/(?i).*:PermitUserEnvironment yes/'
     meta:
       Cat: 2
       CCI: CCI-000366
       NIST800-53R4: CM-6
       Group_Title: SRG-OS-000480-GPOS-00229
-      Rule_ID: SV-230330r1017141_rule
+      Rule_ID: SV-230330r1069305_rule
       STIG_ID: RHEL-08-010830
       Vul_ID: V-230330
 {{ end }}

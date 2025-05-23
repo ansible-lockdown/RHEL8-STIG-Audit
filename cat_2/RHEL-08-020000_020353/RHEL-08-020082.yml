@@ -15,7 +15,7 @@ command:
       - SRG-OS-000029-GPOS-00010
       - SRG-OS-000031-GPOS-00012
       - SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-244539r1017346_rule
+      Rule_ID: SV-244539r1069325_rule
       STIG_ID: RHEL-08-020082
       Vul_ID: V-244539
 file:
@@ -33,7 +33,7 @@ file:
       - SRG-OS-000029-GPOS-00010
       - SRG-OS-000031-GPOS-00012
       - SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-244539r1017346_rule
+      Rule_ID: SV-244539r1069325_rule
       STIG_ID: RHEL-08-020082
       Vul_ID: V-244539
   {{ end }}

@@ -15,7 +15,7 @@ command:
       - SRG-OS-000393-GPOS-00173
       - SRG-OS-000394-GPOS-00174
       - SRG-OS-000125-GPOS-00065
-      Rule_ID: SV-230252r1017070_rule
+      Rule_ID: SV-230252r1067104_rule
       STIG_ID: RHEL-08-010291
       Vul_ID: V-230252
   crypto_policies_openssh_server_ciphers:
@@ -23,7 +23,7 @@ command:
     exec: grep -i crypto /etc/crypto-policies/back-ends/opensshserver.config
     exit-status: 0
     stdout:
-    - '/^CRYPTO_POLICY=.*-oCiphers=aes256-ctr,aes192-ctr,aes128-ctr,aes256-gcm@openssh.com,aes128-gcm@openssh.com.*/'
+    - '/^CRYPTO_POLICY=.*-oCiphers=aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes128-ctr.*-o/'
     meta:
       Cat: 2
       NIST800-53R4: AC-17
@@ -32,7 +32,7 @@ command:
       - SRG-OS-000393-GPOS-00173
       - SRG-OS-000394-GPOS-00174
       - SRG-OS-000125-GPOS-00065
-      Rule_ID: SV-230252r1017070_rule
+      Rule_ID: SV-230252r1067104_rule
       STIG_ID: RHEL-08-010291
       Vul_ID: V-230252
 {{ end }}

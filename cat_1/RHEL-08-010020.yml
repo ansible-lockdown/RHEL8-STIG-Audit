@@ -27,7 +27,7 @@ command:
        CCI: CCI-000068
        NIST800-53R4: AC-17
        Group_Title: SRG-OS-000033-GPOS-00014
-       Rule_ID: SV-230223r1017042_rule
+       Rule_ID: SV-230223r1069327_rule
        STIG_ID: RHEL-08-010020
        Vul_ID: V-230223
 file:
@@ -41,7 +41,7 @@ file:
       CCI: CCI-000068
       NIST800-53R4: AC-17
       Group_Title: SRG-OS-000033-GPOS-00014
-      Rule_ID: SV-230223r1017042_rule
+      Rule_ID: SV-230223r1069327_rule
       STIG_ID: RHEL-08-010020
       Vul_ID: V-230223
 {{ end }}

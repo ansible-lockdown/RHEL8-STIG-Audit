@@ -13,7 +13,7 @@
       Group_Title:
       - SRG-OS-000021-GPOS-00005
       - SRG-OS-000329-GPOS-00128
-      Rule_ID: SV-230337r1017149_rule
+      Rule_ID: SV-230337r1069292_rule
       STIG_ID: RHEL-08-020015
       Vul_ID: V-230337
   {{ end }}

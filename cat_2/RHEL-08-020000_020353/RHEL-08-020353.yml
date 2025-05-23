@@ -4,8 +4,8 @@ file:
     title: RHEL-08-020353 | RHEL 8 must define default permissions for logon and non-logon shells. | bashrc
     exists: true
     contents:
-    - '/^(?i)\s+umask 077/'
-    - '!/^(?i)\s+umask [1-7][0-7][0-7]/'
+    - '/(?i)^\s+umask 077/'
+    - '!/(?i)^\s+umask [1-7][0-7][0-7]/'
     meta:
       Cat: 2
       CCI: CCI-000366
@@ -18,8 +18,8 @@ file:
     title: RHEL-08-020353 | RHEL 8 must define default permissions for logon and non-logon shells. | csh.cshrc
     exists: true
     contents:
-    - '/^(?i)\s+umask 077/'
-    - '!/^(?i)\s+umask [1-7][0-7][0-7]/'
+    - '/(?i)^\s+umask 077/'
+    - '!/(?i)^\s+umask [1-7][0-7][0-7]/'
     meta:
       Cat: 2
       CCI: CCI-000366
@@ -32,8 +32,8 @@ file:
     title: RHEL-08-020353 | RHEL 8 must define default permissions for logon and non-logon shells. | etc/profile
     exists: true
     contents:
-    - '/^(?i)\s+umask 077/'
-    - '!/^(?i)\s+umask [1-7][0-7][0-7]/'
+    - '/(?i)^\s+umask 077/'
+    - '!/(?i)^\s+umask [1-7][0-7][0-7]/'
     meta:
       Cat: 2
       CCI: CCI-000366

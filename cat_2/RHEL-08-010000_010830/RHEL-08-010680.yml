@@ -13,7 +13,7 @@ command:
       CCI: CCI-000366
       NIST800-53R4: CM-6
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230316r1017127_rule
+      Rule_ID: SV-230316r1044801_rule
       STIG_ID: RHEL-08-010680
       Vul_ID: V-230316
 file:
@@ -27,7 +27,7 @@ file:
       CCI: CCI-000366
       NIST800-53R4: CM-6
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230316r1017127_rule
+      Rule_ID: SV-230316r1044801_rule
       STIG_ID: RHEL-08-010680
       Vul_ID: V-230316
   {{ end }}
@@ -43,7 +43,7 @@ file:
       CCI: CCI-000366
       NIST800-53R4: CM-6
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230316r1017127_rule
+      Rule_ID: SV-230316r1044801_rule
       STIG_ID: RHEL-08-010680
       Vul_ID: V-230316
   {{ end }}

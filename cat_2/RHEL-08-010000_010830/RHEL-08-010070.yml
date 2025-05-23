@@ -10,7 +10,7 @@ file:
       CCI: CCI-000067
       NIST800-53R4: AC-17
       Group_Title: SRG-OS-000032-GPOS-00013
-      Rule_ID: SV-230228r1017047_rule
+      Rule_ID: SV-230228r1069299_rule
       STIG_ID: RHEL-08-010070
       Vul_ID: V-230228
 service:
@@ -24,7 +24,7 @@ service:
       CCI: CCI-000067
       NIST800-53R4: AC-17
       Group_Title: SRG-OS-000032-GPOS-00013
-      Rule_ID: SV-230228r1017047_rule
+      Rule_ID: SV-230228r1069299_rule
       STIG_ID: RHEL-08-010070
       Vul_ID: V-230228
 {{ end }}

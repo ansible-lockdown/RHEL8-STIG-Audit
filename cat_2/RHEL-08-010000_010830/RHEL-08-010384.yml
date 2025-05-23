@@ -7,15 +7,16 @@ command:
       or:
       - 0
       - 1
+      - 2
     stdout:
-    - '/^\/etc\/sudoer.*:Defaults timestamp_timeout=([0-9]|10)/'
-    - '!/^\/etc\/sudoer.*:Defaults timestamp_timeout.*-\d/'
+    - '/^\/etc\/sudoer.*:Defaults.*timestamp_timeout=([0-9]|10)/'
+    - '!/^\/etc\/sudoer.*:Defaults.*timestamp_timeout.*-\d/'
     meta:
       Cat: 2
       CCI: CCI-002038
       NIST800-53R4: IA-11
       Group_Title: SRG-OS-000373-GPOS-00156
-      Rule_ID: SV-237643r1017325_rule
+      Rule_ID: SV-237643r1050789_rule
       STIG_ID: RHEL-08-010384
       Vul_ID: V-237643
 {{ end }}

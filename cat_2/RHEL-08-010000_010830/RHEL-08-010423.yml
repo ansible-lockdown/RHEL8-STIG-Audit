@@ -1,27 +1,27 @@
 {{ if .Vars.RHEL_08_010423 }}
 command:
   grub_slub_chk:
-    title: RHEL-08-010423 | RHEL 8 must clear SLUB/SLAB objects to prevent use-after-free attacks. | live slub grub check
+    title: RHEL-08-010423 | RHEL 8 must clear memory when it is freed to prevent use-after-free attacks. | live check
     exec: grub2-editenv list | grep slub_debug
     exit-status: 0
     stdout:
-    - '/^kernelopts=.*\sslub_debug=P\s.*$/'
-    - '!/^kernelopts=.*\sslub_debug=[^P]\s.*$/'
+    - '/^kernelopts=.*\sinit_on_free=1\s.*$/'
+    - '!/^kernelopts=.*\sinit_on_free=1\s.*$/'
     meta:
       Cat: 2
       NIST800-53R4: SC-3
       Group_Title:
       - SRG-OS-000134-GPOS-00068
       - SRG-OS-000433-GPOS-00192
-      Rule_ID: SV-230279r1017092_rule
+      Rule_ID: SV-230279r1069286_rule
       STIG_ID: RHEL-08-010423
       Vul_ID: V-230279
   default_grub_slub:
-    title: RHEL-08-010423 | RHEL 8 must clear SLUB/SLAB objects to prevent use-after-free attacks. | default slub grub check
+    title: RHEL-08-010423 | RHEL 8 must clear memory when it is freed to prevent use-after-free attacks. | conf check
     exec: grep -i slub /etc/default/grub
     exit-status: 0
     stdout:
-    - '/^GRUB_CMDLINE_LINUX*=.*\sslub_debug=P\s.*$/'
+    - '/^GRUB_CMDLINE_LINUX*=.*\sinit_on_free=1\s.*$/'
     meta:
       Cat: 2
       CCI: CCI-001084
@@ -29,7 +29,7 @@ command:
       Group_Title:
       - SRG-OS-000134-GPOS-00068
       - SRG-OS-000433-GPOS-00192
-      Rule_ID: SV-230279r1017092_rule
+      Rule_ID: SV-230279r1069286_rule
       STIG_ID: RHEL-08-010423
       Vul_ID: V-230279
 {{ end }}

@@ -10,7 +10,7 @@ file:
       CCI: CCI-002038
       NIST800-53R4: IA-11
       Group_Title: SRG-OS-000373-GPOS-00156
-      Rule_ID: SV-251712r1017383_rule
+      Rule_ID: SV-251712r1050789_rule
       STIG_ID: RHEL-08-010385
       Vul_ID: V-251712
 {{ end }}

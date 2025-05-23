@@ -5,7 +5,7 @@ file:
     title: RHEL-08-010149 | RHEL 8 operating systems booted with a BIOS must require a unique superusers name upon booting into single-user and maintenance modes. | configured
     exists: true
     contents:
-    - '/^\s+set superusers="[{{ .Vars.rhel8stig_boot_superuser }}]/'
+    - '/^\s+set superusers="{{ .Vars.rhel8stig_boot_superuser }}"/'
     - '/^\s+export superusers/'
     - '/^\s+password_pbkdf2.*\$\{GRUB2_PASSWORD\}/'
     meta:
@@ -39,6 +39,7 @@ command:
       or:
       - 0
       - 1
+      - 2
     stdout:
     - '!/.*/'
     meta:

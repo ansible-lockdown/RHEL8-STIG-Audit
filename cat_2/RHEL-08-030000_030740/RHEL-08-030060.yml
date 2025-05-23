@@ -5,14 +5,14 @@ command:
     exec: grep -i disk_full /etc/audit/auditd.conf
     exit-status: 0
     stdout:
-    - '/^(?i)disk_full_action.*=.*{{ .Vars.rhel8stig_auditd_disk_full_action }}/'
-    - '!/^(?i)disk_full_action.*=.*(ignore|suspend)/'
+    - '/(?i)^disk_full_action.*=.*{{ .Vars.rhel8stig_auditd_disk_full_action }}/'
+    - '!/(?i)^disk_full_action.*=.*(ignore|suspend)/'
     meta:
       Cat: 2
       CCI: CCI-000140
       NIST800-53R4: AU-5
       Group_Title: SRG-OS-000047-GPOS-00023
-      Rule_ID: SV-230392r1017199_rule
+      Rule_ID: SV-230392r1038966_rule
       STIG_ID: RHEL-08-030060
       Vul_ID: V-230392
 {{ end }}

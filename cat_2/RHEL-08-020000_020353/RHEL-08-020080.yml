@@ -15,7 +15,7 @@ command:
       - SRG-OS-000029-GPOS-00010
       - SRG-OS-000031-GPOS-00012
       - SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230354r1017167_rule
+      Rule_ID: SV-230354r1069323_rule
       STIG_ID: RHEL-08-020080
       Vul_ID: V-230347
   dconf_user_lock_override:
@@ -32,7 +32,7 @@ command:
       - SRG-OS-000029-GPOS-00010
       - SRG-OS-000031-GPOS-00012
       - SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230354r1017167_rule
+      Rule_ID: SV-230354r1069323_rule
       STIG_ID: RHEL-08-020080
       Vul_ID: V-230354
   {{ end }}

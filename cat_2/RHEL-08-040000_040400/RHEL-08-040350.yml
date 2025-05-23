@@ -2,20 +2,20 @@
 command:
    tftp-secure:
     title: RHEL-08-040350 | If the Trivial File Transfer Protocol (TFTP) server is required, the RHEL 8 TFTP daemon must be configured to operate in secure mode
-    exec: grep server_args /etc/xinetd.d/tftp
+    exec: grep -i execstart /usr/lib/systemd/system/tftp.service
     exit-status:
       or:
       - 0
       - 127
     stdout:
-    - '/^server_args = -s /var/lib/tftpboot$/'
+    - '/^ExecStart=/usr/sbin/in.tftpd -s.*/'
     skip: {{ .Vars.skip_tftp_check }}
     meta:
       Cat: 2
       CCI: CCI-000366
       NIST800-53R4: CM-6
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230557r1017319_rule
+      Rule_ID: SV-230557r1088855_rule
       STIG_ID: RHEL-08-040350
       Vul_ID: V-230557
 {{ end }}

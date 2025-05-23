@@ -2,16 +2,16 @@
 command:
   auditd_conf_perms:
     title: RHEL-08-030610 | RHEL 8 must allow only the Information System Security Manager (ISSM) (or individuals or roles appointed by the ISSM) to select which auditable events are to be audited.
-    exec: stat -c "%a" /etc/audit/auditd.conf
+    exec: stat -c "%a"  /etc/audit/rules.d/*
     exit-status: 0
     stdout:
-    - '640'
+      - le: 640
     meta:
       Cat: 2
       CCI: CCI-000171
       NIST800-53R4: AU-12
       Group_Title: SRG-OS-000063-GPOS-00032
-      Rule_ID: SV-230471r1017262_rule
+      Rule_ID: SV-230471r1069296_rule
       STIG_ID: RHEL-08-030610
       Vul_ID: V-230471
   auditd_rule_d_perms:
@@ -25,7 +25,7 @@ command:
       CCI: CCI-000171
       NIST800-53R4: AU-12
       Group_Title: SRG-OS-000063-GPOS-00032
-      Rule_ID: SV-230471r1017262_rule
+      Rule_ID: SV-230471r1069296_rule
       STIG_ID: RHEL-08-030610
       Vul_ID: V-230471
 {{ end }}

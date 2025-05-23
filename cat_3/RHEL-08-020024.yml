@@ -15,7 +15,7 @@ command:
       CCI: CCI-000054
       NIST800-53R4: AC-10
       Group_Title: SRG-OS-000027-GPOS-00008
-      Rule_ID: SV-230346r1017159_rule
+      Rule_ID: SV-230346r1069306_rule
       STIG_ID: RHEL-08-020024
       Vul_ID: V-230346
 {{ end }}

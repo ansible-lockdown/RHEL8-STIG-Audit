@@ -4,11 +4,11 @@ package:
     title: RHEL-08-010030 | All RHEL 8 local disk partitions must implement cryptographic mechanisms to prevent unauthorized disclosure or modification of all information that requires at rest protection. | pkg installed
     installed: true
     meta:
-      Cat: 2
+      Cat: 1
       CCI: CCI-001199
       NIST800-53R4: SC-28
       Group_Title: SRG-OS-000185-GPOS-00079
-      Rule_ID: SV-230224r1017043_rule
+      Rule_ID: SV-230224r1044787_rule
       STIG_ID: RHEL-08-010030
       Vul_ID: V-230224
 command:
@@ -20,11 +20,11 @@ command:
     - 'OK - System disks encrypted'
     - '!/Fail - unencrypted disks/'
     meta:
-      Cat: 2
+      Cat: 1
       CCI: CCI-001199
       NIST800-53R4: SC-28
       Group_Title: SRG-OS-000185-GPOS-00079
-      Rule_ID: SV-230224r1017043_rule
+      Rule_ID: SV-230224r1044787_rule
       STIG_ID: RHEL-08-010030
       Vul_ID: V-230224
 {{ end }}

@@ -7,12 +7,10 @@ command:
       - 0
       - 1
     timeout: {{ .Vars.timeout_ms }}
-    exec: gpg -q --keyid-format short --with-fingerprint {{ .Vars.rpm_gpg_key }}
+    exec: gpg -q --keyid-format short --with-fingerprint {{ .Vars.os_gpg_key_pubkey_content }}
     stdout:
-    {{ range .Vars.gpg_keys }}
-    - "{{ .name }}"
-    - "{{ .fingerprint }}"
-    {{ end }}
+    - "{{ .Vars.os_gpg_key_pubkey_name }}"
+    - "{{ .Vars.os_gpg_key_pubkey_content }}"
     meta:
       Cat: 2
       CCI: CCI-001749

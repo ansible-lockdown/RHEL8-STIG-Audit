@@ -14,7 +14,7 @@ file:
       Group_Title:
       - SRG-OS-000023-GPOS-00006
       - SRG-OS-000228-GPOS-00088
-      Rule_ID: SV-230226r1017045_rule
+      Rule_ID: SV-230226r1069298_rule
       STIG_ID: RHEL-08-010050
       Vul_ID: V-230226
   {{ end }}

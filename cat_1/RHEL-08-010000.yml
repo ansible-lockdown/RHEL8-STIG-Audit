@@ -6,13 +6,13 @@ file:
     title: RHEL-08-010000 | RHEL 8 must be a vendor-supported release. (Not checking for EUS)
     exists: true
     contents:
-    - '/.* 8.(8-9|10)/'
+    - '/.* 8.10/'
     meta:
       Cat: 1
       CCI: CCI-000366
       NIST800-53R4: CM-6
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230284r1017095_rule
+      Rule_ID: SV-230221r1017040_rule
       STIG_ID: RHEL-08-010000
       Vul_ID: V-230221
 {{ end }}
