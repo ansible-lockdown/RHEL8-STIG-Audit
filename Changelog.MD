@@ -1,5 +1,44 @@
 # Changelog
 
+## STIG V2R3 April 2025
+
+Many controls rule ID updated
+Other metadata update where required
+updated some regex expressions
+- RHEL-08-101030 - Moved to CAT1
+- RHEL-08-010296 - Added Client ssh MACs control.
+- RHEL-08-010297 - Added Client ssh Cipher control.
+- RHEL-08-010455 - Added requirement.
+- RHEL-08-020103 - removed
+- RHEL-08-020104 - removed
+
+## STIG V2R2 January 2025
+
+RuleIDs updated for listed controls after changes in control
+
+- RHEL-08-010030 - moved from CAT2 to CAT1 control
+- RHEL-08-010130 - hashing round increase min from 5000 to 100000
+- RHEL-08-010290 - MAC reordered
+- RHEL-08-010291 - Ciphers reordered
+- RHEL-08-010292 - RuleID
+- RHEL-08-010680 - RuleID
+
+## STIG V2R1 October 2025
+
+RuleIDs updated for all controls
+Nist Control ID associations added
+
+- RHEL-08-010350 - command updated
+- RHEL-08-010472 - Not Applicable if fips
+- RHEL-08-020035 - version 8.7+
+- RHEL-08-020039 RHEL-08-020040 RHEL-08-020041 RHEL-08-020042, RHEL-08-020070 - TMUX removed
+- RHEL-08-020220, RHEL-08-020221 - remember not required for PAM
+- RHEL-08-020320 - Updated Check and Fix
+- RHEL-08-030603, RHEL-08-040139, RHEL-08-040140, RHEL-08-040141 - Rules updated Ok if no USB peripherals
+- RHEL-08-040284
+- RHEL-08-040370
+- RHEL-08-010001 - removed as not a NIST value
+
 ## STIG V1R14 April 2024
 
 Updated ruleids
@@ -72,7 +111,7 @@ Controls updated
   - 010290 - ruleid and SSH MACS updated
   - 010291 - ruleid and SSH Ciphers updated
   - 010770 - ruleid
-  - 020035 - new control idlesession timeout new var rhel_08_020035_idlesessiontimeout
+  - 020035 - ruleid
   - 020041 - ruleid and tmux script update
   - 030690 - ruleid and protocol options added
   - 040159 - ruleid

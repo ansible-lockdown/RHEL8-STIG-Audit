@@ -18,15 +18,16 @@
 # December 2023 Added goss version and testing
 # April 2024    Updating of OS discovery to work for all supported OSs
 # August 2024   Improve failure capture
+# January 2025  Added Suse OS discovery
+# May 2025        Added formation typos to help and fixed some typos
 
 # Variables in upper case tend to be able to be adjusted
 # lower case variables are discovered or built from other variables
 
 # Goss benchmark variables (these should not need changing unless new release)
 BENCHMARK=STIG # Benchmark Name aligns to the audit
-BENCHMARK_VER=v2r1
+BENCHMARK_VER=v2r3
 BENCHMARK_OS=RHEL8
-
 
 # Goss host Variables
 AUDIT_BIN="${AUDIT_BIN:-/usr/local/bin/goss}"  # location of the goss executable
@@ -42,10 +43,10 @@ Help()
   echo
   echo "Syntax: $0 [-f|-g|-o|-v|-w|-h]"
   echo "options:"
-  echo "-f     optional - change the format output (default value = json)"
+  echo "-f     optional - change the format output (options json(default), documentation, rspecish)"
   echo "-g     optional - Add a group that the server should be grouped with (default value = ungrouped)"
   echo "-o     optional - file to output audit data"
-  echo "-v     optional - relative path to thevars file to load (default e.g. $AUDIT_CONTENT_LOCATION/RHEL7-$BENCHMARK/vars/$BENCHMARK.yml)"
+  echo "-v     optional - relative path to the vars file to load (default e.g. $AUDIT_CONTENT_LOCATION/RHEL7-$BENCHMARK/vars/$BENCHMARK.yml)"
   echo "-w     optional - Sets the system_type to workstation (Default - Server)"
   echo "-h     Print this Help."
   echo
@@ -90,6 +91,9 @@ elif [ "$(grep -Ec "rhel|oracle" /etc/os-release)" != 0 ]; then
   os_vendor="RHEL"
 else
   os_vendor="$(hostnamectl | grep Oper | cut -d : -f2 | awk '{print toupper($1)}')"
+  if [ "${os_vendor}" = "OPENSUSE" ]; then
+   os_vendor="SUSE"
+  fi
 fi
 
 os_maj_ver="$(grep -w VERSION_ID= /etc/os-release | awk -F\" '{print $2}' | cut -d '.' -f1)"
@@ -104,14 +108,14 @@ else
   export format=$FORMAT
 fi
 
-# Set variable for autogroup
+# Set variable for auto group
 if [ -z "$GROUP" ]; then
   export host_auto_group="ungrouped"
 else
   export host_auto_group=$GROUP
 fi
 
-# set default variable for varfile_path
+# set default variable for var file_path
 if [ -z "$VARS_PATH" ]; then
   export varfile_path=$audit_content_dir/$audit_vars
 else
@@ -214,4 +218,3 @@ else
   echo -e "Fail: There were issues when running the audit please investigate $audit_out";
   exit 1
 fi
-

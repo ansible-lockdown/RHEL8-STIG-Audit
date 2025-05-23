@@ -2,7 +2,7 @@
 
 ## Overview
 
-Audit based on STIG v2r1 24th Oct 2024
+Audit based on STIG v2r3 2nd April 2025
 
 Ability to audit a system using a lightweight binary to check the current state.
 
