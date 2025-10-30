@@ -1,5 +1,9 @@
 # Changelog
 
+## STIG V2R4 Oct 2025
+Updated run_audit.sh with $max
+- RHEL-08-030655 - Added requirement.
+
 ## STIG V2R3 April 2025
 
 Many controls rule ID updated
