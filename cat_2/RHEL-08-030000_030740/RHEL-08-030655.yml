@@ -7,7 +7,7 @@ command:
     stdout:
       - "-w /etc/cron.d -p wa -k cronjobs"
     meta:
-      Severity: CAT 2
+      CAT: 2
       CCI: CCI-000172
       NIST800-53R4: AU-12
       Group_Title: SRG-OS-000471-GPOS-00215
@@ -24,7 +24,7 @@ command:
     stdout:
       - "-w /var/spool/cron -p wa -k cronjobs"
     meta:
-      Severity: CAT 2
+      CAT: 2
       CCI: CCI-000172
       NIST800-53R4: AU-12
       Group_Title: SRG-OS-000471-GPOS-00215
