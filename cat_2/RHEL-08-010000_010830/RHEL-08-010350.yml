@@ -13,7 +13,7 @@ command:
       CCI: CCI-001499
       NIST800-53R4: CM-5
       Group_Title: SRG-OS-000259-GPOS-00100
-      Rule_ID: SV-230262r1017082_rule
+      Rule_ID: SV-230262r1101894_rule
       STIG_ID: RHEL-08-010350
       Vul_ID: V-230262
   {{ end }}
