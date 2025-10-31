@@ -1,5 +1,17 @@
 # Changelog
 
+## STIG V2R4 Oct 2025
+
+- Updated run_audit.sh with $max
+- RHEL-08-030655 - Added requirement.
+- RHEL-08-010330, RHEL-08-010340, RHEL-08-010350 - Updated
+- RHEL-08-010380 - Updated
+- RHEL-08-010381 - Updated
+- RHEL-08-010382 - Updated
+- RHEL-08-010741 - Updated
+- RHEL-08-040030 - Updated
+- RHEL-08-040310 - Updated
+
 ## STIG V2R3 April 2025
 
 Many controls rule ID updated

@@ -1,0 +1,37 @@
+{{ if .Vars.RHEL_08_030655 }}
+command:
+  audit_cron_d:
+    title: RHEL-08-030655 | RHEL 8 must audit any script or executable called by cron as root or by any privileged user. | Ensure audit rules exist for /etc/cron.d directory
+    exec: auditctl -l | grep -E '^-w\s+/etc/cron\.d'
+    exit-status: 0
+    stdout:
+      - "-w /etc/cron.d -p wa -k cronjobs"
+    meta:
+      CAT: 2
+      CCI: CCI-000172
+      NIST800-53R4: AU-12
+      Group_Title: SRG-OS-000471-GPOS-00215
+      Rule_ID: SV-274877r1106148_rule
+      STIG_ID: RHEL-08-030655
+      Vul_ID: V-274877
+      Description: >
+        Verify that RHEL 8 audits changes to /etc/cron.d to detect unauthorized modifications
+        to system cron jobs executed by root or privileged users.
+  audit_cron_spool:
+    title: RHEL-08-030655 | RHEL 8 must audit any script or executable called by cron as root or by any privileged user. | Ensure audit rules exist for /var/spool/cron directory
+    exec: auditctl -l | grep -E '^-w\s+/var/spool/cron'
+    exit-status: 0
+    stdout:
+      - "-w /var/spool/cron -p wa -k cronjobs"
+    meta:
+      CAT: 2
+      CCI: CCI-000172
+      NIST800-53R4: AU-12
+      Group_Title: SRG-OS-000471-GPOS-00215
+      Rule_ID: SV-274877r1106148_rule
+      STIG_ID: RHEL-08-030655
+      Vul_ID: V-274877
+      Description: >
+        Verify that RHEL 8 audits modifications to /var/spool/cron to track user-level
+        cron job definitions executed by root or privileged users.
+{{ end }}
