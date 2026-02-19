@@ -1,47 +1,32 @@
 {{ if .Vars.RHEL_08_010020 }}
 command:
-  fipscheck:
-    title: RHEL-08-010020 | RHEL 8 must implement NIST FIPS-validated cryptography for the following - to provision digital signatures, to generate cryptographic hashes, and to protect data requiring data-at-rest protections in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, and standards. | fipscheck
-    exec: fips-mode-setup --check
+  crypto_policy_show:
+    title: RHEL-08-010020 | RHEL 8 must implement a FIPS 140-3-compliant systemwide cryptographic policy. | update-crypto-policies --show
+    exec: update-crypto-policies --show
     exit-status: 0
     stdout:
-    - '!/.*disabled/'
-    - '/.*enabled/'
+    - '/^FIPS/'
     meta:
       Cat: 1
       CCI: CCI-000068
       NIST800-53R4: AC-17
       Group_Title: SRG-OS-000033-GPOS-00014
-      Rule_ID: SV-230223r1017042_rule
+      Rule_ID: SV-230223r1155356_rule
       STIG_ID: RHEL-08-010020
       Vul_ID: V-230223
-  fips_live:
-     title: RHEL-08-010020 | RHEL 8 must implement NIST FIPS-validated cryptography for the following - to provision digital signatures, to generate cryptographic hashes, and to protect data requiring data-at-rest protections in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, and standards. | fips_kernel
-     exec: grub2-editenv list | grep fip
-     exit-status: 0
-     stdout:
-     - '/^kernelopts+.*fips=1/'
-     - '!/^kernelopts+.*fips=0/'
-     meta:
-       Cat: 1
-       CCI: CCI-000068
-       NIST800-53R4: AC-17
-       Group_Title: SRG-OS-000033-GPOS-00014
-       Rule_ID: SV-230223r1069327_rule
-       STIG_ID: RHEL-08-010020
-       Vul_ID: V-230223
-file:
-  /proc/sys/crypto/fips_enabled:
-    title: RHEL-08-010020 | RHEL 8 must implement NIST FIPS-validated cryptography for the following - to provision digital signatures, to generate cryptographic hashes, and to protect data requiring data-at-rest protections in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, and standards. | fips_process
-    exists: true
-    contents:
-    - '1'
+  crypto_policy_current:
+    title: RHEL-08-010020 | RHEL 8 must implement a FIPS 140-3-compliant systemwide cryptographic policy. | CURRENT.pol hash and min_rsa_size
+    exec: grep -E 'rsa_size|hash' /etc/crypto-policies/state/CURRENT.pol
+    exit-status: 0
+    stdout:
+    - '/hash.*SHA2-256.*SHA2-384.*SHA2-512/'
+    - '/min_rsa_size\s*=\s*2048/'
     meta:
       Cat: 1
       CCI: CCI-000068
       NIST800-53R4: AC-17
       Group_Title: SRG-OS-000033-GPOS-00014
-      Rule_ID: SV-230223r1069327_rule
+      Rule_ID: SV-230223r1155356_rule
       STIG_ID: RHEL-08-010020
       Vul_ID: V-230223
 {{ end }}

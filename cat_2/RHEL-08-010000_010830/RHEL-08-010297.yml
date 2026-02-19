@@ -14,7 +14,7 @@ file:
       - SRG-OS-000393-GPOS-00173
       - SRG-OS-000394-GPOS-00174
       - SRG-OS-000125-GPOS-00066
-      Rule_ID: SV-272483r1069415_rule
+      Rule_ID: SV-272483r1155361_rule
       STIG_ID: RHEL-08-010297
       Vul_ID: V-272483
 {{ end }}

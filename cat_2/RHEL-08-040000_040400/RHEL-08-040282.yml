@@ -8,7 +8,7 @@ kernel-param:
       CCI: CCI-000366
       NIST800-53R4: CM-6
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230546r1017308_rule
+      Rule_ID: SV-230546r1155413_rule
       STIG_ID: RHEL-08-040282
       Vul_ID: V-230546
 command:
@@ -26,7 +26,7 @@ command:
       CCI: CCI-000366
       NIST800-53R4: CM-6
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230546r1017308_rule
+      Rule_ID: SV-230546r1155413_rule
       STIG_ID: RHEL-08-040282
       Vul_ID: V-230546
 {{ end }}

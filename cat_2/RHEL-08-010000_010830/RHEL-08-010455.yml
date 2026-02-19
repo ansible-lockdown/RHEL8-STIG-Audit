@@ -11,7 +11,7 @@ command:
       CCI: CCI-002235
       NIST800-53R4: AC-6
       Group_Title: SRG-OS-000445-GPOS-00199
-      Rule_ID: SV-272484r1069340_rule
+      Rule_ID: SV-272484r1134875_rule
       STIG_ID: RHEL-08-010455
       Vul_ID: V-272484
 {{ end }}

@@ -1,7 +1,7 @@
 {{ if .Vars.RHEL_08_010290 }}
 command:
   show_crypto_policy1:
-    title: RHEL-08-010290 | The RHEL 8 SSH server must be configured to use only Message Authentication Codes (MACs) employing FIPS 140-2 validated cryptographic hash algorithms. | live check
+    title: RHEL-08-010290 | The RHEL 8 SSH server must be configured to use only Message Authentication Codes (MACs) employing FIPS 140-3-validated cryptographic hash algorithms to protect the confidentiality of SSH server connections. | live check
     exec: update-crypto-policies --show
     exit-status: 0
     stdout:
@@ -15,11 +15,11 @@ command:
       - SRG-OS-000393-GPOS-00173
       - SRG-OS-000394-GPOS-00174
       - SRG-OS-000125-GPOS-00065
-      Rule_ID: SV-230251r1044814_rule
+      Rule_ID: SV-230251r1155370_rule
       STIG_ID: RHEL-08-010290
       Vul_ID: V-230251
   crypto_policies_openssh_server_macs:
-    title: RHEL-08-010290 | The RHEL 8 SSH daemon must be configured to use only Message Authentication Codes (MACs) employing FIPS 140-2 validated cryptographic hash algorithms. | crypto-policies - ssh_server
+    title: RHEL-08-010290 | The RHEL 8 SSH server must be configured to use only Message Authentication Codes (MACs) employing FIPS 140-3-validated cryptographic hash algorithms to protect the confidentiality of SSH server connections. | crypto-policies - ssh_server
     exec: grep -i MACS /etc/crypto-policies/back-ends/opensshserver.config
     exit-status: 0
     stdout:
@@ -33,7 +33,7 @@ command:
       - SRG-OS-000393-GPOS-00173
       - SRG-OS-000394-GPOS-00174
       - SRG-OS-000125-GPOS-00065
-      Rule_ID: SV-230251r1044814_rule
+      Rule_ID: SV-230251r1155370_rule
       STIG_ID: RHEL-08-010290
       Vul_ID: V-230251
 {{ end }}

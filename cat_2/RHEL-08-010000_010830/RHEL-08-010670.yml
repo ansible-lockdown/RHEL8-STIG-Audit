@@ -9,7 +9,7 @@ service:
       CCI: CCI-000366
       NIST800-53R4: CM-6
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230310r1017120_rule
+      Rule_ID: SV-230310r1155383_rule
       STIG_ID: RHEL-08-010670
       Vul_ID: V-230310
 {{ end }}

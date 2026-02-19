@@ -1,11 +1,11 @@
 {{ if .Vars.RHEL_08_010291 }}
 command:
   show_crypto_policy2:
-    title: RHEL-08-010291 | The RHEL 8 operating system must implement DoD-approved encryption to protect the confidentiality of SSH connections. | Live check
+    title: RHEL-08-010291 | The RHEL 8 SSH server must be configured to use only DOD-approved encryption ciphers employing FIPS 140-3-validated cryptographic hash algorithms to protect the confidentiality of SSH server connections. | Live check
     exec: update-crypto-policies --show
     exit-status: 0
     stdout:
-    - 'FIPS'
+    - '/^FIPS/'
     meta:
       Cat: 2
       CCI: CCI-001453
@@ -15,24 +15,25 @@ command:
       - SRG-OS-000393-GPOS-00173
       - SRG-OS-000394-GPOS-00174
       - SRG-OS-000125-GPOS-00065
-      Rule_ID: SV-230252r1067104_rule
+      Rule_ID: SV-230252r1155364_rule
       STIG_ID: RHEL-08-010291
       Vul_ID: V-230252
   crypto_policies_openssh_server_ciphers:
-    title: RHEL-08-010291 | The RHEL 8 operating system must implement DoD-approved encryption to protect the confidentiality of SSH connections. | crypto-policies - ssh_server
-    exec: grep -i crypto /etc/crypto-policies/back-ends/opensshserver.config
+    title: RHEL-08-010291 | The RHEL 8 SSH server must be configured to use only DOD-approved encryption ciphers employing FIPS 140-3-validated cryptographic hash algorithms to protect the confidentiality of SSH server connections. | crypto-policies - ssh_server
+    exec: grep -i Ciphers /etc/crypto-policies/back-ends/opensshserver.config
     exit-status: 0
     stdout:
-    - '/^CRYPTO_POLICY=.*-oCiphers=aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes128-ctr.*-o/'
+    - '/^CRYPTO_POLICY=.*-oCiphers=aes256-gcm@openssh.com,aes256-ctr,aes128-gcm@openssh.com,aes128-ctr.*-o/'
     meta:
       Cat: 2
+      CCI: CCI-001453
       NIST800-53R4: AC-17
       Group_Title:
       - SRG-OS-000250-GPOS-00093
       - SRG-OS-000393-GPOS-00173
       - SRG-OS-000394-GPOS-00174
       - SRG-OS-000125-GPOS-00065
-      Rule_ID: SV-230252r1067104_rule
+      Rule_ID: SV-230252r1155364_rule
       STIG_ID: RHEL-08-010291
       Vul_ID: V-230252
 {{ end }}

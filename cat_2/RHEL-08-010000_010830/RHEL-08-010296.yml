@@ -12,7 +12,7 @@ file:
       NIST800-53R4: AC-17
       Group_Title:
       - SRG-OS-000250-GPOS-00093
-      Rule_ID: SV-272482r1069414_rule
+      Rule_ID: SV-272482r1155367_rule
       STIG_ID: RHEL-08-010296
       Vul_ID: V-272482
 {{ end }}
