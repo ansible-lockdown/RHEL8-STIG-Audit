@@ -10,6 +10,9 @@ tests/Dockerfile
 packer_cache
 delete*
 ignore*
+*xccdf.xml
+*history.md
+prompt.md
 # VSCode
 .vscode
 
