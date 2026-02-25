@@ -2,10 +2,7 @@
 
 ## STIG V2R6 January 2026
 
-Align to V2R6 benchmark. Verified all 366 rules against V2R6 XCCDF XML.
-Rules not in V2R6 XML removed from audit.
-Aligned vars/STIG.yml with Private-RHEL8-STIG defaults/main.yml and goss template.
-
+- Aligned vars/STIG.yml with Private-RHEL8-STIG defaults/main.yml and goss template.
 - benchmark_version updated to v2r6.
 - RHEL-08-010015 - New CAT1 audit check: crypto-policies package installed (SV-279933r1156352_rule).
 - RHEL-08-010020 - Crypto-policies implementation (FIPS 140-3 systemwide policy); check aligned to V2R6.
@@ -14,19 +11,19 @@ Aligned vars/STIG.yml with Private-RHEL8-STIG defaults/main.yml and goss templat
 - RHEL-08-010270 - New CAT1 audit check: cryptographic policy must not be overridden (SV-279932r1156349_rule).
 - RHEL-08-010275 - New CAT2 audit check: DOD-approved encryption in bind package (SV-279931r1156346_rule).
 - RHEL-08-010280 - New CAT2 audit check: IP tunnels FIPS 140-3 cryptographic algorithms (SV-279930r1156343_rule).
-- RHEL-08-010287 - Removed (rule not in V2R6 XML; redundant with crypto-policies).
+- RHEL-08-010287 - Removed (rule not in V2R6; redundant with crypto-policies).
 - RHEL-08-010290 - SSH server MACs: title FIPS 140-2 → FIPS 140-3, Rule_ID SV-230251r1155370_rule.
 - RHEL-08-010291 - SSH server ciphers: title and check aligned to FIPS 140-3, Rule_ID SV-230252r1155364_rule, cipher order per V2R6.
-- RHEL-08-010293 - Removed (rule not in V2R6 XML; OpenSSL requirement controlled by crypto-policies).
-- RHEL-08-010294, 010295, 040342 - Removed (rules not in V2R6 XML; crypto-policies).
+- RHEL-08-010293 - Removed (rule not in V2R6; OpenSSL requirement controlled by crypto-policies).
+- RHEL-08-010294, 010295, 040342 - Removed (rules not in V2R6; crypto-policies).
 - RHEL-08-010472 - New CAT3 audit check: rng-tools package installed (SV-244527r1017333_rule).
-- RHEL-08-010660 - Removed (rule not in V2R6 XML).
-- RHEL-08-020000, 020340 - Removed (rules not in V2R6 XML).
+- RHEL-08-010660 - Removed (rule not in V2R6).
+- RHEL-08-020000, 020340 - Removed (rules not in V2R6.
 - RHEL-08-020360 - New CAT2 audit check: shell session TMOUT 10 min inactivity (SV-279929r1156340_rule).
-- RHEL-08-030210 - Removed (not in V2R6 XML or Private-RHEL8-STIG).
+- RHEL-08-030210 - Removed (not in V2R6 or Private-RHEL8-STIG).
 - RHEL-08-030655 - New CAT2 audit check: audit cron scripts/executables (SV-274877r1106148_rule).
 - Rule_IDs updated to V2R6 for: 010296, 010297, 010350, 010572, 010580, 010630, 010640, 010650, 010670, 010671, 010673, 010700, 010800, 020060, 040070, 040140, 040172, 040370, 010455, 010672, 010674, 010675, 020015, 040010, 040282, 040285.
-- Title/check aligned to V2R6 XML: 040010 (EPEL repo check, title); 020060 (title: 15 min session lock); 010350 (title: group-owned by root); 040070 (title: automounter disabled).
+- Title/check aligned to V2R6: 040010 (EPEL repo check, title); 020060 (title: 15 min session lock); 010350 (title: group-owned by root); 040070 (title: automounter disabled).
 
 ## STIG V2R3 April 2025
 
