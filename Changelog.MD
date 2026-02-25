@@ -1,5 +1,22 @@
 # Changelog
 
+## QA Fixes February 2026
+
+- Added `---` document marker and blank line to top of all audit yml files and goss.yml for YAML compliance.
+- Fixed malformed CCI values: `CCI-00044` corrected to `CCI-000044` across 16 files (RHEL-08-020010 through RHEL-08-020028).
+- Fixed malformed CCI values: `CI-002238` corrected to `CCI-002238` in RHEL-08-020027 and RHEL-08-020028.
+- Added missing CCI field to RHEL-08-010297 (CCI-001453) and RHEL-08-020012 (CCI-000044).
+- Fixed Rule_ID prefix in RHEL-08-040340: `V-230555r1017317_rule` corrected to `SV-230555r1017317_rule`.
+- Fixed Group_Title in RHEL-08-010171: `GPOS-000689` corrected to `GPOS-00068` (consistent with all other SRG-OS-000134 references).
+- vars/STIG.yml: Fixed duplicate `RPM-GPG-KEY-` prefix in `rpm_gpg_key` value.
+- vars/STIG.yml: Fixed Oracle example section (was copy of Alma with wrong values).
+- vars/STIG.yml: Standardized commented examples to use `gpg_keys:` (plural) matching active config.
+- vars/STIG.yml: Fixed comment typo `RHEL_08_101120` to `RHEL_08_010120`.
+- vars/STIG.yml: Added missing variable definitions for `rhel8stig_banner_file`, `os_gpg_key_pubkey_content`, and `os_gpg_key_pubkey_name`.
+- run_audit.sh: Fixed unquoted variables (`$MAX`, `$FORMAT`, `$GROUP`).
+- Removed leading blank line from RHEL-08-010673.yml.
+- Renamed `cat_2/RHEL-08-020000_020353` to `cat_2/RHEL-08-020000_020360` to match actual file range, updated goss.yml reference.
+
 ## STIG V2R6 January 2026
 
 - Aligned vars/STIG.yml with Private-RHEL8-STIG defaults/main.yml and goss template.

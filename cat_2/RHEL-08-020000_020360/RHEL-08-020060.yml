@@ -1,0 +1,23 @@
+---
+
+{{ if .Vars.rhel8stig_gui }}
+  {{ if .Vars.RHEL_08_020060 }}
+command:
+  dconf_screensvaer_idle_delay:
+    title: RHEL-08-020060 | RHEL 8 must automatically lock graphical user sessions after 15 minutes of inactivity.
+    exec: grep -E "idle-delay" /etc/dconf/db/local.d/00-screensaver
+    exit-status: 0
+    stdout:
+    - '!/^idle-delay=uint32 900/'
+    meta:
+      Cat: 2
+      CCI: CCI-000057
+      NIST800-53R4: AC-11
+      Group_Title:
+      - SRG-OS-000029-GPOS-00010
+      - SRG-OS-000031-GPOS-00012
+      Rule_ID: SV-230352r1155401_rule
+      STIG_ID: RHEL-08-020060
+      Vul_ID: V-230352
+  {{ end }}
+{{ end }}

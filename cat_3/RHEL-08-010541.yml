@@ -1,3 +1,5 @@
+---
+
 {{ if .Vars.RHEL_08_010541 }}
 mount:
   /var/log:

@@ -1,0 +1,19 @@
+---
+
+{{ if .Vars.RHEL_08_020360 }}
+command:
+  tmout_profile:
+    title: RHEL-08-020360 | RHEL 8 must automatically exit interactive command shell user sessions after 10 minutes of inactivity. | TMOUT setting
+    exec: grep -r TMOUT /etc/profile.d/ 2>/dev/null
+    exit-status: 0
+    stdout:
+    - '/TMOUT=600/'
+    meta:
+      Cat: 2
+      CCI: CCI-001133
+      NIST800-53R4: SC-10
+      Group_Title: SRG-OS-000163-GPOS-00072
+      Rule_ID: SV-279929r1156340_rule
+      STIG_ID: RHEL-08-020360
+      Vul_ID: V-279929
+{{ end }}

@@ -108,10 +108,10 @@ audit_vars=vars/${BENCHMARK}.yml
 if [[ -z "$FORMAT" ]]; then
   export format="json"
 else
-  export format=$FORMAT
+  export format="$FORMAT"
 fi
 
-if [ -z $MAX ]; then
+if [ -z "$MAX" ]; then
   export max=50
 else
   export max="$MAX"
@@ -121,7 +121,7 @@ fi
 if [ -z "$GROUP" ]; then
   export host_auto_group="ungrouped"
 else
-  export host_auto_group=$GROUP
+  export host_auto_group="$GROUP"
 fi
 
 # set default variable for var file_path
