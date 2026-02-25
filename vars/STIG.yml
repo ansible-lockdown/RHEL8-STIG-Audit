@@ -1,3 +1,5 @@
+---
+
 ## metadata for Audit benchmark
 benchmark_version: 'v2r6'
 
@@ -450,7 +452,6 @@ MIN_UID: 1000
 MAX_UID: 65000
 
 # RHEL_08_010040-010050-010060
-rhel8stig_banner_file: /etc/issue
 rhel8stig_logon_banner:
   - You are accessing a U.S. Government (USG) Information System (IS) that is provided for USG-authorized use only.
   - By using this IS (which includes any device attached to this IS), you consent to the following conditions
@@ -483,5 +484,5 @@ rhel8stig_remotelog_server: 1.1.1.1
 rhel8stig_remotelog_port: 1549
 rhel8stig_remotelog_protocol: '@@'
 
-# RHEL_08_040137
+# RHEL_08_040137
 python_bin: '/usr/bin/python'
