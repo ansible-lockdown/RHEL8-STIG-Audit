@@ -1,0 +1,20 @@
+{{ if .Vars.RHEL_08_010275 }}
+command:
+  bind_crypto_policy:
+    title: RHEL-08-010275 | RHEL 8 must implement DOD-approved encryption in the bind package. | check crypto-policies backend
+    exec: grep -r crypto-policies /etc/named.conf 2>/dev/null || echo "bind not installed or not configured"
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '/crypto-policies\/back-ends\/bind.config|bind not installed/'
+    meta:
+      Cat: 2
+      CCI: CCI-002418
+      NIST800-53R4: SC-8
+      Group_Title: SRG-OS-000423-GPOS-00187
+      Rule_ID: SV-279931r1156346_rule
+      STIG_ID: RHEL-08-010275
+      Vul_ID: V-279931
+{{ end }}

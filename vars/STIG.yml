@@ -1,5 +1,5 @@
 ## metadata for Audit benchmark
-benchmark_version: '2.3'
+benchmark_version: 'v2r6'
 
 # set to redhat/rocky/alma/oracle
 rhel8stig_os_distribution: redhat
@@ -68,10 +68,13 @@ rhel8stig_bootloader_path: /boot/grub2/
 
 # Cat 1 rules
 RHEL_08_010000: true
+RHEL_08_010015: true
 RHEL_08_010020: true
+RHEL_08_010030: true
 RHEL_08_010121: true
 RHEL_08_010140: true
 RHEL_08_010150: true
+RHEL_08_010270: true
 RHEL_08_010370: true
 RHEL_08_010371: true
 RHEL_08_010460: true
@@ -92,7 +95,6 @@ RHEL_08_040360: true
 # Cat 2 rules
 RHEL_08_010010: true
 RHEL_08_010019: true
-RHEL_08_010030: true
 RHEL_08_010040: true  # Variable options below
 RHEL_08_010049: true  # Variable options below
 RHEL_08_010050: true  # Variable options below
@@ -122,6 +124,8 @@ RHEL_08_010230: true
 RHEL_08_010240: true
 RHEL_08_010250: true
 RHEL_08_010260: true
+RHEL_08_010275: true
+RHEL_08_010280: true
 RHEL_08_010290: true
 RHEL_08_010291: true
 RHEL_08_010296: true
@@ -259,6 +263,7 @@ RHEL_08_020350: true
 RHEL_08_020351: true
 RHEL_08_020352: true
 RHEL_08_020353: true
+RHEL_08_020360: true
 RHEL_08_030000: true
 RHEL_08_030010: true
 RHEL_08_030020: true
@@ -286,7 +291,6 @@ RHEL_08_030180: true
 RHEL_08_030181: true
 RHEL_08_030190: true
 RHEL_08_030200: true
-RHEL_08_030210: true
 RHEL_08_030250: true
 RHEL_08_030260: true
 RHEL_08_030280: true
@@ -326,6 +330,7 @@ RHEL_08_030620: true
 RHEL_08_030630: true
 RHEL_08_030640: true
 RHEL_08_030650: true
+RHEL_08_030655: true
 RHEL_08_030660: true
 RHEL_08_030670: true
 RHEL_08_030680: true
@@ -413,6 +418,7 @@ RHEL_08_010375: true
 RHEL_08_010376: true
 RHEL_08_010440: true
 RHEL_08_010471: true
+RHEL_08_010472: true
 RHEL_08_010540: true
 RHEL_08_010541: true
 RHEL_08_010542: true
@@ -454,7 +460,7 @@ rhel8stig_logon_banner:
   - -This IS includes security measures (e.g., authentication and access controls) to protect USG interests--not for your personal benefit or privacy.
   - -Notwithstanding the above, using this IS does not constitute consent to PM, LE or CI investigative searching or monitoring of the content of privileged communications, or work product, related to personal representation or services by attorneys, psychotherapists, or clergy, and their assistants. Such communications and work product are private and confidential. See User Agreement for details.
 
-# RHEL8_08_010680 to change if using hostfile only - seperate checks
+# RHEL8_08_010680 to change if using hostfile only - separate checks
 rhel8stig_uses_dns: true
 
 # RHEL_08_010360 if run via ansible it is placed in cron.d setting as manually set in cron.daily
