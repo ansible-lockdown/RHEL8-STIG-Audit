@@ -2,7 +2,7 @@
 
 ## QA Fixes February 2026
 
-- Added `---` document marker and blank line to top of all audit yml files and goss.yml for YAML compliance.
+- Added `---` document marker to goss.yml for YAML compliance.
 - Fixed malformed CCI values: `CCI-00044` corrected to `CCI-000044` across 16 files (RHEL-08-020010 through RHEL-08-020028).
 - Fixed malformed CCI values: `CI-002238` corrected to `CCI-002238` in RHEL-08-020027 and RHEL-08-020028.
 - Added missing CCI field to RHEL-08-010297 (CCI-001453) and RHEL-08-020012 (CCI-000044).

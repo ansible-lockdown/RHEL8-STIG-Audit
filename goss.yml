@@ -1,5 +1,3 @@
----
-
 gossfile:
   {{ if .Vars.rhel8stig_cat1 }}
   cat_1/*.yml: {}
