@@ -1,7 +1,9 @@
+---
+
 {{ if .Vars.rhel8stig_gui }}
   {{ if .Vars.RHEL_08_010050 }}
 file:
-  {{ .Vars.rhel8stig_banner_file }}:
+  /etc/dconf/db/local.d/01-banner-message:
     title: RHEL-08-010050 | RHEL 8 must display the Standard Mandatory DoD Notice and Consent Banner before granting local or remote access to the system via a graphical user logon.
     exists: true
     contents:

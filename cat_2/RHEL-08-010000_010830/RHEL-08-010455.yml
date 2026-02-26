@@ -1,3 +1,5 @@
+---
+
 {{ if .Vars.RHEL_08_010455 }}
 command:
   elevated_secontext:

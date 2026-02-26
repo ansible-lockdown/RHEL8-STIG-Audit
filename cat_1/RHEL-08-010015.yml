@@ -1,0 +1,16 @@
+---
+
+{{ if .Vars.RHEL_08_010015 }}
+package:
+  crypto-policies:
+    title: RHEL-08-010015 | RHEL 8 must have the crypto-policies package installed.
+    installed: true
+    meta:
+      Cat: 1
+      CCI: CCI-002450
+      NIST800-53R4: SC-13
+      Group_Title: SRG-OS-000396-GPOS-00176
+      Rule_ID: SV-279933r1156352_rule
+      STIG_ID: RHEL-08-010015
+      Vul_ID: V-279933
+{{ end }}

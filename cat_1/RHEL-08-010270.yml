@@ -1,0 +1,19 @@
+---
+
+{{ if .Vars.RHEL_08_010270 }}
+command:
+  crypto_policy_applied:
+    title: RHEL-08-010270 | RHEL 8 cryptographic policy must not be overridden. | check policy is applied
+    exec: update-crypto-policies --is-applied
+    exit-status: 0
+    stdout:
+    - '/The configured policy.*is applied/'
+    meta:
+      Cat: 1
+      CCI: CCI-002450
+      NIST800-53R4: SC-13
+      Group_Title: SRG-OS-000396-GPOS-00176
+      Rule_ID: SV-279932r1156349_rule
+      STIG_ID: RHEL-08-010270
+      Vul_ID: V-279932
+{{ end }}

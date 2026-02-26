@@ -1,3 +1,5 @@
+---
+
 {{ if .Vars.RHEL_08_030020 }}
 command:
   auditd_conf_action_mail_acct:

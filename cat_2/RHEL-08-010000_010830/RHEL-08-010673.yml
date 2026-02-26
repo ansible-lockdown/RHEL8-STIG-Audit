@@ -1,3 +1,4 @@
+---
 
 {{ if .Vars.RHEL_08_010673 }}
 command:

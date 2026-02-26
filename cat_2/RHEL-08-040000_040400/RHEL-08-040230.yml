@@ -1,3 +1,5 @@
+---
+
 {{ if .Vars.RHEL_08_040230 }}
 kernel-param:
   net.ipv4.icmp_echo_ignore_broadcasts:

@@ -2,7 +2,7 @@
 
 ## Overview
 
-Audit based on STIG v2r3 2nd April 2025
+Audit based on STIG v2r6 05 Jan 2026
 
 Ability to audit a system using a lightweight binary to check the current state.
 
@@ -10,7 +10,7 @@ This is:
 
 - very small < 14MB
 - lightweight
-- self contained
+- self-contained
 
 It works using a set of configuration files and directories to audit STIG of RHEL/CentOS 8 servers. These files/directories correlate to the STIG Level and STIG_ID
 
@@ -21,7 +21,7 @@ Tested on
 - Rocky8
 - Alma-Linux 8
 
-feedback on any differences between OSs please raise an issue
+Feedback on any differences between OSs please raise an issue
 
 ## Requirements
 
@@ -29,7 +29,7 @@ You must have [goss](https://github.com/goss-org/goss/) available to your host y
 
 You must have sudo/root access to the system as some commands require privilege information.
 
-Assuming you have already clone this repository you can run goss from where you wish.
+Assuming you have already cloned this repository you can run goss from where you wish.
 
 Please refer to the audit documentation for usage.
 
@@ -48,13 +48,13 @@ Which will:
 
 On our [Discord Server](https://www.lockdownenterprise.com/discord) to ask questions, discuss features, or just chat with other Ansible-Lockdown users
 
-Set of configuration files and directories to run the first stages of STIG RHEL9 based servers
+Set of configuration files and directories to run the first stages of STIG RHEL8 based servers
 
 This is configured in a directory structure level.
 
 Goss is run based on the goss.yml file in the top level directory. This specifies the configuration.
 
-## further information
+## Further information
 
 - [goss documentation](https://github.com/aelsabbahy/goss/blob/master/docs/manual.md#patterns)
 - [STIG standards](https://public.cyber.mil/stigs/)

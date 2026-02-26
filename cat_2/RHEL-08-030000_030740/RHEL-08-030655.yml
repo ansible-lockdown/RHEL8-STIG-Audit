@@ -1,0 +1,20 @@
+---
+
+{{ if .Vars.RHEL_08_030655 }}
+command:
+  cron_audit_rules:
+    title: RHEL-08-030655 | RHEL 8 must audit any script or executable called by cron as root or by any privileged user. | audit rules for cron directories
+    exec: auditctl -l | grep cronjobs
+    exit-status: 0
+    stdout:
+    - '/.*\/etc\/cron\.d.*-p wa.*-k cronjobs/'
+    - '/.*\/var\/spool\/cron.*-p wa.*-k cronjobs/'
+    meta:
+      Cat: 2
+      CCI: CCI-000172
+      NIST800-53R4: AU-12
+      Group_Title: SRG-OS-000471-GPOS-00215
+      Rule_ID: SV-274877r1106148_rule
+      STIG_ID: RHEL-08-030655
+      Vul_ID: V-274877
+{{ end }}

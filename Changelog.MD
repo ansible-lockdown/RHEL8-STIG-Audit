@@ -1,25 +1,52 @@
 # Changelog
 
+## QA Fixes February 2026
+
+- Added `---` document marker to goss.yml for YAML compliance.
+- Fixed malformed CCI values: `CCI-00044` corrected to `CCI-000044` across 16 files (RHEL-08-020010 through RHEL-08-020028).
+- Fixed malformed CCI values: `CI-002238` corrected to `CCI-002238` in RHEL-08-020027 and RHEL-08-020028.
+- Added missing CCI field to RHEL-08-010297 (CCI-001453) and RHEL-08-020012 (CCI-000044).
+- Fixed Rule_ID prefix in RHEL-08-040340: `V-230555r1017317_rule` corrected to `SV-230555r1017317_rule`.
+- Fixed Group_Title in RHEL-08-010171: `GPOS-000689` corrected to `GPOS-00068` (consistent with all other SRG-OS-000134 references).
+- vars/STIG.yml: Fixed duplicate `RPM-GPG-KEY-` prefix in `rpm_gpg_key` value.
+- vars/STIG.yml: Fixed Oracle example section (was copy of Alma with wrong values).
+- vars/STIG.yml: Standardized commented examples to use `gpg_keys:` (plural) matching active config.
+- vars/STIG.yml: Fixed comment typo `RHEL_08_101120` to `RHEL_08_010120`.
+- vars/STIG.yml: Added missing variable definitions for `rhel8stig_banner_file`, `os_gpg_key_pubkey_content`, and `os_gpg_key_pubkey_name`.
+- run_audit.sh: Fixed unquoted variables (`$MAX`, `$FORMAT`, `$GROUP`).
+- Removed leading blank line from RHEL-08-010673.yml.
+- Renamed `cat_2/RHEL-08-020000_020353` to `cat_2/RHEL-08-020000_020360` to match actual file range, updated goss.yml reference.
+
 ## STIG V2R6 January 2026
 
-Align to V2R6 benchmark. Rules not in V2R6 XML removed from audit.
-
+- Aligned vars/STIG.yml with Private-RHEL8-STIG defaults/main.yml and goss template.
+- benchmark_version updated to v2r6.
+- RHEL-08-010015 - New CAT1 audit check: crypto-policies package installed (SV-279933r1156352_rule).
 - RHEL-08-010020 - Crypto-policies implementation (FIPS 140-3 systemwide policy); check aligned to V2R6.
-- RHEL-08-010287 - Removed (rule not in V2R6 XML; redundant with crypto-policies).
+- RHEL-08-010030 - Moved from CAT2 to CAT1 section in vars/STIG.yml (task file already in cat_1/).
+- RHEL-08-010149 - Corrected metadata Cat: 1 to Cat: 2 in audit task file.
+- RHEL-08-010270 - New CAT1 audit check: cryptographic policy must not be overridden (SV-279932r1156349_rule).
+- RHEL-08-010275 - New CAT2 audit check: DOD-approved encryption in bind package (SV-279931r1156346_rule).
+- RHEL-08-010280 - New CAT2 audit check: IP tunnels FIPS 140-3 cryptographic algorithms (SV-279930r1156343_rule).
+- RHEL-08-010287 - Removed (rule not in V2R6; redundant with crypto-policies).
 - RHEL-08-010290 - SSH server MACs: title FIPS 140-2 → FIPS 140-3, Rule_ID SV-230251r1155370_rule.
 - RHEL-08-010291 - SSH server ciphers: title and check aligned to FIPS 140-3, Rule_ID SV-230252r1155364_rule, cipher order per V2R6.
-- RHEL-08-010293 - Removed (rule not in V2R6 XML; OpenSSL requirement controlled by crypto-policies).
-- RHEL-08-010294, 010295, 040342 - Removed (rules not in V2R6 XML; crypto-policies).
-- RHEL-08-020000, 020340 - Removed (rules not in V2R6 XML).
-- RHEL-08-010660 - Removed (rule not in V2R6 XML).
+- RHEL-08-010293 - Removed (rule not in V2R6; OpenSSL requirement controlled by crypto-policies).
+- RHEL-08-010294, 010295, 040342 - Removed (rules not in V2R6; crypto-policies).
+- RHEL-08-010472 - New CAT3 audit check: rng-tools package installed (SV-244527r1017333_rule).
+- RHEL-08-010660 - Removed (rule not in V2R6).
+- RHEL-08-020000, 020340 - Removed (rules not in V2R6.
+- RHEL-08-020360 - New CAT2 audit check: shell session TMOUT 10 min inactivity (SV-279929r1156340_rule).
+- RHEL-08-030210 - Removed (not in V2R6 or Private-RHEL8-STIG).
+- RHEL-08-030655 - New CAT2 audit check: audit cron scripts/executables (SV-274877r1106148_rule).
 - Rule_IDs updated to V2R6 for: 010296, 010297, 010350, 010572, 010580, 010630, 010640, 010650, 010670, 010671, 010673, 010700, 010800, 020060, 040070, 040140, 040172, 040370, 010455, 010672, 010674, 010675, 020015, 040010, 040282, 040285.
-- Title/check aligned to V2R6 XML: 040010 (EPEL repo check, title); 020060 (title: 15 min session lock); 010350 (title: group-owned by root); 040070 (title: automounter disabled).
+- Title/check aligned to V2R6: 040010 (EPEL repo check, title); 020060 (title: 15 min session lock); 010350 (title: group-owned by root); 040070 (title: automounter disabled).
 
 ## STIG V2R3 April 2025
 
-Many controls rule ID updated
-Other metadata update where required
-updated some regex expressions
+Many controls Rule ID updated
+Other metadata updated where required
+Updated some regex expressions
 - RHEL-08-101030 - Moved to CAT1
 - RHEL-08-010296 - Added Client ssh MACs control.
 - RHEL-08-010297 - Added Client ssh Cipher control.
@@ -29,7 +56,7 @@ updated some regex expressions
 
 ## STIG V2R2 January 2025
 
-RuleIDs updated for listed controls after changes in control
+Rule IDs updated for listed controls after changes in control
 
 - RHEL-08-010030 - moved from CAT2 to CAT1 control
 - RHEL-08-010130 - hashing round increase min from 5000 to 100000
@@ -40,11 +67,11 @@ RuleIDs updated for listed controls after changes in control
 
 ## STIG V2R1 October 2025
 
-RuleIDs updated for all controls
-Nist Control ID associations added
+Rule IDs updated for all controls
+NIST Control ID associations added
 
 - RHEL-08-010350 - command updated
-- RHEL-08-010472 - Not Applicable if fips
+- RHEL-08-010472 - Not Applicable if FIPS
 - RHEL-08-020035 - version 8.7+
 - RHEL-08-020039 RHEL-08-020040 RHEL-08-020041 RHEL-08-020042, RHEL-08-020070 - TMUX removed
 - RHEL-08-020220, RHEL-08-020221 - remember not required for PAM
@@ -56,10 +83,10 @@ Nist Control ID associations added
 
 ## STIG V1R14 April 2024
 
-Updated ruleids
+Updated Rule IDs
 
 - CAT I
-  - RHEL-08-020330 - cat1
+  - RHEL-08-020330 - CAT1
 - CAT II
   - RHEL-08-010040
   - RHEL-08-010070
@@ -78,7 +105,7 @@ Updated ruleids
 
 ## STIG V1R13 24th Jan 2024
 
-ruleid updated
+Rule ID updated
 
 - 010001
 - 020250
@@ -88,18 +115,18 @@ ruleid updated
 CAT II
 
 - 020035 - updated rule and added handler for logind restart
-- 040020 - /bin/false update and ruleid update
-- 040080 - /bin/false and ruleid - updated test
-- 040111 - /bin/false and ruleid - updated test
+- 040020 - /bin/false update and Rule ID update
+- 040080 - /bin/false and Rule ID - updated test
+- 040111 - /bin/false and Rule ID - updated test
 
 CAT III
 
-- 040021 - /bin/false and ruleid
-- 040022 - /bin/false and ruleid
-- 040023 - /bin/false and ruleid
-- 040024 - /bin/false and ruleid
-- 040025 - /bin/false and ruleid
-- 040026 - /bin/false and ruleid
+- 040021 - /bin/false and Rule ID
+- 040022 - /bin/false and Rule ID
+- 040023 - /bin/false and Rule ID
+- 040024 - /bin/false and Rule ID
+- 040025 - /bin/false and Rule ID
+- 040026 - /bin/false and Rule ID
 
 ## STIG V1R12 25th Oct 2023
 
@@ -120,23 +147,23 @@ directory renamed
 Controls updated
 
 - CAT2:
-  - 010030 - ruleid
-  - 010200 - ruleid
-  - 010201 - ruleid
-  - 010290 - ruleid and SSH MACS updated
-  - 010291 - ruleid and SSH Ciphers updated
-  - 010770 - ruleid
-  - 020035 - ruleid
-  - 020041 - ruleid and tmux script update
-  - 030690 - ruleid and protocol options added
-  - 040159 - ruleid
-  - 040160 - ruleid
-  - 040342 - ruleid and SSH KEX algorithms updated
+  - 010030 - Rule ID
+  - 010200 - Rule ID
+  - 010201 - Rule ID
+  - 010290 - Rule ID and SSH MACs updated
+  - 010291 - Rule ID and SSH Ciphers updated
+  - 010770 - Rule ID
+  - 020035 - Rule ID
+  - 020041 - Rule ID and tmux script update
+  - 030690 - Rule ID and protocol options added
+  - 040159 - Rule ID
+  - 040160 - Rule ID
+  - 040342 - Rule ID and SSH KEX algorithms updated
 
 - CAT3
-  - 010471 - ruleid
+  - 010471 - Rule ID
 
-## Stig V1R10 27th April 2023
+## STIG V1R10 27th April 2023
 
 - Added new controls
   - RHEL-08-10019
@@ -158,14 +185,14 @@ Controls updated
   - RHEL-08-30070
   - RHEL-08-40150
 
-## Stig V1R9 23 Jan 2023
+## STIG V1R9 23 Jan 2023
 
-- update to run_audit.sh to allow for Oracle linux
-- alignment with STIG release with remediate
+- update to run_audit.sh to allow for Oracle Linux
+- alignment with STIG release with remediation
 - some tests extended to check for more options
 - fixed banner variable
 
-## Stig V1R8 22nd Oct 2022
+## STIG V1R8 22nd Oct 2022
 
 - auditd outfile name change to include benchmark name
 - new Rule ID for listed
@@ -243,9 +270,9 @@ Controls updated
   - RHEL-08-010376 - updated check
   - RHEL-08-020340 - CCI updated
 
-## Stig V1R7 27th July 2022
+## STIG V1R7 27th July 2022
 
-- auditd config tests now exntded for mutliple locations
+- auditd config tests now extended for multiple locations
 - pwquality based checks extended for all files
 - all files linted for blank line at end of file
 - new Rule ID for listed
@@ -297,7 +324,7 @@ Controls updated
   - RHEL-08-040285
   - RHEL-08-040286
 
-## Stig V1R6 27th April 2022
+## STIG V1R6 27th April 2022
 
 - new Rule ID for all listed
 
@@ -332,7 +359,7 @@ Controls updated
   - RHEL-08-040285
   - RHEL-08-040286
 
-## Stig V1R5 27th January 2022
+## STIG V1R5 27th January 2022
 
 - New Rule ID for all listed
 - os_release variable requirements for new rules. Is set by run_audit script but can be manually set in STIG.yml also.
@@ -410,12 +437,12 @@ Controls updated
 
 
 
-## Stig V1R4 27th October 2021
+## STIG V1R4 27th October 2021
 
 - new rules
 - stig.yml in upper case
 
-## all controls changed have a new ruleid
+## All controls changed have a new Rule ID
 
 ### Cat 1
 
@@ -483,7 +510,7 @@ Controls updated
 - 040025
 - 040026
 
-## Stig V1R3 23rd July 2021
+## STIG V1R3 23rd July 2021
 
 stig.yml
 
@@ -495,7 +522,7 @@ goss.yml & run_audit.sh
 
 - wrapper script for values and corresponding values for benchmark in goss.yml
 
-## All control changes have a new rule ID
+## All control changes have a new Rule ID
 
 ### CAT-1
 
@@ -583,7 +610,7 @@ goss.yml & run_audit.sh
   - updated checks
 - RHEL-08-020013
   - updated checks
-- RHEL-08- 020015
+- RHEL-08-020015
   - updated checks
 - RHEL-08-020017
   - updated checks
@@ -604,7 +631,7 @@ goss.yml & run_audit.sh
 - RHEL-08-020039
   - new control
 - RHEL-08-020040
-  - moved some comntent to 020039
+  - moved some content to 020039
 - RHEL-08-020080
   - moved some checks to 020081 & 020082
 - RHEL-08-020081
@@ -641,7 +668,7 @@ goss.yml & run_audit.sh
 - RHEL-08-040139
   - new control
 - RHEL-08-040140
-  - moved some content to 0101439 & 010141
+  - moved some content to 040139 & 040141
 - RHEL-08-040141
   - new control
 - RHEL-08-040150

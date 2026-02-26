@@ -1,0 +1,45 @@
+---
+
+{{ if .Vars.rhel8stig_os_version_pre_8_2 }}
+  {{ if .Vars.RHEL_08_020022  }}
+command:
+  password_auth_deny_root:
+    title: RHEL-08-020022 | RHEL 8 must include root when automatically locking an account until the locked account is released by an administrator when three unsuccessful logon attempts occur during a 15-minute time period. | OS_ver < 8.2 passwd-auth
+    exec: grep -i dir /etc/pam.d/password-auth
+    exit-status: 0
+    stdout:
+    - '/^auth required pam_faillock.so preauth dir={{ .Vars.rhel8stig_pam_faillock_dir }}.*\seven_deny_root.*/'
+    - '/^auth required pam_faillock.so authfail dir={{ .Vars.rhel8stig_pam_faillock_dir }}'
+    - '/^account required pam_faillock.so/'
+    - '!/^#.*pam_faillock.so/'
+    meta:
+      Cat: 2
+      CCI: CCI-000044
+      NIST800-53R4: AC-7
+      Group_Title:
+      - SRG-OS-000021-GPOS-00005
+      - SRG-OS-000329-GPOS-00128
+      Rule_ID: SV-230344r1017156_rule
+      STIG_ID: RHEL-08-020022
+      Vul_ID: V-230344
+  system_auth_deny_root:
+    title: RHEL-08-020022 | RHEL 8 must include root when automatically locking an account until the locked account is released by an administrator when three unsuccessful logon attempts occur during a 15-minute time period. | OS_ver < 8.2 system-auth
+    exec: grep -i dir /etc/pam.d/system-auth
+    exit-status: 0
+    stdout:
+    - '/^auth required pam_faillock.so preauth dir={{ .Vars.rhel8stig_pam_faillock_dir }}.*\seven_deny_root.*/'
+    - '/^auth required pam_faillock.so authfail dir={{ .Vars.rhel8stig_pam_faillock_dir }}'
+    - '/^account required pam_faillock.so/'
+    - '!/^#.*pam_faillock.so/'
+    meta:
+      Cat: 2
+      CCI: CCI-000044
+      NIST800-53R4: AC-7
+      Group_Title:
+      - SRG-OS-000021-GPOS-00005
+      - SRG-OS-000329-GPOS-00128
+      Rule_ID: SV-230344r1017156_rule
+      STIG_ID: RHEL-08-020022
+      Vul_ID: V-230344
+  {{ end }}
+{{ end }}
