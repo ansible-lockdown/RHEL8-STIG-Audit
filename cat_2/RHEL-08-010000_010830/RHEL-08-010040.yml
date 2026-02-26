@@ -10,7 +10,7 @@ command:
       - 0
       - 2
     stdout:
-    - '/.*:Banner {{ .Vars.rhel8stig_banner_file }}/'
+    - '/.*:Banner /etc/issue/'
     meta:
       Cat: 2
       CCI: CCI-000048
