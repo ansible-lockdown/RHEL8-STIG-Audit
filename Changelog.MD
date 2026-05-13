@@ -1,5 +1,21 @@
 # Changelog
 
+## STIG V2R7 May 2026
+
+- Updated benchmark_version to v2r7 in vars/STIG.yml
+- Updated BENCHMARK_VER to v2r7 in run_audit.sh
+- Updated README to reference V2R7 release (01 April 2026)
+- Updated Rule_ID revision tags for 24 goss test files to V2R7 values
+- Promoted 6 rules from cat_2 to cat_1 (medium -> high severity):
+  - RHEL-08-010275 (SV-279931r1184237) - DOD-approved encryption in bind package
+  - RHEL-08-010280 (SV-279930r1184239) - IP tunnels FIPS 140-3 cryptographic algorithms
+  - RHEL-08-010290 (SV-230251r1184240) - SSH server MACs FIPS 140-2 validated algorithms
+  - RHEL-08-010291 (SV-230252r1184241) - SSH server DOD-approved encryption ciphers
+  - RHEL-08-010296 (SV-272482r1184242) - SSH client MACs FIPS 140-3 validated algorithms
+  - RHEL-08-010297 (SV-272483r1184243) - SSH client ciphers FIPS 140-3 validated algorithms
+- Demoted 1 rule from cat_1 to cat_2 (high -> medium severity):
+  - RHEL-08-040010 (SV-230492r1184277) - EPEL repository packages
+
 ## QA Fixes February 2026
 
 - Added `---` document marker to goss.yml for YAML compliance.
