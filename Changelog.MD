@@ -4,7 +4,7 @@
 
 - Updated benchmark_version to v2r7 in vars/STIG.yml
 - Updated BENCHMARK_VER to v2r7 in run_audit.sh
-- Updated README to reference V2R7 release (01 April 2026)
+- Updated README to reference V2R7 release
 - Updated Rule_ID revision tags for 24 goss test files to V2R7 values
 - Promoted 6 rules from cat_2 to cat_1 (medium -> high severity):
   - RHEL-08-010275 (SV-279931r1184237) - DOD-approved encryption in bind package
