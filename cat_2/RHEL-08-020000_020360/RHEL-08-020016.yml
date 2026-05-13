@@ -19,7 +19,7 @@ command:
       Group_Title:
       - SRG-OS-000021-GPOS-00005
       - SRG-OS-000329-GPOS-00128
-      Rule_ID: SV-230338r1017150_rule
+      Rule_ID: SV-230338r1184270_rule
       STIG_ID: RHEL-08-020016
       Vul_ID: V-230338
   system_auth_lockout_persist:
@@ -38,7 +38,7 @@ command:
       Group_Title:
       - SRG-OS-000021-GPOS-00005
       - SRG-OS-000329-GPOS-00128
-      Rule_ID: SV-230338r1017150_rule
+      Rule_ID: SV-230338r1184270_rule
       STIG_ID: RHEL-08-020016
       Vul_ID: V-230338
   {{ end }}

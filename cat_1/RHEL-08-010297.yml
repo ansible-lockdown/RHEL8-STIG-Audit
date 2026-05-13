@@ -9,7 +9,7 @@ file:
     contents:
     - '/^Ciphers aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes128-ctr.*/'
     meta:
-      Cat: 2
+      Cat: 1
       CCI: CCI-001453
       NIST800-53R4: AC-17
       Group_Title:
@@ -17,7 +17,7 @@ file:
       - SRG-OS-000393-GPOS-00173
       - SRG-OS-000394-GPOS-00174
       - SRG-OS-000125-GPOS-00066
-      Rule_ID: SV-272483r1155361_rule
+      Rule_ID: SV-272483r1184243_rule
       STIG_ID: RHEL-08-010297
       Vul_ID: V-272483
 {{ end }}

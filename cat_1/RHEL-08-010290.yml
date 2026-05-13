@@ -9,7 +9,7 @@ command:
     stdout:
     - '/^FIPS/'
     meta:
-      Cat: 2
+      Cat: 1
       CCI: CCI-001453
       NIST800-53R4: AC-17
       Group_Title:
@@ -17,7 +17,7 @@ command:
       - SRG-OS-000393-GPOS-00173
       - SRG-OS-000394-GPOS-00174
       - SRG-OS-000125-GPOS-00065
-      Rule_ID: SV-230251r1155370_rule
+      Rule_ID: SV-230251r1184240_rule
       STIG_ID: RHEL-08-010290
       Vul_ID: V-230251
   crypto_policies_openssh_server_macs:
@@ -27,7 +27,7 @@ command:
     stdout:
     - '/^CRYPTO_POLICY=.*-oMACS=hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512,hmac-sha2-256.*-o/'
     meta:
-      Cat: 2
+      Cat: 1
       CCI: CCI-001453
       NIST800-53R4: AC-17
       Group_Title:
@@ -35,7 +35,7 @@ command:
       - SRG-OS-000393-GPOS-00173
       - SRG-OS-000394-GPOS-00174
       - SRG-OS-000125-GPOS-00065
-      Rule_ID: SV-230251r1155370_rule
+      Rule_ID: SV-230251r1184240_rule
       STIG_ID: RHEL-08-010290
       Vul_ID: V-230251
 {{ end }}

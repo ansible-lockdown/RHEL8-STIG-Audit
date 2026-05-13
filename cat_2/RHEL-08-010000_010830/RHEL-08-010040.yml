@@ -16,7 +16,7 @@ command:
       CCI: CCI-000048
       NIST800-53R4: AC-8
       Group_Title: SRG-OS-000023-GPOS-00006
-      Rule_ID: SV-230225r1069297_rule
+      Rule_ID: SV-230225r1184236_rule
       STIG_ID: RHEL-08-010040
       Vul_ID: V-230225
 file:
@@ -30,7 +30,7 @@ file:
       CCI: CCI-000048
       NIST800-53R4: AC-8
       Group_Title: SRG-OS-000023-GPOS-00006
-      Rule_ID: SV-230225r1069297_rule
+      Rule_ID: SV-230225r1184236_rule
       STIG_ID: RHEL-08-010040
       Vul_ID: V-230225
 {{ end }}

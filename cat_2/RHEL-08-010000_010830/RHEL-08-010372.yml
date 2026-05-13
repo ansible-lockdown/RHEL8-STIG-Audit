@@ -17,7 +17,7 @@ command:
       CCI: CCI-001749
       NIST800-53R4: CM-5
       Group_Title: SRG-OS-000366-GPOS-00153
-      Rule_ID: SV-230266r1017084_rule
+      Rule_ID: SV-230266r1184246_rule
       STIG_ID: RHEL-08-010372
       Vul_ID: V-230266
 kernel-param:
@@ -29,7 +29,7 @@ kernel-param:
       CCI: CCI-001749
       NIST800-53R4: CM-5
       Group_Title: SRG-OS-000366-GPOS-00153
-      Rule_ID: SV-230266r1017084_rule
+      Rule_ID: SV-230266r1184246_rule
       STIG_ID: RHEL-08-010372
       Vul_ID: V-230266
 {{ end }}

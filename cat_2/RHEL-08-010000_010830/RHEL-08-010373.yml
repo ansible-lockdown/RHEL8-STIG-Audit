@@ -21,7 +21,7 @@ command:
       - SRG-OS-000312-GPOS-00123
       - SRG-OS-000312-GPOS-00124
       - SRG-OS-000324-GPOS-00125
-      Rule_ID: SV-230267r1017085_rule
+      Rule_ID: SV-230267r1184249_rule
       STIG_ID: RHEL-08-010373
       Vul_ID: V-230267
 kernel-param:
@@ -37,7 +37,7 @@ kernel-param:
       - SRG-OS-000312-GPOS-00123
       - SRG-OS-000312-GPOS-00124
       - SRG-OS-000324-GPOS-00125
-      Rule_ID: SV-230267r1017085_rule
+      Rule_ID: SV-230267r1184249_rule
       STIG_ID: RHEL-08-010373
       Vul_ID: V-230267
 {{ end }}

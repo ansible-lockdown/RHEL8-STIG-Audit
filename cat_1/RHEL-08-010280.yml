@@ -12,11 +12,11 @@ command:
     stdout:
     - '/crypto-policies\/back-ends\/libreswan.config|libreswan not installed/'
     meta:
-      Cat: 2
+      Cat: 1
       CCI: CCI-000068
       NIST800-53R4: AC-17
       Group_Title: SRG-OS-000033-GPOS-00014
-      Rule_ID: SV-279930r1156343_rule
+      Rule_ID: SV-279930r1184239_rule
       STIG_ID: RHEL-08-010280
       Vul_ID: V-279930
 {{ end }}

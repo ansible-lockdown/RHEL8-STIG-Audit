@@ -13,7 +13,7 @@ mount:
       CCI: CCI-000366
       NIST800-53R4: CM-6
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-244530r1155403_rule
+      Rule_ID: SV-244530r1184260_rule
       STIG_ID: RHEL-08-010572
       Vul_ID: V-244530
   {{ end }}

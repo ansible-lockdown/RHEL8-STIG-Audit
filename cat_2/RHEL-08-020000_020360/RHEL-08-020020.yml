@@ -19,7 +19,7 @@ command:
       Group_Title:
       - SRG-OS-000021-GPOS-00005
       - SRG-OS-000329-GPOS-00128
-      Rule_ID: SV-230342r1017154_rule
+      Rule_ID: SV-230342r1184274_rule
       STIG_ID: RHEL-08-020020
       Vul_ID: V-230342
   system_auth_audit:
@@ -38,7 +38,7 @@ command:
       Group_Title:
       - SRG-OS-000021-GPOS-00005
       - SRG-OS-000329-GPOS-00128
-      Rule_ID: SV-230342r1017154_rule
+      Rule_ID: SV-230342r1184274_rule
       STIG_ID: RHEL-08-020020
       Vul_ID: V-230342
   {{ end }}

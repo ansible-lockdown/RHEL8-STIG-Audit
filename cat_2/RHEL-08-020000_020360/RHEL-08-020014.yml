@@ -19,7 +19,7 @@ command:
       Group_Title:
       - SRG-OS-000021-GPOS-00005
       - SRG-OS-000329-GPOS-00128
-      Rule_ID: SV-230336r1017148_rule
+      Rule_ID: SV-230336r1184268_rule
       STIG_ID: RHEL-08-020014
       Vul_ID: V-230336
   system_auth_unlock_time:
@@ -38,7 +38,7 @@ command:
       Group_Title:
       - SRG-OS-000021-GPOS-00005
       - SRG-OS-000329-GPOS-00128
-      Rule_ID: SV-230336r1017148_rule
+      Rule_ID: SV-230336r1184268_rule
       STIG_ID: RHEL-08-020014
       Vul_ID: V-230336
   {{ end }}

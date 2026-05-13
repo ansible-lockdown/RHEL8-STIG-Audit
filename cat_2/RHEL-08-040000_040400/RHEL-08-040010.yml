@@ -7,13 +7,13 @@ command:
     exec: sh -c '! dnf repolist 2>/dev/null | grep -qi epel'
     exit-status: 0
     meta:
-      Cat: 1
+      Cat: 2
       CCI: CCI-000381
       NIST800-53R4: CM-7
       Group_Title:
       - SRG-OS-000095-GPOS-00049
       - SRG-OS-000074-GPOS-00042
-      Rule_ID: SV-230492r1134888_rule
+      Rule_ID: SV-230492r1184277_rule
       STIG_ID: RHEL-08-040010
       Vul_ID: V-230492
 {{ end }}

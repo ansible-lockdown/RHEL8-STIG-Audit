@@ -18,7 +18,7 @@ command:
       Group_Title:
       - SRG-OS-000021-GPOS-00005
       - SRG-OS-000329-GPOS-00128
-      Rule_ID: SV-230332r1017144_rule
+      Rule_ID: SV-230332r1184264_rule
       STIG_ID: RHEL-08-020010
       Vul_ID: V-230332
   system_auth_bad_logon:
@@ -36,7 +36,7 @@ command:
       Group_Title:
       - SRG-OS-000021-GPOS-00005
       - SRG-OS-000329-GPOS-00128
-      Rule_ID: SV-230332r1017144_rule
+      Rule_ID: SV-230332r1184264_rule
       STIG_ID: RHEL-08-020010
       Vul_ID: V-230332
   {{ end }}
