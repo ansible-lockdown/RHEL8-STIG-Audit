@@ -436,7 +436,7 @@ RHEL_08_040310: true
 # Variables
 
 rhel8stig_password_hash: grub.pbkdf2.sha512.changeme
-rhel8stig_boot_superuser: root
+rhel8stig_boot_superuser: bootloader_admin
 
 # RHEL_08_101120 & Auditd controls
 MIN_UID: 1000
@@ -468,9 +468,9 @@ rhel8stig_auditd_max_log_file_action: SYSLOG
 rhel8stig_auditd_disk_full_action: HALT
 
 # RHEL_08_030690 if using remote syslog server
-rhel8stig_remotelog_server: 1.1.1.1
-rhel8stig_remotelog_server_port: 1549
-rhel8stig_remotelog_server_protocol: '@@'
+rhel8stig_remotelog_server: 10.10.10.10
+rhel8stig_remotelog_server_port: 9999
+rhel8stig_remotelog_server_protocol: '@'
 
 # RHEL_08_040137
 python_bin: '/usr/bin/python'
