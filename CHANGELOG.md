@@ -1,5 +1,12 @@
 # Changelog
 
+## STIG V2R7 - 2026 May QA updates
+
+- Renamed `Changelog.MD` to canonical `CHANGELOG.md`
+- CONTRIBUTING.rst: rebranded to "Ansible-Lockdown Projects"
+- vars/STIG.yml: aligned placeholder values for `rhel8stig_boot_superuser`, `rhel8stig_remotelog_server`, `rhel8stig_remotelog_server_port`, `rhel8stig_remotelog_server_protocol` with remediation defaults so out-of-the-box audit checks the same values remediation applies
+- run_audit.sh: anchored `VERSION_ID=` grep with `^` to drop the redundant `-w` flag (BSD-grep compatibility)
+
 ## STIG V2R7 May 2026
 
 - Updated benchmark_version to v2r7 in vars/STIG.yml
