@@ -13,6 +13,7 @@
 - RHEL-08-020060 idle-delay test: replaced inverted-only negative `!/^idle-delay=uint32 900/` with positive bounded match `/^idle-delay=(uint32 )?([1-9]|[1-9][0-9]|[1-8][0-9]{2}|900)$/` per XCCDF "If 'idle-delay' is set to '0' or a value greater than '900', this is a finding" - previously the audit FAILED when value was correctly set to 900, the XCCDF-prescribed value
 - RHEL-08-010141 + RHEL-08-010201 Rule_ID bumped to V2R7 revisions (`SV-244521r1137691_rule`, `SV-244525r1017331_rule`) - missed by the prior bulk sweep
 - RHEL-08-040279 Vul_ID typo `V-24533` -> `V-244553` to match Rule_ID `SV-244553r...` (2 occurrences in the file)
+- vars/STIG.yml: removed dead toggle `RHEL_08_030210` (not in V2R7 XCCDF, no goss test consumes it, no rem-side counterpart) - surfaced by cross-repo toggle-parity audit
 
 ## STIG V2R7 May 2026
 
