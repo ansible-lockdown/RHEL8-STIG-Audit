@@ -3,7 +3,7 @@
 {{ if .Vars.RHEL_08_010201 }}
 command:
   sshd_config_ClientAliveInterval:
-    title: RHEL-08-010201 | The RHEL 8 SSH daemon must be configured with a timeout interval.
+    title: RHEL-08-010201 | RHEL 8 must be configured so that all network connections associated with SSH traffic are terminated after 10 minutes of becoming unresponsive.
     exec: grep ClientAliveInterval /etc/ssh/sshd_config /etc/sshd/conf.d
     exit-status:
       or:

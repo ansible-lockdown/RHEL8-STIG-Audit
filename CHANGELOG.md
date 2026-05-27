@@ -7,6 +7,9 @@
 - vars/STIG.yml: aligned placeholder values for `rhel8stig_remotelog_server`, `rhel8stig_remotelog_server_port`, `rhel8stig_remotelog_server_protocol` with remediation defaults so out-of-the-box audit checks the same values remediation applies
 - vars/STIG.yml: kept `rhel8stig_boot_superuser` at `root` to match the baseline-system value the audit checks against
 - run_audit.sh: anchored `VERSION_ID=` grep with `^` to drop the redundant `-w` flag (BSD-grep compatibility)
+- RHEL-08-020031 lock-delay test: fixed inverted regex `!/^uint32 [1-5]$/` (rejected legitimate 1-5 values) to positive `/^uint32 [0-5]$/`; dropped malformed `!/^lock-delay=uint32 ^([6-9]...)$/` (stray `^` made the regex match nothing, silently masking out-of-bounds values); broadened positive lock-delay regex to `[0-5]` per XCCDF "5 or less"
+- 11 cross-pasted/wrong goss titles aligned verbatim to V2R7 XCCDF: 010121 (FIPS hashing -> null passwords), 010130 (password-auth file -> shadow password suite), 010141 (UEFI auth -> UEFI unique superusers name), 010150 (UEFI title -> BIOS rule), 010201 (generic SSH timeout -> 10-min unresponsive), 010460/010470 (VulnDiscussion paragraph -> rule title), 010610 (typo "prevent ode" -> "prevent code"), 020080 (generic -> lock-delay override), 020082 (idle-delay -> lock-enabled), 020352 (unnecessary accounts -> umask=077)
+- RHEL-08-020080 first goss test: corrected meta `Vul_ID: V-230347` -> `V-230354` to match Rule_ID `SV-230354r...` (was a stale paste from sibling 020030)
 
 ## STIG V2R7 May 2026
 
