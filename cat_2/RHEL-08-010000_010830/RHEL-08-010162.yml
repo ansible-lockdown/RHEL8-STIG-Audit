@@ -3,7 +3,7 @@
 {{ if .Vars.RHEL_08_010162 }}
 package:
   krb5-workstation:
-    title: RHEL-08-010162 | The krb5-workstation package must not be installed on RHEL 8
+    title: RHEL-08-010162 | The krb5-workstation package must not be installed on RHEL 8.
     installed: false
     meta:
       Cat: 2

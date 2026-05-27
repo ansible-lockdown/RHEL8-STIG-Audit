@@ -19,7 +19,7 @@ command:
       - SRG-OS-000373-GPOS-00156
       - SRG-OS-000373-GPOS-00157
       - SRG-OS-000373-GPOS-00158
-      Rule_ID: SV-230272r1069289_rule
+      Rule_ID: SV-230272r1101898_rule
       STIG_ID: RHEL-08-010381
       Vul_ID: V-230272
 {{ end }}

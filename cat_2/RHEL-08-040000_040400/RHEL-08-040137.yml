@@ -3,7 +3,7 @@
 {{ if .Vars.RHEL_08_040137 }}
 file:
   /etc/fapolicyd/fapolicyd.conf:
-    title: RHEL-08-040137 | The RHEL 8 fapolicy module must be configured to employ a deny-all, permit-by-exception policy to allow the execution of authorized software programs | permissive
+    title: RHEL-08-040137 | The RHEL 8 fapolicy module must be configured to employ a deny-all, permit-by-exception policy to allow the execution of authorized software programs. | permissive
     exists: true
     contents:
     - '/^permissive = 0/'
@@ -18,7 +18,7 @@ file:
       Vul_ID: V-244546
 command:
   fapolicy_deny_rule_84:
-     title: RHEL-08-040137 | The RHEL 8 fapolicy module must be configured to employ a deny-all, permit-by-exception policy to allow the execution of authorized software programs | deny_rules <= 8.4
+     title: RHEL-08-040137 | The RHEL 8 fapolicy module must be configured to employ a deny-all, permit-by-exception policy to allow the execution of authorized software programs. | deny_rules <= 8.4
      exec: tail /etc/fapolicyd/fapolicyd.rules /etc/fapolicyd/rules.d/99-stig.rules /etc/fapolicyd/compiled.rules
      exit-status:
        or:
@@ -37,7 +37,7 @@ command:
       STIG_ID: RHEL-08-040137
       Vul_ID: V-244546
   fapolicy_mounts:
-     title: RHEL-08-040137 | The RHEL 8 fapolicy module must be configured to employ a deny-all, permit-by-exception policy to allow the execution of authorized software programs | mounts
+     title: RHEL-08-040137 | The RHEL 8 fapolicy module must be configured to employ a deny-all, permit-by-exception policy to allow the execution of authorized software programs. | mounts
      exec: for mount in `df -h --local | tail -n +2 | grep -v efi | awk '{print $NF}'`; do if [ `grep -cw $mount /etc/fapolicyd/fapolicyd.mounts` -eq 0 ]; then echo $mount FAIL; fi; done
      exit-status: 0
      stdout:

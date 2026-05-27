@@ -3,7 +3,7 @@
 {{ if .Vars.RHEL_08_040350 }}
 command:
    tftp-secure:
-    title: RHEL-08-040350 | If the Trivial File Transfer Protocol (TFTP) server is required, the RHEL 8 TFTP daemon must be configured to operate in secure mode
+    title: RHEL-08-040350 | If the Trivial File Transfer Protocol (TFTP) server is required, the RHEL 8 TFTP daemon must be configured to operate in secure mode.
     exec: grep -i execstart /usr/lib/systemd/system/tftp.service
     exit-status:
       or:

@@ -3,7 +3,7 @@
 {{ if .Vars.RHEL_08_030030 }}
 file:
   /etc/aliases:
-    title: RHEL-08-030030 | The RHEL 8 Information System Security Officer (ISSO) and System Administrator (SA) (at a minimum) must have mail aliases to be notified of an audit processing failure
+    title: RHEL-08-030030 | The RHEL 8 Information System Security Officer (ISSO) and System Administrator (SA) (at a minimum) must have mail aliases to be notified of an audit processing failure.
     exists: true
     contents:
     - '/^postmaster\:\s+root/'
