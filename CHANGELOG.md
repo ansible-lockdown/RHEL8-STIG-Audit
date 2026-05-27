@@ -10,6 +10,9 @@
 - RHEL-08-020031 lock-delay test: fixed inverted regex `!/^uint32 [1-5]$/` (rejected legitimate 1-5 values) to positive `/^uint32 [0-5]$/`; dropped malformed `!/^lock-delay=uint32 ^([6-9]...)$/` (stray `^` made the regex match nothing, silently masking out-of-bounds values); broadened positive lock-delay regex to `[0-5]` per XCCDF "5 or less"
 - 11 cross-pasted/wrong goss titles aligned verbatim to V2R7 XCCDF: 010121 (FIPS hashing -> null passwords), 010130 (password-auth file -> shadow password suite), 010141 (UEFI auth -> UEFI unique superusers name), 010150 (UEFI title -> BIOS rule), 010201 (generic SSH timeout -> 10-min unresponsive), 010460/010470 (VulnDiscussion paragraph -> rule title), 010610 (typo "prevent ode" -> "prevent code"), 020080 (generic -> lock-delay override), 020082 (idle-delay -> lock-enabled), 020352 (unnecessary accounts -> umask=077)
 - RHEL-08-020080 first goss test: corrected meta `Vul_ID: V-230347` -> `V-230354` to match Rule_ID `SV-230354r...` (was a stale paste from sibling 020030)
+- RHEL-08-020060 idle-delay test: replaced inverted-only negative `!/^idle-delay=uint32 900/` with positive bounded match `/^idle-delay=(uint32 )?([1-9]|[1-9][0-9]|[1-8][0-9]{2}|900)$/` per XCCDF "If 'idle-delay' is set to '0' or a value greater than '900', this is a finding" - previously the audit FAILED when value was correctly set to 900, the XCCDF-prescribed value
+- RHEL-08-010141 + RHEL-08-010201 Rule_ID bumped to V2R7 revisions (`SV-244521r1137691_rule`, `SV-244525r1017331_rule`) - missed by the prior bulk sweep
+- RHEL-08-040279 Vul_ID typo `V-24533` -> `V-244553` to match Rule_ID `SV-244553r...` (2 occurrences in the file)
 
 ## STIG V2R7 May 2026
 
