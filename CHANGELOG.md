@@ -17,6 +17,8 @@
 - vars/STIG.yml: fixed doubled-prefix typo `RPM-GPG-KEY-RPM-GPG-KEY-redhat-release` -> `RPM-GPG-KEY-redhat-release` (broke RHEL-08-010019 GPG key fingerprint check)
 - RHEL-08-040172 goss: fixed path from `/etc/systemd/system.conf` (base file) to `/etc/systemd/system.conf.d/55-CtrlAltDel-BurstAction` (drop-in file the rem actually writes); audit was failing because the base file never gets touched
 - RHEL-08-010040 goss banner-content check: path `/etc/motd` -> `/etc/issue` to match the file the rem writes (motd is post-login, issue is pre-login banner per the XCCDF SSH-banner intent)
+- RHEL-08-010150 Rule_ID revision bump `SV-230235r1017054_rule` -> `SV-230235r1137691_rule` (missed by bulk sweep and prior verification pass)
+- vars/STIG.yml: added 7 missing `RHEL_08_*` toggle definitions (010015, 010270, 010275, 010280, 010472, 020360, 030655) - their goss test files gate on `{{ if .Vars.RHEL_08_<id> }}` against previously-undefined vars; tests would silently skip under strict mode
 
 ## STIG V2R7 May 2026
 

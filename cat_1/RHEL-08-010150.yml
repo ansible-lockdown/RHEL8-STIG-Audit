@@ -14,7 +14,7 @@ file:
       CCI: CCI-000213
       NIST800-53R4: AC-3
       Group_Title: SRG-OS-000080-GPOS-00048
-      Rule_ID: SV-230235r1017054_rule
+      Rule_ID: SV-230235r1137691_rule
       STIG_ID: RHEL-08-010150
       Vul_ID: V-230235
   {{ end }}
