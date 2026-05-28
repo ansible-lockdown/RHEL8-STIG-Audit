@@ -3,7 +3,7 @@
 {{ if .Vars.RHEL_08_020200 }}
 command:
   login_defs_pass_max:
-    title: RHEL-08-020200 | RHEL 8 user account passwords must have a 60-day maximum password lifetime restriction
+    title: RHEL-08-020200 | RHEL 8 user account passwords must have a 60-day maximum password lifetime restriction.
     exec: grep -i pass_max /etc/login.defs
     exit-status: 0
     stdout:

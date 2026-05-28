@@ -12,7 +12,7 @@ kernel-param:
       Group_Title: SRG-OS-000480-GPOS-00227
       Rule_ID: SV-244553r1017353_rule
       STIG_ID: RHEL-08-040279
-      Vul_ID: V-24533
+      Vul_ID: V-244553
 command:
   ipv4_all_accept_redirects_check:
     title: RHEL-08-040279 | RHEL 8 must ignore IPv4 Internet Control Message Protocol (ICMP) redirect messages.| file_check
@@ -31,5 +31,5 @@ command:
       Group_Title: SRG-OS-000480-GPOS-00227
       Rule_ID: SV-244553r1017353_rule
       STIG_ID: RHEL-08-040279
-      Vul_ID: V-24533
+      Vul_ID: V-244553
 {{ end }}

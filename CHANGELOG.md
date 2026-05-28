@@ -1,5 +1,25 @@
 # Changelog
 
+## STIG V2R7 - 2026 May QA updates
+
+- Renamed `Changelog.MD` to canonical `CHANGELOG.md`
+- CONTRIBUTING.rst: rebranded to "Ansible-Lockdown Projects"
+- vars/STIG.yml: aligned placeholder values for `rhel8stig_remotelog_server`, `rhel8stig_remotelog_server_port`, `rhel8stig_remotelog_server_protocol` with remediation defaults so out-of-the-box audit checks the same values remediation applies
+- vars/STIG.yml: kept `rhel8stig_boot_superuser` at `root` to match the baseline-system value the audit checks against
+- run_audit.sh: anchored `VERSION_ID=` grep with `^` to drop the redundant `-w` flag (BSD-grep compatibility)
+- RHEL-08-020031 lock-delay test: fixed inverted regex `!/^uint32 [1-5]$/` (rejected legitimate 1-5 values) to positive `/^uint32 [0-5]$/`; dropped malformed `!/^lock-delay=uint32 ^([6-9]...)$/` (stray `^` made the regex match nothing, silently masking out-of-bounds values); broadened positive lock-delay regex to `[0-5]` per XCCDF "5 or less"
+- 11 cross-pasted/wrong goss titles aligned verbatim to V2R7 XCCDF: 010121 (FIPS hashing -> null passwords), 010130 (password-auth file -> shadow password suite), 010141 (UEFI auth -> UEFI unique superusers name), 010150 (UEFI title -> BIOS rule), 010201 (generic SSH timeout -> 10-min unresponsive), 010460/010470 (VulnDiscussion paragraph -> rule title), 010610 (typo "prevent ode" -> "prevent code"), 020080 (generic -> lock-delay override), 020082 (idle-delay -> lock-enabled), 020352 (unnecessary accounts -> umask=077)
+- RHEL-08-020080 first goss test: corrected meta `Vul_ID: V-230347` -> `V-230354` to match Rule_ID `SV-230354r...` (was a stale paste from sibling 020030)
+- RHEL-08-020060 idle-delay test: replaced inverted-only negative `!/^idle-delay=uint32 900/` with positive bounded match `/^idle-delay=(uint32 )?([1-9]|[1-9][0-9]|[1-8][0-9]{2}|900)$/` per XCCDF "If 'idle-delay' is set to '0' or a value greater than '900', this is a finding" - previously the audit FAILED when value was correctly set to 900, the XCCDF-prescribed value
+- RHEL-08-010141 + RHEL-08-010201 Rule_ID bumped to V2R7 revisions (`SV-244521r1137691_rule`, `SV-244525r1017331_rule`) - missed by the prior bulk sweep
+- RHEL-08-040279 Vul_ID typo `V-24533` -> `V-244553` to match Rule_ID `SV-244553r...` (2 occurrences in the file)
+- vars/STIG.yml: removed dead toggle `RHEL_08_030210` (not in V2R7 XCCDF, no goss test consumes it, no rem-side counterpart) - surfaced by cross-repo toggle-parity audit
+- vars/STIG.yml: fixed doubled-prefix typo `RPM-GPG-KEY-RPM-GPG-KEY-redhat-release` -> `RPM-GPG-KEY-redhat-release` (broke RHEL-08-010019 GPG key fingerprint check)
+- RHEL-08-040172 goss: fixed path from `/etc/systemd/system.conf` (base file) to `/etc/systemd/system.conf.d/55-CtrlAltDel-BurstAction` (drop-in file the rem actually writes); audit was failing because the base file never gets touched
+- RHEL-08-010040 goss banner-content check: path `/etc/motd` -> `/etc/issue` to match the file the rem writes (motd is post-login, issue is pre-login banner per the XCCDF SSH-banner intent)
+- RHEL-08-010150 Rule_ID revision bump `SV-230235r1017054_rule` -> `SV-230235r1137691_rule` (missed by bulk sweep and prior verification pass)
+- vars/STIG.yml: added 7 missing `RHEL_08_*` toggle definitions (010015, 010270, 010275, 010280, 010472, 020360, 030655) - their goss test files gate on `{{ if .Vars.RHEL_08_<id> }}` against previously-undefined vars; tests would silently skip under strict mode
+
 ## STIG V2R7 May 2026
 
 - Updated benchmark_version to v2r7 in vars/STIG.yml

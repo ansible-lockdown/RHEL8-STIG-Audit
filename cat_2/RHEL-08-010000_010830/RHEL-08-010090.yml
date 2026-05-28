@@ -4,7 +4,7 @@
   {{ if .Vars.RHEL_08_010090 }}
 file:
   /etc/sssd/pki/sssd_auth_ca_db.pem:
-    title: RHEL-08-010090 | Verify RHEL 8 for PKI-based authentication has valid certificates by constructing a certification path (which includes status information) to an accepted trust anchor. | pem file exists in correct place
+    title: RHEL-08-010090 | RHEL 8, for PKI-based authentication, must validate certificates by constructing a certification path (which includes status information) to an accepted trust anchor. | pem file exists in correct place
     exists: true
     meta:
       Cat: 2
@@ -16,7 +16,7 @@ file:
       Vul_ID: V-230229
 command:
   pem_file_cert_chk:
-    title: RHEL-08-010090 | Verify RHEL 8 for PKI-based authentication has valid certificates by constructing a certification path (which includes status information) to an accepted trust anchor. | pem cert check
+    title: RHEL-08-010090 | RHEL 8, for PKI-based authentication, must validate certificates by constructing a certification path (which includes status information) to an accepted trust anchor. | pem cert check
     exec: openssl x509 -text -in /etc/sssd/pki/sssd_auth_ca_db.pem
     exit-status: 0
     stdout:

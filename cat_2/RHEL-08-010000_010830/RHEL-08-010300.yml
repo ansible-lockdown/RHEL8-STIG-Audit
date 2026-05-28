@@ -4,7 +4,7 @@
   {{ if .Vars.RHEL_08_010300 }}
 command:
   root_sys_cmds_perms:
-    title: RHEL-08-010300 | RHEL 8 system commands must have mode 0755 or less permissive.
+    title: RHEL-08-010300 | RHEL 8 system commands must have mode 755 or less permissive.
     exec: find -L /bin /sbin /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin ! -type l -perm /0022 -exec ls -l {} \;
     timeout: {{ .Vars.timeout_ms }}
     exit-status: 0
