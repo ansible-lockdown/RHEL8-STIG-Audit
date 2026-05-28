@@ -22,7 +22,7 @@ command:
 file:
   check_login_banner:
     title: RHEL-08-010040 | RHEL 8 must display the Standard Mandatory DOD Notice and Consent Banner before granting local or remote access to the system via a ssh logon. | banner content check
-    path: /etc/motd
+    path: /etc/issue
     exists: true
     contents: [ {{ .Vars.rhel8stig_logon_banner }} ]
     meta:

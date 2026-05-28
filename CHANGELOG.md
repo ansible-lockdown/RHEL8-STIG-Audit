@@ -14,6 +14,9 @@
 - RHEL-08-010141 + RHEL-08-010201 Rule_ID bumped to V2R7 revisions (`SV-244521r1137691_rule`, `SV-244525r1017331_rule`) - missed by the prior bulk sweep
 - RHEL-08-040279 Vul_ID typo `V-24533` -> `V-244553` to match Rule_ID `SV-244553r...` (2 occurrences in the file)
 - vars/STIG.yml: removed dead toggle `RHEL_08_030210` (not in V2R7 XCCDF, no goss test consumes it, no rem-side counterpart) - surfaced by cross-repo toggle-parity audit
+- vars/STIG.yml: fixed doubled-prefix typo `RPM-GPG-KEY-RPM-GPG-KEY-redhat-release` -> `RPM-GPG-KEY-redhat-release` (broke RHEL-08-010019 GPG key fingerprint check)
+- RHEL-08-040172 goss: fixed path from `/etc/systemd/system.conf` (base file) to `/etc/systemd/system.conf.d/55-CtrlAltDel-BurstAction` (drop-in file the rem actually writes); audit was failing because the base file never gets touched
+- RHEL-08-010040 goss banner-content check: path `/etc/motd` -> `/etc/issue` to match the file the rem writes (motd is post-login, issue is pre-login banner per the XCCDF SSH-banner intent)
 
 ## STIG V2R7 May 2026
 
