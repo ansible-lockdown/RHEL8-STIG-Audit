@@ -3,7 +3,7 @@
 {{ if .Vars.RHEL_08_010130 }}
 command:
   logins_def_sha_crypt:
-    title: RHEL-08-010130 | The RHEL 8 password-auth file must be configured to use a sufficient number of hashing rounds.
+    title: RHEL-08-010130 | The RHEL 8 shadow password suite must be configured to use a sufficient number of hashing rounds.
     exec: grep -i sha_crypt /etc/login.defs
     exit-status: 0
     stdout:

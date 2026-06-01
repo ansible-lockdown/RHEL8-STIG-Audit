@@ -3,7 +3,7 @@
 {{ if .Vars.RHEL_08_040400 }}
 command:
    selinux_grouping:
-    title: RHEL-08-040400 | RHEL 8 must prevent non-privileged users from executing privileged functions, including disabling, circumventing, or altering implemented security safeguards/countermeasures. | Manual Check
+    title: RHEL-08-040400 | RHEL 8 must prevent nonprivileged users from executing privileged functions, including disabling, circumventing, or altering implemented security safeguards/countermeasures. | Manual Check
     exec: echo "Manual Investigation to confirm selinux context for rule"
     exit-status: 0
     stdout:

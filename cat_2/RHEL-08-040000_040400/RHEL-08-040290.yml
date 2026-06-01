@@ -3,7 +3,7 @@
 {{ if .Vars.RHEL_08_040290 }}
 command:
   postfix_restricted:
-    title: RHEL-08-040290 | RHEL 8 must be configured to prevent unrestricted mail relaying
+    title: RHEL-08-040290 | RHEL 8 must be configured to prevent unrestricted mail relaying.
     exec: postconf -n smtpd_client_restrictions
     exit-status:
       or:

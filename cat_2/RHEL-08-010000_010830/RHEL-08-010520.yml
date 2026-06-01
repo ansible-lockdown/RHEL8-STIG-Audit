@@ -3,7 +3,7 @@
 {{ if .Vars.RHEL_08_010520 }}
 command:
   sshd_config_IgnoreUserKnownHosts:
-    title: RHEL-08-010520 | The RHEL 8 SSH daemon must not allow authentication using known host’s authentication
+    title: RHEL-08-010520 | The RHEL 8 SSH daemon must not allow authentication using known host’s authentication.
     exec: grep IgnoreUserKnownHosts /etc/ssh/sshd_config /etc/sshd/conf.d
     exit-status:
       or:

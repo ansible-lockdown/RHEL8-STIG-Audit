@@ -13,7 +13,7 @@ command:
       CCI: CCI-001682
       NIST800-53R4: AC-2
       Group_Title: SRG-OS-000123-GPOS-00064
-      Rule_ID: SV-230374r1017186_rule
+      Rule_ID: SV-230374r1069293_rule
       STIG_ID: RHEL-08-020270
       Vul_ID: V-230374
 {{ end }}

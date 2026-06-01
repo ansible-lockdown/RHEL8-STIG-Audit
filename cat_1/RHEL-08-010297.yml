@@ -3,7 +3,7 @@
 {{ if .Vars.RHEL_08_010297 }}
 file:
   crypto_policies_openssh_config_ciphers:
-    title: RHEL-08-010297 | RHEL 8 SSH client must be configured to use only ciphers employing FIPS 140-3 validated cryptographic hash algorithms. | openssh.config
+    title: RHEL-08-010297 | The RHEL 8 SSH client must be configured to use only DOD-approved encryption ciphers employing FIPS 140-3-validated cryptographic hash algorithms to protect the confidentiality of SSH client connections. | openssh.config
     path: /etc/crypto-policies/back-ends/openssh.config
     exists: true
     contents:

@@ -15,7 +15,7 @@ package:
       Vul_ID: V-230502
 service:
   autofs:
-    title: RHEL-08-040070 | The RHEL 8 file system automounter must be disabled unless required | service
+    title: RHEL-08-040070 | The RHEL 8 file system automounter must be disabled. | service
     running: false
     enabled: false
     meta:

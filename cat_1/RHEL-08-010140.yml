@@ -4,7 +4,7 @@
   {{ if .Vars.RHEL_08_010140 }}
 file:
   grub_user_password_efi:
-    title: RHEL-08-010140 | RHEL 8 operating systems booted with United Extensible Firmware Interface (UEFI) implemented must require authentication upon booting into single-user mode and maintenance. | user_cfg
+    title: RHEL-08-010140 | RHEL 8 operating systems booted with United Extensible Firmware Interface (UEFI) must require authentication upon booting into single-user mode and maintenance. | user_cfg
     exists: true
     path: {{ .Vars.rhel8stig_bootloader_path }}/user.cfg
     contents:
@@ -15,7 +15,7 @@ file:
       CCI: CCI-000213
       NIST800-53R4: AC-3
       Group_Title: SRG-OS-000080-GPOS-00048
-      Rule_ID: SV-230234r1017053_rule
+      Rule_ID: SV-230234r1137691_rule
       STIG_ID: RHEL-08-010140
       Vul_ID: V-230234
   {{ end }}

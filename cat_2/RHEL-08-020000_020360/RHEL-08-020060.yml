@@ -8,7 +8,7 @@ command:
     exec: grep -E "idle-delay" /etc/dconf/db/local.d/00-screensaver
     exit-status: 0
     stdout:
-    - '!/^idle-delay=uint32 900/'
+    - '/^idle-delay=(uint32 )?([1-9]|[1-9][0-9]|[1-8][0-9]{2}|900)$/'
     meta:
       Cat: 2
       CCI: CCI-000057

@@ -17,7 +17,7 @@ command:
       STIG_ID: RHEL-08-020320
       Vul_ID: V-230379
   validate_sys_acct:
-    title: RHEL-08-020320 | RHEL 8 must not have unnecessary accounts | example games acct
+    title: RHEL-08-020320 | RHEL 8 must not have unnecessary accounts. | example games acct
     exec: "awk -F : '{print $1 }' /etc/passwd"
     exit-status: 0
     stdout:
