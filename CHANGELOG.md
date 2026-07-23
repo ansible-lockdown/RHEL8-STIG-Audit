@@ -1,5 +1,13 @@
 # Changelog
 
+## STIG V2R8 - 2026 July - Benchmark V2R8 Upgrade
+
+- V2R8 benchmark bump (366 -> 369 controls; +3 added, 0 removed). vars/STIG.yml + run_audit.sh `BENCHMARK_VER` v2r8 (BENCHMARK_OS=RHEL8 kept); README banner v2r8 / 01 Jul 2026
+- Added goss files RHEL-08-040221 (net.ipv4.conf.all.log_martians), 040222 (net.ipv4.conf.default.log_martians) and 040287 (net.ipv4.conf.default.rp_filter) with full V2R8 meta + `RHEL_08_040221/040222/040287` toggle defaults in vars/STIG.yml (the goss.yml `cat_2/RHEL-08-040000_040400/*.yml` glob already includes them)
+- Mirrored the remediation V2R8 changes: RHEL-08-030610 audit-config mode check tightened to 0600, RHEL-08-040172 drop-in path -> `.conf`, RHEL-08-010490 SSH host-key mode check -> 0600 + title, RHEL-08-040220 and RHEL-08-010120 titles reconciled to V2R8
+- 12 Rule_ID revisions bumped to their V2R8 values (context-aware, anchored to the STIG ID)
+- run_audit.sh hygiene for krameff goss v0.5.0: version parse `awk 'NR==1{print $NF}'` (2-line banner), empty-value BENCHMARK_OS fallback for os_vendor/os_maj_ver, and fixed the "does not met" -> "does not meet" typo; README goss link goss-org -> krameff
+
 ## STIG V2R7 - 2026 May QA updates
 
 - Renamed `Changelog.MD` to canonical `CHANGELOG.md`
