@@ -16,7 +16,7 @@ command:
       Group_Title:
       - SRG-OS-000029-GPOS-00010
       - SRG-OS-000031-GPOS-00012
-      Rule_ID: SV-230352r1155401_rule
+      Rule_ID: SV-230352r1208749_rule
       STIG_ID: RHEL-08-020060
       Vul_ID: V-230352
   {{ end }}

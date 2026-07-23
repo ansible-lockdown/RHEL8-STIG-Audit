@@ -1,5 +1,5 @@
 ## metadata for Audit benchmark
-benchmark_version: 'v2r7'
+benchmark_version: 'v2r8'
 
 # set to redhat/rocky/alma/oracle
 rhel8stig_os_distribution: redhat
@@ -382,6 +382,8 @@ RHEL_08_040180: true
 RHEL_08_040209: true
 RHEL_08_040210: true
 RHEL_08_040220: true
+RHEL_08_040221: true
+RHEL_08_040222: true
 RHEL_08_040230: true
 RHEL_08_040239: true
 RHEL_08_040240: true
@@ -400,6 +402,7 @@ RHEL_08_040283: true
 RHEL_08_040284: true
 RHEL_08_040285: true
 RHEL_08_040286: true
+RHEL_08_040287: true
 RHEL_08_040290: true
 RHEL_08_040320: true
 RHEL_08_040321: true

@@ -7,13 +7,13 @@ command:
     exec: stat -c "%a"  /etc/audit/rules.d/*
     exit-status: 0
     stdout:
-      - le: 640
+      - le: 600
     meta:
       Cat: 2
       CCI: CCI-000171
       NIST800-53R4: AU-12
       Group_Title: SRG-OS-000063-GPOS-00032
-      Rule_ID: SV-230471r1069296_rule
+      Rule_ID: SV-230471r1208750_rule
       STIG_ID: RHEL-08-030610
       Vul_ID: V-230471
   auditd_rule_d_perms:
@@ -21,13 +21,13 @@ command:
     exec: for file in `find /etc/audit/rules.d/ -type f`; do stat -c '%a %n' $file; done
     exit-status: 0
     stdout:
-    - '/^6[0,4]0/'
+    - '/^[46]00/'
     meta:
       Cat: 2
       CCI: CCI-000171
       NIST800-53R4: AU-12
       Group_Title: SRG-OS-000063-GPOS-00032
-      Rule_ID: SV-230471r1069296_rule
+      Rule_ID: SV-230471r1208750_rule
       STIG_ID: RHEL-08-030610
       Vul_ID: V-230471
 {{ end }}

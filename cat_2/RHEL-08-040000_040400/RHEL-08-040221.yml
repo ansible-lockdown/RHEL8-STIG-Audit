@@ -1,0 +1,35 @@
+---
+
+{{ if .Vars.RHEL_08_040221 }}
+kernel-param:
+  net.ipv4.conf.all.log_martians:
+    title: RHEL-08-040221 | RHEL 8 must log IPv4 packets with impossible addresses. | Live_check
+    value: '1'
+    meta:
+      Cat: 2
+      CCI: CCI-002386
+      NIST800-53R4: SC-5
+      Group_Title: SRG-OS-000420-GPOS-00186
+      Rule_ID: SV-284948r1208757_rule
+      STIG_ID: RHEL-08-040221
+      Vul_ID: V-284948
+command:
+  ipv4_all_log_martians_check:
+    title: RHEL-08-040221 | RHEL 8 must log IPv4 packets with impossible addresses. | file_check
+    exec: grep -iR net.ipv4.conf.all.log_martians /run/sysctl.d/*.conf /usr/local/lib/sysctl.d/*.conf /usr/lib/sysctl.d/*.conf /lib/sysctl.d/*.conf /etc/sysctl.conf /etc/sysctl.d/*.conf
+    exit-status:
+      or:
+      - 0
+      - 2
+    stdout:
+    - '/.*:(\s|)net.ipv4.conf.all.log_martians( |)=( |)1/'
+    - '!/.*:(\s|)net.ipv4.conf.all.log_martians( |)=( |)0/'
+    meta:
+      Cat: 2
+      CCI: CCI-002386
+      NIST800-53R4: SC-5
+      Group_Title: SRG-OS-000420-GPOS-00186
+      Rule_ID: SV-284948r1208757_rule
+      STIG_ID: RHEL-08-040221
+      Vul_ID: V-284948
+{{ end }}

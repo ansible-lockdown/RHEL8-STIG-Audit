@@ -13,7 +13,7 @@ file:
       CCI: CCI-001764
       NIST800-53R4: CM-7
       Group_Title: SRG-OS-000368-GPOS-00154
-      Rule_ID: SV-244546r1017349_rule
+      Rule_ID: SV-244546r1208752_rule
       STIG_ID: RHEL-08-040137
       Vul_ID: V-244546
 command:
@@ -33,7 +33,7 @@ command:
       CCI: CCI-001764
       NIST800-53R4: CM-7
       Group_Title: SRG-OS-000368-GPOS-00154
-      Rule_ID: SV-244546r1017349_rule
+      Rule_ID: SV-244546r1208752_rule
       STIG_ID: RHEL-08-040137
       Vul_ID: V-244546
   fapolicy_mounts:
@@ -47,7 +47,7 @@ command:
       CCI: CCI-001764
       NIST800-53R4: CM-7
       Group_Title: SRG-OS-000368-GPOS-00154
-      Rule_ID: SV-244546r1017349_rule
+      Rule_ID: SV-244546r1208752_rule
       STIG_ID: RHEL-08-040137
       Vul_ID: V-244546
 {{ end }}
