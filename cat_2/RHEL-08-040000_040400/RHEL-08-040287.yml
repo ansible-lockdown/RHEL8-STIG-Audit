@@ -1,0 +1,35 @@
+---
+
+{{ if .Vars.RHEL_08_040287 }}
+kernel-param:
+  net.ipv4.conf.default.rp_filter:
+    title: RHEL-08-040287 | RHEL 8 must use a reverse-path filter for IPv4 network traffic, when possible, by default. | Live_check
+    value: '1'
+    meta:
+      Cat: 2
+      CCI: CCI-002385
+      NIST800-53R4: SC-5
+      Group_Title: SRG-OS-000420-GPOS-00186
+      Rule_ID: SV-284947r1210519_rule
+      STIG_ID: RHEL-08-040287
+      Vul_ID: V-284947
+command:
+  ipv4_default_rp_filter_check:
+    title: RHEL-08-040287 | RHEL 8 must use a reverse-path filter for IPv4 network traffic, when possible, by default. | file_check
+    exec: grep -iR net.ipv4.conf.default.rp_filter /run/sysctl.d/*.conf /usr/local/lib/sysctl.d/*.conf /usr/lib/sysctl.d/*.conf /lib/sysctl.d/*.conf /etc/sysctl.conf /etc/sysctl.d/*.conf
+    exit-status:
+      or:
+      - 0
+      - 2
+    stdout:
+    - '/.*:(\s|)net.ipv4.conf.default.rp_filter( |)=( |)1/'
+    - '!/.*:(\s|)net.ipv4.conf.default.rp_filter( |)=( |)0/'
+    meta:
+      Cat: 2
+      CCI: CCI-002385
+      NIST800-53R4: SC-5
+      Group_Title: SRG-OS-000420-GPOS-00186
+      Rule_ID: SV-284947r1210519_rule
+      STIG_ID: RHEL-08-040287
+      Vul_ID: V-284947
+{{ end }}
