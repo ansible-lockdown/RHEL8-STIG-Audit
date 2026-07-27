@@ -3,19 +3,19 @@
 {{ if .Vars.RHEL_08_040220 }}
 kernel-param:
   net.ipv4.conf.all.send_redirects:
-    title: RHEL-08-040220 | RHEL 8 must not send Internet Control Message Protocol (ICMP) redirects. | live_check
+    title: RHEL-08-040220 | RHEL 8 must not allow IPv4 ICMP redirect messages. | live_check
     value: '0'
     meta:
       Cat: 2
       CCI: CCI-000366
       NIST800-53R4: CM-6
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230536r1017298_rule
+      Rule_ID: SV-230536r1208868_rule
       STIG_ID: RHEL-08-040220
       Vul_ID: V-230536
 command:
   check_ipv4_all_defaults:
-    title: RHEL-08-040220 | RHEL 8 must not send Internet Control Message Protocol (ICMP) redirects. | file_check
+    title: RHEL-08-040220 | RHEL 8 must not allow IPv4 ICMP redirect messages. | file_check
     exec: grep -iR net.ipv4.conf.all.send_redirects /run/sysctl.d/*.conf /usr/local/lib/sysctl.d/*.conf /usr/lib/sysctl.d/*.conf /lib/sysctl.d/*.conf /etc/sysctl.conf /etc/sysctl.d/*.conf
     exit-status:
       or:
@@ -29,7 +29,7 @@ command:
       CCI: CCI-000366
       NIST800-53R4: CM-6
       Group_Title: SRG-OS-000480-GPOS-00227
-      Rule_ID: SV-230536r1017298_rule
+      Rule_ID: SV-230536r1208868_rule
       STIG_ID: RHEL-08-040220
       Vul_ID: V-230536
 {{ end }}
