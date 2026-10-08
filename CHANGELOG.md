@@ -13,8 +13,8 @@
   `audit_content_version` from the pair. This audit is single-OS by design - `BENCHMARK_OS=RHEL8` is
   set in the header - so a stripped or unusual `/etc/os-release` could silently build a path to
   content that does not exist. The path is now built straight from `BENCHMARK_OS`, removing the
-  failure class rather than adding another fallback for it, and matching the RHEL 9 and RHEL 10
-  audits. 20 lines shorter, `bash -n` clean, help output unchanged
+  failure class rather than adding another fallback for it, and matching the rest of the STIG RHEL
+  Fleet. 20 lines shorter, `bash -n` clean, help output unchanged
 
 - the benchmark version string changes from `v2r8` to `v2.8.0`, and this content is published on a
   new `benchmark_v2.8.0` branch. `benchmark_v2r8` is left in place and unchanged, so any remediation
