@@ -1,5 +1,5 @@
 ## metadata for Audit benchmark
-benchmark_version: 'v2r8'
+benchmark_version: 'v2.8.0'
 
 # set to redhat/rocky/alma/oracle
 rhel8stig_os_distribution: redhat

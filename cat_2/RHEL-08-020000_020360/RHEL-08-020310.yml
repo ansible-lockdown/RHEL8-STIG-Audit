@@ -3,7 +3,7 @@
 {{ if .Vars.RHEL_08_020310}}
 command:
   login_defs_fail_delay:
-    title: RHEL-08-020310 | RHEL 8 must require the change of at least four character classes when passwords are changed.
+    title: RHEL-08-020310 | RHEL 8 must enforce a delay of at least four seconds between logon prompts following a failed logon attempt.
     exec: grep -i fail_delay /etc/login.defs
     exit-status: 0
     stdout:

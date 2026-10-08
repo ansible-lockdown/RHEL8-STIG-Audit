@@ -1,5 +1,26 @@
 # Changelog
 
+## STIG V2R8 - 2026 October - Benchmark version string moved to the dotted form
+
+- the benchmark version string changes from `v2r8` to `v2.8.0`, and this content is published on a
+  new `benchmark_v2.8.0` branch. `benchmark_v2r8` is left in place and unchanged, so any remediation
+  role still pointing at the old string keeps resolving; nothing is cut over by this alone. Updated
+  in the three places that state it: `vars/STIG.yml`, `run_audit.sh` (`BENCHMARK_VER`) and
+  `README.md`
+- **RHEL-08-020060 passed hosts that the benchmark fails.** The `idle-delay` check accepted any
+  value from 1 to 900 seconds, but V2R8 requires 600. A graphical session locking after 15 minutes
+  rather than 10 was reported compliant. The paired remediation already writes
+  `idle-delay=uint32 600`, so only this content was stale, carrying a threshold from an earlier
+  revision. The ceiling is now 600
+- six test titles did not match the V2R8 wording. Two were alarming on their face and turned out to
+  be label-only: RHEL-08-020310 was titled for password character classes while correctly checking
+  `FAIL_DELAY`, which is its actual control, and RHEL-08-030181 was titled for the audit package
+  while correctly asserting the `auditd` service is running and enabled. Their checks were right and
+  their labels were wrong. Titles now carry the benchmark text with its quotation marks removed, and
+  the per-resource qualifier suffixes are preserved
+- the dotted form matches the convention the Ubuntu audit content already uses, where a `vXrY`
+  remediation pairs with a `vX.Y.0` audit branch
+
 ## STIG V2R8 - 2026 July - Benchmark V2R8 Upgrade
 
 - V2R8 benchmark bump (366 -> 369 controls; +3 added, 0 removed). vars/STIG.yml + run_audit.sh `BENCHMARK_VER` v2r8 (BENCHMARK_OS=RHEL8 kept); README banner v2r8 / 01 Jul 2026
