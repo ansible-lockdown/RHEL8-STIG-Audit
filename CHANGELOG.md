@@ -2,6 +2,20 @@
 
 ## STIG V2R8 - 2026 October - Benchmark version string moved to the dotted form
 
+- the parent company name is Quantum Sky, not Tyto Athene. Renamed in `LICENSE`, the only place this
+  repository carried it. Deliberately not renamed: existing entries in this file, which record what
+  was true when written
+- `CONTRIBUTING.rst` becomes `CONTRIBUTING.md`, carrying the current Ansible-Lockdown contributing
+  guide and matching the sibling audit roles. The canonical header is `Contributing to
+  Ansible-Lockdown Projects`, with each of the five sections appearing once
+- **`run_audit.sh` built its content path from OS detection.** It derived `os_vendor` by probing
+  `/etc/os-release`, `uname` and `hostnamectl`, and `os_maj_ver` from `VERSION_ID`, then assembled
+  `audit_content_version` from the pair. This audit is single-OS by design - `BENCHMARK_OS=RHEL8` is
+  set in the header - so a stripped or unusual `/etc/os-release` could silently build a path to
+  content that does not exist. The path is now built straight from `BENCHMARK_OS`, removing the
+  failure class rather than adding another fallback for it, and matching the RHEL 9 and RHEL 10
+  audits. 20 lines shorter, `bash -n` clean, help output unchanged
+
 - the benchmark version string changes from `v2r8` to `v2.8.0`, and this content is published on a
   new `benchmark_v2.8.0` branch. `benchmark_v2r8` is left in place and unchanged, so any remediation
   role still pointing at the old string keeps resolving; nothing is cut over by this alone. Updated
