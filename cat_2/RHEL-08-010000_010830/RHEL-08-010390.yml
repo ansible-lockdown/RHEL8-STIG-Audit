@@ -10,7 +10,7 @@ package:
       CCI: CCI-001948
       NIST800-53R4: IA-2
       Group_Title: SRG-OS-000375-GPOS-00160
-      Rule_ID: SV-230273r1017381_rule
+      Rule_ID: SV-230273r1262203_rule
       STIG_ID: RHEL-08-010390
       Vul_ID: V-230273
 {{ end }}

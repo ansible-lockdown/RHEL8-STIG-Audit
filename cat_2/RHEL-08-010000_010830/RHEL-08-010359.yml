@@ -15,7 +15,7 @@ package:
       Vul_ID: V-251710
 command:
   aide-db-check:
-    title: RHEL-08-010359 | The RHEL 8 operating system must use a file integrity tool to verify correct operation of all security functions.| check aide db"
+    title: RHEL-08-010359 | The RHEL 8 operating system must use a file integrity tool to verify correct operation of all security functions.
     exec: aide --check
     timeout: {{ .Vars.timeout_ms }}
     exit-status:
@@ -36,7 +36,7 @@ command:
       Vul_ID: V-251710
 file:
   /var/lib/aide/aide.db.gz:
-    title: RHEL-08-010359 | The RHEL 8 operating system must use a file integrity tool to verify correct operation of all security functions.| aide db file"
+    title: RHEL-08-010359 | The RHEL 8 operating system must use a file integrity tool to verify correct operation of all security functions.
     exists: true
     meta:
       Cat: 2
@@ -47,7 +47,7 @@ file:
       STIG_ID: RHEL-08-010359
       Vul_ID: V-251710
   /var/lib/aide/aide.db.new.gz:
-    title: RHEL-08-010359 | The RHEL 8 operating system must use a file integrity tool to verify correct operation of all security functions.| aide db new file"
+    title: RHEL-08-010359 | The RHEL 8 operating system must use a file integrity tool to verify correct operation of all security functions.
     exists: false
     meta:
       Cat: 2

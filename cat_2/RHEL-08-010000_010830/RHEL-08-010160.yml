@@ -3,7 +3,7 @@
 {{ if .Vars.RHEL_08_010160 }}
 command:
   password_auth_pam_unix:
-    title: RHEL-08-010160 |  The RHEL 8 pam_unix.so module must be configured in the password-auth file to use a FIPS 140-2 approved cryptographic hashing algorithm for system authentication.
+    title: RHEL-08-010160 | The RHEL 8 pam_unix.so module must be configured in the password-auth file to use a FIPS 140-2 approved cryptographic hashing algorithm for system authentication.
     exec: grep -i pam_unix.so /etc/pam.d/password-auth
     exit-status: 0
     stdout:
@@ -13,7 +13,7 @@ command:
       CCI: CCI-000803
       NIST800-53R4: IA-7
       Group_Title: SRG-OS-000120-GPOS-00061
-      Rule_ID: SV-230237r1017056_rule
+      Rule_ID: SV-230237r1262189_rule
       STIG_ID: RHEL-08-010160
       Vul_ID: V-230237
 {{ end }}

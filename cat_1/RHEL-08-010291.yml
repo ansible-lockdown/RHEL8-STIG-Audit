@@ -3,7 +3,7 @@
 {{ if .Vars.RHEL_08_010291 }}
 command:
   show_crypto_policy2:
-    title: RHEL-08-010291 | The RHEL 8 SSH server must be configured to use only DOD-approved encryption ciphers employing FIPS 140-3-validated cryptographic hash algorithms to protect the confidentiality of SSH server connections. | Live check
+    title: RHEL-08-010291 | The RHEL 8 SSH server must be configured to use only DoW-approved encryption ciphers employing FIPS 140-3-validated cryptographic hash algorithms to protect the confidentiality of SSH server connections. | Live check
     exec: update-crypto-policies --show
     exit-status: 0
     stdout:
@@ -17,11 +17,11 @@ command:
       - SRG-OS-000393-GPOS-00173
       - SRG-OS-000394-GPOS-00174
       - SRG-OS-000125-GPOS-00065
-      Rule_ID: SV-230252r1184241_rule
+      Rule_ID: SV-230252r1262196_rule
       STIG_ID: RHEL-08-010291
       Vul_ID: V-230252
   crypto_policies_openssh_server_ciphers:
-    title: RHEL-08-010291 | The RHEL 8 SSH server must be configured to use only DOD-approved encryption ciphers employing FIPS 140-3-validated cryptographic hash algorithms to protect the confidentiality of SSH server connections. | crypto-policies - ssh_server
+    title: RHEL-08-010291 | The RHEL 8 SSH server must be configured to use only DoW-approved encryption ciphers employing FIPS 140-3-validated cryptographic hash algorithms to protect the confidentiality of SSH server connections. | crypto-policies - ssh_server
     exec: grep -i Ciphers /etc/crypto-policies/back-ends/opensshserver.config
     exit-status: 0
     stdout:
@@ -35,7 +35,7 @@ command:
       - SRG-OS-000393-GPOS-00173
       - SRG-OS-000394-GPOS-00174
       - SRG-OS-000125-GPOS-00065
-      Rule_ID: SV-230252r1184241_rule
+      Rule_ID: SV-230252r1262196_rule
       STIG_ID: RHEL-08-010291
       Vul_ID: V-230252
 {{ end }}
