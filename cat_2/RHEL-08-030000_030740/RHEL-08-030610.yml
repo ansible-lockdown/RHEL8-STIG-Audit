@@ -13,7 +13,7 @@ command:
       CCI: CCI-000171
       NIST800-53R4: AU-12
       Group_Title: SRG-OS-000063-GPOS-00032
-      Rule_ID: SV-230471r1208750_rule
+      Rule_ID: SV-230471r1262175_rule
       STIG_ID: RHEL-08-030610
       Vul_ID: V-230471
   auditd_rule_d_perms:
@@ -27,7 +27,7 @@ command:
       CCI: CCI-000171
       NIST800-53R4: AU-12
       Group_Title: SRG-OS-000063-GPOS-00032
-      Rule_ID: SV-230471r1208750_rule
+      Rule_ID: SV-230471r1262175_rule
       STIG_ID: RHEL-08-030610
       Vul_ID: V-230471
 {{ end }}

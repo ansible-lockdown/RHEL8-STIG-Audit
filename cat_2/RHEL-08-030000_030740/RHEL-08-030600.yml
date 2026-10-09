@@ -20,7 +20,7 @@ command:
       - SRG-OS-000462-GPOS-00206
       - SRG-OS-000471-GPOS-00215
       - SRG-OS-000473-GPOS-00218
-      Rule_ID: SV-230467r1017259_rule
+      Rule_ID: SV-230467r1262214_rule
       STIG_ID: RHEL-08-030600
       Vul_ID: V-230467
   auditd_lastlog_logins:
@@ -41,7 +41,7 @@ command:
       - SRG-OS-000462-GPOS-00206
       - SRG-OS-000471-GPOS-00215
       - SRG-OS-000473-GPOS-00218
-      Rule_ID: SV-230467r1017259_rule
+      Rule_ID: SV-230467r1262214_rule
       STIG_ID: RHEL-08-030600
       Vul_ID: V-230467
 {{ end }}

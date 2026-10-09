@@ -17,7 +17,7 @@ command:
       - SRG-OS-000393-GPOS-00173
       - SRG-OS-000394-GPOS-00174
       - SRG-OS-000125-GPOS-00065
-      Rule_ID: SV-230251r1184240_rule
+      Rule_ID: SV-230251r1262195_rule
       STIG_ID: RHEL-08-010290
       Vul_ID: V-230251
   crypto_policies_openssh_server_macs:
@@ -35,7 +35,7 @@ command:
       - SRG-OS-000393-GPOS-00173
       - SRG-OS-000394-GPOS-00174
       - SRG-OS-000125-GPOS-00065
-      Rule_ID: SV-230251r1184240_rule
+      Rule_ID: SV-230251r1262195_rule
       STIG_ID: RHEL-08-010290
       Vul_ID: V-230251
 {{ end }}

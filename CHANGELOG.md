@@ -1,5 +1,38 @@
 # Changelog
 
+## STIG V2R9 - 2026 October - V2R8 -> V2R9 benchmark alignment
+
+Aligned to DISA RHEL 8 STIG Version 2, Release 9 (30 September 2026). Three rules added, one
+removed, 371 controls in total, and no severity changed, so nothing moved between `cat_`
+directories.
+
+- **RHEL-08-010293 is new and had no test.** The benchmark now requires `/etc/pki/tls/openssl.cnf`
+  to carry `.include = /etc/crypto-policies/back-ends/opensslcnf.config`, which is what makes the
+  systemwide crypto policy reach OpenSSL at all. Without it, every other crypto-policy control can
+  pass while OpenSSL quietly ignores the policy
+- **RHEL-08-010287 is new and had no test**, asserting that `CRYPTO_POLICY` stays commented out in
+  `/etc/sysconfig/sshd` so sshd inherits the systemwide policy rather than overriding it
+- **RHEL-08-030565 is new and had no test.** Added the paired config and running checks for the
+  `privileged-useradd` audit rule, following the shape already used for the neighbouring
+  privileged-command controls
+- **RHEL-08-010471 was withdrawn as deprecated.** Its test file and toggle are removed
+- **RHEL-08-010020 accepted a subpolicy the benchmark no longer allows.** The test matched
+  `/^FIPS/`, which passes for `FIPS:STIG` and any other suffix. V2R9 deleted the note permitting
+  `FIPS:<SUBPOLICY>`, so the match is now anchored to `FIPS` exactly
+- **RHEL-08-020200 and RHEL-08-020210 still enforced the 60-day maximum password lifetime.** The
+  benchmark raised it to 180 days, so both tests reported a finding against a host configured
+  exactly as V2R9 requires. Their bounds are rewritten, and the existing-password test now also
+  treats a zero or negative value as the finding the benchmark says it is
+- **RHEL-08-020101 asserted `requisite` where the benchmark now specifies `required`** for
+  `pam_pwquality.so`
+- **79 identifier values and 28 titles were behind the benchmark.** Every `Rule_ID` and `Vul_ID` in
+  the tree is now set from the V2R9 XCCDF rather than patched by delta, so a value that had drifted
+  by more than one release is corrected too. 1002 identifier occurrences were checked afterwards
+  and all match
+- benchmark version string moved to `v2.9.0` in the three places that define or state it:
+  `vars/STIG.yml`, `run_audit.sh` (`BENCHMARK_VER`) and `README.md`. The paired remediation role
+  resolves this branch through `audit_git_version`, so the two must move together
+
 ## STIG V2R8 - 2026 October - Goss documentation links
 
 - **three documentation links pointed at the pre-fork repository.** `README.md` and two references

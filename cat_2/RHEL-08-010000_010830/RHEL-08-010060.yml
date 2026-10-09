@@ -3,7 +3,7 @@
 {{ if .Vars.RHEL_08_010060 }}
 file:
   /etc/issue:
-    title: RHEL-08-010060 | RHEL 8 must display the Standard Mandatory DoD Notice and Consent Banner before granting local or remote access to the system via a command line user logon.
+    title: RHEL-08-010060 | RHEL 8 must display the Standard Mandatory DoW Notice and Consent Banner before granting local or remote access to the system via a command line user logon.
     exists: true
     contents: [ {{ .Vars.rhel8stig_logon_banner }} ]
     meta:
@@ -13,7 +13,7 @@ file:
       Group_Title:
       - SRG-OS-000023-GPOS-00006
       - SRG-OS-000228-GPOS-00088
-      Rule_ID: SV-230227r1017046_rule
+      Rule_ID: SV-230227r1262184_rule
       STIG_ID: RHEL-08-010060
       Vul_ID: V-230227
 {{ end }}
