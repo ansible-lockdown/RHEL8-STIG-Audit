@@ -1,5 +1,17 @@
 # Changelog
 
+## STIG V2R8 - 2026 October - Goss documentation links
+
+- **three documentation links pointed at the pre-fork repository.** `README.md` and two references
+  in `docs/Security_remediation_and_auditing.md` sent readers to `github.com/aelsabbahy/goss`,
+  which is not where this content's binary comes from. They now point at `github.com/krameff/goss`,
+  matching the paired remediation role. The README's deep link dropped its `#patterns` anchor: the
+  fork's documentation lives at `docs/index.md` rather than `docs/manual.md`, and a deep link that
+  cannot be confirmed is worse than a working link to the page
+- **deliberately not changed: the pinned `v0.3.16` download URLs** in the same document. Those name
+  a specific release of the pre-fork project, and the fork is not assumed to publish matching
+  artifacts under that tag, so rewriting them would turn stale links into broken ones
+
 ## STIG V2R8 - 2026 October - Benchmark version string moved to the dotted form
 
 - the parent company name is Quantum Sky, not Tyto Athene. Renamed in `LICENSE`, the only place this
