@@ -38,7 +38,7 @@
 # Overview
 
 Ansible remediation for security benchmarks now utilises an opensource
-go binary called [goss](https://github.com/aelsabbahy/goss) to audit the
+go binary called [goss](https://github.com/krameff/goss) to audit the
 system.
 
 Enabling an alternative tool to check and ensure that the remediation
@@ -400,7 +400,7 @@ benchmark.
 
 [Ansible by Red Hat](https://www.ansible.com)
 
-[Goss](https://github.com/aelsabbahy/goss)
+[Goss](https://github.com/krameff/goss)
 
 [Remediation and Audit content](https://github.com/ansible-lockdown)
 
