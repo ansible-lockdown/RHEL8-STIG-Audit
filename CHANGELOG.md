@@ -1,5 +1,85 @@
 # Changelog
 
+## STIG V2R9 - 2026 October - V2R8 -> V2R9 benchmark alignment
+
+Aligned to DISA RHEL 8 STIG Version 2, Release 9 (30 September 2026). Three rules added, one
+removed, 371 controls in total, and no severity changed, so nothing moved between `cat_`
+directories.
+
+- **RHEL-08-010293 is new and had no test.** The benchmark now requires `/etc/pki/tls/openssl.cnf`
+  to carry `.include = /etc/crypto-policies/back-ends/opensslcnf.config`, which is what makes the
+  systemwide crypto policy reach OpenSSL at all. Without it, every other crypto-policy control can
+  pass while OpenSSL quietly ignores the policy
+- **RHEL-08-010287 is new and had no test**, asserting that `CRYPTO_POLICY` stays commented out in
+  `/etc/sysconfig/sshd` so sshd inherits the systemwide policy rather than overriding it
+- **RHEL-08-030565 is new and had no test.** Added the paired config and running checks for the
+  `privileged-useradd` audit rule, following the shape already used for the neighbouring
+  privileged-command controls
+- **RHEL-08-010471 was withdrawn as deprecated.** Its test file and toggle are removed
+- **RHEL-08-010020 accepted a subpolicy the benchmark no longer allows.** The test matched
+  `/^FIPS/`, which passes for `FIPS:STIG` and any other suffix. V2R9 deleted the note permitting
+  `FIPS:<SUBPOLICY>`, so the match is now anchored to `FIPS` exactly
+- **RHEL-08-020200 and RHEL-08-020210 still enforced the 60-day maximum password lifetime.** The
+  benchmark raised it to 180 days, so both tests reported a finding against a host configured
+  exactly as V2R9 requires. Their bounds are rewritten, and the existing-password test now also
+  treats a zero or negative value as the finding the benchmark says it is
+- **RHEL-08-020101 asserted `requisite` where the benchmark now specifies `required`** for
+  `pam_pwquality.so`
+- **79 identifier values and 28 titles were behind the benchmark.** Every `Rule_ID` and `Vul_ID` in
+  the tree is now set from the V2R9 XCCDF rather than patched by delta, so a value that had drifted
+  by more than one release is corrected too. 1002 identifier occurrences were checked afterwards
+  and all match
+- benchmark version string moved to `v2.9.0` in the three places that define or state it:
+  `vars/STIG.yml`, `run_audit.sh` (`BENCHMARK_VER`) and `README.md`. The paired remediation role
+  resolves this branch through `audit_git_version`, so the two must move together
+
+## STIG V2R8 - 2026 October - Goss documentation links
+
+- **three documentation links pointed at the pre-fork repository.** `README.md` and two references
+  in `docs/Security_remediation_and_auditing.md` sent readers to `github.com/aelsabbahy/goss`,
+  which is not where this content's binary comes from. They now point at `github.com/krameff/goss`,
+  matching the paired remediation role. The README's deep link dropped its `#patterns` anchor: the
+  fork's documentation lives at `docs/index.md` rather than `docs/manual.md`, and a deep link that
+  cannot be confirmed is worse than a working link to the page
+- **deliberately not changed: the pinned `v0.3.16` download URLs** in the same document. Those name
+  a specific release of the pre-fork project, and the fork is not assumed to publish matching
+  artifacts under that tag, so rewriting them would turn stale links into broken ones
+
+## STIG V2R8 - 2026 October - Benchmark version string moved to the dotted form
+
+- the parent company name is Quantum Sky, not Tyto Athene. Renamed in `LICENSE`, the only place this
+  repository carried it. Deliberately not renamed: existing entries in this file, which record what
+  was true when written
+- `CONTRIBUTING.rst` becomes `CONTRIBUTING.md`, carrying the current Ansible-Lockdown contributing
+  guide and matching the sibling audit roles. The canonical header is `Contributing to
+  Ansible-Lockdown Projects`, with each of the five sections appearing once
+- **`run_audit.sh` built its content path from OS detection.** It derived `os_vendor` by probing
+  `/etc/os-release`, `uname` and `hostnamectl`, and `os_maj_ver` from `VERSION_ID`, then assembled
+  `audit_content_version` from the pair. This audit is single-OS by design - `BENCHMARK_OS=RHEL8` is
+  set in the header - so a stripped or unusual `/etc/os-release` could silently build a path to
+  content that does not exist. The path is now built straight from `BENCHMARK_OS`, removing the
+  failure class rather than adding another fallback for it, and matching the rest of the STIG RHEL
+  Fleet. 20 lines shorter, `bash -n` clean, help output unchanged
+
+- the benchmark version string changes from `v2r8` to `v2.8.0`, and this content is published on a
+  new `benchmark_v2.8.0` branch. `benchmark_v2r8` is left in place and unchanged, so any remediation
+  role still pointing at the old string keeps resolving; nothing is cut over by this alone. Updated
+  in the three places that state it: `vars/STIG.yml`, `run_audit.sh` (`BENCHMARK_VER`) and
+  `README.md`
+- **RHEL-08-020060 passed hosts that the benchmark fails.** The `idle-delay` check accepted any
+  value from 1 to 900 seconds, but V2R8 requires 600. A graphical session locking after 15 minutes
+  rather than 10 was reported compliant. The paired remediation already writes
+  `idle-delay=uint32 600`, so only this content was stale, carrying a threshold from an earlier
+  revision. The ceiling is now 600
+- six test titles did not match the V2R8 wording. Two were alarming on their face and turned out to
+  be label-only: RHEL-08-020310 was titled for password character classes while correctly checking
+  `FAIL_DELAY`, which is its actual control, and RHEL-08-030181 was titled for the audit package
+  while correctly asserting the `auditd` service is running and enabled. Their checks were right and
+  their labels were wrong. Titles now carry the benchmark text with its quotation marks removed, and
+  the per-resource qualifier suffixes are preserved
+- the dotted form matches the convention the Ubuntu audit content already uses, where a `vXrY`
+  remediation pairs with a `vX.Y.0` audit branch
+
 ## STIG V2R8 - 2026 July - Benchmark V2R8 Upgrade
 
 - V2R8 benchmark bump (366 -> 369 controls; +3 added, 0 removed). vars/STIG.yml + run_audit.sh `BENCHMARK_VER` v2r8 (BENCHMARK_OS=RHEL8 kept); README banner v2r8 / 01 Jul 2026

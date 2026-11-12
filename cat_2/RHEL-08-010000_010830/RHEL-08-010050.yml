@@ -4,7 +4,7 @@
   {{ if .Vars.RHEL_08_010050 }}
 file:
   /etc/dconf/db/local.d/01-banner-message:
-    title: RHEL-08-010050 | RHEL 8 must display the Standard Mandatory DoD Notice and Consent Banner before granting local or remote access to the system via a graphical user logon.
+    title: RHEL-08-010050 | RHEL 8 must display the Standard Mandatory DoW Notice and Consent Banner before granting local or remote access to the system via a graphical user logon.
     exists: true
     contents:
     - 'banner-message-text='
@@ -16,7 +16,7 @@ file:
       Group_Title:
       - SRG-OS-000023-GPOS-00006
       - SRG-OS-000228-GPOS-00088
-      Rule_ID: SV-230226r1069298_rule
+      Rule_ID: SV-230226r1262183_rule
       STIG_ID: RHEL-08-010050
       Vul_ID: V-230226
   {{ end }}

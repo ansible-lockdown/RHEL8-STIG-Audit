@@ -1,0 +1,20 @@
+---
+
+{{ if .Vars.RHEL_08_010293 }}
+file:
+  openssl_cnf_crypto_policy_include:
+    title: RHEL-08-010293 | RHEL 8 must implement DoW-approved encryption in the OpenSSL package.
+    path: /etc/pki/tls/openssl.cnf
+    exists: true
+    contents:
+    - '/^\s*\.include\s*=?\s*\/etc\/crypto-policies\/back-ends\/opensslcnf\.config\s*$/'
+    meta:
+      Cat: 1
+      CCI: CCI-001453
+      NIST800-53R4: AC-17
+      Group_Title:
+      - SRG-OS-000250-GPOS-00093
+      Rule_ID: SV-288829r1261888_rule
+      STIG_ID: RHEL-08-010293
+      Vul_ID: V-288829
+{{ end }}

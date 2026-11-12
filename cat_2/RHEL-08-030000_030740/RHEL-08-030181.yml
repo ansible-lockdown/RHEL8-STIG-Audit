@@ -3,7 +3,7 @@
 {{ if .Vars.RHEL_08_030181 }}
 service:
   auditd:
-    title: RHEL-08-030181 | The RHEL 8 audit package must be installed
+    title: RHEL-08-030181 | RHEL 8 audit records must contain information to establish what type of events occurred, the source of events, where events occurred, and the outcome of events.
     running: true
     enabled: true
     meta:

@@ -1,0 +1,47 @@
+---
+
+{{ if .Vars.RHEL_08_030565 }}
+command:
+  audit_rules_useradd:
+    title: RHEL-08-030565 | OS must generate an audit record for all successful and unsuccessful uses of the useradd command. | config check
+    exec: grep useradd /etc/audit/audit.rules
+    exit-status: 0
+    stdout:
+    - '-a always,exit -F path=/usr/sbin/useradd -F perm=x -F auid>=1000 -F auid!=unset -k privileged-useradd'
+    meta:
+      Cat: 2
+      CCI: CCI-000169
+      NIST800-53R4: AU-12
+      Group_Title:
+      - SRG-OS-000062-GPOS-00031
+      - SRG-OS-000037-GPOS-00015
+      - SRG-OS-000042-GPOS-00020
+      - SRG-OS-000392-GPOS-00172
+      - SRG-OS-000462-GPOS-00206
+      - SRG-OS-000471-GPOS-00215
+      - SRG-OS-000466-GPOS-00210
+      Rule_ID: SV-288831r1261903_rule
+      STIG_ID: RHEL-08-030565
+      Vul_ID: V-288831
+  auditd_useradd_live:
+    title: RHEL-08-030565 | OS must generate an audit record for all successful and unsuccessful uses of the useradd command. | live check
+    exec: auditctl -l | grep -w useradd
+    exit-status: 0
+    stdout:
+    - '-a always,exit -S all -F path=/usr/sbin/useradd -F perm=x -F auid>=1000 -F auid!=-1 -F key=privileged-useradd'
+    meta:
+      Cat: 2
+      CCI: CCI-000169
+      NIST800-53R4: AU-12
+      Group_Title:
+      - SRG-OS-000062-GPOS-00031
+      - SRG-OS-000037-GPOS-00015
+      - SRG-OS-000042-GPOS-00020
+      - SRG-OS-000392-GPOS-00172
+      - SRG-OS-000462-GPOS-00206
+      - SRG-OS-000471-GPOS-00215
+      - SRG-OS-000466-GPOS-00210
+      Rule_ID: SV-288831r1261903_rule
+      STIG_ID: RHEL-08-030565
+      Vul_ID: V-288831
+{{ end }}

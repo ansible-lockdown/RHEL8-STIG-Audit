@@ -19,7 +19,7 @@ file:
       - SRG-OS-000106-GPOS-00053
       - SRG-OS-000107-GPOS-00054
       - SRG-OS-000108-GPOS-00055
-      Rule_ID: SV-230372r1017184_rule
+      Rule_ID: SV-230372r1262209_rule
       STIG_ID: RHEL-08-020250
       Vul_ID: V-230372
   /etc/pam.d/smartcard-auth:
@@ -36,7 +36,7 @@ file:
       - SRG-OS-000106-GPOS-00053
       - SRG-OS-000107-GPOS-00054
       - SRG-OS-000108-GPOS-00055
-      Rule_ID: SV-230372r1017184_rule
+      Rule_ID: SV-230372r1262209_rule
       STIG_ID: RHEL-08-020250
       Vul_ID: V-230372
   /etc/pam.d/system-auth:
@@ -53,7 +53,7 @@ file:
       - SRG-OS-000106-GPOS-00053
       - SRG-OS-000107-GPOS-00054
       - SRG-OS-000108-GPOS-00055
-      Rule_ID: SV-230372r1017184_rule
+      Rule_ID: SV-230372r1262209_rule
       STIG_ID: RHEL-08-020250
       Vul_ID: V-230372
   {{ end }}

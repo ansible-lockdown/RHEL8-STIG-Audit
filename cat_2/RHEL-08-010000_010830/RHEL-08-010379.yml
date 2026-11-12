@@ -3,7 +3,7 @@
 {{ if .Vars.RHEL_08_010379 }}
 file:
   /etc/sudoers:
-    title: RHEL-08-010379 | RHEL 8 must specify the default "include" directory for the /etc/sudoers file.
+    title: RHEL-08-010379 | RHEL 8 must specify the default include directory for the /etc/sudoers file.
     exists: true
     contents:
     - '/^#includedir /etc/sudoers.d/'

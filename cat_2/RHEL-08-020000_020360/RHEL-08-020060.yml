@@ -4,11 +4,11 @@
   {{ if .Vars.RHEL_08_020060 }}
 command:
   dconf_screensvaer_idle_delay:
-    title: RHEL-08-020060 | RHEL 8 must automatically lock graphical user sessions after 15 minutes of inactivity.
+    title: RHEL-08-020060 | RHEL 8 must automatically lock graphical user sessions after 10 minutes of inactivity.
     exec: grep -E "idle-delay" /etc/dconf/db/local.d/00-screensaver
     exit-status: 0
     stdout:
-    - '/^idle-delay=(uint32 )?([1-9]|[1-9][0-9]|[1-8][0-9]{2}|900)$/'
+    - '/^idle-delay=(uint32 )?([1-9]|[1-9][0-9]|[1-5][0-9]{2}|600)$/'
     meta:
       Cat: 2
       CCI: CCI-000057

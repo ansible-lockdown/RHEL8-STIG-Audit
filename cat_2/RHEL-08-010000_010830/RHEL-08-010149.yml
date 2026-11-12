@@ -4,7 +4,7 @@
   {{ if .Vars.RHEL_08_010149 }}
 file:
   /etc/grub.d/01_users:
-    title: RHEL-08-010149 | RHEL 8 operating systems booted with a BIOS must require  a unique superusers name upon booting into single-user and maintenance modes. | configured
+    title: RHEL-08-010149 | RHEL 8 operating systems booted with a BIOS must require a unique superusers name upon booting into single-user and maintenance modes. | configured
     exists: true
     contents:
     - '/^\s+set superusers="{{ .Vars.rhel8stig_boot_superuser }}"/'
@@ -20,7 +20,7 @@ file:
       Vul_ID: V-244522
 command:
   grub_cfg_superusers:
-    title: RHEL-08-010149 | RHEL 8 operating systems booted with a BIOS must require  a unique superusers name upon booting into single-user and maintenance modes. | boot config
+    title: RHEL-08-010149 | RHEL 8 operating systems booted with a BIOS must require a unique superusers name upon booting into single-user and maintenance modes. | boot config
     exec: grep superusers /boot/grub2/grub.cfg
     exit-status: 0
     stdout:
@@ -35,7 +35,7 @@ command:
       STIG_ID: RHEL-08-010149
       Vul_ID: V-244522
   checkboot_superuser:
-    title: RHEL-08-010149 | RHEL 8 operating systems booted with a BIOS must require  a unique superusers name upon booting into single-user and maintenance modes. | existing user check
+    title: RHEL-08-010149 | RHEL 8 operating systems booted with a BIOS must require a unique superusers name upon booting into single-user and maintenance modes. | existing user check
     exec: getent passwd {{ .Vars.rhel8stig_boot_superuser }}
     exit-status:
       or:
